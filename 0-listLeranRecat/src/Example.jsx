@@ -3,7 +3,7 @@ import { ChevronUpIcon } from '@heroicons/react/20/solid'
 
 export default function Example() {
   return (
-    <div className="w-full px-4 pt-6">
+    <div className="w-full px-4 pt-2">
       <div className="mx-auto w-full  rounded-2xl bg-white p-2">
         <Disclosure>
           {({ open }) => (

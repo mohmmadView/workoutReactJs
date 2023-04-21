@@ -14,11 +14,13 @@ export default function MyModal() {
 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center">
-        <button
+
+      <div className="  flex flex-col  justify-center">
+      <h1 className='text-center p-4 font-bold  bg-sky-200'>ul tailwindCss</h1>
+              <button 
           type="button"
           onClick={openModal}
-          className="rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+          className=" rounded-md bg-black bg-opacity-20 w-1/3 mx-auto py-2 my-4 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
         >
           Open dialog
         </button>
