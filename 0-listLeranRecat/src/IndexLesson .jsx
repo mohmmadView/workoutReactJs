@@ -1,15 +1,44 @@
 import { createContext, createElement } from "react"
 import { createRoot } from "react-dom/client"
 import React from 'react';
+import imgRoadMap from "./Screenshot_20230419_183009.png"
+import { BeakerIcon,AcademicCapIcon,ArchiveBoxIcon,ArrowTrendingDownIcon } from '@heroicons/react/24/outline'
+
+function RoadMap(){
+
+return(
+<div>
+<img className="w-full h-full" src={imgRoadMap}/>
+<a href="https://roadmap.sh/react">RoadMap.sh</a>
+
+</div>
+
+)
+
+}
 
 function Lesson(props){
 
 
     return(
-      <button className="bg-yellow-900 text-white  w-full mb-2" onClick={(event)=>{ event.currentTarget.children[1].classList.toggle("hidden") }}>
-      <h1  className='pb-4 bg-stone-900/70 inline-block px-8 border rounded-xl mb-2'>{props.subject}</h1>
-        <p id="title" className="Rtl text-white font-bold hidden text-lg "><code className="text-right">{props.title}</code></p> 
+     
+      <section className="font-serif">
+      <div className="flex h-5">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
+</svg>
+ <BeakerIcon className="w-5" />
+<AcademicCapIcon />
+<ArchiveBoxIcon />
+<ArrowTrendingDownIcon />
+
+
+</div>
+      <button className="bg-yellow-900 text-white  w-full mb-2" onClick={(event)=>{ console.log(event.currentTarget.nextElementSibling.classList.toggle("hidden")) }}>
+      <h1  className='pb-4 bg-stone-900/70 inline-block px-8 border rounded-xl '>{props.subject}</h1>
       </button>
+        <pre id="title" className="  text-white font-bold hidden text-lg bg-gray-600/90 p-6 m-2"><code className="text-right">{props.title}</code></pre> 
+</section>
     )
 
 
@@ -18,6 +47,11 @@ function Lesson(props){
              
     return(
       <div id="indexReact" className="w-full m-5 ">
+      <RoadMap />
+         <h1 className=""></h1>
+          <Lesson title="1.install node 2-terminal in visCode type  npm create vite  "
+            subject="0-create React"
+        />
        <h1 className=""></h1>
         <Lesson title="This funny tag syntax is neither a string nor HTML.
         It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
