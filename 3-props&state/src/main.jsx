@@ -4,6 +4,7 @@ import './index.css'
 import Header from './Header'
 import Center from './Center'
 
+
 class Clock extends React.Component {
   constructor(props) {
     super(props)
@@ -55,7 +56,7 @@ function Footer (){
 }
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Header />
+    <Header number="3-" name="props&state" />
     <Center />
     <Footer />
 
