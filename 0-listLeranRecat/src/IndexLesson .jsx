@@ -2,7 +2,8 @@ import { createContext, createElement } from "react"
 import { createRoot } from "react-dom/client"
 import React from 'react';
 import imgRoadMap from "./Screenshot_20230419_183009.png"
-import { BeakerIcon,AcademicCapIcon,ArchiveBoxIcon,ArrowTrendingDownIcon } from '@heroicons/react/24/outline'
+import imgVirtualDom from "../../3-Virtual DOM/virtualDOM_Limoonad_OP.png";
+import { BeakerIcon,AcademicCapIcon,ArchiveBoxIcon,ArrowTrendingDownIcon } from '@heroicons/react/24/outline';
 
 function RoadMap(){
 
@@ -18,8 +19,10 @@ return(
 }
 
 function Lesson(props){
-
-
+   let isTrue = false;
+        let a = null;
+         a=imgVirtualDom
+        
     return(
      
       <section className="font-serif">
@@ -34,10 +37,17 @@ function Lesson(props){
 
 
 </div>
-      <button className="bg-yellow-900 text-white  w-full mb-2" onClick={(event)=>{ console.log(event.currentTarget.nextElementSibling.classList.toggle("hidden")) }}>
+      <button className="bg-yellow-900 text-white border border-white w-full " onClick={(event)=>{ event.currentTarget.nextElementSibling.classList.toggle("hidden") }}>
       <h1  className='pb-4 bg-stone-900/70 inline-block px-8 border rounded-xl '>{props.subject}</h1>
       </button>
-        <pre id="title" className="  text-white font-bold hidden text-lg bg-gray-600/90 p-6 m-2"><code className="text-right">{props.title}</code></pre> 
+      <div className="hidden">
+        <p id="title" className=" w-auto h-auto  text-white font-bold  text-lg bg-gray-600/90 p-6 ">{props.title}</p> 
+        <pre className="border-4 border-t-yellow-700 bg-stone-800 text-gray-300 pb-2 pt-2">
+          {props.code}
+
+        <img className="w-2/3 mx-auto m-3" src={props.image} alt="" /> 
+         </pre>
+       </div>
 </section>
     )
 
@@ -60,11 +70,16 @@ function Lesson(props){
         />
 <Lesson subject="2-components" title="Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a detailed component API reference here.
 Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
-Function and Class Components The simplest way to define a component is to write a JavaScript function:
+Function and Class Components The simplest way to define a component is to write a JavaScript function:"
+code="
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
-This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
+
+This function is a valid React component because it accepts a single “props”
+ (which stands for properties) object argument with data and returns a React element.
+  We call such components “function components” because they are literally JavaScript functions.
+  
 class Welcome extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
@@ -72,8 +87,9 @@ class Welcome extends React.Component {
 }
 "
 />
-<Lesson subject="3-Props" title="This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
-function Welcome(props) {
+<Lesson subject="3-Virtual Dom in React" image={imgVirtualDom}  title="React uses the virtual DOM as a strategy to compute minimal DOM operations when re-rendering the UI. It is not in rivalry with or faster than the real DOM. The virtual DOM provides a mechanism that abstracts manual DOM manipulations away from the developer," />
+<Lesson subject="4-Props"  title="This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions."
+code=" function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 You can also use an ES6 class to define a component:
@@ -83,7 +99,8 @@ class Welcome extends React.Component {
   }
 }
 "/>
-<Lesson subject="4-State"  title="در React برای ساختن کامپوننت های قابل reuse (استفاده مجدد)از class و function استفاده می شه خصوصیت state یک خصوصیت خاص است؛ از این جهت که اگر تغییری در آن ایجاد شود react تمام DOM را دوباره render می کند. state خاص است تو پروژه های React ای قطعا به دفعات زیاد از state استفاده می کنیم حالا چه از setState در کلاس یا useState در function. این مقاله هدفش گوشزد کردن نکاتی در خصوص بروز رسانی state هست که رعایت کردنش واقعا اهمیت داره 
+
+<Lesson subject="5-State"  title="در React برای ساختن کامپوننت های قابل reuse (استفاده مجدد)از class و function استفاده می شه خصوصیت state یک خصوصیت خاص است؛ از این جهت که اگر تغییری در آن ایجاد شود react تمام DOM را دوباره render می کند. state خاص است تو پروژه های React ای قطعا به دفعات زیاد از state استفاده می کنیم حالا چه از setState در کلاس یا useState در function. این مقاله هدفش گوشزد کردن نکاتی در خصوص بروز رسانی state هست که رعایت کردنش واقعا اهمیت داره 
 نکته: هیچ وقت state رو بصورت مستقیم update نکنید حتما از setState و یا useState استفاده کنید.
 
 this.state.firstName = Ali //اشتباه
@@ -91,6 +108,7 @@ this.state.firstName = Ali //اشتباه
 this.setState({firstName:Ali}) //صحیح
 
 "/>
+
 </div>
     )
   

@@ -48,6 +48,7 @@ function BtnClick(props) {
 function Footer (){
   return (
   <footer className="text-center text-2xl p-8">
+  <h2 className='text-center text-4xl font-bold bg-slate-300 p-5'>State Example</h2>
   <p className='text-center text-2xl p-8'> interactive examples for React and Vue powered by Headless UI, plus vanilla HTML if you’d rather write any necessary JS yourself</p>
  <Clock />
  <BtnClick />There used to be a render method exported from react-dom. This got deprecated in React 18 to make way for React 18's concurrent features. If you see the code below, note that it's outdated (but still works in React 18):
