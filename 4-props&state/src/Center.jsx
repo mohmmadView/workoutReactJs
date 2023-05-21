@@ -6,6 +6,15 @@ import shoesBlack from './assets/5b0981ff-45f8-40c3-9372-32430a62aaea.webp';
 import shoesWhite from './assets/9355f630-53c7-4567-89b4-a788c93171ea.webp';
 import shoesGray from './assets/9dcb2896-e746-4005-a580-608abaa5701d.webp';
 import shoesRed from './assets/2104cfe9-9188-4dc3-8919-636ad3e827a3.webp';
+import Carousel from './Card2';
+
+import image_1 from './assets/321138.jpg'
+import image_2 from './assets/Best-Amazing-Images-For-Desktop.jpg'
+import image_3 from './assets/Best-HD-Photos-Ever.jpg'
+import image_4 from './assets/image.jpg'
+import Card3 from './Card3';
+<Card3></Card3>
+import Card2 from './Card2';
 function Center(props){
 
   const AllShoes = [
@@ -15,10 +24,33 @@ function Center(props){
     {id:4,image:shoesGray,shoesName:"Nike Gray",sale:220},
     {id:5,shoesName:"Nike Pink",sale:190},
   ]
+  const callouts = [
+    {
+      name: 'Desk and Office',
+      description: 'Work from home accessories',
+      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg',
+      imageAlt: 'Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.',
+      href: '#',
+    },
+    {
+      name: 'Self-Improvement',
+      description: 'Journals and note-taking',
+      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg',
+      imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
+      href: '#',
+    },
+    {
+      name: 'Travel',
+      description: 'Daily commute essentials',
+      imageSrc: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg',
+      imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
+      href: '#',
+    },
+  ]
 return(
 <main  className="">
-<h1 className='text-center p-5 font-thin text-5xl font-bold'>props Exmpile</h1>
-<div className="container mx-auto flex">
+<h1 className='text-center p-5 font-thin text-5xl font-bold'>function props Exmpile</h1>
+<div className="container mx-auto ">
 {/* 1 way */}
 {/* <Card image={shoesGreen} shoesName="Nike Air" sale={120} />
 <Card image={shoesBlack} shoesName="Nike black" sale={180} />
@@ -27,6 +59,8 @@ return(
 <Card image={shoesRed} shoesName="Nike Pink" sale={190} /> *}
 */}
 {/* 2 way */}
+
+<div className='flex'>
 <Card {...AllShoes[0]}/>
 <Card {...AllShoes[1]}>
   <button>OFF 50%</button>
@@ -38,7 +72,27 @@ return(
   </h2>
 </Card>
 <Card {...AllShoes[4]}/> 
+</div>
 
+<h1 className='text-center p-5 font-thin text-5xl font-bold'>Class props Exmpile</h1>
+<div className="col">
+<div className=''>
+<Card3 {...callouts[0]}/>
+<Card3 {...callouts[1]}/>
+<Card3 {...callouts[2]}/>
+<Card3 {...callouts[3]}>
+<>
+  <p className='bg-gray-700 p-2 mb-4 text-center font-bold text-2xl font-mono'>class default props image & children </p>
+</>
+{/* class component in  map in data */}
+</Card3>
+
+  <p className='bg-gray-700 p-2 mb-4 text-center font-bold text-2xl font-mono'>class and function component in  map in data </p>
+<Card2 />
+</div>
+</div>
+{/* <Carousel />
+<Carousel /> */}
 
 </div>
 </main>

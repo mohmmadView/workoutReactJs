@@ -1,5 +1,5 @@
 
-export default function Modal(children){
+ function Modal(children){
 
     return(
         <>
@@ -23,3 +23,5 @@ export default function Modal(children){
 
     )
 }
+
+      export default Modal

@@ -15,7 +15,7 @@ if(sale > 0){
     <div className="card-actions  justify-between">
       <h1 className='text-4xl font-bold text-lime-600'>{sale} $</h1>
       <label htmlFor="my-modal-6" className="btn btn-secondary">Buy Now</label>
-  
+  <Modal />
 
     </div>
   </div>
