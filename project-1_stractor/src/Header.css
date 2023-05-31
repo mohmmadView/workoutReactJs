@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    animation: fade-in 1s;
+}
+    .dark {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .navigation ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .navigation ul li {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .dark-mode-toggle {
+    cursor: pointer;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
