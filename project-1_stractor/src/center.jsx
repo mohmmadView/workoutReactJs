@@ -19,6 +19,7 @@ import img4 from "./assets/image.jpg"
 
 return(
     <main>
+    <h1 className="text-5xl  text-white font-serif font-bold bg-stone-700/25  p-4 absolute z-10  top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2">Hyer is a simple, straightforward app that connects  </h1>
 <Slider />
 </main>
 )

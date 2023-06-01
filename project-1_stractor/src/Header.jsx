@@ -12,6 +12,7 @@ const Header = () => {
 
   return (
     <header className={`flex mx-8 justify-between header ${darkMode ? 'dark' : 'light'}`}>
+
     <div className="m-4  logo text-xl"><img className='w-18 h-16' src={Logo}  /></div>
     <nav className="navigation">
       <ul className="flex m-4">
@@ -25,6 +26,7 @@ const Header = () => {
     <div className="m-8  dark-mode-toggle cursor-pointer" onClick={handleDarkModeToggle}>
       {darkMode ? 'Light' : 'Dark'} Mode
     </div>
+   
   </header>
   );
 };
