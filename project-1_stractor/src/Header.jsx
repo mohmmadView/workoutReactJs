@@ -7,11 +7,11 @@ const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleDarkModeToggle = () => {
-    setDarkMode(prevMode => !prevMode);
+    setDarkMode(Mode => !Mode);
   };
 
   return (
-    <header className={`flex mx-8 justify-between header ${darkMode ? 'dark' : 'light'}`}>
+    <header className={`flex px-8 justify-between header ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
 
     <div className="m-4  logo text-xl"><img className='w-18 h-16' src={Logo}  /></div>
     <nav className="navigation">
@@ -31,4 +31,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header ;
