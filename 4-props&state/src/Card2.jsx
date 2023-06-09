@@ -9,34 +9,34 @@ export default class Card2 extends Component {
               name: 'Basic Tee',
               href: '#',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-              imageAlt: "Front of men's Basic Tee in black.",
+              imageAlt: "Front of men's Basic in black.",
               price: '$35',
               color: 'Black',
             },
             {
-              id: 1,
+              id: 2,
               name: 'Basic Tee',
               href: '#',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
               imageAlt: "Front of men's Basic Tee in black.",
-              price: '$35',
-              color: 'Black',
+              price: '$65',
+              color: 'White',
             },
-      {
-              id: 1,
+             {
+              id: 3,
               name: 'Basic Tee',
               href: '#',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
               imageAlt: "Front of men's Basic Tee in black.",
-              price: '$35',
-              color: 'Black',
+              price: '$25',
+              color: 'darkBlue',
             },{
-              id: 1,
+              id: 4,
               name: 'Basic Tee',
               href: '#',
               imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
               imageAlt: "Front of men's Basic Tee in black.",
-              price: '$35',
+              price: '$75',
               color: 'Black',
             },
       
@@ -44,13 +44,13 @@ export default class Card2 extends Component {
           
           
           
-        ]
+         ]
             // More products...
     return(
-      
-              <div className="bg-white">
-                <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                  <h2 className="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+                       
+              <div className="bg-violet-300">
+                <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 font-bold">
+                  <h2 className="text-2xl font-bold tracking-tight text-sky-800 font-serif ">Customers also purchased</h2>
           
                   <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                     {products.map((product) => (
@@ -64,13 +64,13 @@ export default class Card2 extends Component {
                         </div>
                         <div className="mt-4 flex justify-between">
                           <div>
-                            <h3 className="text-sm text-gray-700">
+                            <h3 className="text-sm text-fuchsia-800">
                               <a href={product.href}>
                                 <span aria-hidden="true" className="absolute inset-0" />
                                 {product.name}
                               </a>
                             </h3>
-                            <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                            <p className="mt-1 text-sm text-gray-700">{product.color}</p>
                           </div>
                           <p className="text-sm font-medium text-gray-900">{product.price}</p>
                         </div>

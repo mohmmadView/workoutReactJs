@@ -7,14 +7,14 @@ import shoesWhite from './assets/9355f630-53c7-4567-89b4-a788c93171ea.webp';
 import shoesGray from './assets/9dcb2896-e746-4005-a580-608abaa5701d.webp';
 import shoesRed from './assets/2104cfe9-9188-4dc3-8919-636ad3e827a3.webp';
 import Carousel from './Card2';
-
 import image_1 from './assets/321138.jpg'
 import image_2 from './assets/Best-Amazing-Images-For-Desktop.jpg'
 import image_3 from './assets/Best-HD-Photos-Ever.jpg'
 import image_4 from './assets/image.jpg'
 import Card3 from './Card3';
-<Card3></Card3>
 import Card2 from './Card2';
+import Title from './Title';
+import Modal from './Modal';
 function Center(props){
 
   const AllShoes = [
@@ -24,7 +24,7 @@ function Center(props){
     {id:4,image:shoesGray,shoesName:"Nike Gray",sale:220},
     {id:5,shoesName:"Nike Pink",sale:190},
   ]
-  const callouts = [
+  const callOuts = [
     {
       name: 'Desk and Office',
       description: 'Work from home accessories',
@@ -48,8 +48,10 @@ function Center(props){
     },
   ]
 return(
-<main  className="">
-<h1 className='text-center p-5 font-thin text-5xl font-bold'>function props Exmpile</h1>
+<main  className=" bg-zinc-800 mt-1">
+
+<Title title="Class props example" />
+
 <div className="container mx-auto ">
 {/* 1 way */}
 {/* <Card image={shoesGreen} shoesName="Nike Air" sale={120} />
@@ -74,13 +76,13 @@ return(
 <Card {...AllShoes[4]}/> 
 </div>
 
-<h1 className='text-center p-5 font-thin text-5xl font-bold'>Class props Exmpile</h1>
+<Title title="Class props example" />
 <div className="col">
 <div className=''>
-<Card3 {...callouts[0]}/>
-<Card3 {...callouts[1]}/>
-<Card3 {...callouts[2]}/>
-<Card3 {...callouts[3]}>
+<Card3 {...callOuts[0]}/>
+<Card3 {...callOuts[1]}/>
+<Card3 {...callOuts[2]}/>
+<Card3 {...callOuts[3]}>
 <>
   <p className='bg-gray-700 p-2 mb-4 text-center font-bold text-2xl font-mono'>class default props image & children </p>
 </>
@@ -93,16 +95,39 @@ return(
 </div>
 {/* <Carousel />
 <Carousel /> */}
+<Title title="propsTypes mt-2" />
+<div className="mt-4 p-5 mx-32 mockup-code bg-violet-300 text-primary-content">
+  <pre><code>
+ <span className='text-black font-bold '> ## Usage</span> <br />
 
+ PropTypes was originally exposed as part of the React core module,<br />
+ and is commonly used with React components. <br />
+ Here is an example of using PropTypes with a React component,<br />
+ which also documents the different validators provided:<br />
+<span className='pl-5 text-xl text-yellow-700 font-bold'>```jsx</span><br />
+import React from 'react';<br />
+import PropTypes from 'prop-types';<br />
+
+class MyComponent extends React.Component "<br />
+  render() " <br />
+    // ... do things with the props<br />
+    MyComponent.propTypes = <br />
+  // You can declare that a prop is a specific JS primitive. By default, these<br />
+  // are all optional.<br />
+  optionalArray: PropTypes.array,<br />
+  optionalBigInt: PropTypes.bigint,<br />
+  optionalBool: PropTypes.bool,<br />
+  optionalFunc: PropTypes.func,<br />
+  optionalNumber: PropTypes.number,<br />
+  optionalString: PropTypes.string,<br />
+  optionalSymbol: PropTypes.symbol,<br />
+  </code></pre>
+</div>
 </div>
 </main>
 
 ) 
 
 }
-
-
-  
-
 
 export default Center

@@ -6,15 +6,15 @@ function Card({image=logoReact,shoesName,sale,children}){
     console.log(image,shoesName,sale);
 if(sale > 0){
     return(
-<div className="card w-96  m-4 bg-base-100 shadow-xl">
+<div className="card w-96  m-4  shadow-xl">
   <figure><img src={image} alt="Shoes" /></figure>
-  <div className="card-body text-black bg-stone-100">
-    <h2 className="card-title">{shoesName}</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+  <div className="card-body text-black bg-violet-300">
+    <h2 className="card-title text-sky-800">{shoesName}</h2>
+    <p>If a children Card Shoes choose?</p>
     {children}
     <div className="card-actions  justify-between">
-      <h1 className='text-4xl font-bold text-lime-600'>{sale} $</h1>
-      <label htmlFor="my-modal-6" className="btn btn-secondary">Buy Now</label>
+      <h1 className='text-4xl font-bold text-fuchsia-800'>{sale} $</h1>
+      <label htmlFor="my-modal-6" className="btn ">Buy Now</label>
   <Modal />
 
     </div>
