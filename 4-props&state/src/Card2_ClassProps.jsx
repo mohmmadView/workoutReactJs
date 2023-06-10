@@ -1,7 +1,7 @@
 import React,{ Component } from "react";
 import logoReact from "./assets/react.svg"
 
- export default class Card3 extends Component {
+ export default class Card2 extends Component {
     render(props){
   return (
     <div  className="bg-violet-300 p-1 my-4">
@@ -34,7 +34,7 @@ import logoReact from "./assets/react.svg"
 }
 }
 
-Card3.defaultProps={
+Card2.defaultProps={
     name: 'default_Value',
 imageSrc: logoReact
 }

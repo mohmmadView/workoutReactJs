@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import logoRect from './assets/react.svg'
-export default class Card2 extends Component {
+export default class Card3 extends Component {
 
   render() {
   const products = [
