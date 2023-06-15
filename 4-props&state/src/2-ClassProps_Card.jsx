@@ -4,7 +4,7 @@ import logoReact from "./assets/react.svg"
  export default class Card2 extends Component {
     render(props){
   return (
-    <div  className="bg-violet-300 p-1 my-4">
+    <div  className="bg-violet-300 p-1 mx-1 my-4">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-2 sm:py-24 lg:max--none lg:py-8">
          {this.props.children}
