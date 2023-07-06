@@ -20,7 +20,7 @@ const Person = ({ name, age }) => {
   </label>
   <label className="input-group">
     <span>Name</span>
-    <input type="text" disabled value={name} placeholder=" Type : String" className="input input-bordered" />
+    <input type="text"  value={name} placeholder=" Type : String" className="input input-bordered" />
   </label>
 
 
@@ -30,7 +30,7 @@ const Person = ({ name, age }) => {
   </label>
   <label className="input-group">
     <span>Age</span>
-    <input type="text"  disabled value={age} placeholder=" Type : Number" className="input input-bordered" />
+    <input type="text"  value={age} placeholder=" Type : Number" className="input input-bordered" />
   </label>
 </div>
 

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "babel-plugin-prismjs": "^2.1.0",
     "daisyui": "^2.51.6",
     "prismjs": "^1.29.0",
     "prop-types": "^15.8.1",
