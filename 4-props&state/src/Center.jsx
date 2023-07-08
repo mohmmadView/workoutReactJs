@@ -3,6 +3,7 @@ import Card  from './1-FunctionProps_Card'
 import Card2 from './2-ClassProps_Card';
 import Card3 from './3-ClassAndFunctionInMapData-Card';
 import Person from './4-props_Types';
+import AppName from './5-state'
 import viteLogo  from '../public/tailwindui-small@75.8bb955b2.jpg'
 import shoesGreen from './assets/air-vapormax-2021-flyknit-next-nature-mens-shoes-NpTfFz.jpeg';
 import shoesBlack from './assets/5b0981ff-45f8-40c3-9372-32430a62aaea.webp';
@@ -164,11 +165,14 @@ return(
 <Carousel /> */}
 <Title title="4-propsTypes " />
 
-<Person name="mamad" age={29} />
+<Person name="mohammad" age={28} />
 <div className="mt-4 p-5 mx-32 mockup-code  bg-violet-300 text-primary-content">
 <code><PrismGe code={code_Props_Type} language="javascript" /></code>
 
 </div>
+
+<Title title="5-State" />
+<AppName />
 </div>
 </main>
 

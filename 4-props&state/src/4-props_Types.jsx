@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes, { number } from "prop-types";
 
 /** 
 * @external PropTypes  
@@ -11,7 +11,8 @@ import PropTypes from "prop-types";
 *   and warn in development if they don’t match.
 */
 
-const Person = ({ name, age }) => {
+const Person = (props) => {
+
     return (
 <div className="w-3/4 flex justify-evenly mx-auto">
 
@@ -20,22 +21,17 @@ const Person = ({ name, age }) => {
   </label>
   <label className="input-group">
     <span>Name</span>
-    <input type="text"  value={name} placeholder=" Type : String" className="input input-bordered" />
+    <input type="text"  value={props.name} placeholder=" Type : String" className="input input-bordered" />
   </label>
-
-
 
   <label className="label">
     <span className="label-text">Props.Types : Number</span>
   </label>
   <label className="input-group">
     <span>Age</span>
-    <input type="text"  value={age} placeholder=" Type : Number" className="input input-bordered" />
+    <input type="text"  value={props.age} placeholder=" Type : Number" className="input input-bordered" />
   </label>
 </div>
-
-
-  
     );
   };
   
