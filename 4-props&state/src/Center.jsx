@@ -64,13 +64,7 @@ const code = [
     CodeInner:'./Card1_FunctionProps.jsx'
 },
 ]
-const codePa=()=>{
-const codeTest = `var data = 1;`;
-const htmlTest=Prism.highlight(code_Props_Type, Prism.languages.js, 'js');
-loadLanguages(['jsx', 'js'])
-console.log(htmlTest);
-return htmlTest
-}
+
 // The code snippet you want to highlight, as a string
 const code_Props_Type = `import PropTypes from "prop-types";
 /** 
