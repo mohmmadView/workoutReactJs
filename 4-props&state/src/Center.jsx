@@ -3,7 +3,8 @@ import Card  from './1-FunctionProps_Card'
 import Card2 from './2-ClassProps_Card';
 import Card3 from './3-ClassAndFunctionInMapData-Card';
 import Person from './4-props_Types';
-import AppName from './5-state'
+import UpdateList from './5-Class-State'
+import BtnChange from './6-Function-useState' 
 import viteLogo  from '../public/tailwindui-small@75.8bb955b2.jpg'
 import shoesGreen from './assets/air-vapormax-2021-flyknit-next-nature-mens-shoes-NpTfFz.jpeg';
 import shoesBlack from './assets/5b0981ff-45f8-40c3-9372-32430a62aaea.webp';
@@ -18,6 +19,7 @@ import image_4 from './assets/image.jpg'
 import Prism from 'prismjs';
 import PrismGe from './Prism';
 import Title from './Title';
+import Example from './Example'
 import LogoCode from './assets/file-code.svg'
 import Modal from './Modal';
 // Prism.manual = true;
@@ -166,7 +168,10 @@ return(
 </div>
 
 <Title title="5-State" />
-<AppName />
+<Example exampleNumber={1} exampleName="Update List" />
+<UpdateList />
+<Example exampleName="btn click change Title" exampleNumber={2} />
+<BtnChange />
 </div>
 </main>
 

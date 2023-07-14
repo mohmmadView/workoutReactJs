@@ -110,13 +110,13 @@ export default AppName;`;
                      }
 render() {
 return(
-    <div className="flex h-96 ">
+    <div className="flex h-96 m-5 ">
     <div className="w-1/2">
     {/* onClick={this.clickHandler.bind(this)} */}
     {/* onClick={ () => this.clickHandler()} */}
         <h1 onClick={()=> this.clickHandler()} className="text-2xl text-red-500 font-bold ">{...this.state.users[0].name}</h1>
         <button className="p-3 border m-4 rounded-xl hover:bg-slate-500" onClick={this.changeUsersHandler.bind(this)}>change btn keyboard</button>
-        <User {...this.state.users[1]} />
+        <User className="mt-2" {...this.state.users[1]} />
         <User {...this.state.users[2]} />
         <User {...this.state.users[3]} />
         <User {...this.state.users[4]} />
