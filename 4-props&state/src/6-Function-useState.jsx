@@ -3,6 +3,7 @@ import logoReactXs from './assets/react-logo-xs.png'
 import Prism from 'prismjs';
 import PrismGe from './Prism';
 import  './BtnChangeClick.css'
+
 const code = `
 const content = [
   [
@@ -124,7 +125,7 @@ export default function BtnChangeClick(){
     const [activeContentIndex, setActiveContentIndex] = useState(0);
 
     return (
-        <div className="flex h-96 m-4">
+        <div className="flex h-96 m-4 mx-8">
       <div className="w-1/2">
         <header>
           <img src={logoReactXs} alt="React logo" />
@@ -173,7 +174,7 @@ export default function BtnChangeClick(){
           </div>
         </div>
       </div>
-      <div className="w-1/2 mt-4 p-5 mx-32 mockup-code overflow-scroll bg-violet-300 text-primary-content">
+      <div className="w-1/2 mt-4 p-5 mx-8 mockup-code overflow-scroll bg-violet-300 text-primary-content">
 <code>
     <PrismGe code={code} language="javascript" ></PrismGe>
 </code>

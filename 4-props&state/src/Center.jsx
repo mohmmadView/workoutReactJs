@@ -5,6 +5,7 @@ import Card3 from './3-ClassAndFunctionInMapData-Card';
 import Person from './4-props_Types';
 import UpdateList from './5-Class-State'
 import BtnChange from './6-Function-useState' 
+import Temperature from './Temperature_Display'
 import viteLogo  from '../public/tailwindui-small@75.8bb955b2.jpg'
 import shoesGreen from './assets/air-vapormax-2021-flyknit-next-nature-mens-shoes-NpTfFz.jpeg';
 import shoesBlack from './assets/5b0981ff-45f8-40c3-9372-32430a62aaea.webp';
@@ -104,7 +105,7 @@ const Person = ({ name, age }) => {
     name: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
   };
-  export default Person;;`
+  export default Person;`
 
   const htmlTest=Prism.highlight(code_Props_Type, Prism.languages.js, 'js');
 // Returns a highlighted HTML string
@@ -113,8 +114,7 @@ const Person = ({ name, age }) => {
 return(
 <main  className=" bg-zinc-800 mt-1">
 
-<Title title="1-Function props example" code='./Card1_FunctionProps.jsx' />
-
+<Title title="1-Function props" code='./Card1_FunctionProps.jsx' />
 <div className="container mx-auto ">
 
 {/* //! Card1*/}
@@ -172,6 +172,8 @@ return(
 <UpdateList />
 <Example exampleName="btn click change Title" exampleNumber={2} />
 <BtnChange />
+<Example exampleName="btn click change Title" exampleNumber={3} />
+<Temperature />
 </div>
 </main>
 

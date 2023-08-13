@@ -111,7 +111,7 @@ export default AppName;`;
 render() {
 return(
     <div className="flex h-96 m-5 ">
-    <div className="w-1/2">
+    <div className="w-1/2 mx-8">
     {/* onClick={this.clickHandler.bind(this)} */}
     {/* onClick={ () => this.clickHandler()} */}
         <h1 onClick={()=> this.clickHandler()} className="text-2xl text-red-500 font-bold ">{...this.state.users[0].name}</h1>
@@ -122,7 +122,7 @@ return(
         <User {...this.state.users[4]} />
         <User {...this.state.users[5]} />
     </div>
-    <div className="w-1/2 mt-4 p-5 mx-32 mockup-code overflow-scroll bg-violet-300 text-primary-content">
+    <div className="w-1/2 mt-4 p-5 mx-8 mockup-code overflow-scroll bg-violet-300 text-primary-content">
 <code>
     <PrismGe code={this.code} language="javascript" ></PrismGe>
 </code>
