@@ -110,7 +110,7 @@ const Person = ({ name, age }) => {
   const htmlTest=Prism.highlight(code_Props_Type, Prism.languages.js, 'js');
 // Returns a highlighted HTML string
 
-
+var elmCircle = document.querySelector('#circle');
 return(
 <main  className=" bg-zinc-800 mt-1">
 
@@ -172,7 +172,7 @@ return(
 <UpdateList />
 <Example exampleName="btn click change Title" exampleNumber={2} />
 <BtnChange />
-<Example exampleName="btn click change Title" exampleNumber={3} />
+<Example exampleName="Temperature"  exampleNumber={3} />
 <Temperature />
 </div>
 </main>
