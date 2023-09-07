@@ -1,5 +1,5 @@
 import { useState , useRef } from "react"
-import PrismGe from './Prism';
+import PrismGe from '../utils/Prism';
 import Prism from 'prismjs';
 
 /**
@@ -67,10 +67,7 @@ export default function Temperature() {
  "w-1/2 h-1/2 bg-primary mx-auto text-4xl text-neutral flex justify-center rounded-full",
  "w-1/2 h-1/2 bg-amber-200 mx-auto text-4xl text-neutral flex justify-center rounded-full",
  "w-1/2 h-1/2 bg-amber-400 mx-auto text-4xl text-neutral flex  justify-center rounded-full"];
-console.log('======  // return     elmCircle.classList=styleElmCircle[2];==============================');
-console.log(elmCircle);
-console.log('===================================='); 
-     
+
     return(
 <div className="flex h-96">
   <div className="w-1/2 mx-8">

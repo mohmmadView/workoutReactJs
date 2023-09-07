@@ -1,7 +1,7 @@
 import { useState } from "react";
-import logoReactXs from './assets/react-logo-xs.png'
+import logoReactXs from '../assets/react-logo-xs.png'
 import Prism from 'prismjs';
-import PrismGe from './Prism';
+import PrismGe from '../utils/Prism';
 import  './BtnChangeClick.css'
 
 const code = `
@@ -49,7 +49,7 @@ export default function BtnChangeClick(){
         <div id="tabs">
           <menu>
             <button
-              className={activeContentIndex === 0 ? "active" : ""}
+              className={activeC            ontentIndex === 0 ? "active" : ""}
               onClick={() => setActiveContentIndex(0)}
             >
               Why React?
@@ -119,7 +119,11 @@ const content = [
     "With React, you define the goal and React figures out how to get there"
   ]
 ];
-
+/**
+ * Renders a button that changes the active content index.
+ *
+ * @return {JSX.Element} The JSX element representing the button.
+ */
 export default function BtnChangeClick(){
 
     const [activeContentIndex, setActiveContentIndex] = useState(0);
@@ -134,7 +138,6 @@ export default function BtnChangeClick(){
             <p>i.e., using the React library for rendering the UI</p>
           </div>
         </header>
-  
         <div id="tabs">
           <menu>
             <button
@@ -164,9 +167,6 @@ export default function BtnChangeClick(){
           </menu>
           <div id="tab-content">
             <ul>
-            {
-            console.log(content[activeContentIndex].map((item)=> (<li key={item}>{item}</li>)))
-           }
               {content[activeContentIndex].map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -183,4 +183,3 @@ export default function BtnChangeClick(){
     </div>
     );
   };
-  

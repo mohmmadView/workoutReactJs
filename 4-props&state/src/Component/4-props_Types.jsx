@@ -1,14 +1,20 @@
 import PropTypes, { number } from "prop-types";
 
 /** 
-* @external PropTypes  
-* @see https://www.npmjs.com/package/prop-types
-*/
-/**
 *  components.React (and potentially other libraries—see the 
 *  checkPropTypes() reference below) will check props 
 *  passed to your components against those definitions,
 *   and warn in development if they don’t match.
+ * Renders a Person component with the given props.
+* @external PropTypes  
+* @see https://www.npmjs.com/package/prop-types
+*/
+/**
+ *
+ * @param {object} props - The props for the Person component.
+ * @param {string} props.name - The name of the person.
+ * @param {number} props.age - The age of the person.
+ * @return {JSX.Element} - The rendered Person component.
 */
 
 const Person = (props) => {

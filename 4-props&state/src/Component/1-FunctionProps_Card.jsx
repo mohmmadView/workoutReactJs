@@ -1,5 +1,5 @@
-import logoReact from './assets/react.svg'
-import Modal  from './Modal'
+import Modal  from '../utils/Modal'
+import logoReact from '../assets/react-logo-xs.png'
 /**
 @external logoReact is a logo React @typedef {svg: string}
 @external Modal Component in Card1 Component button{BUYNow} in run Modal
@@ -9,13 +9,13 @@ import Modal  from './Modal'
  * 
  * @param {string} [image=logoReact] - url image to default logoReact
  * @param {string} shoesName - name of shoes card-title
- * @param {number} sale - sale price in  shoes card
- * @param {*} children - children cards
- * @returns 
+ * @param {number} sale - The sale price of the shoe.
+ * @param {ReactNode} children - The child components for the card.
+ * @returns {ReactNode} The card component.
  */
+
 function Card({image=logoReact,shoesName,sale,children}){
 
-    console.log(image,shoesName,sale);
 if(sale > 0){
     return(
 <div className="card w-32 m-1 sm:w-44 md:w-52 md:m-2 lg:w-72  xl:w-96  shadow-xl ">

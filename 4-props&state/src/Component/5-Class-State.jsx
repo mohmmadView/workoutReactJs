@@ -1,13 +1,14 @@
 import React from "react";
-import User from "./User";
+import User from "../utils/User";
 import Prism from 'prismjs';
-import PrismGe from './Prism';
+import PrismGe from '../utils/Prism';
 //TODO props برای مقداری دهی  ثابت استفاده  میشود
 //TODO state برای مقدار دهی  که در طول برنامه تغیرر پیدا می کنند استفاده میشود
  class AppName extends React.Component {
     
     constructor(props) {
         super(props)
+        //Todo this code  متغییر   نمایش کد هست 
 this.code =`import React from "react";
 import User from "./User";
 import Prism from 'prismjs';
@@ -94,6 +95,12 @@ export default AppName;`;
                      clickHandler(){
                        console.log(this);
                      }
+                                          /**
+                      * Sets the state of the component to update the list of users.
+                      *
+                      * @param {type} paramName - description of parameter
+                      * @return {type} description of return value
+                      */
                      changeUsersHandler(){
                         this.setState(
                             {
@@ -108,6 +115,11 @@ export default AppName;`;
                     }
                            )
                      }
+                          /**
+                          * Renders the component and returns the JSX code.
+                           *
+                             * @return {JSX} The JSX code representing the component.
+                               */
 render() {
 return(
     <div className="flex h-96 m-5 ">

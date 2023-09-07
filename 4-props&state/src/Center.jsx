@@ -1,28 +1,28 @@
 import React from 'react'
-import Card  from './1-FunctionProps_Card'
-import Card2 from './2-ClassProps_Card';
-import Card3 from './3-ClassAndFunctionInMapData-Card';
-import Person from './4-props_Types';
-import UpdateList from './5-Class-State'
-import BtnChange from './6-Function-useState' 
-import Temperature from './Temperature_Display'
+import Card  from './Component/1-FunctionProps_Card'
+import Card2 from './Component/2-ClassProps_Card';
+import Card3 from './Component/3-ClassAndFunctionInMapData-Card';
+import Person from './Component/4-props_Types';
+import UpdateList from './Component/5-Class-State'
+import BtnChange from './Component/6-Function-useState' 
+import Temperature from './Component/7.Temperature_Display'
 import viteLogo  from '../public/tailwindui-small@75.8bb955b2.jpg'
 import shoesGreen from './assets/air-vapormax-2021-flyknit-next-nature-mens-shoes-NpTfFz.jpeg';
 import shoesBlack from './assets/5b0981ff-45f8-40c3-9372-32430a62aaea.webp';
 import shoesWhite from './assets/9355f630-53c7-4567-89b4-a788c93171ea.webp';
 import shoesGray from './assets/9dcb2896-e746-4005-a580-608abaa5701d.webp';
 import shoesRed from './assets/2104cfe9-9188-4dc3-8919-636ad3e827a3.webp';
-import Carousel from './3-ClassAndFunctionInMapData-Card';
+import Carousel from './Component/3-ClassAndFunctionInMapData-Card';
 import image_1 from './assets/321138.jpg'
 import image_2 from './assets/Best-Amazing-Images-For-Desktop.jpg'
 import image_3 from './assets/Best-HD-Photos-Ever.jpg'
 import image_4 from './assets/image.jpg'
 import Prism from 'prismjs';
-import PrismGe from './Prism';
-import Title from './Title';
-import Example from './Example'
+import PrismGe from './utils/Prism';
+import Title from './utils/Title';
+import Example from './utils/Example'
 import LogoCode from './assets/file-code.svg'
-import Modal from './Modal';
+import Modal from './utils/Modal';
 // Prism.manual = true;
 
 // Prism.highlightAll();
@@ -113,11 +113,11 @@ const Person = ({ name, age }) => {
 var elmCircle = document.querySelector('#circle');
 return(
 <main  className=" bg-zinc-800 mt-1">
-
+{/* //Todo  Component Card ==  1-functionProps_Card.jsx */}
 <Title title="1-Function props" code='./Card1_FunctionProps.jsx' />
 <div className="container mx-auto ">
 
-{/* //! Card1*/}
+{/* //! Card*/}
 {/* //TODO 1 way Props value*/}
 {/*//? <Card image={shoesGreen} shoesName="Nike Air" sale={120} />
  //? <Card image={shoesBlack} shoesName="Nike black" sale={180} />
@@ -125,8 +125,6 @@ return(
 <//?Card image={shoesGray} shoesName="Nike Gray" sale={220} />
 <//?Card image={shoesRed} shoesName="Nike Pink" sale={190} /> *}
 */}
-
-
 {/*//TODO 2 way Props Array in Data */}
 <div className='flex overflow-auto'>
 <Card {...AllShoes[0]}/>
@@ -142,9 +140,8 @@ return(
 <Card {...AllShoes[4]}/> 
 </div>
 
-
+{/* //Todo  Component Card2 ==  2-functionProps_Card.jsx */ }
 <Title title="2-Class props example" />
-
 <div className="col">
 <Card2 {...callOuts[0]}/>
 <Card2 {...callOuts[1]}/>
@@ -155,18 +152,18 @@ return(
 </Card2>
 {/* class component in  map in data */}
 </div>
+{/* //Todo  Component Card3 == 3-ClassAndFunctionInMapData-Card */ }
 <Title title="3-Class And Function In Map Data" />
 <Card3  />
-{/* <Carousel />
-<Carousel /> */}
+{/* //Todo  Component Person ==  4-props_Types */ }
 <Title title="4-propsTypes " />
-
+{/* //Todo  SourceCode  4-Props-Types */}
 <Person name="mohammad" age={28} />
 <div className="mt-4 p-5 mx-32 mockup-code  bg-violet-300 text-primary-content">
 <code><PrismGe code={code_Props_Type} language="javascript" /></code>
 
 </div>
-
+{/* //Todo  Component Card3 == 5-State */ }
 <Title title="5-State" />
 <Example exampleNumber={1} exampleName="Update List" />
 <UpdateList />

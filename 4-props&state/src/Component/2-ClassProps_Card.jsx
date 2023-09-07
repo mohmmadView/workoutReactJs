@@ -1,6 +1,11 @@
 import React,{ Component } from "react";
-import logoReact from "./assets/react.svg"
-
+import logoReact from "../assets/react.svg"
+ /**
+     * Renders the component with the given props.
+     *
+     * @param {Object} props - The props object containing the component's properties =>{ props.name and props.imageSrc and props.imageAlt and props.href and props.children and props.description }
+     * @return {JSX.Element} The rendered component.
+     */
  export default class Card2 extends Component {
     render(props){
   return (
