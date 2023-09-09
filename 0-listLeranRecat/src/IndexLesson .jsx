@@ -41,7 +41,7 @@ function Lesson(props){
       <h1  className='pb-4 bg-stone-900/70 inline-block px-8 border rounded-xl '>{props.subject}</h1>
       </button>
       <div className="hidden">
-        <p id="title" className=" w-auto h-auto  text-white font-bold  text-lg bg-gray-600/90 p-6 ">{props.title}</p> 
+        <pre id="title" className=" w-auto h-auto  text-white font-bold  text-lg bg-gray-600/90 p-6 ">{props.title}</pre> 
         <pre className="border-4 border-t-yellow-700 bg-stone-800 text-gray-300 pb-2 pt-2">
           {props.code}
 
@@ -100,13 +100,13 @@ class Welcome extends React.Component {
 }
 "/>
 
-<Lesson subject="5-State"  title="در React برای ساختن کامپوننت های قابل reuse (استفاده مجدد)از class و function استفاده می شه خصوصیت state یک خصوصیت خاص است؛ از این جهت که اگر تغییری در آن ایجاد شود react تمام DOM را دوباره render می کند. state خاص است تو پروژه های React ای قطعا به دفعات زیاد از state استفاده می کنیم حالا چه از setState در کلاس یا useState در function. این مقاله هدفش گوشزد کردن نکاتی در خصوص بروز رسانی state هست که رعایت کردنش واقعا اهمیت داره 
-نکته: هیچ وقت state رو بصورت مستقیم update نکنید حتما از setState و یا useState استفاده کنید.
+<Lesson subject="5-State"  title="
+ در ریکت یک شی جاوا اسکریپت است که داده‌های پویای یک کامپوننت را ذخیره می‌کند State
 
-this.state.firstName = Ali //اشتباه
 
-this.setState({firstName:Ali}) //صحیح
+State در ریکت برای ایجاد رابط‌های کاربری تعاملی و پویای استفاده می‌شود. به عنوان مثال، می‌توان از State برای ذخیره مقدار یک کنترل ورودی استفاده کرد تا وقتی کاربر مقدار کنترل را تغییر دهد، رابط کاربری به‌روز شود.
 
+State در ریکت به صورت محلی در هر کامپوننت ذخیره می‌شود. به عبارت دیگر، هر کامپوننت State خاص خود را دارد که از سایر کامپوننت‌ها جدا است.
 "/>
 
 </div>

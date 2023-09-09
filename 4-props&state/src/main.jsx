@@ -57,7 +57,7 @@ function Footer (){
 }
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Header number="3-" name="props&state" />
+    <Header name="props&state" />
     <Center />
     <Footer />
 

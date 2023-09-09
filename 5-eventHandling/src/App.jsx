@@ -1,13 +1,17 @@
-
+import Title from './utils/Title'
+import ClassEventHandling from './Component/1-ClassEventHandling';
+import ClassConditionalRendering from './Component/2-ClassConditionalRendering';
 import './App.css'
 
 function App() {
 
   return (
-    <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <main>
+<Title title="Class Event Handling" />
+ <ClassEventHandling />
+<ClassConditionalRendering />
 
+  </main>
   )
 }
 
