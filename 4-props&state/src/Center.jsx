@@ -165,6 +165,10 @@ return(
 </div>
 {/* //Todo  Component Card3 == 5-State */ }
 <Title title="5-State" />
+<div className="mt-4 p-5 mx-32   bg-violet-300 text-primary-content">
+<p className="text-2xl text-justify ">Often, you’ll want your component to “remember” some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add state to your component.
+First, import useState from React:</p>
+</div>
 <Example exampleNumber={1} exampleName="Update List" />
 <UpdateList />
 <Example exampleName="btn click change Title" exampleNumber={2} />

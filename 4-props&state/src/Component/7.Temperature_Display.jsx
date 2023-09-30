@@ -74,7 +74,6 @@ export default function Temperature() {
 <div className="flex  justify-center w-96 h-96 bg-neutral border  text-neutral-content">
   <div className="flex w-full flex-col justify-center text-center">
     <h2 id="circle" className={styleElmCircle_1}><p className="inline my-auto font-bold">{`${celsius} C`}</p></h2>
-  
     <div className=" w-10/12 mt-16 mx-auto flex justify-around">
       <button onClick={()=> handlerTemplate(-5)} className="btn btn-primary w-1/3 "><p className="text-4xl">-</p></button>
       <button onClick={()=> handlerTemplate(5)} className="btn btn-primary w-1/3 "><p className="text-4xl">+</p></button>
