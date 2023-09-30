@@ -4,8 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  
-
+  function Recipe({ drinkers }) {
+    return (
+      <ol>    
+        <li>Boil {drinkers} cups of water.</li>
+        <li>Add {drinkers} spoons of tea and {0.5 * drinkers} spoons of spice.</li>
+        <li>Add {0.5 * drinkers} cups of milk to boil and sugar to taste.</li>
+      </ol>
+    );
+  }
+  function Cup({ guest }) {
+    return <h2>Tea cup for guest #{guest}</h2>;
+  }
   return (
 <main className='' >
 <div className="flex justify-center">
@@ -41,7 +51,16 @@ function App() {
 </div>
 <p className='mt-5'>The above line creates a react element and passing three arguments inside where the first is the name of the element which is div, second is the attributes passed in the div tag, and last is the content you pass which is the "Hello JavaTpoint."</p>
  </div>
-
+ <section>
+      <h1>Spiced Chai Recipe</h1>
+      <h2>For two</h2>
+      <Recipe drinkers={2} />
+      <h2>For a gathering</h2>
+      <Recipe drinkers={4} />
+    </section>
+    <Cup guest={1} />
+      <Cup guest={2} />
+      <Cup guest={3} />
 </section>
    
 
