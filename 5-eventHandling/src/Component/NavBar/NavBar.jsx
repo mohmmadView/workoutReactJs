@@ -27,7 +27,7 @@ class Navbar extends React.Component {
                     <a className="navbar-brand" href="#">Hello World</a>
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                        <span className="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon">test</span>
                     </button>
 
                     <div className="collapse navbar-collapse" id="collapsibleNavbar">
@@ -41,7 +41,7 @@ class Navbar extends React.Component {
 
                         </ul>
                     </div>
-                 <button onClick={()=>this.setState(this,()=>{this.state.notifications.shift(-1)})} className="btn btn-danger">دریافت اطلاعیه</button>
+                 <button onClick={()=>this.setState(this,()=>{this.state.notifications.pop()})} className="btn btn-danger">دریافت اطلاعیه</button>
                        {console.log(this.state.notifications)}
                 </div>
             </nav>

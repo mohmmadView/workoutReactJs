@@ -1,7 +1,7 @@
 export default function Title(props){
   
 return(<div className="flex justify-center m-2"> 
-<h1 className='flex max-sm:text-3xl max-sm:leading-[1.750] max-sm:p-1 p-5  text-5xl mx-auto my-auto border rounded-lg mt-4 text-violet-100 font-bold bg-violet-500 '>
+<h1 className='flex max-sm:text-3xl max-sm:leading-[1.750] max-sm:p-1 p-5  text-5xl mx-auto my-auto border rounded-lg mt-4 text-violet-100 font-bold bg-fuchsia-900 '>
 {props.title}
 <svg  className="m-4 fill-red-100 cursor-pointer" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
   <defs></defs>

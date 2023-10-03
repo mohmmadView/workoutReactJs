@@ -5,6 +5,28 @@
   text-align: center;
   background-color:#B8B8FF;
 }
+.token{
+   
+}
+.keyword{
+    color: red;
+}
+.operator{
+    color: cadetblue;
+}
+.number{
+    color: green;
+}
+.punctuation{
+    color: chocolate;
+}
+.parameter{
+    color:rgb(255, 222, 8)
+}
+.string{
+    color: green;
+}
+
 /* 
 .logo {
   height: 6em;

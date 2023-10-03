@@ -1,12 +1,4 @@
-import Title from './utils/Title'
-import ClassEventHandling from './Component/1-ClassEventHandling';
-import ClassConditionalRendering from './Component/2-ClassConditionalRendering';
-import FuncEvent from './Component/3-FunEvent';
-import Navbar from './Component/NavBar/NavBar';
-import Code from './utils/Prism';
-
-import './App.css'
-let codeFuncEvent =`import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function AlertButton({ message, children }) {
   return (
@@ -15,13 +7,17 @@ function AlertButton({ message, children }) {
     </button>
   );
 }
-function Toolbar() {
+function Toolbar(e) {
+    console.log('====================================');
+    console.log(e);
+    console.log('====================================');
     return (
       <div className="w-2/12 h-12 p-2 m-4 text-center self-center bg-orange-500" onClick={() => {
         alert('You clicked on the toolbar!');
       }}>
-        <button onClick={() => alert('Playing!')}>
-          Play Movie
+        <button onClick={(e) => {
+            console.log(e);alert('Playing!')}}>
+          Play Movie 
         </button>
         <button onClick={() => alert('Uploading!')}>
           Upload Image
@@ -38,26 +34,8 @@ return(
     <>
     <AlertButton message="Hello World" >Test</AlertButton>
         <AlertButton message="test">child</AlertButton>
-        <br />
+      
         <Toolbar />
     </>
 )
-}`
-function App() {
-
-  return (
-  <main>
-<Title title="Class Event Handling" />
- <ClassEventHandling />
-<ClassConditionalRendering />
-<Navbar />
-<Title title="function Event Handling" />
-<section className='flex self-center h-96'>
-<FuncEvent  />
-<Code code={codeFuncEvent} language="js" />
-</section>
-  </main>
-  )
 }
-
-export default App
