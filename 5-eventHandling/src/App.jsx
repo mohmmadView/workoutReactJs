@@ -2,6 +2,7 @@ import Title from './utils/Title'
 import ClassEventHandling from './Component/1-ClassEventHandling';
 import ClassConditionalRendering from './Component/2-ClassConditionalRendering';
 import FuncEvent from './Component/3-FunEvent';
+import FuncEvent2 from './Component/4-funEvent2';
 import Navbar from './Component/NavBar/NavBar';
 import Code from './utils/Prism';
 
@@ -54,8 +55,10 @@ function App() {
 <Title title="function Event Handling" />
 <section className='flex self-center h-96'>
 <FuncEvent  />
+
 <Code code={codeFuncEvent} language="js" />
 </section>
+<FuncEvent2 />
   </main>
   )
 }
