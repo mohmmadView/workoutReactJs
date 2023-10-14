@@ -1,7 +1,7 @@
 export default function Signup() {
 let messageInput = "";
     return (
-      <form className="w-5/12 h-52 mt-8 " onSubmit={e => {
+      <form className="w-5/12 mt-8 self-center" onSubmit={e => {
         e.preventDefault();
         alert(messageInput);
       }}>

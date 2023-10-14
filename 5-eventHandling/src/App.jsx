@@ -5,9 +5,9 @@ import FuncEvent from './Component/3-FunEvent';
 import FuncEvent2 from './Component/4-funEvent2';
 import Navbar from './Component/NavBar/NavBar';
 import Code from './utils/Prism';
-
+import Example from './utils/Example';
 import './App.css'
-let codeFuncEvent =`import PropTypes from 'prop-types';
+let codeFuncEvent_3 =`import PropTypes from 'prop-types';
 
 function AlertButton({ message, children }) {
   return (
@@ -44,21 +44,42 @@ return(
     </>
 )
 }`
+let codeFuncEvent_4 =`export default function Signup() {
+  let messageInput = "";
+      return (
+        <form className="w-5/12 mt-8 self-center" onSubmit={e => {
+          e.preventDefault();
+          alert(messageInput);
+        }}>
+          <input id="textMsg" placeholder="message alert" className="w-5/12 h-12 p-2 m-4 self-center bg-slate-300 input input-bordered" />
+          <button className="btn bg-accent" onClick={() => { var elmInput = document.getElementById('textMsg')
+           messageInput = elmInput.value 
+          }}>Send</button>
+        </form>
+      );
+    }
+    `
 function App() {
 
   return (
   <main>
 <Title title="Class Event Handling" />
+<Example exampleNumber={1} exampleName="Class Event Handling"  />
  <ClassEventHandling />
+<Example exampleNumber={2} exampleName="Class Event Handling"  />
 <ClassConditionalRendering />
 <Navbar />
 <Title title="function Event Handling" />
+<Example exampleNumber={1} exampleName="function Event Handling"  />
 <section className='flex self-center h-96 '>
 <FuncEvent  />
-
-<Code code={codeFuncEvent} language="js" />
+<Code code={codeFuncEvent_3} language="js" />
 </section>
+<Example exampleNumber={2} exampleName="function Event Handling"  />
+<section className='flex justify-between self-center h-96 '>
 <FuncEvent2 />
+<Code code={codeFuncEvent_4} language="js" />
+</section>
   </main>
   )
 }
