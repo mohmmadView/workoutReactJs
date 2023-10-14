@@ -1,11 +1,14 @@
 export default function Signup() {
+let messageInput = "";
     return (
-      <form className="w-5/12 h-52 bg-yellow-700 p-4 " onSubmit={e => {
+      <form className="w-5/12 h-52 mt-8 " onSubmit={e => {
         e.preventDefault();
-        alert('Submitting!');
+        alert(messageInput);
       }}>
-        <input className="w-5/12 h-12 p-2 m-4 text-center self-center bg-orange-500" />
-        <button>Send</button>
+        <input id="textMsg" placeholder="message alert" className="w-5/12 h-12 p-2 m-4 self-center bg-slate-300 input input-bordered" />
+        <button className="btn bg-accent" onClick={() => { var elmInput = document.getElementById('textMsg')
+         messageInput = elmInput.value 
+        }}>Send</button>
       </form>
     );
   }

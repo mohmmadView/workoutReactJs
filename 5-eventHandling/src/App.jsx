@@ -11,20 +11,21 @@ let codeFuncEvent =`import PropTypes from 'prop-types';
 
 function AlertButton({ message, children }) {
   return (
-    <button className="btn text-primary  w-2/12 h-12 p-2 m-4 text-center self-center bg-orange-500" onClick={() => alert(message)}>
+    <button className="btn bg-primary text-white  w-2/12 h-12 p-2 m-4 text-center self-center " onClick={() => alert(message)}>
       {children}
     </button>
   );
 }
 function Toolbar() {
     return (
-      <div className="w-2/12 h-12 p-2 m-4 text-center self-center bg-orange-500" onClick={() => {
+      <div className="w-2/12 h-12  m-4 text-center self-center " onClick={() => {
         alert('You clicked on the toolbar!');
       }}>
-        <button onClick={() => alert('Playing!')}>
-          Play Movie
+        <button className='btn bg-secondary mr-1 ' onClick={(e) => {
+            console.log(e);alert('Playing!')}}>
+          Play Movie 
         </button>
-        <button onClick={() => alert('Uploading!')}>
+        <button className='btn bg-warning ' onClick={() => alert('Uploading!')}>
           Upload Image
         </button>
       </div>
@@ -39,7 +40,6 @@ return(
     <>
     <AlertButton message="Hello World" >Test</AlertButton>
         <AlertButton message="test">child</AlertButton>
-        <br />
         <Toolbar />
     </>
 )
@@ -53,7 +53,7 @@ function App() {
 <ClassConditionalRendering />
 <Navbar />
 <Title title="function Event Handling" />
-<section className='flex self-center h-96'>
+<section className='flex self-center h-96 '>
 <FuncEvent  />
 
 <Code code={codeFuncEvent} language="js" />
