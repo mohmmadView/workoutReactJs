@@ -1,5 +1,6 @@
 import StageShot from './1-snapShot';
 import StateUpdate from './2-StateUpdate';
+import StateUpdateTrue from './3-StateUpdateTrue';
 import  Title from './utils/Title';
 import Example from './utils/Example';
 import Code from './utils/Prism';
@@ -16,6 +17,24 @@ export default function Counter() {
           setNumber(number + 1);
           setNumber(number + 1);
           setNumber(number + 1);
+        }}>+3</button>
+      </div>
+    )
+  }
+  
+`;
+let stateUpdateCodeTrue =`
+import { useState } from 'react';
+export default function Counter__true() {
+    const [number, setNumber] = useState(0);
+  
+    return (
+      <div className='flex justify-center  '>
+        <h1 className='text-3xl w-36 text-center self-center p-2 rounded-lg bg-transparent/20 text-white'>{number}</h1>
+        <button className='btn btn-error hover:bg-red-400 text-xl w-36 self-center ' onClick={() => {
+          setNumber(n => n + 1);
+          setNumber(n => n + 1);
+          setNumber(n => n + 1);
         }}>+3</button>
       </div>
     )
@@ -84,9 +103,18 @@ export default function Counter() {
     <div className='flex justify-center'>
     <StateUpdate />
     <Code  code={stateUpdateCode} language="js" />
-   
     </div> 
     <Example exampleNumber="" exampleName="Updating the same state multiple times before the next render" />
+     <div className='flex justify-center'>
+      <p className='w-8/12 my-6 text-2xl text-primary bg-secondary p-8 rounded-lg'>
+          It is an uncommon use case, but if you would like to update the same state variable multiple times before the next render, instead of passing the next state value like setNumber(number + 1), you can pass a function that calculates the next state based on the previous one in the queue, like setNumber(n => n + 1). It is a way to tell React to “do something with the state value” instead of just replacing it.
+         Try incrementing the counter now:
+      </p>   
+       </div>
+      <div className='flex justify-center'>
+     <StateUpdateTrue />
+      <Code  code={stateUpdateCodeTrue} language="js" />
+      </div>
     </>
     
   )
