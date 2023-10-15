@@ -1,6 +1,7 @@
 import StageShot from './1-snapShot';
 import StateUpdate from './2-StateUpdate';
 import StateUpdateTrue from './3-StateUpdateTrue';
+import UpdatingObject from './4-UpdatingObject';
 import  Title from './utils/Title';
 import Example from './utils/Example';
 import Code from './utils/Prism';
@@ -115,6 +116,11 @@ export default function Counter__true() {
      <StateUpdateTrue />
       <Code  code={stateUpdateCodeTrue} language="js" />
       </div>
+     
+        <Example exampleNumber="" exampleName="Update Object" />
+        <div className='flex justify-center'>
+      <UpdatingObject  />
+        </div>
     </>
     
   )
