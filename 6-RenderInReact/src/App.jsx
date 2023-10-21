@@ -42,6 +42,33 @@ export default function Counter__true() {
   }
   
 `;
+ let CodeUpdatingObject = `
+  import { useState } from 'react';
+export default function MovingDot() {
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0
+  });
+  return (
+    <div className='w-1/2  relative bg-slate-500 mt-4  mx-8'
+      onPointerMove={e => {
+        e.target.onmouseover=(e)=>{console.log(e);};
+        setPosition({
+          x: e.nativeEvent.layerX,
+          y: e.nativeEvent.layerY
+        });
+      }}
+      >
+      <div className={absolute bg-red-500 rounded-full  h-3 w-3} 
+       style={{
+        transform: translate({position.x}px, {position.y}px),
+      }} 
+       />
+    </div>
+  );
+}
+
+`;
   return (
     <>
       <Title title="Render in React" />
@@ -149,9 +176,10 @@ export default function Counter__true() {
       <Example exampleNumber="" exampleName="Update Object" />
       <div className="flex justify-center">
         <UpdatingObject />
-         <Code code={stateUpdateCodeTrue} language="js" />
+         <Code code={CodeUpdatingObject} language="js" />
       </div>
        <Example exampleNumber="" exampleName="Update Object" />
+       
     </>
   );
 }
