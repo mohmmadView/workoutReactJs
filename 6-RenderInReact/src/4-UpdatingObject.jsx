@@ -1,6 +1,5 @@
 import { useState } from 'react';
 export default function MovingDot() {
-
   const [position, setPosition] = useState({
     x: 0,
     y: 0
@@ -13,10 +12,9 @@ export default function MovingDot() {
           x: e.nativeEvent.layerX,
           y: e.nativeEvent.layerY
         });
-        console.log(e, e.nativeEvent.layerY,e.nativeEvent.offsetX,e.nativeEvent.clientX);
       }}
       >
-      <div className={`absolute bg-red-500 rounded-full  h-3 w-3`} 
+      <div className={`absolute bg-red-500 rounded-full  h-5 w-5`} 
        style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
       }} 

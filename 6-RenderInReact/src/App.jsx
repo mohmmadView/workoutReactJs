@@ -2,6 +2,7 @@ import StageShot from "./1-snapShot";
 import StateUpdate from "./2-StateUpdate";
 import StateUpdateTrue from "./3-StateUpdateTrue";
 import UpdatingObject from "./4-UpdatingObject";
+import UpdatingObject__2 from './4-2-UpdateingObject'
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import Code from "./utils/Prism";
@@ -42,6 +43,78 @@ export default function Counter__true() {
   }
   
 `;
+ let CodeUpdatingObject = `
+  import { useState } from 'react';
+export default function MovingDot() {
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0
+  });
+  return (
+    <div className='w-1/2  relative bg-slate-500 mt-4  mx-8'
+      onPointerMove={e => {
+        e.target.onmouseover=(e)=>{console.log(e);};
+        setPosition({
+          x: e.nativeEvent.layerX,
+          y: e.nativeEvent.layerY
+        });
+      }}
+      >
+      <div className={absolute bg-red-500 rounded-full  h-3 w-3} 
+       style={{
+        transform: translate({position.x}px, {position.y}px),
+      }} 
+       />
+    </div>
+  );
+}
+
+`;
+let CodeUpdatingObject__2 = `
+import {useState} from 'react'
+export default function ChangeWord() {
+
+ let [person , setPerson]=useState({
+     firstName:"mohammad",
+     lastName:"ali",
+     age:"28"
+ }) 
+ function firstchange(e){
+     setPerson({
+        ...person,
+         firstName:e.target.value
+        
+     })
+ }
+ function lastchange(e){
+    setPerson({
+       ...person,
+        lastName:e.target.value
+       
+    })
+}
+ function agechange(e){
+    setPerson({
+       ...person,
+        age:e.target.value
+       
+    })
+}
+
+    return(
+        <div className='w-1/2 h-96 m-8 flex flex-col gap-3'>
+        <input onChange={firstchange} value={person.firstName} type="text" placeholder=" firstName" className="input input-bordered input-accent w-full " />
+       <input onChange={lastchange} type="text" placeholder="LastName" value={person.lastName} className="input input-bordered input-success w-full " />
+      <input onChange={agechange} value={person.age} type="text" placeholder="age" className="input input-bordered input-secondary w-full " /> 
+        <h1>FirstName  : {person.firstName}</h1> 
+        <h1>lastName :  {person.lastName}</h1> 
+        <h1>age :  {person.age}</h1> 
+        </div>
+
+    )
+}
+
+`
   return (
     <>
       <Title title="Render in React" />
@@ -149,9 +222,13 @@ export default function Counter__true() {
       <Example exampleNumber="" exampleName="Update Object" />
       <div className="flex justify-center">
         <UpdatingObject />
-         <Code code={stateUpdateCodeTrue} language="js" />
+         <Code code={CodeUpdatingObject} language="js" />
       </div>
        <Example exampleNumber="" exampleName="Update Object" />
+      <div className="flex justify-center">
+        <UpdatingObject__2 />
+         <Code code={CodeUpdatingObject__2} language="js" />
+        </div>
     </>
   );
 }

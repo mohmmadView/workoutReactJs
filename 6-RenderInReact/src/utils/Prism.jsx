@@ -6,7 +6,7 @@ export default function Code({ code, language }) {
     Prism.highlightAll(Prism.highlight);
   }, []);
   return (
-    <div className="w-1/2 mt-4 p-5 mx-8 mockup-code overflow-scroll text-white text-left">
+    <div className="w-1/2 h-96 mt-4 p-5 mx-8 mockup-code overflow-scroll text-white text-left">
     <code className="Code">
       <h2> Code Syntax Block {language}</h2>
       <pre>
