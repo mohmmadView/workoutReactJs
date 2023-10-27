@@ -224,11 +224,12 @@ export default function ChangeWord() {
         <UpdatingObject />
          <Code code={CodeUpdatingObject} language="js" />
       </div>
-       <Example exampleNumber="" exampleName="Update Object" />
+       <Example exampleNumber="" exampleName="Update Object__2" />
       <div className="flex justify-center">
         <UpdatingObject__2 />
          <Code code={CodeUpdatingObject__2} language="js" />
         </div>
+          <Example exampleNumber="" exampleName="Update Object__useState__replace__useImmer" />
     </>
   );
 }
