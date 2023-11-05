@@ -6,8 +6,8 @@ export default function MovingDot() {
   });
   return (
     <div className='w-1/2  relative bg-slate-500 mt-4  mx-8'
-      onPointerMove={e => {
-        e.target.onmouseover=(e)=>{console.log(e);};
+      onPointerMove={e => {console.log(e.nativeEvent)
+        // e.target.onmouseover=(e)=>{console.log(e)};
         setPosition({
           x: e.nativeEvent.layerX,
           y: e.nativeEvent.layerY
