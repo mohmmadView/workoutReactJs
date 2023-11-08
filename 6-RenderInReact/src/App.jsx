@@ -2,7 +2,8 @@ import StageShot from "./1-snapShot";
 import StateUpdate from "./2-StateUpdate";
 import StateUpdateTrue from "./3-StateUpdateTrue";
 import UpdatingObject from "./4-UpdatingObject";
-import UpdatingObject__2 from './4-2-UpdateingObject'
+import UpdatingObject__2 from './4-2-UpdateingObject';
+import UpdateArrow_note from './5-UpdatingArrays_note';
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import Code from "./utils/Prism";
@@ -72,12 +73,16 @@ export default function MovingDot() {
 `;
 let CodeUpdatingObject__2 = `
 import {useState} from 'react'
+import logoReact from './assets/react.svg'
 export default function ChangeWord() {
 
  let [person , setPerson]=useState({
      firstName:"mohammad",
+     about:{
      lastName:"ali",
-     age:"28"
+     age:"28",
+     image:logoReact
+    }
  }) 
  function firstchange(e){
      setPerson({
@@ -89,26 +94,72 @@ export default function ChangeWord() {
  function lastchange(e){
     setPerson({
        ...person,
+       about:{
+        ...person.about,
         lastName:e.target.value
-       
+       }
     })
 }
  function agechange(e){
     setPerson({
        ...person,
+       about:{
+        ...person.about,
         age:e.target.value
-       
+       }
     })
-}
+   }
+   function imgChange(e){
+    setPerson({
+       ...person,
+       about:{
+        ...person.about,
+        image:e.target.value
+       }
+    })
+   }
+  
 
     return(
-        <div className='w-1/2 h-96 m-8 flex flex-col gap-3'>
+        <div className='w-1/3 h-96 m-8 flex flex-col gap-3'>
         <input onChange={firstchange} value={person.firstName} type="text" placeholder=" firstName" className="input input-bordered input-accent w-full " />
-       <input onChange={lastchange} type="text" placeholder="LastName" value={person.lastName} className="input input-bordered input-success w-full " />
-      <input onChange={agechange} value={person.age} type="text" placeholder="age" className="input input-bordered input-secondary w-full " /> 
+       <input onChange={lastchange} type="text" placeholder="LastName" value={person.about.lastName} className="input input-bordered input-success w-full " />
+      <input onChange={agechange} value={person.about.age} type="text" placeholder="age" className="input input-bordered input-secondary w-full " /> 
+      <input onChange={imgChange} value={person.about.image} type="text" placeholder="age" className="input input-bordered input-secondary w-full " /> 
         <h1>FirstName  : {person.firstName}</h1> 
-        <h1>lastName :  {person.lastName}</h1> 
-        <h1>age :  {person.age}</h1> 
+        <h1>lastName :  {person.about.lastName}</h1> 
+        <h1>age :  {person.about.age}</h1> 
+        <img className='w-2/4' src={person.about.image} /> 
+        </div>
+
+    )
+}
+
+`
+let codeNote=`
+import {useState} from 'react';
+let nextId = 0;
+export default function UpdateArray_note(){
+    
+    let [subject,setSubject]=useState("");
+     let [lists,setList]=useState([]);
+   
+   
+    return(
+        <div className='w-2/3 h-96 m-8 flex flex-col gap-3'>
+          <input  type="text" onChange={(e)=> setSubject(e.target.value)} value={subject}  placeholder=" firstName" className="input input-bordered input-accent w-full h-10 sub" />
+
+ <button onClick={()=>{ setList([
+                    ...lists,
+                    {id:nextId++, subject : subject}
+                ]) }
+            } className='btn btn-info'>new note</button>       
+            <ul className='list-disc m-5'>
+               {lists.map(li=>(
+                <li className='text-2xl' key={li.id}>{li.subject}</li>
+               ))}
+            </ul>
+            
         </div>
 
     )
@@ -230,6 +281,18 @@ export default function ChangeWord() {
          <Code code={CodeUpdatingObject__2} language="js" />
         </div>
           <Example exampleNumber="" exampleName="Update Object__useState__replace__useImmer" />
+               <div className="flex justify-center">
+        <p className="w-8/12 my-6 text-2xl text-primary bg-secondary p-8 rounded-lg">
+        If your state is deeply nested, you might want to consider flattening it. But, if you don’t want to change your state structure, you might prefer a shortcut to nested spreads. Immer is a popular library that lets you write using the convenient but mutating syntax and takes care of producing the copies for you. With Immer, the code you write looks like you are “breaking the rules” and mutating an object:
+        </p>
+             
+             </div>
+              <Example exampleNumber="" exampleName="Note Updating Arrays in State" />
+              <div className="flex justify-center">
+               <UpdateArrow_note />
+                 <Code code={codeNote} language="js" />
+        </div>
+       
     </>
   );
 }
