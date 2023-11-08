@@ -1,0 +1,243 @@
+/* .grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: [col-1] 20ch [col-2] 1fr;
+    background-color: rgb(20, 19, 18);
+    padding: 1rem;
+}
+.grid>.subgrid{
+    grid-column:span 2;
+    display: grid;
+    padding: 1rem;
+    border: 2px solid;
+    grid-template-columns: subgrid;
+    background-color: rgb(126, 116, 103);
+}
+.col{
+    padding:1rem ;
+background-color: rgb(206, 204, 184);
+}
+.container{
+    
+    display: grid;
+    place-content: center;
+}
+.device {
+    display: grid;
+    height: 100vh;
+    grid-template-rows:
+      [system-status] 3.5rem
+      [primary-nav] 3rem
+      [primary-header] 4rem
+      [main] auto
+      [footer] 4rem
+      [system-gestures] 2rem
+    ;
+    background-color: antiquewhite;
+    grid-template-columns: [fullbleed-start] 1rem [main-start] auto [main-end] 1rem [fullbleed-end];
+}
+.container-mobile>.device,
+.device> div{
+    display: grid;
+    grid: subgrid / subgrid;
+
+    
+    grid-template-rows: subgrid;
+    grid-template-columns: subgrid;
+
+}
+.app > .main img {
+       grid-area: fullbleed;
+
+}
+img{
+    width: 100%; ;
+} */
+
+/* .status-line{
+    grid-area: 1/2 ;
+    background-color: saddlebrown;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.pirmary-nav{
+     text-align: center;
+    grid-area: 2/2 ;
+    background-color: blueviolet;
+}
+.header{
+    grid-area: 3/2 ;
+     text-align: center;
+    background-color: aqua;
+}
+.main{
+    grid-area: 4/2 ;
+    color: aliceblue;
+     text-align: center;
+     background-color: blue;
+}
+.footer{
+    grid-area: 5/2 ;
+     text-align: center;
+    background-color: rgb(42, 165, 58);
+}
+.gest{
+     text-align: center;
+    grid-area: 6/2 ;
+    background-color: chartreuse;
+} */
+@import "https://unpkg.com/open-props/shadows.min.css";
+
+@layer demo {
+  .device {
+    display: grid;
+    grid-template-rows: 
+      [system-status] 3.5rem 
+      [primary-nav] 3rem 
+      [primary-header] 4rem
+      [main] auto
+      [footer] 4rem 
+      [system-gestures] 2rem
+    ;
+    grid-template-columns: [fullbleed-start] 1rem [main-start] auto [main-end] 1rem [fullbleed-end];
+  }
+  
+  .device > *,
+  .app > * {
+    display: grid;
+    grid: subgrid / subgrid;
+  }
+  
+  .system-status-bar {
+    grid-area: system-status / fullbleed;
+    display: grid;
+    align-items: center;
+  }
+  
+  .system-status-bar > time {
+    grid-area: system-status / main;
+    margin-inline: 2rem;
+  }
+  
+  .system-gesture-bar {
+    grid-area: system-gestures / fullbleed;
+    place-items: center;
+  }
+  
+  .app {
+    grid-area: primary-nav / fullbleed-start / system-gestures / fullbleed-end;
+  }
+  
+  .app > nav {
+    grid-area: primary-nav / fullbleed;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .app > nav > svg {
+    grid-area: main;
+  }
+  
+  .app > nav > svg:last-of-type {
+    justify-self: flex-end;
+  }
+  
+  .app > header {
+    grid-area: primary-header / fullbleed;
+    grid-template-rows: auto auto;
+  }
+  
+  .app > header > h1 {
+    grid-area: 1 / main;
+  }
+  
+  .app > header > small {
+    grid-area: 2 / main;
+  }
+  
+  .app > main {
+    background: hsl(0 0% 95%);
+    grid-area: main / fullbleed;
+    overflow: auto;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .app > main {
+      background: black;
+    }
+  }
+  
+  .app > main img {
+    grid-area: fullbleed;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+  
+  .app > footer {
+    grid-area: footer / fullbleed;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .tab {
+    display: grid;
+    gap: .5ch;
+    place-content: center;
+    place-items: center;
+    font-size: .8rem;
+  }
+}
+
+@layer demo.support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    color-scheme: dark light;
+    background: hsl(0 0% 92%);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    html {
+      background: hsl(0 0% 15%);
+    }
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: grid;
+    place-content: center;
+  }
+  
+  .device {
+    inline-size: 50vmin;
+    aspect-ratio: 9/16;
+    background: Canvas;
+    border-radius: 25px;
+    box-shadow: var(--shadow-6);
+  }
+  
+  .system-status-bar::after {
+    content: "";
+    grid-area: 1 / main;
+    justify-self: center;
+    background: black;
+    block-size: 50%;
+    inline-size: 25%;
+    border-radius: 1e5px;
+  }
+  
+  .system-gesture-bar::after {
+    content: "";
+    grid-area: 1 / main;
+    background: black;
+    block-size: 5px;
+    inline-size: 40%;
+    border-radius: 1e5px;
+  }
+}
