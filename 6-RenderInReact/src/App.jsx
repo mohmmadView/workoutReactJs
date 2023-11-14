@@ -4,6 +4,7 @@ import StateUpdateTrue from "./3-StateUpdateTrue";
 import UpdatingObject from "./4-UpdatingObject";
 import UpdatingObject__2 from './4-2-UpdateingObject';
 import UpdateArrow_note from './5-UpdatingArrays_note';
+import UpdateTransform  from './5.2-updateArray_Transforming';
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import Code from "./utils/Prism";
@@ -166,6 +167,51 @@ export default function UpdateArray_note(){
 }
 
 `
+let codeTransform=`
+import { useState } from  "react"
+let initialShapes = [
+  { id: 0, type: 'circle', x: 50, y: 100 },
+  { id: 1, type: 'square', x: 150, y: 100 },
+  { id: 2, type: 'circle', x: 250, y: 100 },
+];
+export default function Transforming() {
+    const [items, setItems] = useState(
+        initialShapes
+    );
+function handleClick(){
+const nextShape = items.map((item) => {
+    if (item.type === 'square') {
+        // No change
+        return item;
+      } else {
+        // Return a new circle 50px below
+        return {
+          ...item,
+          y: item.y + 50,
+    }}    }) 
+setItems(nextShape);
+}
+    return(
+        <div className="w-3/6 h-96 m-8 flex flex-col gap-3" >
+            <button onClick={handleClick} className="btn btn-primary w-3/6 h-10">Element Circle react down</button>
+            <div className="flex row justify-between relative">
+                {items.map((item) => (
+                    <div key={item.id} style={{  
+                    background: 'purple',
+                    position: 'absolute',
+                    left: item.x,
+                    top: item.y,
+                    borderRadius:
+                      item.type === 'circle'
+                        ? '50%' : '',
+                    width: 40,
+                    height: 40, }} ></div>
+                ))}
+            </div>
+        </div>
+    )
+}
+`
   return (
     <>
       <Title title="Render in React" />
@@ -291,7 +337,12 @@ export default function UpdateArray_note(){
               <div className="flex justify-center">
                <UpdateArrow_note />
                  <Code code={codeNote} language="js" />
-        </div>
+              </div>
+              <Example exampleNumber="" exampleName="updateArray_Transdorming" />
+                <div className="flex justify-center">
+                   <UpdateTransform />
+                     <Code code={codeTransform} language="js" />
+                </div>
        
     </>
   );
