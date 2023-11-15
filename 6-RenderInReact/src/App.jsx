@@ -5,6 +5,7 @@ import UpdatingObject from "./4-UpdatingObject";
 import UpdatingObject__2 from './4-2-UpdateingObject';
 import UpdateArrow_note from './5-UpdatingArrays_note';
 import UpdateTransform  from './5.2-updateArray_Transforming';
+import Tmren from './6-Tmren'
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import Code from "./utils/Prism";
@@ -343,6 +344,11 @@ setItems(nextShape);
                    <UpdateTransform />
                      <Code code={codeTransform} language="js" />
                 </div>
+
+              <Example exampleNumber="" exampleName="Tmren" />
+                <div className="flex justify-center">
+                  <Tmren />
+                  </div>
        
     </>
   );

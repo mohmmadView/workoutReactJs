@@ -55,7 +55,7 @@ export default function ChangeWord() {
         <h1>FirstName  : {person.firstName}</h1> 
         <h1>lastName :  {person.about.lastName}</h1> 
         <h1>age :  {person.about.age}</h1> 
-        <img className='w-2/4' src={person.about.image} /> 
+        <img className='w-1/4' src={person.about.image} /> 
         </div>
 
     )
