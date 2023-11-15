@@ -25,7 +25,7 @@ return(
 <ul className='w-1/2 flex flex-col   '> 
   {count.map((item)=>{
     return(
-      <li className='text-2xl self-center' key={item.id}>{item.name} : {item.count} <button className='btn btn-primary ml-6' onClick={
+      <li className='text-2xl self-center m-1' key={item.id}>{item.name} : {item.count} <button className='btn btn-primary ml-6' onClick={
         ()=>setCount(
         count.map((ite_m)=>{
          if(ite_m.id===item.id){

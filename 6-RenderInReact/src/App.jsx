@@ -5,7 +5,8 @@ import UpdatingObject from "./4-UpdatingObject";
 import UpdatingObject__2 from './4-2-UpdateingObject';
 import UpdateArrow_note from './5-UpdatingArrays_note';
 import UpdateTransform  from './5.2-updateArray_Transforming';
-import Tmren from './6-Tmren'
+import Tmren from './6-Tmren';
+import Tmren2 from './7-Tmren-2';
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import Code from "./utils/Prism";
@@ -348,6 +349,11 @@ setItems(nextShape);
               <Example exampleNumber="" exampleName="Tmren" />
                 <div className="flex justify-center">
                   <Tmren />
+                  </div>
+                   <Example exampleNumber="" exampleName="Tmren-2" />
+                <div className="flex justify-center">
+                  
+                  <Tmren2 />
                   </div>
        
     </>
