@@ -1,6 +1,6 @@
 
-export default  function Tasklist({ tasks}) {
-
+export default  function Tasklist({ tasks ,dataUpdate}) {
+        
 
     return (
       <div>
@@ -10,6 +10,6 @@ export default  function Tasklist({ tasks}) {
            ))}
 
        </ul>
-
+         {console.log(tasks)}
       </div>
                     )}

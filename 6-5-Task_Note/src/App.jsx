@@ -1,6 +1,7 @@
 import Add__task from './Add_task'
 import Tasklist from './Tasklist'
 import './App.css'
+import { useState } from 'react';
 let DataTask =[
   {
 id : 1,
@@ -16,14 +17,27 @@ title : "go to",
 isTask : true
 }
 ]
-let indexOf = 3;
+let indexOf = 4;
 function App() {
- 
+ let [data , setData] = useState(DataTask)
+  function handelrAddTask(title){
+setData([...data,{
+  id : indexOf++,
+  title :title,
+  isTask :false
+}])
+  }
+  function handelerUpdateTask(nextTodo){
+   const todo = data.find(t => t.id === nextTodo.id)
+   todo.title===nextTodo.title
+  }
+
 
   return (
     <div className='container'>
-    <Add__task indexID={indexOf} data={DataTask} />
-    <Tasklist tasks={DataTask} />
+    <Add__task onAddTodo={handelrAddTask} />
+    {console.log(DataTask)}
+    <Tasklist  dataUpdate={handelerUpdateTask} tasks={data} />
        
     </div>
   )
