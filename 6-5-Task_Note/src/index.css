@@ -1,6 +1,7 @@
 .container{
 display: flex;
-justify-content: center;
+/* justify-content: center; */
+flex-direction: column;
 }
 .input__Add{
   width: 50vw;
@@ -15,4 +16,8 @@ justify-content: center;
   height: 5vh;
  border: #242424 4px solid;
   background-color: blueviolet;
+}
+ul{
+  font-size: xx-large;
+  color: brown;
 }

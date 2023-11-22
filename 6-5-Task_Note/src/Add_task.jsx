@@ -8,7 +8,8 @@ let  [title ,setTitle] = useState("");
         <section>
           <input className="input__Add" onChange={(e)=>setTitle(e.target.value)} value={title} />
            <button className="btn__Add" onClick={()=>{
-            
+              
+              setTitle(title);
                console.log(title)
             
            }} >Add Task</button>

@@ -1,5 +1,5 @@
 import Add__task from './Add_task'
-
+import Tasklist from './Tasklist'
 import './App.css'
 let DataTask =[
   {
@@ -16,13 +16,14 @@ title : "go to",
 isTask : true
 }
 ]
+let indexOf = 3;
 function App() {
  
 
   return (
     <div className='container'>
-    <Add__task />
-    
+    <Add__task indexID={indexOf} data={DataTask} />
+    <Tasklist tasks={DataTask} />
        
     </div>
   )
