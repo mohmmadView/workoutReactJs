@@ -1,6 +1,12 @@
 import { useState } from "react"
+import PropTypes from "prop-types";
 
-
+/**
+ * Render a component for adding a task.
+ *
+ * @param {Object} onAddTodo - A function to add a new task.
+ * @return {JSX.Element} A React component for adding a task.
+ */
 export default  function Add_task({onAddTodo}){
 let  [title ,setTitle] = useState("");
 
@@ -14,3 +20,7 @@ let  [title ,setTitle] = useState("");
         </section>
     )
 }
+
+Add_task.propTypes = {
+  onAddTodo: PropTypes.func.isRequired,
+};
