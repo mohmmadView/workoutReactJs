@@ -7,9 +7,13 @@ export default  function Tasklist({ tasks , onChangeTodo , onDeleteTodo}) {
        <ul>
            {tasks.map(task=>(
             <li  key={task.id}>{task.title}
-           <div> <button>Edit</button> <button>Delete</button></div> </li>
+              <div> 
+                  <button onClick={onChangeTodo} >Edit</button> 
+                  <button onClick={onDeleteTodo} >Delete</button>
+                  <input  type="checkbox" />
+              </div> 
+           </li>
            ))}
-
        </ul>
          {console.log(tasks)}
       </div>

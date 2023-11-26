@@ -27,7 +27,6 @@ function App() {
    * @return {object} - This function sets the state of the data array.
    */
   function handelrAddTask(title){
- 
     if(title){
 setData([...data,{
   id : indexOf++,
@@ -40,13 +39,17 @@ setData([...data,{
    const todo = data.find(t => t.id === nextTodo.id)
    todo.title===nextTodo.title
   }
-
-
   return (
     <div className='container'>
     <Add__task onAddTodo={handelrAddTask} />
     {console.log(DataTask)}
-    <Tasklist  dataUpdate={handelerUpdateTask} tasks={data} />
+    <Tasklist onChangeTodo={()=>{console.log('update data task list');}} 
+    onDeleteTodo={(e)=>{
+      let dataTitle = e.target.parentElement.parentElement;
+    let dataTarget =  data.find(t => console.log(t.title===dataTitle));
+    console.log("dataTitle :",dataTitle,"dataTarget :",dataTarget,e);
+    }} 
+    tasks={data} />
        
     </div>
   )
