@@ -36,8 +36,14 @@ setData([...data,{
     console.log('update data task list');}
   }
   function changeUpdate(nextTodo){
-    const todo = data.find(t => t.id === nextTodo.id)
-    todo.title=nextTodo.title
+   setData( data.map(t =>{
+      if(t.id === nextTodo.id){
+       return  nextTodo
+      }
+       else{
+        return t
+       }
+    }))
   }
   function handelerUpdateTask(nextTodo){
    const todo = data.find(t => t.id === nextTodo.id)
