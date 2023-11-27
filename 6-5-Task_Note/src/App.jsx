@@ -35,6 +35,10 @@ setData([...data,{
 }])
     console.log('update data task list');}
   }
+  function changeUpdate(nextTodo){
+    const todo = data.find(t => t.id === nextTodo.id)
+    todo.title=nextTodo.title
+  }
   function handelerUpdateTask(nextTodo){
    const todo = data.find(t => t.id === nextTodo.id)
    todo.title===nextTodo.title
@@ -43,7 +47,7 @@ setData([...data,{
     <div className='container'>
     <Add__task onAddTodo={handelrAddTask} />
     {console.log(DataTask)}
-    <Tasklist onChangeTodo={handelrAddTask} 
+    <Tasklist onChangeTodo={changeUpdate} 
     onDeleteTodo={(e)=>{
       let dataTitle = e.target.parentElement.parentElement;
     let dataTarget =  data.find(t => console.log(t.title===dataTitle));

@@ -8,7 +8,7 @@ export default  function Tasklist({ tasks , onChangeTodo , onDeleteTodo}) {
        <ul>
            {tasks.map(task=>(
             <li  key={task.id}>
-              <Task todo={task.title} onChange={onChangeTodo} onDelete={onDeleteTodo} />
+              <Task todo={task} onChange={onChangeTodo} onDelete={onDeleteTodo} />
            </li>
            ))}
        </ul>
@@ -21,34 +21,36 @@ export default  function Tasklist({ tasks , onChangeTodo , onDeleteTodo}) {
                      if(isEdit){
                       contentTask =(
                         <>
-                        <p>{todo}</p>
-                           <input type="text"  onChange={ (e)=>onChange(e.target.value)}  />
+                           <input type="text" value={todo.title} onChange={ (e)=>{onChange({
+                            ...todo, 
+                            title:e.target.value})}}  />
+                              <div>
                            <button onClick={()=>{setIsEditing(false)}} >Save</button>
-              <div> 
-                  <button onClick={onChange} >Edit</button> 
-                  <button onClick={onDelete} >Delete</button>
-                  <input  type="checkbox" />
-                
-              </div> 
+                               </div>
+                           
                        
                         </>
                         )
                      }else{
                       contentTask =(
                         <>
-                        <p>{todo}</p>
-              <div> 
-                  <button onClick={()=>{setIsEditing(true)}} >Edit</button> 
-                  <button onClick={onDelete} >Delete</button>
-                  <input  type="checkbox" />
-              </div> 
-                        
+                        <p>{todo.title}</p>
+                      
+                        <button onClick={()=>{setIsEditing(true)}} >edit</button>
+                       
                         </>
                       )
 
                      }
                     return(
-                      contentTask
+                     
+                    
+                      <div>
+                          {contentTask}
+                  <button onClick={onDelete} >Delete</button>
+                  <input  type="checkbox" />
+                      </div>
+                 
                     )
                      
                     }
