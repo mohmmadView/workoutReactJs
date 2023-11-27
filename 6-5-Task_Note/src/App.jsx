@@ -43,7 +43,7 @@ setData([...data,{
     <div className='container'>
     <Add__task onAddTodo={handelrAddTask} />
     {console.log(DataTask)}
-    <Tasklist onChangeTodo={()=>{console.log('update data task list');}} 
+    <Tasklist onChangeTodo={handelrAddTask} 
     onDeleteTodo={(e)=>{
       let dataTitle = e.target.parentElement.parentElement;
     let dataTarget =  data.find(t => console.log(t.title===dataTitle));
