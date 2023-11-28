@@ -45,20 +45,16 @@ setData([...data,{
        }
     }))
   }
-  function handelerUpdateTask(nextTodo){
-   const todo = data.find(t => t.id === nextTodo.id)
-   todo.title===nextTodo.title
+  function onDeleteTask(todoId){
+     setData(data.filter(t => t.id !== todoId))
   }
+
   return (
     <div className='container'>
     <Add__task onAddTodo={handelrAddTask} />
     {console.log(DataTask)}
     <Tasklist onChangeTodo={changeUpdate} 
-    onDeleteTodo={(e)=>{
-      let dataTitle = e.target.parentElement.parentElement;
-    let dataTarget =  data.find(t => console.log(t.title===dataTitle));
-    console.log("dataTitle :",dataTitle,"dataTarget :",dataTarget,e);
-    }} 
+    onDeleteTodo={onDeleteTask}  
     tasks={data} />
        
     </div>

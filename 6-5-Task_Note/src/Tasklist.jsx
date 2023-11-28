@@ -15,7 +15,7 @@ export default  function Tasklist({ tasks , onChangeTodo , onDeleteTodo}) {
          {console.log(tasks)}
       </div>
                     )}
-                    function Task({todo,onChange, onDelete}){
+                    function Task({todo,onChange, onDelete,isChecked}){
                      const [isEdit , setIsEditing ]=useState(false);
                      let contentTask ;
                      if(isEdit){
@@ -35,20 +35,19 @@ export default  function Tasklist({ tasks , onChangeTodo , onDeleteTodo}) {
                       contentTask =(
                         <>
                         <p>{todo.title}</p>
-                      
                         <button onClick={()=>{setIsEditing(true)}} >edit</button>
-                       
                         </>
                       )
 
                      }
                     return(
-                     
-                    
                       <div>
                           {contentTask}
-                  <button onClick={onDelete} >Delete</button>
-                  <input  type="checkbox" />
+                  <button onClick={()=> 
+                  onDelete(todo.id)} >Delete</button>
+                  <input checked={todo.isTask} onChange={()=>onChange({...todo,
+                    isTask:!todo.isTask
+                  })} type="checkbox" />
                       </div>
                  
                     )
