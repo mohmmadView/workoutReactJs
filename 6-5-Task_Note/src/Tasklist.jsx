@@ -48,8 +48,11 @@ export default  function Tasklist({ tasks , onChangeTodo , onDeleteTodo}) {
                   <input checked={todo.isTask} onChange={()=>onChange({...todo,
                     isTask:!todo.isTask
                   })} type="checkbox" />
+                           <button onClick={(e)=>{
+                            console.log(e.target);
+                           }}>red</button>
                       </div>
                  
                     )
-                     
-                    }
+                }
+                   
