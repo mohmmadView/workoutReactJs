@@ -50,6 +50,7 @@ export default  function Tasklist({ tasks , onChangeTodo , onDeleteTodo}) {
                   })} type="checkbox" />
                            <button onClick={(e)=>{
                             console.log(e.target);
+                            e.target.style.backgroundColor ="red"
                            }}>red</button>
                       </div>
                  
