@@ -1,9 +1,8 @@
- import PropTypes from 'prop-types';
+//  import PropTypes from 'prop-types';
 
 /**
  * Renders an example component.
  *
- * @param {object} props - The properties of the component.
  * @param {number} props.exampleNumber - The example number.
  * @param {string} props.exampleName - The name of the example.
  * @return {ReactElement} The rendered example component.
@@ -23,8 +22,8 @@ return(
 
 
 }
-Example.propTypes = {
-    exampleNumber: PropTypes.string.isRequired,
-    exampleName: PropTypes.string.isRequired,
-    // Other prop validations
-  }
+// Example.propTypes = {
+//     exampleNumber: PropTypes.string.isRequired,
+//     exampleName: PropTypes.string.isRequired,
+//     // Other prop validations
+//   }

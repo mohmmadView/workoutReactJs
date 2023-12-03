@@ -8,7 +8,54 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const CodeCityQiuz = `
+  import { useState } from "react"
+
+export default function CityQuiz() {
+     const cities = [
+        "New York",
+        "Los Angeles",
+        "Chicago",
+        "Houston",
+        "Phoenix",
+        "Philadelphia",
+        "San Antonio",
+        "San Diego",
+        "Dallas",
+        "San Jose",
+    ]
+    let [answer,setAnswer]=useState("");
+    let [disable,setDisable]=useState(false);
+    let [message,setMessage] = useState("");
+    function textareaHandleChange(e){
+        setAnswer(e.target.value);
+        setDisable(false);
+    }
+    function handleSubmit(){
+        setDisable(true);
+        console.log(answer);
+        let i;
+       for(i=0;i<cities.length;i++){
+  if(cities[i].toLowerCase()===answer.toLowerCase()){
+    setMessage("answer is Good");
+   break;
+  }else{
+    setMessage("answer is wrong");
+  }
+       }
+    }   
+return (
+    <div className="w-1/2   p-4 flex flex-col justify-between align-baseline ">
+
+        <h1 className="text-3xl font-bold text-primary">City Quiz</h1>
+        <p>It is one of the big cities of usa. The answer to the question?</p>
+        <textarea onChange={textareaHandleChange} className="textarea textarea-secondary textarea-lg"/>
+        <p className={{message === "answer is Good" ? 'text-green-500' : 'text-red-500'}    text-red-500  'text-green-500'}>{message}</p>
+        <button onClick={handleSubmit} className={btn btn-secondary w-1/3 self-center {disable && btn-disabled}}>Submit</button>
+    </div>
+)
+}
+  `
 
   return (
     <div className='w-full'>
@@ -35,7 +82,7 @@ Here is a quiz form built using React. Note how it uses the status state variabl
      </div>
       <div className='w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl flex' >
         <CityQiuz/>
-        <Code code={"</div></div></div></div>"} />
+        <Code language="jsx" code={CodeCityQiuz} />
      </div>
      </div>
   )

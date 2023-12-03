@@ -1,6 +1,6 @@
 import  { useEffect } from "react";
 import Prism from "prismjs";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 export default function Code({ code, language }) {
   useEffect(() => {
     Prism.highlightAll(Prism.highlight);
@@ -17,7 +17,7 @@ export default function Code({ code, language }) {
   );
 }
 
-Code.propTypes = {
-  code: PropTypes.string.isRequired,
-  language: PropTypes.string.isRequired,
-};
+// Code.propTypes = {
+//   code: PropTypes.string.isRequired,
+//   language: PropTypes.string.isRequired,
+// };
