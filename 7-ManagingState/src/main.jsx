@@ -5,6 +5,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <main className='w-11/12 flex m-auto'>
     <App />
+    </main>
   </React.StrictMode>,
 )
