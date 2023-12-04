@@ -5,7 +5,8 @@ import Code from "./utils/Prism";
 import CityQiuz from './1-CityQiuz';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import './index.css';
 
 function App() {
   const CodeCityQiuz = `
@@ -80,9 +81,9 @@ return (
 
 Here is a quiz form built using React. Note how it uses the status state variable to determine whether to enable or disable the submit button, and whether to show the success message instead.       </p>
      </div>
-      <div className='w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl flex' >
+      <div className='w-10/12 mx-auto my-12 bg-base-300 p-4 text-xl flex' >
         <CityQiuz/>
-        <Code language="jsx" code={CodeCityQiuz} />
+        <Code language="js" code={CodeCityQiuz} />
      </div>
      </div>
   )

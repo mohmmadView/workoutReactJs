@@ -22,10 +22,9 @@ export default function CityQuiz() {
     }
     function handleSubmit(){
         setDisable(true);
-        console.log(answer);
         let i;
        for(i=0;i<cities.length;i++){
-  if(cities[i].toLowerCase()===answer.toLowerCase()){
+  if(cities[i].toLowerCase().split(" ").join("")===answer.toLowerCase().split(" ").join("")){
     setMessage("answer is Good");
    break;
   }else{
@@ -34,12 +33,12 @@ export default function CityQuiz() {
        }
     }   
 return (
-    <div className="w-1/2   p-4 flex flex-col justify-between align-baseline ">
+    <div className="w-1/3   p-4 flex flex-col justify-between align-baseline ">
 
         <h1 className="text-3xl font-bold text-primary">City Quiz</h1>
-        <p>It is one of the big cities of usa. The answer to the question?</p>
+        <p>It is one oanswerf the big cities of usa. The answer to the question?</p>
         <textarea onChange={textareaHandleChange} className="textarea textarea-secondary textarea-lg"/>
-        <p className={`${message === "answer is Good" ? 'text-green-500' : 'text-red-500'}    text-red-500  'text-green-500'`}>{message}</p>
+        <p className={`${message === "answer is Good" ? 'text-green-500' : 'text-red-500'}   `}>{message}</p>
         <button onClick={handleSubmit} className={`btn btn-secondary w-1/3 self-center ${disable && 'btn-disabled'}`}>Submit</button>
     </div>
 )
