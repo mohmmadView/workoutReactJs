@@ -35,14 +35,25 @@ function App() {
      </div>
           <div className='w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl' >
          <div className="divider divider-warning text-secondary font-bold text-3xl"> واکنش به ورودی با حالت </div>
-       <p>
+       <p style={{direction: 'rtl'}}>
        با <span className='text-blue-400'>React</span>، شما از کد به صورت مستقیم تغییرات را در رابط کاربری اعمال نخواهید کرد. به عنوان مثال، دستوراتی مانند "دکمه را غیرفعال کن"، "دکمه را فعال کن"، "پیام موفقیت را نشان بده" و غیره را نخواهید نوشت. به جای اینکه دستورات مستقیم بنویسید، شما توصیف خواهید کرد که رابط کاربری مورد نظر خود را برای وضعیت‌های مختلف دیداری کامپوننت خود <span>("وضعیت اولیه"، "وضعیت تایپ کردن"، "وضعیت موفقیت") </span>و سپس تغییرات وضعیت را در پاسخ به ورودی کاربر فراخوانی خواهید کرد. این مشابه به این است که طراحان به رابط کاربری فکر می‌کنند.
 
 در زیر، یک فرم آزمون به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت <span>(status)</span> برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است   </p>
      </div>
       <CityQiuz />
      <CityQuiz2 />
-      
+       <div className='w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl' >
+         <div className="divider divider-warning text-secondary font-bold text-3xl">Choosing the state structure </div>
+       <p>
+      Structuring state well can make a difference between a component that is pleasant to modify and debug, and one that is a constant source of bugs. The most important principle is that state shouldn’t contain redundant or duplicated information. If there’s unnecessary state, it’s easy to forget to update it, and introduce bugs! 
+     Structuring state well can make a difference between a component that is pleasant to modify and debug, and one that is a constant source of bugs. The most important principle is that state shouldn’t contain redundant or duplicated information. If there’s unnecessary state, it’s easy to forget to update it, and introduce bugs!  </p>
+     </div>
+       <div className='w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl' >
+         <div className="divider divider-warning text-secondary font-bold text-3xl "> واکنش به ورودی با حالت </div>
+       <p className='rtl' style={{direction: 'rtl'}}>
+          در زیر، یک فرم آزمون به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت <span>(status)</span> برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است ساختاردهی مناسب برای وضعیت (state) می‌تواند تفاوتی بین یک کامپوننتی که اصلاح و اشکال‌زدایی آسان است و یک کامپوننتی که منبع دائمی از باگ‌هاست، ایجاد کند. اصل مهم‌ترین این است که وضعیت باید شامل اطلاعات اضافی یا تکراری نباشد. اگر وضعیت غیرضروری باشد، آسان است که فراموش شود که آن را به‌روز کنیم و باگ‌ها را وارد کنیم! ساختاردهی مناسب برای وضعیت می‌تواند تفاوتی بین یک کامپوننتی که اصلاح و اشکال‌زدایی آسان است و یک کامپوننتی که منبع دائمی از باگ‌هاست، ایجاد کند. اصل مهم‌ترین این است که وضعیت باید شامل اطلاعات اضافی یا تکراری نباشد. اگر وضعیت غیرضروری باشد، آسان است که فراموش شود که آن را به‌روز کنیم و باگ‌ها را وارد کنیم! 
+          </p>
+     </div>
        
        
      </div>
