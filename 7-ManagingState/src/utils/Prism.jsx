@@ -16,7 +16,7 @@ export default function Code({ code, language }) {
   }
   return (
    <div className="w-2/3  ">
-    <div className={overflow ?  ``  :` h-96 overflow-auto `+`mt-4 p-1 mx-2 mockup-code text-white text-left`}>
+    <div className={overflow ?  ``  :` h-96 overflow-auto `+`w-full mt-4 p-1  mockup-code text-white rounded-none text-left`}>
       <code className="Code">
         <h2> Code Syntax Block {language}</h2>
         <pre>
@@ -25,7 +25,7 @@ export default function Code({ code, language }) {
       </code>
      
     </div>
-     <button className="full-screen btn btn-success-content btn-success"
+     <button className="w-[100%]  btn  btn-warning rounded-t"
      onClick={handleClick}>more</button>
    </div>
   );
