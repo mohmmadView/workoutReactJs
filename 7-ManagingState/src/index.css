@@ -3,7 +3,7 @@
 @tailwind utilities;
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #55a6b1;
+  color: #74bfc9;
   background: 0 0;
   text-shadow: 0 -0.1em 0.2em #000;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
@@ -13,7 +13,7 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.2;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -62,7 +62,9 @@ pre[class*="language-"] {
 .token.boolean,
 .token.constant,
 .token.number,
-.token.property,
+.token.property{
+  color: darkgray;
+}
 .token.symbol,
 .token.tag {
   color: #d1939e;

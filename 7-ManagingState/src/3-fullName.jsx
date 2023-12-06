@@ -21,7 +21,6 @@ export default function FullName() {
         <div className="w-1/3 m-4">
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              {" "}
               <span className="label-text">What is your First name?</span>
             </div>
             <input
@@ -51,7 +50,6 @@ export default function FullName() {
     </div>
   );
 }
-
 `
   let [name, setName] = useImmer({ firstName: "", lastName: "" });
   function handleChangeFirstName(e){
@@ -69,7 +67,6 @@ export default function FullName() {
         <div className="w-1/3 m-4">
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              {" "}
               <span className="label-text">What is your First name?</span>
             </div>
             <input
@@ -95,6 +92,7 @@ export default function FullName() {
         </div>
         <Prism language="js" code={codeFullName} />
       </div>
+     {console.log(name.firstName)}
     </div>
   );
 }
