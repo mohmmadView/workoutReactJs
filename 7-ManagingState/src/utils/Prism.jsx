@@ -15,7 +15,7 @@ export default function Code({ code, language }) {
     }
   }
   return (
-   <div className="w-2/3  ">
+   <div className="w-2/3  ml-2">
     <div className={overflow ?  ``  :` h-96 overflow-auto `+`w-full mt-4 p-1  mockup-code text-white rounded-none text-left`}>
       <code className="Code">
         <h2> Code Syntax Block {language}</h2>
