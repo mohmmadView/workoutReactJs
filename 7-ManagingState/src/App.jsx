@@ -1,12 +1,9 @@
-import { useState } from "react";
 import Container from './utils/container'
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import CityQiuz from "./1-CityQiuz";
 import CityQuiz2 from "./2-CityQiuz";
 import FullName from "./3-fullName";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import "./index.css";
 
@@ -41,10 +38,10 @@ export default function App() {
           <span className="text-primary underline underline-offset-4  decoration-double font-bold">
             state
           </span>
-          between distant components.
+          between distant components.,Children
         </p>}/>
       <Container  Title={"مدیریت وضعیت"}
-       Children={  <p className="rtl" style={{ direction: "rtl" }}>
+       Children={(<p className="rtl" style={{ direction: "rtl" }}>
           هرچقدر برنامه شما بزرگتر می‌شود، بهتر است که در مورد نحوه سازماندهی و
           چگونگی جریان داده
           <span className="text-primary underline underline-offset-4  decoration-double font-bold">
@@ -68,11 +65,11 @@ export default function App() {
             state
           </span>
           را بین کامپوننت‌های دوردست به اشتراک بگذارید
-          <br/  >
+          <br />
           ((<span className="text-accent  ">
              برنامه نویسی فرانت، مدیریت وضعیت یکی از چالش های اصلی است. در برنامه های بزرگ و پیچیده، حفظ وضعیت در طول زمان می تواند دشوار باشد. این امر می تواند منجر به مشکلاتی مانند خطاها، عملکرد ضعیف و پیچیدگی کد شود.
           </span>)) <br />
-          ((<span className="text-success">
+          <span className="text-success">
            <p className="text-primary font-bold text-2xl p-2"> مفهوم مدیریت وضعیت:</p>
 
 در برنامه‌نویسی، وضعیت  (State) به داده‌ها یا وضعیت فعلی یک برنامه یا کامپوننت اشاره دارد. مدیریت وضعیت به معنای کنترل و به‌روزرسانی اطلاعات و وضعیت داخلی برنامه است تا برنامه بتواند به درستی با ورودی‌ها و رویدادها برخورد کند و تغییرات مورد نیاز را اعمال کند.
@@ -88,8 +85,8 @@ export default function App() {
 
    <p className="text-2xl font-bold text-primary p-2"> پاسخگویی به رویدادها:</p>
     مدیریت وضعیت به برنامه این امکان را می‌دهد که به درستی به رویدادها و تغییرات در وضعیت پاسخ دهد. این امر به بهترین نحو امکان پذیر استفاده از برنامه را فراهم می‌کند.
-          </span>))
-        </p> }/>
+          </span>
+        </p>)}/>
       <Example exampleNumber={1} exampleName={"Example State"} />
       <Container Title={"Reacting to input with state"}
       Children={<p>
