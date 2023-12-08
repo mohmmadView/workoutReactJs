@@ -1,11 +1,11 @@
 import Container from './utils/container'
 import Title from "./utils/Title";
 import Example from "./utils/Example";
-import ScrollY from './utils/ScrollY';
 import CityQiuz from "./1-CityQiuz";
 import CityQuiz2 from "./2-CityQiuz";
 import FullName from "./3-fullName";
 import Panel from './4-Panel';
+import ChatList from "./5-ChatList";
 import "./App.css";
 import "./index.css";
 
@@ -170,8 +170,12 @@ export default function App() {
 به عبارت دیگر، در این مثال، تنها یک پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت فعال در جزء والد <span>(App)</span> ذخیره می‌شود و از طریق <span>prop</span> <span>isActive</span> به اجزای فرزند <span>(Panel)</span> منتقل می‌شود. این <span>prop</span> به اجزای <span>Panel</span> اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا غیرفعال نمایش داده شوند.
 این روشی مؤثر برای اشتراک‌گذاری وضعیت بین اجزای <span>React</span> است زیرا باعث می‌شود کد شما ماژولارتر و نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و ایجاد پیچیدگی در ساختار برنامه جلوگیری می‌کنید.
      </p>} />
-    
     <Panel />
+    <Container Title="Preserving and resetting state " Children={<p>
+      When you re-render a component, React needs to decide which parts of the tree to keep (and update), and which parts to discard or re-create from scratch. In most cases, React’s automatic behavior works well enough. By default, React preserves the parts of the tree that “match up” with the previously rendered component tree.
+However, sometimes this is not what you want. In this chat app, typing a message and then switching the recipient does not reset the input. This can make the user accidentally send a message to the wrong person:
+      </p>} />
+     <ChatList />
     </div>
   )
        }
