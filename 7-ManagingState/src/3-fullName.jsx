@@ -70,7 +70,7 @@ export default function FullName() {
         For example, this form has a redundant fullName state variable:
       </p>
       <div className="flex">
-        <div className="w-1/3 m-4">
+        <div className="w-1/3 h-48 sticky top-5 m-4">
           <label className="form-control w-full max-w-xs">
             <div className="label">
               <span className="label-text">What is your First name?</span>

@@ -1,9 +1,11 @@
 import Container from './utils/container'
 import Title from "./utils/Title";
 import Example from "./utils/Example";
+import ScrollY from './utils/ScrollY';
 import CityQiuz from "./1-CityQiuz";
 import CityQuiz2 from "./2-CityQiuz";
 import FullName from "./3-fullName";
+import Panel from './4-Panel';
 import "./App.css";
 import "./index.css";
 
@@ -122,7 +124,8 @@ export default function App() {
       />
      
       <CityQiuz />
-      <CityQuiz2 />
+      <CityQuiz2 /> 
+      {/* <ScrollY /> */}
       <Container Title={"Choosing the state structure"} 
       Children={ `Structuring state well can make a difference between a component that
           is pleasant to modify and debug, and one that is a constant source of
@@ -153,7 +156,22 @@ export default function App() {
      
       <FullName />
     
-      <Container Direction="rtl" Title={"واکنش به ورودی با حالت"} Content={"سیبسدر زیر، یک فرم آزمون به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت (status) برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است ساختاردهی مناسب برای وضعیت (state) می‌تواند تفاوتی بین یک کامپوننتی که اصلاح و اشکال‌زدایی آسان است و یک کامپوننتی که منبع دائمی از باگ‌هاست، ایجاد کند. اصل مهم‌ترین این است که وضعیت باید شامل اطلاعات اضافی یا تکراری نباشد. اگر وضعیت غیرضروری باشد، آسان است که فراموش شود که آن را به‌روز کنیم و باگ‌ها را وارد کنیم! ساختاردهی مناسب برای وضعیت می‌تواند تفاوتی بین یک کامپوننتی که اصلاح و اشکال‌زدایی آسان است و یک کامپوننتی که منبع دائمی از باگ‌هاست، ایجاد کند. اصل مهم‌ترین این است که وضعیت باید شامل اطلاعات اضافی یا تکراری نباشد. اگر وضعیت غیرضروری باشد، آسان است که فراموش شود که آن را به‌روز کنیم و باگ‌ها را وارد کنیم!یل سیببیب  سییبس"} />
+      <Container  Title={"Sharing state between components"} 
+      Children={<p> Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their 
+      closest common parent, and then pass it down to them via props. This is known as <span className='font-bold'>lifting state up</span>, and it’s one of the most common things you will do writing React code.
+      In this example, only one panel should be active at a time. To achieve this, instead of keeping the active state inside each individual panel,
+       the parent component holds the state and specifies the props for its children.</p>} 
+    />
+    <Container Title={"Sharing state between components"}  Direction={"rtl"}
+     Children={<p>
+      گاهی اوقات، ممکن است بخواهید وضعیت دو جزء <span>React</span> همیشه با هم تغییر کند. برای انجام این کار، باید وضعیت را از هر دو جزء حذف کنید،
+       آن را به والد مشترک آنها منتقل کنید و سپس از طریق <span>props</span> به آنها منتقل کنید. این روش به نام "بالا بردن وضعیت" <span>(lifting state up)</span> شناخته می‌شود و یکی از رایج‌ترین روش‌های نوشتن کد <span>React</span> است.
+در این مثال، فقط یک پانل باید در یک زمان فعال باشد. برای دستیابی به این هدف، به جای ذخیره وضعیت فعال در هر پانل جداگانه، جزء والد وضعیت را نگه می‌دارد و <span>props</span> را برای فرزندان خود مشخص می‌کند.
+به عبارت دیگر، در این مثال، تنها یک پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت فعال در جزء والد <span>(App)</span> ذخیره می‌شود و از طریق <span>prop</span> <span>isActive</span> به اجزای فرزند <span>(Panel)</span> منتقل می‌شود. این <span>prop</span> به اجزای <span>Panel</span> اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا غیرفعال نمایش داده شوند.
+این روشی مؤثر برای اشتراک‌گذاری وضعیت بین اجزای <span>React</span> است زیرا باعث می‌شود کد شما ماژولارتر و نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و ایجاد پیچیدگی در ساختار برنامه جلوگیری می‌کنید.
+     </p>} />
+    
+    <Panel />
     </div>
   )
        }
