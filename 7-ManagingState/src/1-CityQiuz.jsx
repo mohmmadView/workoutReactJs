@@ -79,6 +79,8 @@ function submitForm(answer) {
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("typing");
+  var elmCity = document.getElementById("cityQuiz");
+console.log(elmCity);
 
   if (status === "success") {
     return <h1>That's right!</h1>;
@@ -101,8 +103,8 @@ function submitForm(answer) {
   }
 
   return (
-    <div className="w-10/12 mx-auto my-12 bg-base-300 p-4 text-xl flex">
-      <div id="cityQuiz" className="w-1/3 max-h-40 border p-4">
+    <div className="w-10/12 mx-auto my-12 bg-base-300 p-4 text-xl  flex">
+      <div id="cityQuiz" className="w-1/3 max-h-40 border p-4 mb-44 sticky top-5">
         <h2 className="text-3xl p-2 text-primary">City quiz</h2>
         <p>
           In which city is there a billboard that turns air into drinkable
@@ -136,7 +138,6 @@ function submitForm(answer) {
       <Prism language="js" code={CodeCityQiuz} />
     </div>
   );
-}
 
 function submitForm(answer) {
   // Pretend it's hitting the network.
@@ -150,4 +151,5 @@ function submitForm(answer) {
       }
     }, 1500);
   });
+}
 }

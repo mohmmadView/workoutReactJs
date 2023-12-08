@@ -124,7 +124,8 @@ export default function App() {
       />
      
       <CityQiuz />
-      <CityQuiz2 />
+      <CityQuiz2 /> 
+      {/* <ScrollY /> */}
       <Container Title={"Choosing the state structure"} 
       Children={ `Structuring state well can make a difference between a component that
           is pleasant to modify and debug, and one that is a constant source of
@@ -169,7 +170,7 @@ export default function App() {
 به عبارت دیگر، در این مثال، تنها یک پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت فعال در جزء والد <span>(App)</span> ذخیره می‌شود و از طریق <span>prop</span> <span>isActive</span> به اجزای فرزند <span>(Panel)</span> منتقل می‌شود. این <span>prop</span> به اجزای <span>Panel</span> اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا غیرفعال نمایش داده شوند.
 این روشی مؤثر برای اشتراک‌گذاری وضعیت بین اجزای <span>React</span> است زیرا باعث می‌شود کد شما ماژولارتر و نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و ایجاد پیچیدگی در ساختار برنامه جلوگیری می‌کنید.
      </p>} />
-     <ScrollY />
+    
     <Panel />
     </div>
   )
