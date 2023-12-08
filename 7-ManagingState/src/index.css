@@ -33,6 +33,7 @@ pre[class*="language-"] {
   background: #4c3f33;
 }
 pre[class*="language-"] {
+  
   padding: 1em;
   /* margin: 0.5em 0; */
   overflow: auto;

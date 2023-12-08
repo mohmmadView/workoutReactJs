@@ -102,7 +102,7 @@ function submitForm(answer) {
 
   return (
     <div className="w-10/12 mx-auto my-12 bg-base-300 p-4 text-xl flex">
-      <div className="w-1/3  p-4">
+      <div id="cityQuiz" className="w-1/3 max-h-40 border p-4">
         <h2 className="text-3xl p-2 text-primary">City quiz</h2>
         <p>
           In which city is there a billboard that turns air into drinkable

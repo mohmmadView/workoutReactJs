@@ -1,6 +1,7 @@
 import Container from './utils/container'
 import Title from "./utils/Title";
 import Example from "./utils/Example";
+import ScrollY from './utils/ScrollY';
 import CityQiuz from "./1-CityQiuz";
 import CityQuiz2 from "./2-CityQiuz";
 import FullName from "./3-fullName";
@@ -168,6 +169,7 @@ export default function App() {
 به عبارت دیگر، در این مثال، تنها یک پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت فعال در جزء والد <span>(App)</span> ذخیره می‌شود و از طریق <span>prop</span> <span>isActive</span> به اجزای فرزند <span>(Panel)</span> منتقل می‌شود. این <span>prop</span> به اجزای <span>Panel</span> اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا غیرفعال نمایش داده شوند.
 این روشی مؤثر برای اشتراک‌گذاری وضعیت بین اجزای <span>React</span> است زیرا باعث می‌شود کد شما ماژولارتر و نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و ایجاد پیچیدگی در ساختار برنامه جلوگیری می‌کنید.
      </p>} />
+     <ScrollY />
     <Panel />
     </div>
   )
