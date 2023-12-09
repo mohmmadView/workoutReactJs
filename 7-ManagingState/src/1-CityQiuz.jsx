@@ -79,9 +79,6 @@ function submitForm(answer) {
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("typing");
-  var elmCity = document.getElementById("cityQuiz");
-console.log(elmCity);
-
   if (status === "success") {
     return <h1>That's right!</h1>;
   }
