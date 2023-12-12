@@ -6,6 +6,7 @@ import CityQuiz2 from "./2-CityQiuz";
 import FullName from "./3-fullName";
 import Panel from './4-Panel';
 import ChatList from "./5-ChatList";
+import Note from "./6-note";
 import "./App.css";
 import "./index.css";
 
@@ -176,6 +177,12 @@ export default function App() {
 However, sometimes this is not what you want. In this chat app, typing a message and then switching the recipient does not reset the input. This can make the user accidentally send a message to the wrong person:
       </p>} />
      <ChatList />
+     <Container Title="Extracting state logic into a reducer " Children={<p>
+Components with many state updates spread across many event handlers can get overwhelming. For these cases, you can 
+consolidate all the state update logic outside your component in a single function, called “reducer”. Your event handlers become 
+concise because they only specify the user “actions”. At the bottom of the file, the reducer function specifies how the state should update in response to each action!
+     </p>} />
+       <Note note={"test"} />
     </div>
   )
        }
