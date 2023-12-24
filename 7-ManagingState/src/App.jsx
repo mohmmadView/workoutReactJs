@@ -1,11 +1,12 @@
 import Container from './utils/container'
 import Title from "./utils/Title";
 import Example from "./utils/Example";
-import ScrollY from './utils/ScrollY';
 import CityQiuz from "./1-CityQiuz";
 import CityQuiz2 from "./2-CityQiuz";
 import FullName from "./3-fullName";
 import Panel from './4-Panel';
+import ChatList from "./5-ChatList";
+import Note from "./6-note";
 import "./App.css";
 import "./index.css";
 
@@ -110,11 +111,11 @@ export default function App() {
         Children={<p style={{ direction: "rtl" }}>
           با <span className="text-blue-400">React</span>، شما از کد به صورت
           مستقیم تغییرات را در رابط کاربری اعمال نخواهید کرد. به عنوان مثال،
-          دستوراتی مانند "دکمه را غیرفعال کن"، "دکمه را فعال کن"، "پیام موفقیت
-          را نشان بده" و غیره را نخواهید نوشت. به جای اینکه دستورات مستقیم
+          دستوراتی مانند دکمه را غیرفعال کن، دکمه را فعال کن، پیام موفقیت
+          را نشان بده و غیره را نخواهید نوشت. به جای اینکه دستورات مستقیم
           بنویسید، شما توصیف خواهید کرد که رابط کاربری مورد نظر خود را برای
           وضعیت‌های مختلف دیداری کامپوننت خود
-          <span>("وضعیت اولیه"، "وضعیت تایپ کردن"، "وضعیت موفقیت") </span>و سپس
+          <span>(وضعیت اولیه، وضعیت تایپ کردن، وضعیت موفقیت) </span>و سپس
           تغییرات وضعیت را در پاسخ به ورودی کاربر فراخوانی خواهید کرد. این مشابه
           به این است که طراحان به رابط کاربری فکر می‌کنند. در زیر، یک فرم آزمون
           به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت
@@ -170,8 +171,18 @@ export default function App() {
 به عبارت دیگر، در این مثال، تنها یک پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت فعال در جزء والد <span>(App)</span> ذخیره می‌شود و از طریق <span>prop</span> <span>isActive</span> به اجزای فرزند <span>(Panel)</span> منتقل می‌شود. این <span>prop</span> به اجزای <span>Panel</span> اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا غیرفعال نمایش داده شوند.
 این روشی مؤثر برای اشتراک‌گذاری وضعیت بین اجزای <span>React</span> است زیرا باعث می‌شود کد شما ماژولارتر و نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و ایجاد پیچیدگی در ساختار برنامه جلوگیری می‌کنید.
      </p>} />
-    
     <Panel />
+    <Container Title="Preserving and resetting state " Children={<p>
+      When you re-render a component, React needs to decide which parts of the tree to keep (and update), and which parts to discard or re-create from scratch. In most cases, React’s automatic behavior works well enough. By default, React preserves the parts of the tree that “match up” with the previously rendered component tree.
+However, sometimes this is not what you want. In this chat app, typing a message and then switching the recipient does not reset the input. This can make the user accidentally send a message to the wrong person:
+      </p>} />
+     <ChatList />
+     <Container Title="Extracting state logic into a reducer " Children={<p>
+Components with many state updates spread across many event handlers can get overwhelming. For these cases, you can 
+consolidate all the state update logic outside your component in a single function, called “reducer”. Your event handlers become 
+concise because they only specify the user “actions”. At the bottom of the file, the reducer function specifies how the state should update in response to each action!
+     </p>} />
+       <Note note={"test"} />
     </div>
   )
        }

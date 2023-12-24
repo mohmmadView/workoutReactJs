@@ -16,7 +16,7 @@ export default function Code({ code, language , widthIN}) {
   }
   return (
    <div className={`w-2/3 ${widthIN}  ml-2`}>
-    <div className={overflow ?  ``  :` h-96 overflow-auto `+`w-full mt-4 p-1  mockup-code text-white rounded-none text-left`}>
+    <div className={overflow ?  ``  :` h-96 overflow-auto `+`w-full p-1  mockup-code text-white rounded-none text-left`}>
       <code className="Code">
         <h2> Code Syntax Block {language}</h2>
         <pre>
