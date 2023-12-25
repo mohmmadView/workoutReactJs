@@ -5,7 +5,7 @@ export default function AddTask({ onAddTask }) {
   const [text, setText] = useState('');
   const dispatch = useTasksDispatch();
   return (
-    <div className='flex m-2 gap-2'>
+    <div className='flex  m-2 gap-2'>
       <input
       className='input input-accent bg-accent-content input-bordered w-full max-w-xs'
         placeholder="Add task"
