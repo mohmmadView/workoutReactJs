@@ -223,6 +223,7 @@ Here, the Heading component determines its heading level by “asking” the clo
        
 
      </p>} />
+   
 
      <NoteReducer />
     </div>
