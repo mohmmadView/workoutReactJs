@@ -26,5 +26,5 @@ function component() {
     console.log(Notes);
     return element;
   }
-  
   document.body.appendChild(component());
+  //TODO WebPack Guide https://webpack.js.org/guides/code-splitting/#entry-points
