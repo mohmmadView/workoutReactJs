@@ -1,4 +1,4 @@
- let CodeCityQiuz = `
+let CodeCityQiuz = `
   import { useState } from 'react';
 
 export default function Form() {
@@ -73,7 +73,7 @@ function submitForm(answer) {
   });
 }
   `;
-  const CodeCityQiuz2 = `
+const CodeCityQiuz2 = `
   import { useState } from "react"
 
 export default function CityQuiz() {
@@ -121,7 +121,7 @@ return (
 )
 }
   `;
-  let codeFullName =`
+let codeFullName = `
 import Prism from "./utils/Prism";
 import { useImmer } from 'use-immer'
 export default function FullName() {
@@ -171,7 +171,7 @@ export default function FullName() {
   );
 }
 `;
-  let CodePanel = `
+let CodePanel = `
 import { useState } from "react"
 import Prism from "./utils/Prism";
 export default function Panel() {
@@ -197,7 +197,7 @@ let [active,setActive]=useState(false);
     )
 }
     `;
-    let codeChatList= `
+let codeChatList = `
   import { useState } from "react";
 import Prism from "./utils/Prism";
 export default function ChatList(){
@@ -238,8 +238,8 @@ function Chat({listContact}){
     )
   }
   
-  `
-  let codeNote =`
+  `;
+let codeNote = `
   import { useState } from 'react';
 import Code from './utils/Prism';
    let dataList=[
@@ -308,6 +308,13 @@ export default function Note() {
         </div>
         )
     }
-  `
- 
-  export default [CodeCityQiuz,CodeCityQiuz2,codeFullName,CodePanel,codeChatList,codeNote]
+  `;
+
+export default [
+  CodeCityQiuz,
+  CodeCityQiuz2,
+  codeFullName,
+  CodePanel,
+  codeChatList,
+  codeNote,
+];

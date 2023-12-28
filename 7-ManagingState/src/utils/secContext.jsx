@@ -1,11 +1,11 @@
-import { useContext } from 'react';
-import { downContext } from './downContext';
+import { useContext } from "react";
+import { downContext } from "./downContext";
 
-export default function SetContext({ children}) {
+export default function SetContext({ children }) {
   const numContainer = useContext(downContext);
   switch (numContainer) {
     case 0:
-      throw Error('Heading must be inside a Section!');
+      throw Error("Heading must be inside a Section!");
     case 1:
       return <h1>{children}</h1>;
     case 2:
@@ -19,6 +19,6 @@ export default function SetContext({ children}) {
     case 6:
       return <h6>{children}</h6>;
     default:
-      throw Error('Unknown level: ' + numContainer);
+      throw Error("Unknown level: " + numContainer);
   }
 }

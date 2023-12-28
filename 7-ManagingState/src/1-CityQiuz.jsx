@@ -2,7 +2,6 @@ import { useState } from "react";
 import Prism from "./utils/Prism";
 import CodeCityQiuz from "./codeString/AllCodeString";
 export default function Form() {
-
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("typing");
@@ -28,7 +27,10 @@ export default function Form() {
 
   return (
     <div className="w-10/12 mx-auto my-12 bg-base-300 p-4 text-xl  flex">
-      <div id="cityQuiz" className="w-1/3 max-h-40 border p-4 mb-44 sticky top-5">
+      <div
+        id="cityQuiz"
+        className="w-1/3 max-h-40 border p-4 mb-44 sticky top-5"
+      >
         <h2 className="text-3xl p-2 text-primary">City quiz</h2>
         <p>
           In which city is there a billboard that turns air into drinkable
@@ -63,17 +65,17 @@ export default function Form() {
     </div>
   );
 
-function submitForm(answer) {
-  // Pretend it's hitting the network.
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let shouldError = answer.toLowerCase() !== "lima";
-      if (shouldError) {
-        reject(new Error("Good guess but a wrong answer. Try again!"));
-      } else {
-        resolve();
-      }
-    }, 1500);
-  });
-}
+  function submitForm(answer) {
+    // Pretend it's hitting the network.
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let shouldError = answer.toLowerCase() !== "lima";
+        if (shouldError) {
+          reject(new Error("Good guess but a wrong answer. Try again!"));
+        } else {
+          resolve();
+        }
+      }, 1500);
+    });
+  }
 }

@@ -1,20 +1,23 @@
 import Prism from "./utils/Prism";
-import { useImmer } from 'use-immer'
-import codeFullName from './codeString/AllCodeString.js'
+import { useImmer } from "use-immer";
+import codeFullName from "./codeString/AllCodeString.js";
 /**
- * Generates a function FullName  give a firstName and  lastName  
+ * Generates a function FullName  give a firstName and  lastName
  *
  * @return {string}  fullName a printed screen
  */
 export default function FullName() {
-
   let [name, setName] = useImmer({ firstName: "", lastName: "" });
 
-  function handleChangeFirstName(e){
-  setName((draft) => {draft.firstName = e.target.value})
+  function handleChangeFirstName(e) {
+    setName((draft) => {
+      draft.firstName = e.target.value;
+    });
   }
-    function handleChangeLastName(e){
-  setName((draft) => {draft.lastName = e.target.value})
+  function handleChangeLastName(e) {
+    setName((draft) => {
+      draft.lastName = e.target.value;
+    });
   }
   return (
     <div className="w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl">
@@ -45,7 +48,9 @@ export default function FullName() {
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
             />
-            <p  className="pt-4 text-success">{name.firstName} {name.lastName}</p>
+            <p className="pt-4 text-success">
+              {name.firstName} {name.lastName}
+            </p>
           </label>
         </div>
         <Prism language="js" code={codeFullName[2]} />

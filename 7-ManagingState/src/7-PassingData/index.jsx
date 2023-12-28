@@ -1,5 +1,5 @@
-import Heading from './Heading';
-import Section from './Section';
+import Heading from "./Heading";
+import Section from "./Section";
 
 export default function Page() {
   return (
@@ -12,13 +12,14 @@ export default function Page() {
         <Section>
           <Heading>Sub-heading</Heading>
           <Heading>Sub-heading</Heading>
-          <Heading >Sub-heading</Heading>
-          <Section onclick={() => console.log('clicked')}>
+          <Heading>Sub-heading</Heading>
+          <Section onclick={() => console.log("clicked")}>
             <Heading>Sub-sub-heading</Heading>
-             <Heading>Sub-sub-heading</Heading>
-             <Section>
+            <Heading>Sub-sub-heading</Heading>
+            <Section>
               <Heading>Sub-sub-heading</Heading>
-            <Heading>Sub-sub-sub-heading</Heading><Heading>Sub-sub-sub-heading</Heading>
+              <Heading>Sub-sub-sub-heading</Heading>
+              <Heading>Sub-sub-sub-heading</Heading>
             </Section>
             <Heading>Sub-sub-heading</Heading>
           </Section>
