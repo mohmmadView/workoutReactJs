@@ -17,6 +17,7 @@ export default function Page() {
             <Heading>Sub-sub-heading</Heading>
              <Heading>Sub-sub-heading</Heading>
              <Section>
+              <Heading>Sub-sub-heading</Heading>
             <Heading>Sub-sub-sub-heading</Heading><Heading>Sub-sub-sub-heading</Heading>
             </Section>
             <Heading>Sub-sub-heading</Heading>

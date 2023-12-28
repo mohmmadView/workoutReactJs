@@ -11,60 +11,15 @@ import NoteReducer from "./6-Note-reducer/index";
 import PassingDataNesting  from './7-PassingData/index.jsx';
 import "./App.css";
 import "./index.css";
-import text from "./codeString/tex.jsx"
+import SetContext from './utils/secContext.jsx';
+import DataText from './TasksContext.jsx'
 export default function App() {
-  console.log(text);
+  console.log(DataText[0].text_2);
   return (
     <div className="w-full">
       <Title title="Managing State" />
-     
-      <Container Title={"Intermediate"} >{text()}</Container>
-      <Container  Title={"مدیریت وضعیت"}><p className="rtl" style={{ direction: "rtl" }}>
-          هرچقدر برنامه شما بزرگتر می‌شود، بهتر است که در مورد نحوه سازماندهی و
-          چگونگی جریان داده
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          بین کامپوننت‌های شما دقت بیشتری داشته باشید. وضعیت
-          <span className="text-primary underline underline-offset-4  decoration-wavy font-bold">
-            state
-          </span>
-          تکراری یا تکراری منبعی رایج برای باگ‌هاست. در این فصل، یاد می‌گیرید که
-          چگونه وضعیت
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          خود را به خوبی سازماندهی کنید، چگونه منطق به‌روزرسانی وضعیت
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          خود را قابل دفاع نگه دارید و چگونه وضعیت
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          را بین کامپوننت‌های دوردست به اشتراک بگذارید
-          <br />
-          ((<span className="text-accent  ">
-             برنامه نویسی فرانت، مدیریت وضعیت یکی از چالش های اصلی است. در برنامه های بزرگ و پیچیده، حفظ وضعیت در طول زمان می تواند دشوار باشد. این امر می تواند منجر به مشکلاتی مانند خطاها، عملکرد ضعیف و پیچیدگی کد شود.
-          </span>)) <br />
-          <span className="text-success">
-           <p className="text-primary font-bold text-2xl p-2"> مفهوم مدیریت وضعیت:</p>
-
-در برنامه‌نویسی، وضعیت  (State) به داده‌ها یا وضعیت فعلی یک برنامه یا کامپوننت اشاره دارد. مدیریت وضعیت به معنای کنترل و به‌روزرسانی اطلاعات و وضعیت داخلی برنامه است تا برنامه بتواند به درستی با ورودی‌ها و رویدادها برخورد کند و تغییرات مورد نیاز را اعمال کند.
-<p className="text-secondary font-bold text-3xl">اهمیت مدیریت وضعیت:</p>
- <br />
-    <p className="text-2xl font-bold p-2 text-primary">پایداری و قابلیت تعمیر:</p> 
-   
-    مدیریت وضعیت کمک می‌کند تا برنامه پایدارتر باشد و به راحتی قابل تعمیر باشد. با داشتن کنترل بر وضعیت داخلی، خطاها را می‌توان سریع‌تر شناسایی و رفع کرد.
-
-  <p className="text-2xl font-bold text-primary p-2">  تداول داده بهینه:</p>
-
-    اطلاعات برنامه به صورت موقت در وضعیت نگهداری می‌شوند و تغییرات مورد نیاز در اینجا اعمال می‌شوند. این کار به بهینه‌تر کردن مدیریت داده‌ها کمک می‌کند.
-
-   <p className="text-2xl font-bold text-primary p-2"> پاسخگویی به رویدادها:</p>
-    مدیریت وضعیت به برنامه این امکان را می‌دهد که به درستی به رویدادها و تغییرات در وضعیت پاسخ دهد. این امر به بهترین نحو امکان پذیر استفاده از برنامه را فراهم می‌کند.
-          </span>
-        </p></Container>
+      <Container Title={"Intermediate"} ><SetContext>{DataText[0].Intermediate()}</SetContext></Container>
+      <Container  Title={"مدیریت وضعیت"}><SetContext>{DataText[1].ManagingState()}</SetContext></Container>
       <Example exampleNumber={1} exampleName={"Example State"} />
       <Container Title={"Reacting to input with state"}>
      <p>

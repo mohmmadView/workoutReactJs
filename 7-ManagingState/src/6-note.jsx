@@ -8,7 +8,7 @@ import codeString from './codeString/AllCodeString';
       ]
         // let idNext=3;
 export default function Note() {
-    let [idNext,setIdNext] = useState(2);
+   // let [idNext,setIdNext] = useState(2);
     let [list,setList] =useState(dataList);
     return (
         <div className="w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl flex">           
@@ -35,7 +35,6 @@ export default function Note() {
                        return li;}
                        else{
                         li.edit = false;
-
                        return li
                        } } ) )
                         
