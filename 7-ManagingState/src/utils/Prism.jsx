@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import Prism from "prismjs";
-// import PropTypes from "prop-types";
+import Prism from 'prismjs';
 export default function Code({ code, language, widthIN }) {
   useEffect(() => {
-    Prism.highlightAll(Prism.highlight);
+     Prism.highlightAll(Prism.highlight);
   }, []);
   let [overflow, setOverflow] = useState(false);
   function handleClick() {
@@ -40,8 +39,3 @@ export default function Code({ code, language, widthIN }) {
     </div>
   );
 }
-
-// Code.propTypes = {
-//   code: PropTypes.string.isRequired,
-//   language: PropTypes.string.isRequired,
-// };

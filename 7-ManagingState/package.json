@@ -10,10 +10,12 @@
     "preview": "vite preview",
     "development": "vite --mode development",
     "production": "vite build --mode production"
-    
-
   },
   "dependencies": {
+    "@types/prismjs": "^1.26.3",
+    "immer": "^10.0.3",
+    "prism": "^4.1.2",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "use-immer": "^0.9.0"
