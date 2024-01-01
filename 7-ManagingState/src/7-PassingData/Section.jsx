@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { LevelContext } from "./LevelContext";
-
-export default function Section({ children }) {
+function Section({ children }) {
   const level = useContext(LevelContext);
   return (
     <section
@@ -23,3 +22,5 @@ export default function Section({ children }) {
     </section>
   );
 }
+
+export default Section;

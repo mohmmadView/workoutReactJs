@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Prism from "./utils/Prism";
 import CodePanel from "./codeString/AllCodeString";
-export default function ContainerPanel() {
+import PropTypes from 'prop-types';
+ function ContainerPanel({men , and}) {
   let [active, setActive] = useState(0);
 
   return (
@@ -46,10 +47,31 @@ export default function ContainerPanel() {
           />
           <p className="pt-4  text-success"></p>
         </div>
+        {men  }{and}
         <Prism widthIN="w-full " language="js" code={CodePanel[3]} />
       </div>
     </div>
   );
+  // let Panel = React.createClass({
+  //   propTypes: {
+  //     Title: PropTypes.string.isRequired,
+  //     childern: PropTypes.string.isRequired,
+  //     isActive: PropTypes.number.isRequired,
+  //     onShow: PropTypes.func.isRequired,
+  //     itemColors: PropTypes.string.isRequired,
+  //   },render:function(){
+  //      return (
+  //     <div className={`w-full p-4 border border-warning  ${itemColors}`}>
+  //       <span className="">{Title}</span>
+  //       <p className="pt-4 ">{isActive === active ? childern : ""}</p>
+  //       <button className="btn btn-primary mt-4" onClick={onShow}>
+  //         Show
+  //       </button>
+  //     </div>
+  //   );
+  //   }
+  // });
+  
   function Panel({ Title, childern, isActive, onShow, itemColors }) {
     return (
       <div className={`w-full p-4 border border-warning  ${itemColors}`}>
@@ -60,5 +82,11 @@ export default function ContainerPanel() {
         </button>
       </div>
     );
+
   }
+}
+export default ContainerPanel
+PropTypes.ContainerPanel={
+  men :PropTypes.string.isRequired,
+  and:PropTypes.array.isRequired
 }

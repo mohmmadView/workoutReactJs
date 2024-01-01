@@ -12,6 +12,7 @@ import PassingDataNesting from "./7-PassingData/index.jsx";
 import "./App.css";
 import "./index.css";
 import DataText from "./TasksContext.jsx";
+import CardImport from './utils/card_Import.jsx'
 export default function App() {
   console.log(DataText[0].text_2);
   return (
@@ -69,6 +70,10 @@ export default function App() {
         {DataText[12].PassingDataDeeplyWithContextFa()}
       </Container>
       <NoteReducer />
+      <Container >
+      <CardImport />
+      <CardImport />
+      </Container>
     </div>
   );
 }
