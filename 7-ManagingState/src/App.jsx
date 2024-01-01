@@ -72,7 +72,6 @@ export default function App() {
       <NoteReducer />
       <Container >
       <CardImport />
-      <CardImport />
       </Container>
     </div>
   );

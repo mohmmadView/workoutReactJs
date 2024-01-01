@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Prism from 'prismjs';
-export default function Code({ code, language, widthIN ,HeaderBol}) {
- Boolean(HeaderBol);
- 
+export default function Code({ code, language, widthIN }) {
   useEffect(() => {
      Prism.highlightAll(Prism.highlight);
   }, []);
@@ -15,7 +13,6 @@ export default function Code({ code, language, widthIN ,HeaderBol}) {
       setOverflow(false);
     }
   }
-
   return (
     <div className={`w-2/3 ${widthIN}  ml-2`}>
       <div
@@ -23,18 +20,18 @@ export default function Code({ code, language, widthIN ,HeaderBol}) {
           overflow
             ? ``
             : ` h-96 overflow-auto ` +
-              `w-full p-1  ${HeaderBol ? `bg-secondary` : `mockup-code`} text-white rounded-none text-left`
+              `w-full p-1  mockup-code text-white rounded-none text-left`
         }
       >
         <code className="Code">
-          <h2 > Code Syntax Block {language}</h2>
+          <h2> Code Syntax Block {language}</h2>
           <pre>
             <code className={`language-${language}`}>{code}</code>
           </pre>
         </code>
       </div>
       <button
-        className={HeaderBol ?`w-[100%]  btn  btn-warning rounded-t` : 'hidden' }
+        className="w-[100%]  btn  btn-warning rounded-t"
         onClick={handleClick}
       >
         more
