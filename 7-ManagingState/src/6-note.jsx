@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Code from "./utils/Prism";
 import codeString from "./codeString/AllCodeString";
+
 let dataList = [
   { id: 0, title: "mohammad", check: false, edit: false },
   { id: 1, title: "Ahmad", check: false, edit: false },
@@ -14,7 +15,10 @@ export default function Note() {
     <div className="w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl flex">
       <div className="w-1/3">
         <AddTask onAddTask={AddToList} />
-        <List dataList={list} idFix={editHandel} taskDelete={deleteHandel} />
+             {dataList.map((li) => ( <section key={li.id}>
+              <TaskNote check={li.check} edit={li.edit}  title={li.title}  />
+             </section> ))}
+       
       </div>
       <Code language={"js"} code={codeString[5]} />
     </div>
@@ -24,13 +28,14 @@ export default function Note() {
     setList(list.filter((li) => li.id !== idDelete));
   }
   function editHandel(edit, text) {
+    console.log(text);
     setList(
       list.map((li) => {
         if (li.id === edit) {
           console.log(li, edit);
           li.edit = !li.edit;
-
-          li.title = text;
+        
+        
           return li;
         } else {
           li.edit = false;
@@ -75,24 +80,25 @@ export default function Note() {
       </div>
     );
   }
-  function List({ dataList, idFix, taskDelete }) {
-    let [text, textEdit] = useState("");
+  function TaskNote({  title, check , edit }) {
+    let  setTitle = useState("")
+   let [IdEdit , setEdit] = useState(false)
     return (
       <div className="w-3/3  flex flex-col pt-8 p-2 justify-between">
-        {dataList.map((task) => (
-          <div className="flex" key={task.id}>
+   
+          <div className="flex" >
             <div className="flex w-8/12">
               <input
-                checked={task.check}
+                checked={check}
                 className="w-4 mr-2"
                 type="checkbox"
               />
               <input
-                onChange={(e) => textEdit(e.target.value)}
-                value={task.title}
+                onChange={(e) =>setTitle( e.target.value)}
+                value={title}
                 className={
-                  task.edit
-                    ? ` input input-accent bg-accent-content input-bordered max-w-xs`
+                    IdEdit
+                    ? ` input input-accent bg-accent-content input-bordered max-w-xs }`
                     : ` input input-ghost bg-accent-ghost input-bordered max-w-xs `
                 }
                 type="text"
@@ -101,7 +107,7 @@ export default function Note() {
             <div className="w-4/12 flex justify-between">
               <button
                 onClick={() => {
-                  idFix(task.id, text);
+                  setEdit(!IdEdit)
                 }}
                 className="btn btn-outline btn-sm self-center btn-secondary"
               >
@@ -109,7 +115,7 @@ export default function Note() {
               </button>
               <button
                 onClick={() => {
-                  taskDelete(task.id);
+                  
                 }}
                 className="btn btn-sm self-center btn-error"
               >
@@ -117,7 +123,7 @@ export default function Note() {
               </button>
             </div>
           </div>
-        ))}
+      
       </div>
     );
   }
