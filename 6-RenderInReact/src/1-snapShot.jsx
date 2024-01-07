@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function StageShot() {
-  const [to, setTo] = useState('Alice');
-  const [message, setMessage] = useState('Hello');
+  const [to, setTo] = useState("Alice");
+  const [message, setMessage] = useState("Hello");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -12,23 +12,30 @@ export default function StageShot() {
   }
 
   return (
-    <form className='w-2/6 p-4 gap-2 border border-secondary rounded-lg flex flex-col'  onSubmit={handleSubmit}>
+    <form
+      className="w-2/6 p-4 gap-2 border border-secondary rounded-lg flex flex-col"
+      onSubmit={handleSubmit}
+    >
       <label>
-        To:{' '}
+        To:{" "}
         <select
-        className='select select-primary'
+          className="select select-primary"
           value={to}
-          onChange={e => setTo(e.target.value)}>
+          onChange={(e) => setTo(e.target.value)}
+        >
           <option value="Alice">Alice</option>
           <option value="Bob">Bob</option>
         </select>
       </label>
-      <textarea className="textarea textarea-primary"
+      <textarea
+        className="textarea textarea-primary"
         placeholder="Message"
         value={message}
-        onChange={e => setMessage(e.target.value)}
+        onChange={(e) => setMessage(e.target.value)}
       />
-      <button className='btn btn-primary' type="submit">Send</button>
+      <button className="btn btn-primary" type="submit">
+        Send
+      </button>
     </form>
   );
 }

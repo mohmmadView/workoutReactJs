@@ -8,7 +8,7 @@ export default function Form() {
   // if (status === "success") {
   //   return (<h1>That right!</h1>)
   // }
-  
+
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting");

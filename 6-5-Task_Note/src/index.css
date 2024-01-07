@@ -1,15 +1,15 @@
-.container{
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-section{
+.container {
   display: flex;
-width: 50vw;
-height: 5vh;
+  flex-direction: column;
+  align-items: center;
+}
+section {
+  display: flex;
+  width: 50vw;
+  height: 5vh;
 }
 
-.input__Add{
+.input__Add {
   width: 80%;
   height: 91%;
   padding: 2px;
@@ -21,35 +21,36 @@ height: 5vh;
   background-color: #000000;
   border: #242424;
 }
-.btn__Add{
+.btn__Add {
   width: 18%;
   height: 100%;
   padding: 2px;
   margin-top: 8px;
   color: #ffffff;
   font-weight: bold;
- border: #242424 4px solid;
+  border: #242424 4px solid;
   background-color: blueviolet;
   margin-left: 0;
   border-radius: 0%;
 }
-ul{
+ul {
   font-size: xx-large;
   color: rgb(10, 1, 1);
-   padding-left: 0px;
-   padding: 1vw;
-   background-color: rgb(207, 166, 212);
+  padding-left: 0px;
+  padding: 1vw;
+  background-color: rgb(207, 166, 212);
 }
-li{display: flex;
+li {
+  display: flex;
   justify-content: space-between;
 
-width: 50vw;}
-div > button{
+  width: 50vw;
+}
+div > button {
   padding: 0.8vw;
   margin: 0.5vw;
   background-color: #353a94;
   color: #ffffff;
   border: #242424;
-  border-radius: 0.5vw
-
+  border-radius: 0.5vw;
 }

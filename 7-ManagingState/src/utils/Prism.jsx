@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Prism from 'prismjs';
+import Prism from "prismjs";
 export default function Code({ code, language, widthIN }) {
   useEffect(() => {
-     Prism.highlightAll(Prism.highlight);
+    Prism.highlightAll(Prism.highlight);
   }, []);
   let [overflow, setOverflow] = useState(false);
   function handleClick() {

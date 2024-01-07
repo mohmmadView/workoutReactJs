@@ -1,15 +1,14 @@
 import React from "react";
 import User from "../utils/User";
-import Prism from 'prismjs';
-import PrismGe from '../utils/Prism';
+import Prism from "prismjs";
+import PrismGe from "../utils/Prism";
 //TODO props برای مقداری دهی  ثابت استفاده  میشود
 //TODO state برای مقدار دهی  که در طول برنامه تغیرر پیدا می کنند استفاده میشود
- class AppName extends React.Component {
-    
-    constructor(props) {
-        super(props)
-        //Todo this code  متغییر   نمایش کد هست 
-this.code =`import React from "react";
+class AppName extends React.Component {
+  constructor(props) {
+    super(props);
+    //Todo this code  متغییر   نمایش کد هست
+    this.code = `import React from "react";
 import User from "./User";
 import Prism from 'prismjs';
 import PrismGe from './Prism';
@@ -68,82 +67,87 @@ return(
 
 export default AppName;`;
 
- this.state ={
-    users:[    
-           {id:1,name: "List_Done"},
-           {id:2,name: "ali"},
-           {id:3,name: "mamad"},
-           {id:4,name: "shahin"},
-           {id:5,name: "test"},
-           {id:6,name: "Mikele"}
-          ] 
-    }
+    this.state = {
+      users: [
+        { id: 1, name: "List_Done" },
+        { id: 2, name: "ali" },
+        { id: 3, name: "mamad" },
+        { id: 4, name: "shahin" },
+        { id: 5, name: "test" },
+        { id: 6, name: "Mikele" },
+      ],
+    };
     setTimeout(() => {
+      this.setState({
+        users: [
+          { id: 1, name: "Update_List" },
+          { id: 2, name: "jack" },
+          { id: 3, name: "Tomi" },
+          { id: 4, name: "sad" },
+          { id: 5, name: "hamid" },
+          { id: 6, name: "hani" },
+        ],
+      });
+    }, 4000);
+  }
+  clickHandler() {
+    console.log(this);
+  }
+  /**
+   * Sets the state of the component to update the list of users.
+   *
+   * @param {type} paramName - description of parameter
+   * @return {type} description of return value
+   */
+  changeUsersHandler() {
     this.setState({
-    users:[    
-           {id:1,name: "Update_List"},
-           {id:2,name: "jack"},
-           {id:3,name: "Tomi"},
-           {id:4,name: "sad"},
-           {id:5,name: "hamid"},
-           {id:6,name: "hani"}
-          ] 
-                 })
-                   
-                },4000)
-                     };
-                     clickHandler(){
-                       console.log(this);
-                     }
-                                          /**
-                      * Sets the state of the component to update the list of users.
-                      *
-                      * @param {type} paramName - description of parameter
-                      * @return {type} description of return value
-                      */
-                     changeUsersHandler(){
-                        this.setState(
-                            {
-                                users:[
-                                    {id:1,name: "Btn_List"},
-                                    {id:2,name: "ctrl"},
-                                    {id:3,name: "Alt"},
-                                    {id:4,name: "Shift"},
-                                    {id:5,name: "Enter"},
-                                    {id:6,name: "f1"}
-                                       ]
-                    }
-                           )
-                     }
-                          /**
-                          * Renders the component and returns the JSX code.
-                           *
-                             * @return {JSX} The JSX code representing the component.
-                               */
-render() {
-return(
-    <div className="flex h-96 m-5 ">
-    <div className="w-1/2 mx-8">
-    {/* onClick={this.clickHandler.bind(this)} */}
-    {/* onClick={ () => this.clickHandler()} */}
-        <h1 onClick={()=> this.clickHandler()} className="text-2xl text-red-500 font-bold ">{...this.state.users[0].name}</h1>
-        <button className="p-3 border m-4 rounded-xl hover:bg-slate-500" onClick={this.changeUsersHandler.bind(this)}>change btn keyboard</button>
-        <User className="mt-2" {...this.state.users[1]} />
-        <User {...this.state.users[2]} />
-        <User {...this.state.users[3]} />
-        <User {...this.state.users[4]} />
-        <User {...this.state.users[5]} />
-    </div>
-    <div className="w-1/2 mt-4 p-5 mx-8 mockup-code overflow-scroll bg-violet-300 text-primary-content">
-<code>
-    <PrismGe code={this.code} language="javascript" ></PrismGe>
-</code>
-
-</div>
-</div>
-)
-}
-
+      users: [
+        { id: 1, name: "Btn_List" },
+        { id: 2, name: "ctrl" },
+        { id: 3, name: "Alt" },
+        { id: 4, name: "Shift" },
+        { id: 5, name: "Enter" },
+        { id: 6, name: "f1" },
+      ],
+    });
+  }
+  /**
+   * Renders the component and returns the JSX code.
+   *
+   * @return {JSX} The JSX code representing the component.
+   */
+  render() {
+    return (
+      <div className="flex h-96 m-5 ">
+        <div className="w-1/2 mx-8">
+          {/* onClick={this.clickHandler.bind(this)} */}
+          {/* onClick={ () => this.clickHandler()} */}
+          <h1
+            onClick={() => this.clickHandler()}
+            className="text-2xl text-red-500 font-bold "
+          >
+            {...this.state.users[0].name}
+          </h1>
+          <button
+            className="p-3 border m-4 rounded-xl hover:bg-slate-500"
+            onClick={this.changeUsersHandler.bind(this)}
+          >
+            change btn keyboard
+          </button>
+          <User className="mt-2" {...this.state.users[1]} />
+          <User {...this.state.users[2]} />
+          <User {...this.state.users[3]} />
+          <User {...this.state.users[4]} />
+          <User {...this.state.users[5]} />
+        </div>
+        <div className="w-1/2 mt-4 p-5 mx-8 mockup-code overflow-scroll bg-violet-300 text-primary-content">
+          <code>
+            <PrismGe code={this.code} language="javascript"></PrismGe>
+          </code>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default AppName;

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import logoReactXs from '../assets/react-logo-xs.png'
-import Prism from 'prismjs';
-import PrismGe from '../utils/Prism';
-import  './BtnChangeClick.css'
+import logoReactXs from "../assets/react-logo-xs.png";
+import Prism from "prismjs";
+import PrismGe from "../utils/Prism";
+import "./BtnChangeClick.css";
 
 const code = `
 const content = [
@@ -93,43 +93,42 @@ export default function BtnChangeClick(){
     </div>
     );
   };
-`
+`;
 const content = [
   [
     "React is extremely popular",
     "It makes building complex, interactive UIs a breeze",
     "It's powerful & flexible",
-    "It has a very active and versatile ecosystem"
+    "It has a very active and versatile ecosystem",
   ],
   [
     "Components, JSX & Props",
     "State",
     "Hooks (e.g., useEffect())",
-    "Dynamic rendering"
+    "Dynamic rendering",
   ],
   [
     "Official web page (react.dev)",
     "Next.js (Fullstack framework)",
-    "React Native (build native mobile apps with React)"
+    "React Native (build native mobile apps with React)",
   ],
   [
     "Vanilla JavaScript requires imperative programming",
     "Imperative Programming: You define all the steps needed to achieve a result",
     "React on the other hand embraces declarative programming",
-    "With React, you define the goal and React figures out how to get there"
-  ]
+    "With React, you define the goal and React figures out how to get there",
+  ],
 ];
 /**
  * Renders a button that changes the active content index.
  *
  * @return {JSX.Element} The JSX element representing the button.
  */
-export default function BtnChangeClick(){
+export default function BtnChangeClick() {
+  const [activeContentIndex, setActiveContentIndex] = useState(0);
 
-    const [activeContentIndex, setActiveContentIndex] = useState(0);
-
-    return (
-        <div className="flex h-96 m-4 mx-8">
+  return (
+    <div className="flex h-96 m-4 mx-8">
       <div className="w-1/2">
         <header>
           <img src={logoReactXs} alt="React logo" />
@@ -175,11 +174,10 @@ export default function BtnChangeClick(){
         </div>
       </div>
       <div className="w-1/2 mt-4 p-5 mx-8 mockup-code overflow-scroll bg-violet-300 text-primary-content">
-<code>
-    <PrismGe code={code} language="javascript" ></PrismGe>
-</code>
-
-</div>
+        <code>
+          <PrismGe code={code} language="javascript"></PrismGe>
+        </code>
+      </div>
     </div>
-    );
-  };
+  );
+}

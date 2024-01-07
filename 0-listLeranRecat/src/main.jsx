@@ -1,17 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Header from './Header'
-import './index.css'
-import IndexLesson  from './IndexLesson '
-import Example  from './Example'
-import Dialog from './MyModal'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./Header";
+import "./index.css";
+import IndexLesson from "./IndexLesson ";
+import Example from "./Example";
+import Dialog from "./MyModal";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode >
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <Header />
-<IndexLesson />
+    <IndexLesson />
     <Dialog />
-    <Example  />
-
+    <Example />
   </React.StrictMode>,
-)
+);

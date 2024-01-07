@@ -1,17 +1,16 @@
 @font-face {
-    font-family: 'firaCode';
-    src: url('./font/FiraCode-VariableFont_wght.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: "firaCode";
+  src: url("./font/FiraCode-VariableFont_wght.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
-.hello{
-    color:rgb(255, 0, 0);
-    font-family: 'firaCode';
-   
-     /* background:url('../src/icon/logo__react.png') ; */
+.hello {
+  color: rgb(255, 0, 0);
+  font-family: "firaCode";
+
+  /* background:url('../src/icon/logo__react.png') ; */
 }
 
-.hello:hover{
-     
-    color:blue;
+.hello:hover {
+  color: blue;
 }

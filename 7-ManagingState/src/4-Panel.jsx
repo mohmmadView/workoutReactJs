@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Prism from "./utils/Prism";
 import CodePanel from "./codeString/AllCodeString";
-import PropTypes from 'prop-types';
- function ContainerPanel({men , and}) {
+import PropTypes from "prop-types";
+function ContainerPanel({ men, and }) {
   let [active, setActive] = useState(0);
 
   return (
@@ -47,7 +47,8 @@ import PropTypes from 'prop-types';
           />
           <p className="pt-4  text-success"></p>
         </div>
-        {men  }{and}
+        {men}
+        {and}
         <Prism widthIN="w-full " language="js" code={CodePanel[3]} />
       </div>
     </div>
@@ -71,7 +72,7 @@ import PropTypes from 'prop-types';
   //   );
   //   }
   // });
-  
+
   function Panel({ Title, childern, isActive, onShow, itemColors }) {
     return (
       <div className={`w-full p-4 border border-warning  ${itemColors}`}>
@@ -82,11 +83,10 @@ import PropTypes from 'prop-types';
         </button>
       </div>
     );
-
   }
 }
-export default ContainerPanel
-PropTypes.ContainerPanel={
-  men :PropTypes.string.isRequired,
-  and:PropTypes.array.isRequired
-}
+export default ContainerPanel;
+PropTypes.ContainerPanel = {
+  men: PropTypes.string.isRequired,
+  and: PropTypes.array.isRequired,
+};

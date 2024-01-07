@@ -412,13 +412,14 @@ const DataText = [
       );
     },
   },
- {
+  {
     WhatIsReactContext: () => {
       return (
         <p>
-          React Context provides us a way to pass data down through the component tree 
-          to where we need it without having to manually pass props at every single level.
-          It acts as a global storage space for all your components in your project.
+          React Context provides us a way to pass data down through the
+          component tree to where we need it without having to manually pass
+          props at every single level. It acts as a global storage space for all
+          your components in your project.
         </p>
       );
     },
@@ -427,11 +428,13 @@ const DataText = [
     ReactContextDifferent: () => {
       return (
         <p>
-        In prop threading, data is passed down from the parent component to the child component. If a child of 
-        that component needs the same prop, it is passed down until the required component gets the data.
-        While simple, it can become complex when traversing deeply nested structures, and this results in prop drilling.
-        In contrast, React Context allows data to be passed from the parent component to any nested 
-        component that requires it, simplifying the process.
+          In prop threading, data is passed down from the parent component to
+          the child component. If a child of that component needs the same prop,
+          it is passed down until the required component gets the data. While
+          simple, it can become complex when traversing deeply nested
+          structures, and this results in prop drilling. In contrast, React
+          Context allows data to be passed from the parent component to any
+          nested component that requires it, simplifying the process.
         </p>
       );
     },

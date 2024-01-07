@@ -16,16 +16,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
- 
 
 @layer utilities {
-
   .Rtl {
-
     direction: rtl;
-
   }
-
 }
 a {
   font-weight: 500;
@@ -42,7 +37,6 @@ body {
   place-items: center;
   /* min-width: 320px;
   min-height: 100vh; */
-  ;
 }
 
 h1 {

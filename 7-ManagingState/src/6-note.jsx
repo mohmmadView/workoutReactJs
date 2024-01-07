@@ -15,10 +15,11 @@ export default function Note() {
     <div className="w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl flex">
       <div className="w-1/3">
         <AddTask onAddTask={AddToList} />
-             {dataList.map((li) => ( <section key={li.id}>
-              <TaskNote check={li.check} edit={li.edit}  title={li.title}  />
-             </section> ))}
-       
+        {dataList.map((li) => (
+          <section key={li.id}>
+            <TaskNote check={li.check} edit={li.edit} title={li.title} />
+          </section>
+        ))}
       </div>
       <Code language={"js"} code={codeString[5]} />
     </div>
@@ -34,8 +35,7 @@ export default function Note() {
         if (li.id === edit) {
           console.log(li, edit);
           li.edit = !li.edit;
-        
-        
+
           return li;
         } else {
           li.edit = false;
@@ -80,50 +80,42 @@ export default function Note() {
       </div>
     );
   }
-  function TaskNote({  title, check , edit }) {
-    let  setTitle = useState("")
-   let [IdEdit , setEdit] = useState(false)
+  function TaskNote({ title, check, edit }) {
+    let setTitle = useState("");
+    let [IdEdit, setEdit] = useState(false);
     return (
       <div className="w-3/3  flex flex-col pt-8 p-2 justify-between">
-   
-          <div className="flex" >
-            <div className="flex w-8/12">
-              <input
-                checked={check}
-                className="w-4 mr-2"
-                type="checkbox"
-              />
-              <input
-                onChange={(e) =>setTitle( e.target.value)}
-                value={title}
-                className={
-                    IdEdit
-                    ? ` input input-accent bg-accent-content input-bordered max-w-xs }`
-                    : ` input input-ghost bg-accent-ghost input-bordered max-w-xs `
-                }
-                type="text"
-              />
-            </div>
-            <div className="w-4/12 flex justify-between">
-              <button
-                onClick={() => {
-                  setEdit(!IdEdit)
-                }}
-                className="btn btn-outline btn-sm self-center btn-secondary"
-              >
-                Edit
-              </button>
-              <button
-                onClick={() => {
-                  
-                }}
-                className="btn btn-sm self-center btn-error"
-              >
-                Delete
-              </button>
-            </div>
+        <div className="flex">
+          <div className="flex w-8/12">
+            <input checked={check} className="w-4 mr-2" type="checkbox" />
+            <input
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+              className={
+                IdEdit
+                  ? ` input input-accent bg-accent-content input-bordered max-w-xs }`
+                  : ` input input-ghost bg-accent-ghost input-bordered max-w-xs `
+              }
+              type="text"
+            />
           </div>
-      
+          <div className="w-4/12 flex justify-between">
+            <button
+              onClick={() => {
+                setEdit(!IdEdit);
+              }}
+              className="btn btn-outline btn-sm self-center btn-secondary"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => {}}
+              className="btn btn-sm self-center btn-error"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       </div>
     );
   }

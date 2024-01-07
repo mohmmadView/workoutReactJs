@@ -1,10 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-class MyComponent extends React.Component {
-
-
-
-
-    
-}
+class MyComponent extends React.Component {}

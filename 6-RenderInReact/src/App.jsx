@@ -2,11 +2,11 @@ import StageShot from "./1-snapShot";
 import StateUpdate from "./2-StateUpdate";
 import StateUpdateTrue from "./3-StateUpdateTrue";
 import UpdatingObject from "./4-UpdatingObject";
-import UpdatingObject__2 from './4-2-UpdateingObject';
-import UpdateArrow_note from './5-UpdatingArrays_note';
-import UpdateTransform  from './5.2-updateArray_Transforming';
-import Tmren from './6-Tmren';
-import Tmren2 from './7-Tmren-2';
+import UpdatingObject__2 from "./4-2-UpdateingObject";
+import UpdateArrow_note from "./5-UpdatingArrays_note";
+import UpdateTransform from "./5.2-updateArray_Transforming";
+import Tmren from "./6-Tmren";
+import Tmren2 from "./7-Tmren-2";
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import Code from "./utils/Prism";
@@ -47,7 +47,7 @@ export default function Counter__true() {
   }
   
 `;
- let CodeUpdatingObject = `
+  let CodeUpdatingObject = `
   import { useState } from 'react';
 export default function MovingDot() {
   const [position, setPosition] = useState({
@@ -74,7 +74,7 @@ export default function MovingDot() {
 }
 
 `;
-let CodeUpdatingObject__2 = `
+  let CodeUpdatingObject__2 = `
 import {useState} from 'react'
 import logoReact from './assets/react.svg'
 export default function ChangeWord() {
@@ -138,8 +138,8 @@ export default function ChangeWord() {
     )
 }
 
-`
-let codeNote=`
+`;
+  let codeNote = `
 import {useState} from 'react';
 let nextId = 0;
 export default function UpdateArray_note(){
@@ -168,8 +168,8 @@ export default function UpdateArray_note(){
     )
 }
 
-`
-let codeTransform=`
+`;
+  let codeTransform = `
 import { useState } from  "react"
 let initialShapes = [
   { id: 0, type: 'circle', x: 50, y: 100 },
@@ -213,7 +213,7 @@ setItems(nextShape);
         </div>
     )
 }
-`
+`;
   return (
     <>
       <Title title="Render in React" />
@@ -321,41 +321,46 @@ setItems(nextShape);
       <Example exampleNumber="" exampleName="Update Object" />
       <div className="flex justify-center">
         <UpdatingObject />
-         <Code code={CodeUpdatingObject} language="js" />
+        <Code code={CodeUpdatingObject} language="js" />
       </div>
-       <Example exampleNumber="" exampleName="Update Object__2" />
+      <Example exampleNumber="" exampleName="Update Object__2" />
       <div className="flex justify-center">
         <UpdatingObject__2 />
-         <Code code={CodeUpdatingObject__2} language="js" />
-        </div>
-          <Example exampleNumber="" exampleName="Update Object__useState__replace__useImmer" />
-               <div className="flex justify-center">
+        <Code code={CodeUpdatingObject__2} language="js" />
+      </div>
+      <Example
+        exampleNumber=""
+        exampleName="Update Object__useState__replace__useImmer"
+      />
+      <div className="flex justify-center">
         <p className="w-8/12 my-6 text-2xl text-primary bg-secondary p-8 rounded-lg">
-        If your state is deeply nested, you might want to consider flattening it. But, if you don’t want to change your state structure, you might prefer a shortcut to nested spreads. Immer is a popular library that lets you write using the convenient but mutating syntax and takes care of producing the copies for you. With Immer, the code you write looks like you are “breaking the rules” and mutating an object:
+          If your state is deeply nested, you might want to consider flattening
+          it. But, if you don’t want to change your state structure, you might
+          prefer a shortcut to nested spreads. Immer is a popular library that
+          lets you write using the convenient but mutating syntax and takes care
+          of producing the copies for you. With Immer, the code you write looks
+          like you are “breaking the rules” and mutating an object:
         </p>
-             
-             </div>
-              <Example exampleNumber="" exampleName="Note Updating Arrays in State" />
-              <div className="flex justify-center">
-               <UpdateArrow_note />
-                 <Code code={codeNote} language="js" />
-              </div>
-              <Example exampleNumber="" exampleName="updateArray_Transdorming" />
-                <div className="flex justify-center">
-                   <UpdateTransform />
-                     <Code code={codeTransform} language="js" />
-                </div>
+      </div>
+      <Example exampleNumber="" exampleName="Note Updating Arrays in State" />
+      <div className="flex justify-center">
+        <UpdateArrow_note />
+        <Code code={codeNote} language="js" />
+      </div>
+      <Example exampleNumber="" exampleName="updateArray_Transdorming" />
+      <div className="flex justify-center">
+        <UpdateTransform />
+        <Code code={codeTransform} language="js" />
+      </div>
 
-              <Example exampleNumber="" exampleName="Tmren" />
-                <div className="flex justify-center">
-                  <Tmren />
-                  </div>
-                   <Example exampleNumber="" exampleName="Tmren-2" />
-                <div className="flex justify-center">
-                  
-                  <Tmren2 />
-                  </div>
-       
+      <Example exampleNumber="" exampleName="Tmren" />
+      <div className="flex justify-center">
+        <Tmren />
+      </div>
+      <Example exampleNumber="" exampleName="Tmren-2" />
+      <div className="flex justify-center">
+        <Tmren2 />
+      </div>
     </>
   );
 }

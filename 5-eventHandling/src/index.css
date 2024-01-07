@@ -1,24 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.token{
-   
+.token {
 }
-.keyword{
-    color: red;
+.keyword {
+  color: red;
 }
-.operator{
-    color: cadetblue;
+.operator {
+  color: cadetblue;
 }
-.number{
-    color: green;
+.number {
+  color: green;
 }
-.punctuation{
-    color: chocolate;
+.punctuation {
+  color: chocolate;
 }
-.parameter{
-    color:rgb(255, 222, 8)
+.parameter {
+  color: rgb(255, 222, 8);
 }
-.string{
-    color: green;
+.string {
+  color: green;
 }

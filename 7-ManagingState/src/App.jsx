@@ -8,10 +8,11 @@ import Panel from "./4-Panel";
 import ChatList from "./5-ChatList";
 import NoteReducer from "./6-Note-reducer/index";
 import PassingDataNesting from "./7-PassingData/index.jsx";
+import ToggleTheme from './8-ToggleTheme/App.jsx'
 import "./App.css";
 import "./index.css";
 import DataText from "./TasksContext.jsx";
-import CardImport from './utils/card_Import.jsx'
+import CardImport from "./utils/card_Import.jsx";
 import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
 export default function App() {
   console.log(DataText[0].text_2);
@@ -62,12 +63,19 @@ export default function App() {
         {DataText[10].ExtractingStateLogicFa()}
       </Container>
       <Title title="React Context" />
-       <Container Title="What is React Context?">
+      <Container Title="What is React Context?">
         {DataText[13].WhatIsReactContext()}
       </Container>
       <Container Title="How is React Context Different from Prop Threading?">
-      {DataText[14].ReactContextDifferent()}
-      <img src={imgReactContext} className="w-full h-full mt-4" alt="React Context" />
+        {DataText[14].ReactContextDifferent()}
+        <img
+          src={imgReactContext}
+          className="w-full h-full mt-4"
+          alt="React Context"
+        />
+      </Container>
+      <Container Title="Toggle Theme">
+        <ToggleTheme />
       </Container>
       <Container Title="Passing data deeply with context  ">
         {DataText[11].PassingDataDeeplyWithContext()}
@@ -77,9 +85,10 @@ export default function App() {
         {DataText[12].PassingDataDeeplyWithContextFa()}
       </Container>
       <NoteReducer />
-      <Container >
-      <CardImport />
+      <Container>
+        <CardImport />
       </Container>
+    
     </div>
   );
 }

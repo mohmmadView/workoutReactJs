@@ -1,12 +1,12 @@
-import Modal  from '../utils/Modal'
-import logoReact from '../assets/react-logo-xs.png'
+import Modal from "../utils/Modal";
+import logoReact from "../assets/react-logo-xs.png";
 /**
 @external logoReact is a logo React @typedef {svg: string}
 @external Modal Component in Card1 Component button{BUYNow} in run Modal
 */
 //way 1
 /**
- * 
+ *
  * @param {string} [image=logoReact] - url image to default logoReact
  * @param {string} shoesName - name of shoes card-title
  * @param {number} sale - The sale price of the shoe.
@@ -14,31 +14,33 @@ import logoReact from '../assets/react-logo-xs.png'
  * @returns {ReactNode} The card component.
  */
 
-function Card({image=logoReact,shoesName,sale,children}){
-
-if(sale > 0){
-    return(
-<div className="card w-32 m-1 sm:w-44 md:w-52 md:m-2 lg:w-72  xl:w-96  shadow-xl ">
-  <figure><img src={image} alt="Shoes" /></figure>
-  <div className="card-body max-sm:p-2 max-sm:text-xs text-black bg-violet-300 ">
-    <h2 className="card-title text-sky-800">{shoesName}</h2>
-    <p>If a children Card Shoes choose?</p>
-    {children}
-    <div className="card-actions  justify-between">
-      <h1 className='max-sm:text-base text-4xl font-bold text-fuchsia-800'>{sale} $</h1>
-      <label htmlFor="my-modal-6" className="btn max-sm:w-11/12">Buy Now</label>
-  <Modal />
-
-    </div>
-  </div>
-</div>
-
-
-    )
+function Card({ image = logoReact, shoesName, sale, children }) {
+  if (sale > 0) {
+    return (
+      <div className="card w-32 m-1 sm:w-44 md:w-52 md:m-2 lg:w-72  xl:w-96  shadow-xl ">
+        <figure>
+          <img src={image} alt="Shoes" />
+        </figure>
+        <div className="card-body max-sm:p-2 max-sm:text-xs text-black bg-violet-300 ">
+          <h2 className="card-title text-sky-800">{shoesName}</h2>
+          <p>If a children Card Shoes choose?</p>
+          {children}
+          <div className="card-actions  justify-between">
+            <h1 className="max-sm:text-base text-4xl font-bold text-fuchsia-800">
+              {sale} $
+            </h1>
+            <label htmlFor="my-modal-6" className="btn max-sm:w-11/12">
+              Buy Now
+            </label>
+            <Modal />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-}
 
- export default Card
+export default Card;
 
 //  Way 2
 // function Card(props){
@@ -58,7 +60,6 @@ if(sale > 0){
 //     </div>
 //   </div>
 // </div>
-
 
 //     )
 // }
