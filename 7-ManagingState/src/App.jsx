@@ -8,7 +8,7 @@ import Panel from "./4-Panel";
 import ChatList from "./5-ChatList";
 import NoteReducer from "./6-Note-reducer/index";
 import PassingDataNesting from "./7-PassingData/index.jsx";
-import ToggleTheme from './8-ToggleTheme/App.jsx'
+import ToggleTheme from "./8-ToggleTheme/App.jsx";
 import "./App.css";
 import "./index.css";
 import DataText from "./TasksContext.jsx";
@@ -88,7 +88,6 @@ export default function App() {
       <Container>
         <CardImport />
       </Container>
-    
     </div>
   );
 }
