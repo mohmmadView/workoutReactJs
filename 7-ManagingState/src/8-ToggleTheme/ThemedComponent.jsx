@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme } from "./ThemeContext";
 /**
  * Renders a themed component.
@@ -26,4 +25,5 @@ const ThemedComponent = () => {
     </div>
   );
 };
+
 export default ThemedComponent;

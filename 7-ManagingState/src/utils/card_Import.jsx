@@ -14,7 +14,8 @@ export default function CardImport() {
   //   }
   // }
   const createContext = [
-    {
+    { 
+      id:1,
       name: "createContext",
       code: `
     (alias) function createContext<T>(defaultValue: T): Context<T>
@@ -22,6 +23,7 @@ export default function CardImport() {
       about: `  defaultValue: The value that you want the context to have when there is no matching context provider in the tree above the component that reads context. If you don’t have any meaningful default value, specify null. The default value is meant as a “last resort” fallback. It is static and never changes over time.`,
     },
     {
+      id:2,
       name: "useTasksDispatch",
       code: `
     (alias) function useTasksDispatch(): null
@@ -30,6 +32,7 @@ export default function CardImport() {
       about: `  context provider in the tree above the component that reads context. If you don’t have any meaningful default value, specify null. The default value is meant as a “last resort” fallback. It is static and never changes over time.`,
     },
     {
+      id:3,
       name: "useReducer",
       code: `
   (alias) function useReducer<R extends ReducerWithoutAction<any>, I>(reducer: R, initializerArg: I, initializer: (arg: I) => ReducerStateWithoutAction<R>): [ReducerStateWithoutAction<R>, DispatchWithoutAction] (+4 overloads)
@@ -39,6 +42,7 @@ An alternative to useState.
 useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values. It also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.`,
     },
     {
+      id:4,
       name: "useContext",
       code: `
     (alias) function useContext<T>(context: Context<T>): T
@@ -51,6 +55,7 @@ useReducer is usually preferable to useState when you have complex state logic t
 `,
     },
     {
+      id:5,
       name: "useReducer",
       code: `
   (alias) function useReducer<R extends ReducerWithoutAction<any>, I>(reducer: R, initializerArg: I, initializer: (arg: I) => ReducerStateWithoutAction<R>): [ReducerStateWithoutAction<R>, DispatchWithoutAction] (+4 overloads)
@@ -59,14 +64,27 @@ useReducer is usually preferable to useState when you have complex state logic t
 An alternative to useState.
 useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values. It also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.`,
     },
+    {
+      id:6,
+      name:"useEffect",
+      code:`
+      (alias) useEffect(effect: React.EffectCallback, deps?: React.DependencyList | undefined): void
+      
+      `,
+      about:`
+      Accepts a function that contains imperative, possibly effectful code.
+      @param effect — Imperative function that can return a cleanup function
+      @param deps — If present, effect will only activate if the values in the list change.
+      @version — 16.8.0
+      `
+    }
   ];
 
   return (
     <>
       {createContext.map((item) => (
-        <>
-          <div className="collapse collapse-arrow bg-secondary-content">
-            <input type="radio" name="my-accordion-2" checked="checked" />
+          <div key={item.id} className="collapse collapse-arrow bg-secondary-content">
+            <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               <div className="badge badge-warning text-center badge-lg text-2xl">
                 {item.name}
@@ -75,12 +93,10 @@ useReducer is usually preferable to useState when you have complex state logic t
             <div className="collapse-content ">
               <code className={`language-${"js"} bg-black`}>{`
            ${item.code}
-
             `}</code>
               <p>{item.about}</p>
             </div>
           </div>
-        </>
       ))}
     </>
   );

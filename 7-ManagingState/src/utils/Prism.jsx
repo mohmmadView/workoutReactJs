@@ -6,7 +6,6 @@ export default function Code({ code, language, widthIN }) {
   }, []);
   let [overflow, setOverflow] = useState(false);
   function handleClick() {
-    console.log(overflow);
     if (!overflow) {
       setOverflow(true);
     } else {

@@ -15,31 +15,24 @@ import DataText from "./TasksContext.jsx";
 import CardImport from "./utils/card_Import.jsx";
 import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
 export default function App() {
-  console.log(DataText[0].text_2);
   return (
     <div className="w-full">
       <Title title="Managing State" />
       <Container Title={"Intermediate"}>{DataText[0].Intermediate()}</Container>
-      <Container Title={"مدیریت وضعیت"}>
-        {DataText[1].ManagingState()}
+      <Container Title={"مدیریت وضعیت"}>{DataText[1].ManagingState()}
       </Container>
       <Example exampleNumber={1} exampleName={"Example State"} />
-      <Container Title={"Reacting to input with state"}>
-        {DataText[2].Reactingtoinput()}
-      </Container>
+      <Container Title={"Reacting to input with state"}>{DataText[2].Reactingtoinput()} </Container>
       <Container Title="واکنش به ورودی با استفاده از state" Direction="rtl">
-        <p style={{ direction: "rtl" }}>{DataText[3].ReactingToInputFa()}</p>
-      </Container>
+        {DataText[3].ReactingToInputFa()}
+        </Container>
       <CityQiuz />
       <CityQuiz2 />
-      {/* <ScrollY /> */}
       <Container Title={"Choosing the state structure"}>
         {DataText[4].ChoosingTheState()}
       </Container>
       <Container Direction={"rtl"} Title={"Choosing the state structure"}>
-        <p className="rtl" style={{ direction: "rtl" }}>
           {DataText[5].ChoosingTheStateFa()}
-        </p>
       </Container>
       <FullName />
       <Container Title={"Sharing state between components"}>
