@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTasks, useTasksDispatch } from "./TaskContext";
-
 export default function TaskList() {
   const tasks = useTasks();
   return (
