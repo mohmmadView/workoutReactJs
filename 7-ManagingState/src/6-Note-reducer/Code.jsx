@@ -1,7 +1,49 @@
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
-
+import TaskApp from ".";
 export default function Code(){
+    useEffect(() => {
+        Prism.highlightAll(Prism.highlight);
+      }, []);
+      let [overflow, setOverflow] = useState(false);
+      function handleClick() {
+        if (!overflow) {
+          setOverflow(true);
+        } else {
+          setOverflow(false);
+        }
+      }
+      return (
+        <div  className={`w-full  ml-2`}>
+           <div className="join m-auto w-3/6 flex justify-center  ">
+            <a href="#TaskApp"  className="join-item btn btn-outline  ">TaskApp.jsx</a>
+            <a href="#TaskList"  className="join-item btn btn-outline  ">TaskList.jsx</a>
+            <a href="#TaskContext"  className="join-item btn btn-outline">TaskContext.jsx</a>
+            <a href="#AddTask"  className="join-item btn btn-outline">AddTask.jsx</a>
+        </div>
+          <div className={
+              overflow
+                ? ``
+                : ` h-96 overflow-auto m-3.5` +
+                `w-full p-1 m-3 mockup-code text-white rounded-none text-left`}>
+            {codeTaskApp.map((code, index) => 
+               <code  key={index} id={fileName[index]} tabIndex={index} className="Code">
+                <h2 className="text-center text-success p-4 font-bold ">{fileName[index]+'.jsx'}</h2>
+                <pre>
+                    <code  className={`language-${'js'}`}>{code}</code>
+                </pre>
+                </code>
+            )}
+          </div>
+          <button
+            className="w-[100%]  btn  btn-warning rounded-t"
+            onClick={handleClick}>
+            more
+          </button>
+        </div>
+      );   
+}
+let fileName=["TaskApp","TaskContext","TaskList","AddTask"];
     let codeTaskApp = [
     `
 import AddTask from "./AddTask";
@@ -214,63 +256,3 @@ let nextId = 3;
 
    `
    ]
-    let [id , setId]=useState(0);
-    useEffect(() => {
-        Prism.highlightAll(Prism.highlight);
-      }, []);
-      let [overflow, setOverflow] = useState(false);
-      function handleClick() {
-        if (!overflow) {
-          setOverflow(true);
-        } else {
-          setOverflow(false);
-        }
-      }
-      return (
-        <div className={`w-full  ml-2`}>
-           <div className="m-auto w-3/6 flex justify-center bg-primary-content ring ">
-            <a href="#TaskApp"  className="hover:text-secondary p-3 text-primary  ">TaskApp.jsx</a>
-            <a href="#TaskList"  className="hover:text-secondary p-3 text-primary ">TaskList.jsx</a>
-            <a href="#TaskContext"  className="hover:text-secondary p-3 text-primary">TaskContext.jsx</a>
-            <a href="#AddTask"  className="hover:text-secondary p-3 text-primary">AddTask.jsx</a>
-        </div>
-          <div className={
-              overflow
-                ? ``
-                : ` h-96 overflow-auto ` +
-                `w-full p-1  mockup-code text-white rounded-none text-left`}>
-            <code id="TaskApp" tabIndex={0} className="Code">
-                <h2 className="text-center text-success font-bold">  index.jsx </h2>
-                <pre>
-                    <code className={`language-${'js'}`}>{codeTaskApp[0]}</code>
-                </pre>
-            </code>
-             <code id="TaskContext" tabIndex={1} className="Code">
-                <h2 className="text-center text-success font-bold p-4" > TaskContext.jsx </h2>
-                <pre>
-                    <code className={`language-${'js'}`}>{codeTaskApp[1]}</code>
-                </pre>
-            </code>
-              <code id="TaskList" tabIndex={2} className="Code">
-                <h2 className="text-center text-success font-bold p-4" >TaskList.jsx</h2>
-                <pre>
-                    <code className={`language-${'js'}`}>{codeTaskApp[2]}</code>
-                </pre>
-            </code>
-              <code id="AddTask" tabIndex={3} className="Code">
-                <h2 className="text-center text-success font-bold p-4" >AddTask.jsx</h2>
-                <pre  >
-                    <code className={`language-${'js'}`}>{codeTaskApp[3]}</code>
-                </pre>
-            </code>
-          </div>
-          <button
-            className="w-[100%]  btn  btn-warning rounded-t"
-            onClick={handleClick}>
-            more
-          </button>
-        </div>
-      );
-
-      
-}

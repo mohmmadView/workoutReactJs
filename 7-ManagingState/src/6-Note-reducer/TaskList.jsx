@@ -3,7 +3,7 @@ import { useTasks, useTasksDispatch } from "./TaskContext";
 export default function TaskList() {
   const tasks = useTasks();
   return (
-    <ul className="w-8/12">
+    <ul className=" my-8 ">
       {tasks.map((task) => (
         <li className="flex m-2" key={task.id}>
           <Task task={task} />
@@ -43,7 +43,7 @@ function Task({ task }) {
     );
   } else {
     taskContent = (
-      <div className="flex text-2xl w-6/12">
+      <div className="flex justify-center text-2xl w-8/12">
         <p className="w-full">{task.text}</p>
         <button
           className="btn btn-accent border border-purple-800 btn-circle ml-2"
@@ -55,7 +55,7 @@ function Task({ task }) {
     );
   }
   return (
-    <label className="w-full gap-4 flex ">
+    <label className="w-full gap-4 flex justify-center">
       <input
         className="checkbox checkbox-accent border border-purple-800"
         type="checkbox"
