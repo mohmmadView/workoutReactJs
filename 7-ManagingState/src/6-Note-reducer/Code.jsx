@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
-import TaskApp from ".";
+import '../index.css'
 export default function Code(){
     useEffect(() => {
         Prism.highlightAll(Prism.highlight);
@@ -31,7 +31,16 @@ export default function Code(){
                 <h2 className="flex justify-around text-center text-success p-4 font-bold ">{fileName[index]+'.jsx'}
                  <svg
           className=" fill-red-100 cursor-pointer"
-          onClick={()=>navigator.clipboard.writeText(code)}
+          onClick={()=>{
+            navigator.clipboard.writeText(code)
+            document.body.insertAdjacentHTML("afterbegin",`
+            <div id="alert" role="alert" class="alert alert-success w-1/12 fixed bottom-2 right-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <p>Copy</p>
+            </div>
+            `)
+            setTimeout(()=>(document.querySelector("#alert").remove()),3000)
+          }}
           viewBox="0 0 24 24"
           width="24"
           height="24"

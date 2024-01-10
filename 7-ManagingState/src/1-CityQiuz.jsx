@@ -61,7 +61,7 @@ export default function Form() {
         </form>
       </div>
 
-      <Prism language="js" code={CodeCityQiuz} />
+      <Prism language="js" code={CodeCityQiuz} fileName={"1-CityQuiz.jsx"} />
     </div>
   );
 

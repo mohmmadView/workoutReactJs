@@ -53,7 +53,7 @@ export default function FullName() {
             </p>
           </label>
         </div>
-        <Prism language="js" code={codeFullName[2]} />
+        <Prism language="js" code={codeFullName[2]} fileName={"3-fullName.jsx"} />
       </div>
     </div>
   );

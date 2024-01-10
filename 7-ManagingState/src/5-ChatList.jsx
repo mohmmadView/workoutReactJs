@@ -9,7 +9,7 @@ export default function ChatList() {
         <ContactList giveId={setId} list={contacts} />
         <Chat listContact={contacts[id]} />
       </div>
-      <Prism language="js" code={codeChatList[4]} />
+      <Prism language="js" code={codeChatList[4]} fileName={"5-ChatList.jsx"} />
     </div>
   );
 }

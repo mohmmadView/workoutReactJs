@@ -63,7 +63,7 @@ export default function CityQuiz() {
           Submit
         </button>
       </div>
-      <Prism language="js" code={CodeCityQiuz2[1]} />
+      <Prism language="js" code={CodeCityQiuz2[1]} fileName={"2-CityQiuz.jsx"} />
     </div>
   );
 }

@@ -13,6 +13,7 @@ export default function TaskApp() {
         <AddTask />
         <TaskList />
         <Code />
+  
       </TasksProvider>
     </div>
   );
