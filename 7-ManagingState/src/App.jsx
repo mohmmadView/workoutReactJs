@@ -15,7 +15,7 @@ import DataText from "./TasksContext.jsx";
 import CardImport from "./utils/card_Import.jsx";
 import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
 import { useTranslation, Trans } from 'react-i18next';
-import i18n from './i18n.jsx'
+
 const langs = {
   en : { nativeName: 'English' },
   fa  : { nativeName: 'فارسی' }
