@@ -81,6 +81,10 @@ export default function App() {
       <Container>
         <CardImport />
       </Container>
+      <Title title="Reacting to Input with State" />
+      <Container>
+
+      </Container>
     </div>
   );
 }
