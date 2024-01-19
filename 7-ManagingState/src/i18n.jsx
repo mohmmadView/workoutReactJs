@@ -2,7 +2,6 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from "i18next-browser-languagedetector";
 
-
 i18n
     .use(LanguageDetector)
     // detect user language
@@ -15,7 +14,7 @@ i18n
     debug: true,
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      escapeValue: true, // not needed for react as it escapes by default
     },
     resources: {
       en: {
@@ -24,22 +23,11 @@ i18n
            description: {
             part1:`
               <p>
-          With <span className="text-blue-400">React</span>, you won’t modify
-          the UI from code directly. For example, you won’t write commands like
-          “disable the button”, “enable the button”, “show the success message”,
-          etc. Instead, you will describe the UI you want to see for the
-          different visual states of your component
-          <span>(“initial state”, “typing state”, “success state”),</span> and
-          then trigger the <span>state</span> changes in response to user input.
-          This is similar to how designers think about UI. Here is a quiz form
-          built using React. Note how it uses the status <span>state</span>{" "}
-          variable to determine whether to enable or disable the submit button,
-          and whether to show the success message instead.
+    
         </p>
             
             `,
-            part2: 'Learn React',
-            part3: function(){ return(<div> Intermediate <a className="text-red">Love</a> </div> )}
+          }
           }
         }
       },
@@ -59,12 +47,10 @@ i18n
             به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت
             <span>(status)</span> برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال
             باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است</p>`,
-            part2: 'درس ریکت',
-            part3: 'مدیریت وضعیت<a class="text-red">عشق</a>'
           }
         }
       }
     }
-  });
+  );
 
 export default i18n;
