@@ -1,7 +1,6 @@
 const DataText = [
   {
     Intermediate: () => {
-   
       return (
         <p>
           As your application grows, it helps to be more intentional about how

@@ -1,5 +1,4 @@
 import { useState } from "react"
-
 export default function InputActive(){
 let [type ,setType] = useState("");
 let [disable,setDisable] = useState(true);
@@ -17,9 +16,8 @@ var timeOut ;
                     }} type="text" className="textarea textarea-secondary w-full max-w-xs" />
                 <button  className={`btn  btn-primary ml-4 h-full  ${disable ? "btn-disabled" : ""}`}
                 onClick={()=>{value==="iran" ? setType("Success") : setType("Error")   }}>Submit</button>
-              
             </div>
-              <span className={type == "Success"?"bg-success-content  text-success font-bold ":"text-error" }>{type}</span>
+            <span className={type == "Success"?"bg-success-content  text-success font-bold ":"text-error" }>{type}</span>
         </div>
     )
 
