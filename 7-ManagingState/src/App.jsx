@@ -15,24 +15,26 @@ import "./index.css";
 import DataText from "./TasksContext.jsx";
 import CardImport from "./utils/card_Import.jsx";
 import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
+import { useState } from "react";
 export default function App() {
+  let [lang ,setLang]=useState(true);
+
   return (
     <div className="w-full">
       <Title title="Managing State" />
       <button className="btn btn-outline  mx-2" onClick={()=>{
-        
+        setLang(true) 
         }}>fa</button>
       <button className="btn btn-outline  mx-2" onClick={()=>{
-          
+         setLang(false)
       }}>En</button>
-      <Container Title={"Intermediate"}>{DataText[0].Intermediate()}</Container>
+     {lang ?  <Container Title={"Managing State"}>{DataText[0].Intermediate()}</Container>: <Container Title={"مدیریت وضعیت"}>{DataText[1].ManagingState()}</Container> }
+      {/* <Container  Title={"Intermediate"}>{DataText[0].Intermediate()}</Container>
       <Container Title={"مدیریت وضعیت"}>{DataText[1].ManagingState()}
-      </Container>
+      </Container> */}
       <Example exampleNumber={1} exampleName={"Example State"} />
-      <Container Title={"Reacting to input with state"}>{DataText[2].Reactingtoinput()} </Container>
-      <Container Title="واکنش به ورودی با استفاده از state" Direction="rtl">
-        {DataText[3].ReactingToInputFa()}
-        </Container>
+      {lang ? <Container Title={"Reacting to input with state"}>{DataText[2].Reactingtoinput()} </Container>: <Container Title="واکنش به ورودی با استفاده از state" Direction="rtl">{DataText[3].ReactingToInputFa()}</Container>}
+     
       <CityQiuz />
       <CityQuiz2 />
       <Container Title={"Choosing the state structure"}>
