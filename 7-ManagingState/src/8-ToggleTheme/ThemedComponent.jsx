@@ -10,8 +10,7 @@ const ThemedComponent = () => {
     <div
       className={`w-2/3 m-auto p-2 
     ${theme === "success" ? "bg-success-content" : "bg-secondary-content"}
-    ${theme === "success" ? "text-success" : "text-secondary"}`}
-    >
+    ${theme === "success" ? "text-success" : "text-secondary"}`}>
       <h2 className="text-center text-lime-600">Themed Component</h2>
       <p className="text-center p-4">
         Current Theme:

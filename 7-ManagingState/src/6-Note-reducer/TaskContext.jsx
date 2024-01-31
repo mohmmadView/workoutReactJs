@@ -31,7 +31,7 @@ export function useTasksDispatch() {
  * @return {Array} - The updated array of tasks after the reduction.
  */
 function tasksReducer(tasks, action) {
-  switch (action.type){
+  switch (action.type) {
     case "added": {
       return [
         ...tasks,
@@ -43,7 +43,7 @@ function tasksReducer(tasks, action) {
       ];
     }
     case "changed": {
-      return tasks.map((t) => {
+      return tasks.map(t => {
         if (t.id === action.task.id) {
           return action.task;
         } else {
@@ -52,7 +52,7 @@ function tasksReducer(tasks, action) {
       });
     }
     case "deleted": {
-      return tasks.filter((t) => t.id !== action.id);
+      return tasks.filter(t => t.id !== action.id);
     }
     default: {
       throw Error("Unknown action: " + action.type);

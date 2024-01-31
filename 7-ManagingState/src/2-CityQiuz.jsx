@@ -50,20 +50,22 @@ export default function CityQuiz() {
         <p
           className={`${
             message === "answer is Good" ? "text-green-500" : "text-red-500"
-          }   `}
-        >
+          }   `}>
           {message}
         </p>
         <button
           onClick={handleSubmit}
           className={`btn btn-secondary w-1/3 self-center ${
             disable && "btn-disabled"
-          }`}
-        >
+          }`}>
           Submit
         </button>
       </div>
-      <Prism language="js" code={CodeCityQiuz2[1]} fileName={"2-CityQiuz.jsx"} />
+      <Prism
+        language="js"
+        code={CodeCityQiuz2[1]}
+        fileName={"2-CityQiuz.jsx"}
+      />
     </div>
   );
 }

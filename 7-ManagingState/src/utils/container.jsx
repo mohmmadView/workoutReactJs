@@ -6,10 +6,10 @@
  * @param {ReactNode} Children - The children to be rendered within the container.
  * @return {ReactElement} The rendered container component.
  */
-import  {downContext}  from "./downContext";
+import { downContext } from "./downContext";
 import { useContext } from "react";
 
-export default function Container({ children,Title, Direction }) {
+export default function Container({ children, Title, Direction }) {
   let numContainer = useContext(downContext);
   return (
     <div
@@ -19,9 +19,7 @@ export default function Container({ children,Title, Direction }) {
         {Title}
       </div>
       <downContext.Provider value={numContainer + 1}>
-      <p>
-        {children}
-      </p>
+        <p>{children}</p>
       </downContext.Provider>
     </div>
   );

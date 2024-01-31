@@ -48,11 +48,16 @@ function ContainerPanel({ men, and }) {
         </div>
         {men}
         {and}
-        <Prism widthIN="w-full " language="js" code={CodePanel[3]} fileName={"4-Panel.jsx"} />
+        <Prism
+          widthIN="w-full "
+          language="js"
+          code={CodePanel[3]}
+          fileName={"4-Panel.jsx"}
+        />
       </div>
     </div>
   );
-    function Panel({ Title, childern, isActive, onShow, itemColors }) {
+  function Panel({ Title, childern, isActive, onShow, itemColors }) {
     return (
       <div className={`w-full p-4 border border-warning  ${itemColors}`}>
         <span className="">{Title}</span>

@@ -4,18 +4,17 @@ function Section({ children }) {
   const level = useContext(LevelContext);
   return (
     <section
-      onClick={(e) => {
+      onClick={e => {
         e.target.addEventListener(
           "click",
-          (e) => {
+          e => {
             e.target.innerHTML = `<span class='text-red-500'>${(e.target.innerHTML +=
               " clicked")}</span>`;
           },
           { once: true },
         );
       }}
-      className="section border-2 border-primary p-4"
-    >
+      className="section border-2 border-primary p-4">
       <LevelContext.Provider value={level + 1}>
         {children}
       </LevelContext.Provider>

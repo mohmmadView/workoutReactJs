@@ -25,24 +25,21 @@ const App = () => {
           className="w-1/3 btn btn-primary btn-circle"
           onClick={() => {
             setCodeTheme((codeTheme = 6));
-          }}
-        >
+          }}>
           App.jsx
         </button>
         <button
           className="w-1/3 btn btn-primary btn-circle"
           onClick={() => {
             setCodeTheme((codeTheme = 7));
-          }}
-        >
+          }}>
           ThemeContext.jsx
         </button>
         <button
           className="w-1/3 btn btn-primary btn-circle"
           onClick={() => {
             setCodeTheme((codeTheme = 8));
-          }}
-        >
+          }}>
           ThemedComponent.jsx
         </button>
       </div>

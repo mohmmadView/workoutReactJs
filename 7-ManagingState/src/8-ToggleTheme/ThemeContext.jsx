@@ -15,9 +15,7 @@ const ThemeProvider = ({ children }) => {
    * @return {void} No return value.
    */
   const toggleTheme = () => {
-    setTheme((prevTheme) =>
-      prevTheme === "success" ? "secondary" : "success",
-    );
+    setTheme(prevTheme => (prevTheme === "success" ? "secondary" : "success"));
   };
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

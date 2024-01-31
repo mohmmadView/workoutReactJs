@@ -21,13 +21,12 @@ const contacts = [
 function ContactList({ list, giveId }) {
   return (
     <div className="w-5/12">
-      {list.map((contact) => {
+      {list.map(contact => {
         return (
           <button
             onClick={() => giveId(contact.id)}
             className="w-11/12 m-1 btn btn-primary flex"
-            key={contact.id}
-          >
+            key={contact.id}>
             {contact.name}
           </button>
         );
@@ -42,7 +41,7 @@ function Chat({ listContact }) {
       <textarea
         className="w-full textarea textarea-bordered h-4/6"
         placeholder={listContact.name}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={e => setMessage(e.target.value)}
         value={message}
       />
       <button className="w-5/6  mt-1 h-1/6 self-center btn btn-accent">

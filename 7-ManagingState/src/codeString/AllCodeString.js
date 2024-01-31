@@ -1,16 +1,9 @@
 let CodeCityQiuz = `
-  import { useState } from 'react';
-
+import { useState } from 'react';
 export default function Form() {
   const [answer, setAnswer] = useState('');
   const [error, setError] = useState(null);
   const [status, setStatus] = useState('typing');
-
-  if (status === 'success') {
-    return <h1>That's right!</h1>
-  }
-  
-
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus('submitting');
@@ -22,11 +15,9 @@ export default function Form() {
       setError(err);
     }
   }
-
   function handleTextareaChange(e) {
     setAnswer(e.target.value);
   }
-
   return (
     <div className='w-10/12 mx-auto my-12 bg-base-300 p-4 text-xl flex' >
     <div className='w-1/3 bg-base-100 p-4 border '>
@@ -60,7 +51,6 @@ export default function Form() {
 }
 
 function submitForm(answer) {
-  // Pretend it's hitting the network.
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let shouldError = answer.toLowerCase() !== 'lima'

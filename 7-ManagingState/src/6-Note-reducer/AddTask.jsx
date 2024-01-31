@@ -10,7 +10,7 @@ export default function AddTask() {
         className="input input-accent bg-accent-content input-bordered w-full max-w-xs"
         placeholder="Add task"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={e => setText(e.target.value)}
       />
       <button
         className="btn btn-accent border border-purple-800 btn-circle"
@@ -21,8 +21,7 @@ export default function AddTask() {
             id: nextId++,
             text: text,
           });
-        }}
-      >
+        }}>
         Add
       </button>
     </div>

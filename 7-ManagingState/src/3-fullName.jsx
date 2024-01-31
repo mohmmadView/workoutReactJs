@@ -10,12 +10,12 @@ export default function FullName() {
   let [name, setName] = useImmer({ firstName: "", lastName: "" });
 
   function handleChangeFirstName(e) {
-    setName((draft) => {
+    setName(draft => {
       draft.firstName = e.target.value;
     });
   }
   function handleChangeLastName(e) {
-    setName((draft) => {
+    setName(draft => {
       draft.lastName = e.target.value;
     });
   }
@@ -53,7 +53,11 @@ export default function FullName() {
             </p>
           </label>
         </div>
-        <Prism language="js" code={codeFullName[2]} fileName={"3-fullName.jsx"} />
+        <Prism
+          language="js"
+          code={codeFullName[2]}
+          fileName={"3-fullName.jsx"}
+        />
       </div>
     </div>
   );

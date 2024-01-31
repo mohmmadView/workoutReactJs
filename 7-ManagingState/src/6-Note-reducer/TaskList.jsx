@@ -4,7 +4,7 @@ export default function TaskList() {
   const tasks = useTasks();
   return (
     <ul className=" my-8 ">
-      {tasks.map((task) => (
+      {tasks.map(task => (
         <li className="flex m-2" key={task.id}>
           <Task task={task} />
         </li>
@@ -23,7 +23,7 @@ function Task({ task }) {
         <input
           className="input input-accent bg-accent-content input-bordered  max-w-xs"
           value={task.text}
-          onChange={(e) => {
+          onChange={e => {
             dispatch({
               type: "changed",
               task: {
@@ -35,8 +35,7 @@ function Task({ task }) {
         />
         <button
           className="btn btn-accent border border-purple-800 btn-circle"
-          onClick={() => setIsEditing(false)}
-        >
+          onClick={() => setIsEditing(false)}>
           Save
         </button>
       </>
@@ -47,8 +46,7 @@ function Task({ task }) {
         <p className="w-full">{task.text}</p>
         <button
           className="btn btn-accent border border-purple-800 btn-circle ml-2"
-          onClick={() => setIsEditing(true)}
-        >
+          onClick={() => setIsEditing(true)}>
           Edit
         </button>
       </div>
@@ -60,7 +58,7 @@ function Task({ task }) {
         className="checkbox checkbox-accent border border-purple-800"
         type="checkbox"
         checked={task.done}
-        onChange={(e) => {
+        onChange={e => {
           dispatch({
             type: "changed",
             task: {
@@ -78,8 +76,7 @@ function Task({ task }) {
             type: "deleted",
             id: task.id,
           });
-        }}
-      >
+        }}>
         Delete
       </button>
     </label>
