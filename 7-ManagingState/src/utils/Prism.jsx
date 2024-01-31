@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
+import { element } from "prop-types";
 export default function Code({ code, language, fileName, widthIN }) {
   useEffect(() => {
     Prism.highlightAll(Prism.highlight);
   }, []);
   let [overflow, setOverflow] = useState(false);
-  function handleClick() {
+  function handleClick(event) {
+    console.log(event.target.previousElementSibling.scrollHeight - 384);
     if (!overflow) {
       setOverflow(true);
     } else {
       setOverflow(false);
+    //TODO  scroll top  document.body.scrollTop= event.target.previousElementSibling.scrollHeight 
+    //   window.addEventListener("scroll", (e) => {
+    // ;});
     }
   }
   return (

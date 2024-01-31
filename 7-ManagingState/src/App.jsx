@@ -22,20 +22,22 @@ export default function App() {
   return (
     <div className="w-full">
       <Title title="Managing State" />
-      <button
-        className="btn btn-outline  mx-2"
-        onClick={() => {
-          setLang(false);
-        }}>
-        fa
-      </button>
-      <button
-        className="btn btn-outline  mx-2"
-        onClick={() => {
-          setLang(true);
-        }}>
-        En
-      </button>
+      <div className=" inline-flex p-2  fixed top-15 right-10 bg-primary-content ring-8 ring-primary  ring-offset-4 rounded-xl ">
+        <button
+          className="btn   btn-primary    btn-outline  mx-2"
+          onClick={() => {
+            setLang(false);
+          }}>
+          fa
+        </button>
+        <button
+          className="btn btn-outline  mx-2"
+          onClick={() => {
+            setLang(true);
+          }}>
+          En
+        </button>
+      </div>
       {lang ? (
         <Container Title={"Managing State"}>
           {DataText[0].Intermediate()}

@@ -101,7 +101,6 @@ export default function CityQuiz() {
     }   
 return (
     <div className="w-1/2   p-4 flex flex-col justify-between align-baseline ">
-
         <h1 className="text-3xl font-bold text-primary">City Quiz</h1>
         <p>It is one of the big cities of usa. The answer to the question?</p>
         <textarea onChange={textareaHandleChange} className="textarea textarea-secondary textarea-lg"/>
@@ -135,7 +134,6 @@ export default function FullName() {
             </div>
             <input
               type="text"
-              // value={e=>e.target.value}
               onChange={handleChangeFirstName}
               placeholder="Type here"
               className="input input-bordered w-full max-w-xs"
@@ -155,7 +153,6 @@ export default function FullName() {
             <p  className="pt-4 text-success">{name.firstName} {name.lastName}</p>
           </label>
         </div>
-        <Prism language="js" code={";sld;las"} />
       </div>
     </div>
   );
