@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 const ThemeContext = createContext();
 /**
  * Creates a theme provider component that wraps the provided children components.

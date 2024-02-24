@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import ThemedComponent from "./ThemedComponent";
 import { ThemeProvider } from "./ThemeContext";
-import Code from "./../utils/Prism";
+import Code from "./Code";
 import StringCode from "./../codeString/AllCodeString";
 /**
  * Render the App component.
@@ -20,30 +20,7 @@ const App = () => {
         </h1>
         <ThemedComponent />
       </div>
-      <div className="flex justify-between">
-        <button
-          className="w-1/3 btn btn-primary btn-circle"
-          onClick={() => {
-            setCodeTheme((codeTheme = 6));
-          }}>
-          App.jsx
-        </button>
-        <button
-          className="w-1/3 btn btn-primary btn-circle"
-          onClick={() => {
-            setCodeTheme((codeTheme = 7));
-          }}>
-          ThemeContext.jsx
-        </button>
-        <button
-          className="w-1/3 btn btn-primary btn-circle"
-          onClick={() => {
-            setCodeTheme((codeTheme = 8));
-          }}>
-          ThemedComponent.jsx
-        </button>
-      </div>
-      <Code widthIN={"w-full"} language={"js"} code={StringCode[codeTheme]} />
+      <Code className='mt-4' widthIN={"w-full"} language={"js"}  />
     </ThemeProvider>
   );
 };
