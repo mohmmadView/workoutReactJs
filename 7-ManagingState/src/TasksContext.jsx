@@ -153,6 +153,25 @@ const DataText = [
           bugs. The most important principle is that state shouldn’t contain
           redundant or duplicated information. If there’s unnecessary state,
           it’s easy to forget to update it, and introduce bugs!
+      <h1 className="text-secondary text-3xl p-4">Types of structure state</h1><br />
+       <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
+       <code>
+       <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
+       <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
+       <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
+       </code>
+        </p>
+         <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
+       <code>
+       <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
+       <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
+  {`{ title: 'pretzels',       id: 0 }`},<br />
+  {`{ title: 'crispy seaweed', id: 1 }`},<br />
+  {`{ title: 'granola bar',    id: 2 }`},<br />
+];;</span> <br />
+       <span className="text-yellow-500">const</span>  [items, setItems]        = <span className="text-green-500">useState(<span className="text-red-500">initialItems</span>);</span><br />
+       </code>
+        </p>
         </p>
       );
     },
@@ -191,7 +210,26 @@ const DataText = [
          </span> 
          در <span className="text-blue-500">React،</span> مهم است که وضعیت کامپوننت به نحوی طراحی شود که حاوی اطلاعات ضروری باشد 
          و اطلاعات تکراری یا اضافی حذف شوند. این کار باعث ساده‌تر شدن فرآیند توسعه، اشکال‌زدایی و نگهداری می‌شود. <br />
-       </p>
+        <h1 className="text-secondary text-3xl p-4">انواع ساختار  state</h1><br />
+       <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
+       <code>
+       <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
+       <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
+       <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
+       </code>
+        </p>
+         <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
+       <code>
+       <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
+       <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
+  {`{ title: 'pretzels',       id: 0 }`},<br />
+  {`{ title: 'crispy seaweed', id: 1 }`},<br />
+  {`{ title: 'granola bar',    id: 2 }`},<br />
+];;</span> <br />
+       <span className="text-yellow-500">const</span>  [items, setItems]        = <span className="text-green-500">useState(<span className="text-red-500">initialItems</span>);</span><br />
+       </code>
+        </p>
+      </p>
       );
     },
   },
@@ -428,6 +466,9 @@ const DataText = [
       );
     },
   },
+  // {
+ 
+  // },
 ];
 
 export default DataText;

@@ -154,6 +154,10 @@ export default function App() {
       <Container>
         <InputActive />
       </Container>
+      <Title title="Choosing the State Structure" />
+     <Container>
+        <InputActive />
+      </Container>
     </div>
   );
 }
