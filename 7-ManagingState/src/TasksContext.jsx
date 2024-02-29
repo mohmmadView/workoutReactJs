@@ -509,7 +509,7 @@ const DataText = [
 <span className="text-secondary">Escape Hatches </span>مکانیزم هایی هستند که به شما امکان می دهند از State یک مؤلفه به طور موقت خارج شوید. این می تواند در مواقعی مفید باشد که می خواهید به طور موقت State را تغییر دهید بدون اینکه بر State اصلی مؤلفه تأثیر بگذارد. <br /> 
 <h1 className="text-secondary text-3xl p-2">مثال عملی</h1> <br />
  فرض کنید یک مؤلفه داریم که یک شمارنده را نمایش می دهد. می خواهیم یک دکمه "افزایش" داشته باشیم که مقدار شمارنده را افزایش دهد.
-<Code  widthIN={"w-full"} code={`
+<Code fileName={"example"} widthIN={"w-full"} code={`
  const Counter = () => {
  const [count, setCount] = useState(0);
   const handleIncrease = () => {
@@ -523,7 +523,10 @@ const DataText = [
     </div>
   );
 };
-        `} language={"js"}></Code>
+        `} language={"js"}></Code><br />
+        حال فرض کنید می خواهیم یک دکمه "بازنشانی" نیز داشته باشیم که شمارنده را به 0 بازنشانی کند. اما می خواهیم این کار را بدون تغییر State اصلی مؤلفه انجام دهیم.
+
+برای این کار می توانیم از یک Escape Hatch به نام useState استفاده کنیم.
         </p>
       );
    }
