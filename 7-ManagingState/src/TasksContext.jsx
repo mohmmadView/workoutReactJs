@@ -1,3 +1,4 @@
+import Code from './utils/Prism'
 const DataText = [
   {
     Intermediate: () => {
@@ -156,15 +157,15 @@ const DataText = [
       <h1 className="text-secondary text-3xl p-4">Types of structure state</h1><br />
        <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
        <code>
-       <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
-       <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
-       <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
+       1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
+       2- <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
+       3- <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
        </code>
         </p>
          <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
        <code>
-       <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
-       <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
+       1- <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
+       2- <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
   {`{ title: 'pretzels',       id: 0 }`},<br />
   {`{ title: 'crispy seaweed', id: 1 }`},<br />
   {`{ title: 'granola bar',    id: 2 }`},<br />
@@ -213,20 +214,28 @@ const DataText = [
         <h1 className="text-secondary text-3xl p-4">انواع ساختار  state</h1><br />
        <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
        <code>
-       <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
-       <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
-       <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
+      1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
+      2- <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
+      3- <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
        </code>
         </p>
          <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
        <code>
-       <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
-       <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
+        <h1 className="px-6 pb-2 text-xl font-bold text-secondary">1. state object :</h1>
+          <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
+        <h1 className="px-6 py-2 font-bold text-xl text-secondary">2. state Array :</h1>
+          <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
   {`{ title: 'pretzels',       id: 0 }`},<br />
   {`{ title: 'crispy seaweed', id: 1 }`},<br />
   {`{ title: 'granola bar',    id: 2 }`},<br />
 ];;</span> <br />
        <span className="text-yellow-500">const</span>  [items, setItems]        = <span className="text-green-500">useState(<span className="text-red-500">initialItems</span>);</span><br />
+        <h1 className="px-6 pb-2 text-xl font-bold text-secondary">3. state nested object :</h1>
+       <span className="text-yellow-500">const</span> <span className="text-red-500"> [person, setPerson] </span>   = <span className="text-green-500">useState({`{`} <br />
+          {`{ title: 'pretzels',       id: 0 }`},<br />
+          {`{ title: 'crispy seaweed', id: 1 }`},<br />
+          {`{ title: 'granola bar',    id: 2 }`},<br />
+          {`}`});</span> <br />
        </code>
         </p>
       </p>
@@ -236,7 +245,7 @@ const DataText = [
   {
     SharingState: () => {
       return (
-        <p>
+        <p style={{ direction: "ltr" }}>
           Sometimes, you want the state of two components to always change
           together. To do it, remove state from both of them, move it to their
           closest common parent, and then pass it down to them via props. This
@@ -254,8 +263,8 @@ const DataText = [
     SharingStateFa: () => {
       return (
         <p style={{ direction: "rtl" }}>
-          گاهی اوقات، ممکن است بخواهید وضعیت دو جزء <span>React</span> همیشه با
-          هم تغییر کند. برای انجام این کار، باید وضعیت را از هر دو جزء حذف کنید،
+          گاهی اوقات، ممکن است بخواهید <span className="font-bold text-primary">state</span> دو جزء <span>React</span> همیشه با
+          هم تغییر کند. برای انجام این کار، باید <span className="font-bold text-primary">state</span> را از هر دو جزء حذف کنید،
           آن را به والد مشترک آنها منتقل کنید و سپس از طریق <span>props</span>{" "}
           به آنها منتقل کنید. این روش به نام "بالا بردن وضعیت"{" "}
           <span>(lifting state up)</span> شناخته می‌شود و یکی از رایج‌ترین
@@ -466,9 +475,59 @@ const DataText = [
       );
     },
   },
-  // {
- 
-  // },
+  {
+      EscapeHatches:()=>{
+        return (
+          <p>
+            Context provides an escape hatch in case you need to pass data down
+            from a parent component to a child component that doesn’t need it. In
+            this example, the Heading component asks the closest Section for its
+
+            <Code widthIN={"w-full"} fileName={"example"} code={`
+ const Counter = () => {
+ const [count, setCount] = useState(0);
+  const handleIncrease = () => {
+    // افزایش شمارنده
+    setCount(count + 1);
+  };
+  return (
+    <div>
+      <h1>شمارنده: {count}</h1>
+      <button onClick={handleIncrease}>افزایش</button>
+    </div>
+  );
+};
+        `} language={"js"}></Code>
+            </p>
+        );
+      }
+   },{
+
+    EscapeHatchesFa:()=>{
+      return (
+        <p>
+<span className="text-secondary">Escape Hatches </span>مکانیزم هایی هستند که به شما امکان می دهند از State یک مؤلفه به طور موقت خارج شوید. این می تواند در مواقعی مفید باشد که می خواهید به طور موقت State را تغییر دهید بدون اینکه بر State اصلی مؤلفه تأثیر بگذارد. <br /> 
+<h1 className="text-secondary text-3xl p-2">مثال عملی</h1> <br />
+ فرض کنید یک مؤلفه داریم که یک شمارنده را نمایش می دهد. می خواهیم یک دکمه "افزایش" داشته باشیم که مقدار شمارنده را افزایش دهد.
+<Code  widthIN={"w-full"} code={`
+ const Counter = () => {
+ const [count, setCount] = useState(0);
+  const handleIncrease = () => {
+    // افزایش شمارنده
+    setCount(count + 1);
+  };
+  return (
+    <div>
+      <h1>شمارنده: {count}</h1>
+      <button onClick={handleIncrease}>افزایش</button>
+    </div>
+  );
+};
+        `} language={"js"}></Code>
+        </p>
+      );
+   }
+  }
 ];
 
 export default DataText;

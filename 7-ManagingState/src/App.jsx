@@ -22,7 +22,7 @@ export default function App() {
   return (
     <div className="w-full">
       <Title title="Managing State" />
-      <div className=" inline-flex p-2  fixed top-15 right-10 bg-primary-content ring-8 ring-primary  ring-offset-4 rounded-xl ">
+      <div className="z-50 inline-flex p-2  fixed top-15 right-10 bg-primary-content ring-8 ring-primary  ring-offset-4 rounded-xl ">
         <button
           className="btn   btn-primary    btn-outline  mx-2"
           onClick={() => {
@@ -77,7 +77,7 @@ export default function App() {
           {DataText[6].SharingState()}
         </Container>
       ) : (
-        <Container Title={"Sharing state between components"} Direction={"rtl"}>
+        <Container Title={"به اشتراک گذاری  state بین کامپوننت ها"} Direction={"rtl"}>
           {DataText[7].SharingStateFa()}
         </Container>
       )}
@@ -154,10 +154,17 @@ export default function App() {
       <Container>
         <InputActive />
       </Container>
-      <Title title="Choosing the State Structure" />
-     <Container>
-        <InputActive />
-      </Container>
+      <Title title="Escape Hatches" />
+         {lang ? (
+        <Container  >
+          {DataText[18].EscapeHatches()}
+        </Container>
+      ) : (
+        <Container Direction={"rtl"} >
+          {" "}
+          {DataText[19].EscapeHatchesFa()}
+        </Container>
+      )}
     </div>
   );
 }
