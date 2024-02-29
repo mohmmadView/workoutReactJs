@@ -527,6 +527,27 @@ const DataText = [
         حال فرض کنید می خواهیم یک دکمه "بازنشانی" نیز داشته باشیم که شمارنده را به 0 بازنشانی کند. اما می خواهیم این کار را بدون تغییر State اصلی مؤلفه انجام دهیم.
 
 برای این کار می توانیم از یک Escape Hatch به نام useState استفاده کنیم.
+<Code fileName={"example"} widthIN={"w-full"} code={`
+ const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const handleReset = () => {
+    // بازنشانی شمارنده بدون تغییر State اصلی
+    setCount((prevState) => 0);
+  };
+
+  return (
+    <div>
+      <h1>شمارنده: {count}</h1>
+      <button onClick={handleIncrease}>افزایش</button>
+      <button onClick={handleReset}>بازنشانی</button>
+    </div>
+  );
+};
+        `} language={"js"}></Code><br />
+        در تابع handleReset، از useState برای دریافت State فعلی مؤلفه (prevState) استفاده می کنیم. سپس، مقدار جدید State را با استفاده از یک تابع به عنوان ورودی به setCount ارسال می کنیم.
+
+در این تابع، مقدار جدید State را به 0 تنظیم می کنیم. این کار State مؤلفه را بدون تغییر State اصلی بازنشانی می کند.
         </p>
       );
    }
