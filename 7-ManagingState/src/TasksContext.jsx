@@ -478,26 +478,32 @@ const DataText = [
   {
       EscapeHatches:()=>{
         return (
-          <p>
-            Context provides an escape hatch in case you need to pass data down
-            from a parent component to a child component that doesn’t need it. In
-            this example, the Heading component asks the closest Section for its
+          <p style={{direction:"ltr"}}>
+           Some of your components may need to control and synchronize with systems outside of React. For example, you might need to focus an input using the browser API, play and pause a video player implemented without React, or connect and listen to messages from a remote server. In this chapter, you’ll learn the escape hatches that let you “step outside” React and connect to external systems. Most of your application logic and data flow should not rely on these features
+<h1 className="text-secondary text-3xl p-2"> Referencing values with refs </h1> <br />
+<p>When you want a component to “remember” some information, but you don’t want that information to trigger new renders, you can use a ref:</p><br />
+<p className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</p>
+<p className='m-2'>Like state, refs are retained by React between re-renders. However, setting state re-renders a component. Changing a ref does not! You can access the current value of that ref through the ref.current property.</p>
+          <span className='m-2'>  <Code widthIN={"w-full"} fileName={"example"} code={`
+ import { useRef } from 'react';
 
-            <Code widthIN={"w-full"} fileName={"example"} code={`
- const Counter = () => {
- const [count, setCount] = useState(0);
-  const handleIncrease = () => {
-    // افزایش شمارنده
-    setCount(count + 1);
-  };
-  return (
-    <div>
-      <h1>شمارنده: {count}</h1>
-      <button onClick={handleIncrease}>افزایش</button>
-    </div>
-  );
-};
-        `} language={"js"}></Code>
+ export default function Counter() {
+   let ref = useRef(0);
+ 
+   function handleClick() {
+     ref.current = ref.current + 1;
+     alert('You clicked ' + ref.current + ' times!');
+   }
+ 
+   return (
+     <button onClick={handleClick}>
+       Click me!
+     </button>
+   );
+ }
+ 
+        `} language={"js"}></Code></span>
+        <p>A ref is like a secret pocket of your component that React doesn’t track. For example, you can use refs to store timeout IDs, DOM elements, and other objects that don’t impact the component’s rendering output.</p>
             </p>
         );
       }
@@ -506,48 +512,34 @@ const DataText = [
     EscapeHatchesFa:()=>{
       return (
         <p>
+     <span className="text-secondary">Escape Hatches </span>    ر برخی از اجزای شما ممکن است نیاز به کنترل و همگام سازی با سیستم های خارج از React داشته باشند. برای مثال، ممکن است لازم باشد یک ورودی را با استفاده از API مرورگر متمرکز کنید، پخش‌کننده ویدیویی را که بدون React اجرا شده است، پخش و متوقف کنید، یا پیام‌های یک سرور راه دور را متصل کنید و به آنها گوش دهید. در این فصل، دریچه‌های فرار را یاد می‌گیرید که به شما اجازه می‌دهند «بیرون بروید» React و به سیستم‌های خارجی متصل شوید. بیشتر منطق برنامه و جریان داده شما نباید به این ویژگی ها متکی باشد.<br />
 <span className="text-secondary">Escape Hatches </span>مکانیزم هایی هستند که به شما امکان می دهند از State یک مؤلفه به طور موقت خارج شوید. این می تواند در مواقعی مفید باشد که می خواهید به طور موقت State را تغییر دهید بدون اینکه بر State اصلی مؤلفه تأثیر بگذارد. <br /> 
-<h1 className="text-secondary text-3xl p-2">مثال عملی</h1> <br />
- فرض کنید یک مؤلفه داریم که یک شمارنده را نمایش می دهد. می خواهیم یک دکمه "افزایش" داشته باشیم که مقدار شمارنده را افزایش دهد.
+<span> تعریف دیگه از Escape Hatches</span><br />
+در برخی موارد، ممکن است لازم باشد از State خارج شوید و به طور مستقیم DOM را دستکاری کنید. برای این کار می توانید از Escape Hatches استفاده کنید.
+<h1 className="text-secondary text-3xl p-2">Referencing values with refs</h1> <br />
+<p>وقتی می‌خواهید یک مؤلفه اطلاعاتی را «به خاطر بسپارد»، اما نمی‌خواهید این اطلاعات رندرهای جدیدی را ایجاد کند، می‌توانید از یک ref استفاده کنید:</p>
+<p style={{direction:"ltr"}} className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</p>
+<p>مانند حالت، ref ها توسط React بین رندرهای مجدد حفظ می شوند. با این حال، تنظیم وضعیت یک مؤلفه را دوباره ارائه می کند. تغییر یک رف انجام نمی شود! شما می توانید از طریق ویژگی ref.current به مقدار فعلی آن ref دسترسی پیدا کنید.</p>
 <Code fileName={"example"} widthIN={"w-full"} code={`
- const Counter = () => {
- const [count, setCount] = useState(0);
-  const handleIncrease = () => {
-    // افزایش شمارنده
-    setCount(count + 1);
-  };
-  return (
-    <div>
-      <h1>شمارنده: {count}</h1>
-      <button onClick={handleIncrease}>افزایش</button>
-    </div>
-  );
-};
+ import { useRef } from 'react';
+
+ export default function Counter() {
+   let ref = useRef(0);
+ 
+   function handleClick() {
+     ref.current = ref.current + 1;
+     alert('You clicked ' + ref.current + ' times!');
+   }
+ 
+   return (
+     <button onClick={handleClick}>
+       Click me!
+     </button>
+   );
+ }
+ 
         `} language={"js"}></Code><br />
-        حال فرض کنید می خواهیم یک دکمه "بازنشانی" نیز داشته باشیم که شمارنده را به 0 بازنشانی کند. اما می خواهیم این کار را بدون تغییر State اصلی مؤلفه انجام دهیم.
-
-برای این کار می توانیم از یک Escape Hatch به نام useState استفاده کنیم.
-<Code fileName={"example"} widthIN={"w-full"} code={`
- const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  const handleReset = () => {
-    // بازنشانی شمارنده بدون تغییر State اصلی
-    setCount((prevState) => 0);
-  };
-
-  return (
-    <div>
-      <h1>شمارنده: {count}</h1>
-      <button onClick={handleIncrease}>افزایش</button>
-      <button onClick={handleReset}>بازنشانی</button>
-    </div>
-  );
-};
-        `} language={"js"}></Code><br />
-        در تابع handleReset، از useState برای دریافت State فعلی مؤلفه (prevState) استفاده می کنیم. سپس، مقدار جدید State را با استفاده از یک تابع به عنوان ورودی به setCount ارسال می کنیم.
-
-در این تابع، مقدار جدید State را به 0 تنظیم می کنیم. این کار State مؤلفه را بدون تغییر State اصلی بازنشانی می کند.
+        <p>یک ref مانند یک جیب مخفی از مؤلفه شما است که React آن را ردیابی نمی کند. برای مثال، می‌توانید از refs timeout IDs, DOM elements و سایر اشیایی که بر خروجی رندر مؤلفه تأثیر نمی‌گذارند استفاده کنید.</p>
         </p>
       );
    }

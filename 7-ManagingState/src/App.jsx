@@ -10,6 +10,7 @@ import NoteReducer from "./6-Note-reducer/index";
 import PassingDataNesting from "./7-PassingData/index.jsx";
 import ToggleTheme from "./8-ToggleTheme/App.jsx";
 import InputActive from "./9-inputIsActive/index.jsx";
+import EscapeHatches from "./10-Escape_Hatches/index.jsx";
 import "./App.css";
 import "./index.css";
 import DataText from "./TasksContext.jsx";
@@ -164,7 +165,11 @@ export default function App() {
           {" "}
           {DataText[19].EscapeHatchesFa()}
         </Container>
+        
       )}
+      <Container Title="Example of Escape Hatches">
+        <EscapeHatches />
+      </Container>
     </div>
   );
 }

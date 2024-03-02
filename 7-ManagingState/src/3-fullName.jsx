@@ -9,7 +9,7 @@ import codeFullName from "./codeString/AllCodeString.js";
 export default function FullName() {
   let [name, setName] = useImmer({ firstName: "", lastName: "" });
 
-  function handleChangeFirstName(e) {
+  function handleChangeFirstName(e) {rophone in linux
     setName(draft => {
       draft.firstName = e.target.value;
     });
