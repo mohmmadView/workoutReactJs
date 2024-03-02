@@ -15,6 +15,7 @@ import "./App.css";
 import "./index.css";
 import DataText from "./TasksContext.jsx";
 import CardImport from "./utils/card_Import.jsx";
+import CardImportFa from "./utils/card_ImportFa.jsx";
 import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
 import { useState } from "react";
 export default function App() {
@@ -148,9 +149,15 @@ export default function App() {
       )}
       <PassingDataNesting />
       <NoteReducer />
+      {lang ? (
       <Container>
         <CardImport />
-      </Container>
+      </Container> ): (
+        <Container>
+          <CardImportFa />
+        </Container>
+      )}
+      
       <Title title="Reacting to Input with State" />
       <Container>
         <InputActive />

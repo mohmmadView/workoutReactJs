@@ -77,9 +77,19 @@ useReducer is usually preferable to useState when you have complex state logic t
       @param deps — If present, effect will only activate if the values in the list change.
       @version — 16.8.0
       `,
-    },
+    },{
+      id:7,
+      name:"useRef",
+      code:`
+     (alias) function useRef<T>(initialValue: T): MutableRefObject<T> (+2 overloads)
+      `,
+      about:`
+     useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component.
+Note that useRef() is useful for more than the ref attribute. It’s handy for keeping any mutable value around similar to how you’d use instance fields in classes.
+@version — 16.8.0
+      `
+    }
   ];
-
   return (
     <>
       {createContext.map(item => (
@@ -92,11 +102,11 @@ useReducer is usually preferable to useState when you have complex state logic t
               {item.name}
             </div>
           </div>
-          <div className="collapse-content ">
+          <div className="collapse-content flex flex-col">
             <code className={`language-${"js"} bg-black`}>{`
            ${item.code}
             `}</code>
-            <p>{item.about}</p>
+            <p className="p-2 m-2 border border-primary bg-primary-content">{item.about}</p>
           </div>
         </div>
       ))}
