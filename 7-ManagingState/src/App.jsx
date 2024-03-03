@@ -175,7 +175,7 @@ export default function App() {
         
       )}
       <Container Title="Example of Escape Hatches">
-        <EscapeHatches />
+        <EscapeHatches lang={lang} />
       </Container>
     </div>
   );
