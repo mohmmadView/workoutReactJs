@@ -204,8 +204,8 @@ const DataText = [
          ۴ مهارت‌های مدیریت وضعیت<span>(state) </span>وضعیت: <br />
          </span> 
          مدیریت وضعیت یک مهارت مهم در <span className="text-blue-500">React</span> است. استفاده از مفاهیمی مانند 
-        <span> "lifting state up"</span> برای به‌اشتراک‌گذاری وضعیت بین کامپوننت‌ها و 
-        <span> "useEffect" </span>برای کنترل جریان عمر کامپوننت‌ها کمک می‌کند. <br />
+        <span> lifting state up</span> برای به‌اشتراک‌گذاری وضعیت بین کامپوننت‌ها و 
+        <span> useEffect </span>برای کنترل جریان عمر کامپوننت‌ها کمک می‌کند. <br />
          <span className="text-primary">
          5 اهمیت به‌روزرسانی دقیق: <br />
          </span> 
@@ -266,7 +266,7 @@ const DataText = [
           گاهی اوقات، ممکن است بخواهید <span className="font-bold text-primary">state</span> دو جزء <span>React</span> همیشه با
           هم تغییر کند. برای انجام این کار، باید <span className="font-bold text-primary">state</span> را از هر دو جزء حذف کنید،
           آن را به والد مشترک آنها منتقل کنید و سپس از طریق <span>props</span>{" "}
-          به آنها منتقل کنید. این روش به نام "بالا بردن وضعیت"{" "}
+          به آنها منتقل کنید. این روش به نام بالا بردن وضعیت"{" "}
           <span>(lifting state up)</span> شناخته می‌شود و یکی از رایج‌ترین
           روش‌های نوشتن کد <span>React</span> است. در این مثال، فقط یک پانل باید
           در یک زمان فعال باشد. برای دستیابی به این هدف، به جای ذخیره وضعیت فعال
