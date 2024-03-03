@@ -15,7 +15,7 @@ export default function Container({ children, Title, Direction }) {
     <div
       style={{ direction: `${Direction}` }}
       className="w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl">
-      <div className="divider divider-warning text-secondary font-bold text-3xl">
+      <div className="divider divider-warning text-secondary font-bold text-3xl max-md:text-xl">
         {Title}
       </div>
       <downContext.Provider value={numContainer + 1}>

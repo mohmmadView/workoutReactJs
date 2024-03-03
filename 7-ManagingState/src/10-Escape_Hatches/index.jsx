@@ -3,6 +3,7 @@ export default function EscapeHatches(lang) {
   let ref = useRef(0);
  let [startTimer, setStartTimer] = useState(null);
  let [now,setNow]=useState(null);
+ let [bol,setBol]=useState(false); 
  let intervalRef = useRef(null);
  function handleStart(){
   setStartTimer(Date.now());
@@ -14,15 +15,26 @@ export default function EscapeHatches(lang) {
  }
  function handlerStop(){
   clearInterval(intervalRef.current);
+  setBol(false);
+  console.log("now :" +now,"startTimer :" +startTimer);
  }
  let secondsPassed = 0 ;
  if(now != null && startTimer !=null){
   secondsPassed = (now - startTimer) / 1000;
  }
+ 
    function handleClick() {
      ref.current = ref.current + 1;
      alert('You clicked ' + ref.current + ' times!');
    }
+   function handlerContinue(){
+if(!bol){
+    intervalRef.current = setInterval(()=>{
+      setNow(Date.now())
+    },10);
+    setBol(true);
+console.log(secondsPassed);
+   }}
  
    return (
     <div className='flex flex-col items-center'>
@@ -38,6 +50,9 @@ export default function EscapeHatches(lang) {
         </button>
          <button className='btn btn-circle btn-warning w-24' onClick={handlerStop}>
           Stop
+        </button> 
+        <button className='btn btn-circle btn-success w-24' onClick={handlerContinue}>
+        continues
         </button>
      </div>
      {lang.lang?(<p>When a piece of information is used for rendering, keep it in state. When a piece of information is only needed by event handlers and changing it doesn’t require a re-render, 
