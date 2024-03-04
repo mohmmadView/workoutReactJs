@@ -20,7 +20,7 @@ export default function FullName() {
     });
   }
   return (
-    <div className="w-10/12 mx-auto my-12 bg-base-300 p-10 text-xl">
+    <div className="w-11/12 mx-auto my-12 bg-base-300 p-10 text-xl">
       <p className="p-2 text-success">
         For example, this form has a redundant fullName state variable:
       </p>

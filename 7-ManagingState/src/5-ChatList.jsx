@@ -4,7 +4,7 @@ import codeChatList from "./codeString/AllCodeString";
 export default function ChatList() {
   let [id, setId] = useState(0);
   return (
-    <div className="w-10/12 mx-auto my-12 bg-base-300 flex p-10 text-xl">
+    <div className="w-11/12 mx-auto my-12 bg-base-300 flex p-10 text-xl">
       <div className="w-1/3 flex">
         <ContactList giveId={setId} list={contacts} />
         <Chat listContact={contacts[id]} />

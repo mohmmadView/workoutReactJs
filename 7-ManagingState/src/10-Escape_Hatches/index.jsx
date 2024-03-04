@@ -1,4 +1,5 @@
  import { useRef , useState} from 'react';
+import Code from '../utils/Prism'
 export default function EscapeHatches(lang) {
   let ref = useRef(0);
  let [startTimer, setStartTimer] = useState(null);
@@ -13,29 +14,28 @@ export default function EscapeHatches(lang) {
     setNow(Date.now())
   },10)
  }
+
  function handlerStop(){
   clearInterval(intervalRef.current);
   setBol(false);
-  console.log("now :" +now,"startTimer :" +startTimer);
  }
  let secondsPassed = 0 ;
  if(now != null && startTimer !=null){
   secondsPassed = (now - startTimer) / 1000;
  }
- 
    function handleClick() {
      ref.current = ref.current + 1;
      alert('You clicked ' + ref.current + ' times!');
    }
    function handlerContinue(){
+     setNow(Date.now())
 if(!bol){
+  clearInterval(intervalRef.current);
     intervalRef.current = setInterval(()=>{
-      setNow(Date.now())
+        setNow(Date.now());
     },10);
-    setBol(true);
-console.log(secondsPassed);
-   }}
- 
+   }
+  }
    return (
     <div className='flex flex-col items-center'>
        <div className="divider text-primary divider-accent">Alert click number </div>
@@ -149,6 +149,41 @@ console.log(secondsPassed);
         <p>اگر مؤلفه شما نیاز به ذخیره مقداری دارد، اما بر منطق رندر تأثیر نمی گذارد، refs را انتخاب کنید.</p>
      </ul>
      </div>)}
+     <div className="divider  divider-primary text-red-700">Manipulating the DOM with refs </div>
+     <p className='bg-primary-content/20 p-4'>React automatically updates the DOM to match your render output, so your components won’t often need to manipulate it. However, sometimes you might need access to the DOM elements managed by React—for example, to focus a node, scroll to it, or measure its size and position. There is no built-in way to do those things in React, so you will need a ref to the DOM node. For example, clicking the button will focus the input using a ref:</p>
+     <Code fileName={"example"} widthIN={"w-full"} code={`
+ import { useRef } from 'react';
+ export default function Counter() {
+   let ref = useRef(0);
+   function handleClick() {
+     ref.cimport { useRef } from 'react';
+     export default function Form() {
+       const inputRef = useRef(null);
+       function handleClick() {
+         inputRef.current.focus();
+       }
+       return (
+         <>
+           <input ref={inputRef} />
+           <button onClick={handleClick}>
+             Focus the input
+           </button>
+         </>
+       );
+     }
+     urrent = ref.current + 1;
+     alert('You clicked ' + ref.current + ' times!');
+   }
+ 
+   return (
+     <button onClick={handleClick}>
+     
+       Click me!
+     </button>
+   );
+ }
+ 
+        `} language={"js"}></Code><br />
     </div>
    );
 }

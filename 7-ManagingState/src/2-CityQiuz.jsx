@@ -37,7 +37,7 @@ export default function CityQuiz() {
     }
   }
   return (
-    <div className="w-10/12 mx-auto my-12 bg-base-300 p-4 text-xl flex">
+    <div className="w-11/12 mx-auto my-12 bg-base-300 p-4 text-xl flex">
       <div className="w-1/3 sticky top-5 h-72 mb-24 gap-2 p-4 flex flex-col justify-between align-baseline ">
         <h1 className="text-3xl font-bold text-primary">City Quiz</h1>
         <p>
