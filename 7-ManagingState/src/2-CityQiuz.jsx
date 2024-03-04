@@ -39,27 +39,31 @@ export default function CityQuiz() {
   return (
     <div className="w-11/12 mx-auto my-12 bg-base-300 p-4 text-xl flex">
       <div className="w-1/3 sticky top-5 h-72 mb-24 gap-2 p-4 flex flex-col justify-between align-baseline ">
-        <h1 className="text-3xl font-bold text-primary">City Quiz</h1>
+        <h1 className="text-3xl font-bold text-primary">City Quiz 2</h1>
         <p>
           It is one answer the big cities of usa. The answer to the question?
         </p>
-        <textarea
-          onChange={textareaHandleChange}
-          className="textarea textarea-secondary textarea-lg "
-        />
-        <p
-          className={`${
-            message === "answer is Good" ? "text-green-500" : "text-red-500"
-          }   `}>
-          {message}
-        </p>
-        <button
-          onClick={handleSubmit}
-          className={`btn btn-secondary w-1/3 self-center ${
-            disable && "btn-disabled"
-          }`}>
-          Submit
-        </button>
+        <form id="cityQuizForm" className="">
+          
+          <textarea
+          name="cityQuizForm"
+            onChange={textareaHandleChange}
+            className="textarea textarea-secondary textarea-lg "
+          />
+          <p
+            className={`${
+              message === "answer is Good" ? "text-green-500" : "text-red-500"
+            }   `}>
+            {message}
+          </p>
+          <button
+            onClick={handleSubmit}
+            className={`btn btn-secondary w-1/3 self-center ${
+              disable && "btn-disabled"
+            }`}>
+            Submit
+          </button>
+        </form>
       </div>
       <Prism
         language="js"

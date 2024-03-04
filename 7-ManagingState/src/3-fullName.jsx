@@ -9,7 +9,7 @@ import codeFullName from "./codeString/AllCodeString.js";
 export default function FullName() {
   let [name, setName] = useImmer({ firstName: "", lastName: "" });
 
-  function handleChangeFirstName(e) {rophone in linux
+  function handleChangeFirstName(e) {
     setName(draft => {
       draft.firstName = e.target.value;
     });
@@ -26,30 +26,32 @@ export default function FullName() {
       </p>
       <div className="flex">
         <div className="w-1/3 h-48 sticky top-5 m-4">
-          <label className="form-control w-full max-w-xs">
+          <label id="inputName" className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">What is your First name?</span>
+              <span className="label-text text-primary">What is your First name?</span>
             </div>
             <input
+            name="inputName"
               type="text"
               onChange={handleChangeFirstName}
               placeholder="Type here"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-primary w-full max-w-xs"
             />
             <div className="label"></div>
           </label>
-          <label className="form-control w-full max-w-xs">
+          <label id="inputLastName" className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">What is your Last name?</span>
+              <span className="label-text text-primary">What is your Last name?</span>
             </div>
             <input
+            name="inputLastName"
               type="text"
               onChange={handleChangeLastName}
               placeholder="Type here"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-primary input-bordered w-full max-w-xs"
             />
             <p className="pt-4 text-success">
-              {name.firstName} {name.lastName}
+              <span >{name.firstName}</span><span className="text-lime-500"> {name.lastName}</span>
             </p>
           </label>
         </div>

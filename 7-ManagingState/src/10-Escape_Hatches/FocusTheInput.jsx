@@ -1,6 +1,6 @@
 import {useRef} from 'react';
 import Code from '../utils/Prism'
-export default function Form(){
+export default function FocusInInput(){
     const inputRef = useRef(null);
 
     function handleClick(){
@@ -11,7 +11,7 @@ export default function Form(){
       
  <Code fileName={"example"} widthIN={"w-full"} code={`
 import { useRef } from 'react';
-export default function Form() {
+export default function FocusInInput() {
 const inputRef = useRef(null);
 
   function handleClick() {
