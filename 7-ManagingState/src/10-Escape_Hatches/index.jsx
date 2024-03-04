@@ -1,4 +1,5 @@
  import { useRef , useState} from 'react';
+ import InputFocus from './FocusTheInput.jsx';
 import Code from '../utils/Prism'
 export default function EscapeHatches(lang) {
   let ref = useRef(0);
@@ -152,38 +153,25 @@ if(!bol){
      <div className="divider  divider-primary text-red-700">Manipulating the DOM with refs </div>
      <p className='bg-primary-content/20 p-4'>React automatically updates the DOM to match your render output, so your components won’t often need to manipulate it. However, sometimes you might need access to the DOM elements managed by React—for example, to focus a node, scroll to it, or measure its size and position. There is no built-in way to do those things in React, so you will need a ref to the DOM node. For example, clicking the button will focus the input using a ref:</p>
      <Code fileName={"example"} widthIN={"w-full"} code={`
- import { useRef } from 'react';
- export default function Counter() {
-   let ref = useRef(0);
-   function handleClick() {
-     ref.cimport { useRef } from 'react';
-     export default function Form() {
-       const inputRef = useRef(null);
-       function handleClick() {
-         inputRef.current.focus();
-       }
-       return (
-         <>
-           <input ref={inputRef} />
-           <button onClick={handleClick}>
-             Focus the input
-           </button>
-         </>
-       );
-     }
-     urrent = ref.current + 1;
-     alert('You clicked ' + ref.current + ' times!');
-   }
- 
-   return (
-     <button onClick={handleClick}>
-     
-       Click me!
-     </button>
-   );
- }
- 
+import { useRef } from 'react';
+export default function Form() {
+const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button>
+    </>
+  );
+}
         `} language={"js"}></Code><br />
+<InputFocus />
     </div>
    );
 }
