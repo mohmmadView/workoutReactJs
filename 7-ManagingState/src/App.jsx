@@ -24,16 +24,16 @@ export default function App() {
   return (
     <div className="w-full">
       <Title title="Managing State" />
-      <div className="z-50 inline-flex p-2  fixed top-15 right-10 bg-primary-content ring-8 ring-primary  ring-offset-4 rounded-xl ">
+      <div className="z-50 flex flex-col gap-2 p-2  fixed top-5 right-5 bg-primary-content ring-8 ring-primary  ring-offset-2 rounded-xl ">
         <button
-          className="btn   btn-primary    btn-outline  mx-2"
+          className={` btn btn-circle btn-outline mx-2 font-bold ${lang?`btn-primary `:`btn-success btn-active`}`}
           onClick={() => {
             setLang(false);
           }}>
           fa
         </button>
         <button
-          className="btn btn-outline  mx-2"
+          className={` btn btn-circle btn-outline mx-2 font-bold ${lang?` btn-active btn-success`:`btn-primary`}`}
           onClick={() => {
             setLang(true);
           }}>
