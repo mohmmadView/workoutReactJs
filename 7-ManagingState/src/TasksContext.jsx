@@ -3,7 +3,7 @@ const DataText = [
   {
     Intermediate: () => {
       return (
-        <p>
+        <>
           As your application grows, it helps to be more intentional about how
           your
           <span className="text-primary underline underline-offset-4  decoration-double font-bold">
@@ -28,7 +28,7 @@ const DataText = [
             state
           </span>
           between distant components.,Children
-        </p>
+        </>
       );
     },
   },
@@ -304,7 +304,7 @@ const DataText = [
   {
     PreservingAndResettingFa: () => {
       return (
-        <p>
+        <p style={{direction: "rtl"} }>
           وقتی یک کامپوننت را دوباره رندر می‌کنید، React باید تصمیم بگیرد که
           کدام قسمت‌های درخت را نگه دارد (و به‌روزرسانی کند)، و کدام قسمت‌ها را
           دور انداخته یا از ابتدا دوباره ایجاد کند. در بیشتر موارد، رفتار خودکار
@@ -321,7 +321,7 @@ const DataText = [
   {
     ExtractingStateLogic: () => {
       return (
-        <p>
+        <p style={{direction: "rtl"}}>
           Components with many state updates spread across many event handlers
           can get overwhelming. For these cases, you can consolidate all the
           state update logic outside your component in a single function, called
@@ -336,7 +336,7 @@ const DataText = [
   {
     ExtractingStateLogicFa: () => {
       return (
-        <>
+        <p style={{direction: "rtl"}}>
           کامپوننت‌هایی که به‌روزرسانی‌های حالت زیادی در بسیاری از
           کنترل‌کننده‌های رویداد پخش شده‌اند، می‌توانند بسیار زیاد شوند. برای
           این موارد، می‌توانید تمام منطق به‌روزرسانی حالت خارج از مؤلفه خود را
@@ -344,14 +344,14 @@ const DataText = [
           مختصر می‌شوند زیرا آنها فقط «اقدامات» کاربر را مشخص می‌کنند. در پایین
           فایل، تابع کاهنده مشخص می کند که وضعیت چگونه باید در پاسخ به هر عمل به
           روز شود!
-        </>
+        </p>
       );
     },
   },
   {
     PassingDataDeeplyWithContext: () => {
       return (
-        <>
+        <p >
           Usually, you will pass information from a parent component to a child
           component via props. But passing props can become inconvenient if you
           need to pass some prop through many components, or if many components
@@ -363,14 +363,14 @@ const DataText = [
           parent Section and adding one to it. Every Section provides
           information to all components below it without passing props—it does
           that through context.
-        </>
+        </p>
       );
     },
   },
   {
     PassingDataDeeplyWithContextFa: () => {
       return (
-        <p className="rtl" style={{ direction: "rtl" }}>
+        <p  style={{ direction: "rtl" }}>
           در{" "}
           <span>
             React، <span>reducer</span>
@@ -424,7 +424,7 @@ const DataText = [
   {
     WhatIsReactContext: () => {
       return (
-        <p>
+        <p >
           React Context provides us a way to pass data down through the
           component tree to where we need it without having to manually pass
           props at every single level. It acts as a global storage space for all
@@ -436,7 +436,7 @@ const DataText = [
   {
     WhatIsReactContextFa: () => {
       return (
-        <p>
+        <p style={{direction: "rtl"}}>
           React Context راهی را در اختیار ما قرار می دهد تا داده ها را از طریق
           درخت کامپوننت به جایی که به آن نیاز داریم منتقل کنیم، بدون اینکه نیازی
           به ارسال دستی props در هر سطح باشد. این به عنوان یک فضای ذخیره سازی
@@ -448,7 +448,7 @@ const DataText = [
   {
     ReactContextDifferent: () => {
       return (
-        <p>
+        <p >
           In prop threading, data is passed down from the parent component to
           the child component. If a child of that component needs the same prop,
           it is passed down until the required component gets the data. While
@@ -463,7 +463,7 @@ const DataText = [
   {
     ReactContextDifferentFa: () => {
       return (
-        <p>
+        <p style={{direction: "rtl"}}>
           در prop threading، داده ها از مولفه والد به جزء فرزند منتقل می شود.
           اگر فرزند آن مؤلفه به همان پایه نیاز داشته باشد، تا زمانی که مؤلفه
           مورد نیاز داده را دریافت کند، ارسال می شود. در حالی که ساده است، می
@@ -511,7 +511,8 @@ const DataText = [
 
     EscapeHatchesFa:()=>{
       return (
-        <p>
+        
+        <p style={{direction: "rtl"}}>
      <span className="text-secondary">Escape Hatches </span>    ر برخی از اجزای شما ممکن است نیاز به کنترل و همگام سازی با سیستم های خارج از React داشته باشند. برای مثال، ممکن است لازم باشد یک ورودی را با استفاده از API مرورگر متمرکز کنید، پخش‌کننده ویدیویی را که بدون React اجرا شده است، پخش و متوقف کنید، یا پیام‌های یک سرور راه دور را متصل کنید و به آنها گوش دهید. در این فصل، دریچه‌های فرار را یاد می‌گیرید که به شما اجازه می‌دهند «بیرون بروید» React و به سیستم‌های خارجی متصل شوید. بیشتر منطق برنامه و جریان داده شما نباید به این ویژگی ها متکی باشد.<br />
 <span className="text-secondary">Escape Hatches </span>مکانیزم هایی هستند که به شما امکان می دهند از State یک مؤلفه به طور موقت خارج شوید. این می تواند در مواقعی مفید باشد که می خواهید به طور موقت State را تغییر دهید بدون اینکه بر State اصلی مؤلفه تأثیر بگذارد. <br /> 
 <span> تعریف دیگه از Escape Hatches</span><br />
@@ -520,25 +521,30 @@ const DataText = [
 <p>وقتی می‌خواهید یک مؤلفه اطلاعاتی را «به خاطر بسپارد»، اما نمی‌خواهید این اطلاعات رندرهای جدیدی را ایجاد کند، می‌توانید از یک ref استفاده کنید:</p>
 <p style={{direction:"ltr"}} className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</p>
 <p>مانند حالت، ref ها توسط React بین رندرهای مجدد حفظ می شوند. با این حال، تنظیم وضعیت یک مؤلفه را دوباره ارائه می کند. تغییر یک رف انجام نمی شود! شما می توانید از طریق ویژگی ref.current به مقدار فعلی آن ref دسترسی پیدا کنید.</p>
-<Code fileName={"example"} widthIN={"w-full"} code={`
- import { useRef } from 'react';
-
- export default function Counter() {
-   let ref = useRef(0);
- 
-   function handleClick() {
-     ref.current = ref.current + 1;
-     alert('You clicked ' + ref.current + ' times!');
+<div style={{direction:"ltr"}} >
+  
+  <Code fileName={"example"} widthIN={"w-full"} code={`
+   import { useRef } from 'react';
+  
+   export default function Counter() {
+     let ref = useRef(0);
+   
+     function handleClick() {
+       ref.current = ref.current + 1;
+       alert('You clicked ' + ref.current + ' times!');
+     }
+   
+     return (
+       <button onClick={handleClick}>
+         Click me!
+       </button>
+     );
    }
- 
-   return (
-     <button onClick={handleClick}>
-       Click me!
-     </button>
-   );
- }
- 
-        `} language={"js"}></Code><br />
+   
+          `} language={"js"}></Code>
+          
+</div>
+        <br />
         <p>یک ref مانند یک جیب مخفی از مؤلفه شما است که React آن را ردیابی نمی کند. برای مثال، می‌توانید از refs timeout IDs, DOM elements و سایر اشیایی که بر خروجی رندر مؤلفه تأثیر نمی‌گذارند استفاده کنید.</p>
         </p>
       );

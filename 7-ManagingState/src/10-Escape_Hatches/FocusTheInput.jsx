@@ -12,7 +12,7 @@ export default function FocusInInput(){
  <Code fileName={"example"} widthIN={"w-full"} code={`
 import { useRef } from 'react';
 export default function FocusInInput() {
-const inputRef = useRef(null);
+const inputRef = useRef(null); //Declare inputRef with the useRef Hook.
 
   function handleClick() {
     inputRef.current.focus();
@@ -20,8 +20,9 @@ const inputRef = useRef(null);
 
   return (
     <>
-      <input ref={inputRef} />
-      <button onClick={handleClick}>
+      <input ref={inputRef} /> //Pass it as <input ref={inputRef}>. 
+      //This tells React to put this <input>’s DOM node into inputRef.current.
+      <button onClick={handleClick}> //In the handleClick function, read the input DOM node from inputRef.current and call focus() on it with inputRef.current.focus().
         Focus the input
       </button>
     </>

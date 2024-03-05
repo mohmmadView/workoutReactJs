@@ -9,17 +9,17 @@
 import { downContext } from "./downContext";
 import { useContext } from "react";
 
-export default function Container({ children, Title, Direction }) {
+export default function Container({ children, Title }) {
   let numContainer = useContext(downContext);
   return (
     <div
-      style={{ direction: `${Direction}` }}
+      style={{ direction: `auto` }}
       className="w-11/12 mx-auto my-12 bg-base-300 p-10 text-xl">
-      <div style={{direction: `${Direction}`}} className="divider divider-warning text-secondary font-bold text-3xl max-lg:text-xl max-md:text-lg">
-        <p>{Title}</p>
+      <div style={{direction: "auto"}} className="divider divider-warning text-secondary font-bold text-3xl max-lg:text-xl max-md:text-lg">
+        {Title}
       </div>
       <downContext.Provider value={numContainer + 1}>
-        <p>{children}</p>
+        {children}
       </downContext.Provider>
     </div>
   );

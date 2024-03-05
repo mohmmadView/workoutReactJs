@@ -41,8 +41,8 @@ export default function App() {
         </button>
       </div>
       {lang ? (
-        <Container Title={"Managing State"}>
-          {DataText[0].Intermediate()}
+        <Container  Title={"Managing State"}>
+        {DataText[0].Intermediate()}
         </Container>
       ) : (
         <Container Title={"مدیریت وضعیت"}>
@@ -54,10 +54,10 @@ export default function App() {
 
       {lang ? (
         <Container Title={"Reacting to input with state"}>
-          {DataText[2].Reactingtoinput()}{" "}
+          {DataText[2].Reactingtoinput()}
         </Container>
       ) : (
-        <Container Title="واکنش به ورودی با استفاده از state" Direction="rtl">
+        <Container Title="واکنش به ورودی با استفاده از state" >
           {DataText[3].ReactingToInputFa()}
         </Container>
       )}
@@ -69,7 +69,7 @@ export default function App() {
           {DataText[4].ChoosingTheState()}
         </Container>
       ) : (
-        <Container Direction={"rtl"} Title={"   انتخاب ساختار  state"}>
+        <Container  Title={"   انتخاب ساختار  state"}>
           {DataText[5].ChoosingTheStateFa()}
         </Container>
       )}
@@ -79,7 +79,7 @@ export default function App() {
           {DataText[6].SharingState()}
         </Container>
       ) : (
-        <Container Title={"به اشتراک گذاری  state بین کامپوننت ها"} Direction={"rtl"}>
+        <Container Title={"به اشتراک گذاری  state بین کامپوننت ها"} >
           {DataText[7].SharingStateFa()}
         </Container>
       )}
@@ -99,7 +99,7 @@ export default function App() {
           {DataText[10].ExtractingStateLogic()}
         </Container>
       ) : (
-        <Container Direction={"rtl"} Title="استخراج منطق stage در یک کاهنده ">
+        <Container  Title="استخراج منطق stage در یک کاهنده ">
           {DataText[11].ExtractingStateLogicFa()}
         </Container>
       )}
@@ -109,7 +109,7 @@ export default function App() {
           {DataText[14].WhatIsReactContext()}
         </Container>
       ) : (
-        <Container Direction={"rtl"} Title="چیست؟ React Context ">
+        <Container  Title="چیست؟ React Context ">
           {DataText[15].WhatIsReactContextFa()}
         </Container>
       )}
@@ -124,7 +124,7 @@ export default function App() {
         </Container>
       ) : (
         <Container
-          Direction={"rtl"}
+          
           Title="React Context چه تفاوتی با Prop Threading دارد؟">
           {DataText[17].ReactContextDifferentFa()}
           <img
@@ -142,7 +142,7 @@ export default function App() {
           {DataText[12].PassingDataDeeplyWithContext()}
         </Container>
       ) : (
-        <Container Direction={"rtl"} Title="Passing data deeply with context  ">
+        <Container  Title="Passing data deeply with context  ">
           {" "}
           {DataText[13].PassingDataDeeplyWithContextFa()}
         </Container>
@@ -163,18 +163,19 @@ export default function App() {
         <InputActive />
       </Container>
       <Title title="Escape Hatches" />
-         {lang ? (
-        <Container  >
+      
+      <Container Title="Example of Escape Hatches">
+           {lang ? (
+      <>
           {DataText[18].EscapeHatches()}
-        </Container>
+        </>
       ) : (
-        <Container Direction={"rtl"} >
-          {" "}
-          {DataText[19].EscapeHatchesFa()}
-        </Container>
+      <>
+            {DataText[19].EscapeHatchesFa()}
+          
+      </>
         
       )}
-      <Container Title="Example of Escape Hatches">
         <EscapeHatches lang={lang} />
       </Container>
     </div>

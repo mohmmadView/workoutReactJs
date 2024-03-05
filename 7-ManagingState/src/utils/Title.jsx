@@ -1,8 +1,8 @@
-export default function Title(props) {
+export default function Title({title}) {
   return (
     <div className="flex justify-center m-2">
       <h1 className="flex max-sm:text-3xl max-sm:leading-[1.750] max-sm:p-1 p-5  text-5xl mx-auto my-auto border rounded-lg mt-4 text-primary font-bold bg-primary-content ">
-        {props.title}
+        {title}
         <svg
           className="m-4 fill-red-100 cursor-pointer"
           viewBox="0 0 24 24"
