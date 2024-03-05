@@ -16,13 +16,13 @@ export default function Code({ code, language, fileName, widthIN }) {
     }
   }
   return (
-    <div className={`w-2/3 ${widthIN}  `}>
+    <div className={`w-2/3  ${widthIN}  `}>
       <div
         className={
           overflow
             ? ``
             : ` h-96 overflow-auto ` +
-              `w-full  p-3 bg-zinc-900 mockup-browser-toolbar text-white  text-left`
+              `w-full ${widthIN}  p-3 bg-zinc-900 mockup-browser-toolbar text-white  text-left`
         }>
         <code className="Code">
           <span className="flex justify-around text-center text-success  font-bold ">
