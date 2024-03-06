@@ -1,5 +1,5 @@
 import { useRef } from "react";
-export default function ScrollIntoView(second) {
+export default function ScrollIntoView() {
  const firstCatRef = useRef(null);
   const secondCatRef = useRef(null);
   const thirdCatRef = useRef(null);
