@@ -2,6 +2,7 @@
  import InputFocus from './FocusTheInput.jsx';
  import StopWatch from './stopWatch.jsx';
 import WhatWorkUseRef from './whatWorkUseRef.jsx';
+import ScrollIntoView from './ScrollIntoView.jsx';
 export default function EscapeHatches(lang) {
 
  
@@ -106,6 +107,7 @@ export default function EscapeHatches(lang) {
  
 <InputFocus lang={lang.lang} />
 <WhatWorkUseRef />
+<ScrollIntoView />
     </div>
    );
 }
