@@ -9,6 +9,7 @@ export default function AlertClickNumber() {
    return (
     <>
        <div className="divider text-primary divider-accent">Alert click number </div>
+       <p>ref.current is {ref.current}</p>
      <button className='btn btn-square btn-primary w-24' onClick={handleClick}>
        Click me!
      </button>

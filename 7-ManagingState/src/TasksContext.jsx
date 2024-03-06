@@ -485,21 +485,23 @@ const DataText = [
 <p className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</p>
 <p className='m-2'>Like state, refs are retained by React between re-renders. However, setting state re-renders a component. Changing a ref does not! You can access the current value of that ref through the ref.current property.</p>
           <span className='m-2'>  <Code widthIN={"w-full"} fileName={"example"} code={`
- import { useRef } from 'react';
-
- export default function Counter() {
-   let ref = useRef(0);
- 
-   function handleClick() {
-     ref.current = ref.current + 1;
-     alert('You clicked ' + ref.current + ' times!');
-   }
- 
-   return (
-     <button onClick={handleClick}>
-       Click me!
-     </button>
-   );
+import { useRef } from 'react';
+export default function AlertClickNumber() {
+let ref = useRef(0);
+  
+function handleClick() {
+   ref.current = ref.current + 1; 
+   alert('You clicked ' + ref.current + ' times!');
+ }
+ return (
+  <>
+ <div className="divider text-primary divider-accent">Alert click number </div>
+   <p>ref.current is {ref.current}</p> // not changed ref.current is 0 not in render
+   <button className='btn btn-square btn-primary w-24' onClick={handleClick}>
+     Click me!
+   </button>
+   </>
+   )
  }
  
         `} language={"js"}></Code></span>
@@ -524,22 +526,24 @@ const DataText = [
 <div style={{direction:"ltr"}} >
   
   <Code fileName={"example"} widthIN={"w-full"} code={`
-   import { useRef } from 'react';
-  
-   export default function Counter() {
+ import { useRef } from 'react';
+ export default function AlertClickNumber() {
      let ref = useRef(0);
-   
-     function handleClick() {
-       ref.current = ref.current + 1;
-       alert('You clicked ' + ref.current + ' times!');
-     }
-   
-     return (
-       <button onClick={handleClick}>
-         Click me!
-       </button>
-     );
-   }
+  
+    function handleClick() {
+      ref.current = ref.current + 1; 
+      alert('You clicked ' + ref.current + ' times!');
+    }
+    return (
+     <>
+        <div className="divider text-primary divider-accent">Alert click number </div>
+        <p>ref.current is {ref.current}</p> // not changed ref.current is 0 not in render
+      <button className='btn btn-square btn-primary w-24' onClick={handleClick}>
+        Click me!
+      </button>
+      </>
+      )
+ }
    
           `} language={"js"}></Code>
           
