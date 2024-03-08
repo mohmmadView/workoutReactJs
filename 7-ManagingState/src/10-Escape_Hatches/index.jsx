@@ -3,6 +3,7 @@
  import StopWatch from './stopWatch.jsx';
 import WhatWorkUseRef from './whatWorkUseRef.jsx';
 import ScrollIntoView from './ScrollIntoView.jsx';
+import WhenReactAttachesTheRef from './ٌWhenReactAttachesTheRef.jsx';
 export default function EscapeHatches(lang) {
 
  
@@ -104,10 +105,15 @@ export default function EscapeHatches(lang) {
      </ul>
      </div>)}
      <div className="divider  divider-primary text-red-700">Manipulating the DOM with refs </div>
- 
+  
 <InputFocus lang={lang.lang} />
-<WhatWorkUseRef />
+<div className="divider divider-start text-info divider-info">Example:<p className='under text-primary'> Scrolling to an element</p> </div>
 <ScrollIntoView />
+<WhatWorkUseRef />
+<WhenReactAttachesTheRef />
+
+
+
     </div>
    );
 }
