@@ -110,7 +110,7 @@ export default function EscapeHatches(lang) {
 <div className="divider divider-start text-info divider-info">Example:<p className='under text-primary'> Scrolling to an element</p> </div>
 <ScrollIntoView />
 <WhatWorkUseRef />
-<WhenReactAttachesTheRef />
+<WhenReactAttachesTheRef lang={lang.lang} />
 
 
 
