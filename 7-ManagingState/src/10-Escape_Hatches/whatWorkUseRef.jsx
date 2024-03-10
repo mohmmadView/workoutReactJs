@@ -1,5 +1,5 @@
 import Code from "../utils/Prism"
-export default function WhatWorkUseRef(lang) {
+export default function WhatWorkUseRef() {
 
 
     return(

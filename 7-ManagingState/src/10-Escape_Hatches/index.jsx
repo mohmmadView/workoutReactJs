@@ -112,8 +112,6 @@ export default function EscapeHatches(lang) {
 <WhatWorkUseRef />
 <WhenReactAttachesTheRef lang={lang.lang} />
 
-
-
     </div>
    );
 }

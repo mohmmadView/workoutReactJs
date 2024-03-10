@@ -5,7 +5,11 @@ export default function ScrollIntoView() {
  const firstCatRef = useRef(null);
   const secondCatRef = useRef(null);
   const thirdCatRef = useRef(null);
-
+  const checkTest = useRef(null);
+  function testClick() {
+  let testC =  checkTest.current.hasAttribute('class');
+  console.log(testC);
+  }
   function handleScrollClick1() {
     firstCatRef.current.scrollIntoView({
       behavior: "smooth" ,
@@ -41,12 +45,13 @@ export default function ScrollIntoView() {
           <button className="btn btn-success ring-1  ring-inset " onClick={handleScrollClick3}>
             Jellylorum
           </button>
+         
         </nav>
         <div>
           <ul className="carousel carousel-center max-w-3xl  p-4 space-x-32 bg-neutral rounded-box  gap-14">
             <li className="carousel-item">
               <img
-                src="https://placekitten.com/g/200/200"
+                src="https://placekitten.com/300/200"
                 alt="Tom"
                 ref={firstCatRef}
               />
@@ -65,6 +70,7 @@ export default function ScrollIntoView() {
                 ref={thirdCatRef}
               />
             </li>
+             
           </ul>
         </div>
      </div>
