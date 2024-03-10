@@ -1,11 +1,10 @@
-import { array } from "prop-types";
 import { useState ,useRef} from "react";
+import Code from '../utils/Prism'
 
 export default function WhenReactAttachesTheRef(lang) {
 let listRef = useRef(null);
 let [todos,setTodo]=useState(initialTodos)
 let [text,setText]=useState("");
-let tokenList = useRef(null);
 
 function handleClick(){
     const newTodo = { id:nextId++,text:text};
@@ -15,10 +14,6 @@ function handleClick(){
         behavior: "smooth",
         block:`nearest`
     });
-}
-
-function handleInput(e){
-    setText(e.target.value);
 }
 
     return(
@@ -105,7 +100,7 @@ Effects can be used if there is no event to do something with a ref.<br/>
             </div>
         ):(
             <div dir="rtl">
-<p>کدی مانند این را در نظر بگیرید، که یک کار جدید اضافه می‌کند و صفحه را تا آخرین فرزند لیست به سمت پایین اسکرول می‌کند. توجه کنید که چگونه به دلایلی همیشه به کاری که درست قبل از آخرین مورد اضافه شده بود پیمایش می کند:</p>
+<p>کدی مانند این را در نظر بگیرید، که یک تودو به لیست اضافه میکند  و صفحه را تا آخرین تودو لیست به سمت پایین اسکرول می‌کند. </p>
 <br />
             </div>
         )}
@@ -118,13 +113,89 @@ Effects can be used if there is no event to do something with a ref.<br/>
 </ul>
 {lang.lang?(
 <div>
-    <p className="p-4">The issue is with these two lines:</p>
+    <p className="p-4"><span className="text-red-500">Note : </span>it always scrolls to the todo that was just before the last added one:</p>
    
 </div>):(
     <div dir="rtl" className="p-4">
-        <p>مشکل در این دو خط است:</p>
+        <p><span className="text-red-500">توجه : </span> بعد از اضافه شدن تودو پیمایش اسکرول به یکی مانده به اخری از تودو لیست اسکرول میکند</p>
+        
     </div>
 )}
+<Code widthIN={"w-full "} fileName={"Ref ScrollView todoList"} language={'js'} code={
+  `import { useState ,useRef} from "react";
+export default function WhenReactAttachesTheRef(lang) {
+let listRef = useRef(null);
+let [todos,setTodo]=useState(initialTodos)
+let [text,setText]=useState("");
+function handleClick(){
+    const newTodo = { id:nextId++,text:text};
+      setText('');
+    setTodo([...todos,newTodo]);
+    listRef.current.lastChild.scrollIntoView({
+        behavior: "smooth",
+        block:'nearest'
+    });
+}
+    return(
+     <div className="w-11/12 mx-auto my-12 bg-base-300 p-10 text-xl">
+        <div className="flex gap-3">
+              <input value={text} onChange={(e)=>setText(e.target.value)} className="input input-primary w-full"  />
+              <button onClick={handleClick} className="w-24 btn btn-primary btn-circle" type="button">Add Todo</button>
+          </div>
+        <ul ref={listRef} className="w-6/12 mt-5 table-column">
+      {todos.map(todo => <li  key={todo.id}>{todo.text}</li>)}
+        </ul>
+     </div>
+      )
+    }`} />
+
+        <div className="divider divider-start  divider-primary text-orange-200 font-bold">flushSync</div>
+        {lang.lang?(
+        <p>  This will instruct <span className="font-bold text-blue-500">React</span> to <span>update</span> the DOM synchronously right after the code wrapped in <span className="font-bold text-orange-400 ">flushSync</span> executes. As a result, the last todo will already be in the DOM by the time you try to scroll to it:</p>
+        ):(
+          <p dir="rtl">این کار باعث می شود <span className="font-bold text-blue-500">React</span>  بلافاصله بعد از اجرای کد داخل <span className="font-bold text-orange-400 ">flushSync</span>  به صورت همزمان DOM را به روز رسانی کند. در نتیجه، آخرین کار به جا اضافه شده در زمان تلاش برای اسکرول کردن به آن، قبلا در DOM وجود خواهد داشت.
+
+</p>
+        )}
+    <div className="m-4">
+    <Code widthIN={"w-full"} language={"js"} fileName={"Ref ScrollView"} code={
+      `import { useState, useRef } from 'react';
+import { flushSync } from 'react-dom';
+    function TodoList() {
+  const listRef = useRef(null);
+  const [text, setText] = useState('');
+  const [todos, setTodos] = useState(
+    initialTodos
+  );
+  function handleAdd() {
+    const newTodo = { id: nextId++, text: text };
+    flushSync(() => {
+      setText('');
+      setTodos([ ...todos, newTodo]);      
+    });
+    listRef.current.lastChild.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  }
+  return (
+    <>
+      <button onClick={handleAdd}>
+        Add
+      </button>
+      <input
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+      <ul ref={listRef}>
+        {todos.map(todo => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </>
+  );
+}`} />
+    </div>
         </>
     )
 
