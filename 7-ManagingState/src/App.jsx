@@ -11,6 +11,7 @@ import PassingDataNesting from "./7-PassingData/index.jsx";
 import ToggleTheme from "./8-ToggleTheme/App.jsx";
 import InputActive from "./9-inputIsActive/index.jsx";
 import EscapeHatches from "./10-Escape_Hatches/index.jsx";
+import Effects from "./11-Effects/index.jsx";
 import "./App.css";
 import "./index.css";
 import DataText from "./TasksContext.jsx";
@@ -177,6 +178,10 @@ export default function App() {
         
       )}
         <EscapeHatches lang={lang} />
+      </Container>
+      <Title title="Effects" />
+      <Container>
+        <Effects />
       </Container>
     </div>
   );
