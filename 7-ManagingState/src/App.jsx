@@ -1,4 +1,5 @@
 import Container from "./utils/container";
+import WordColorAuto from "./utils/WordAutoColor.jsx";
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import CityQiuz from "./1-CityQiuz";
@@ -182,6 +183,9 @@ export default function App() {
       <Title title="Effects" />
       <Container Title="Synchronizing with Effects">
         <Effects lang={lang} />
+      </Container>
+      <Container>
+        <WordColorAuto />
       </Container>
     </div>
   );
