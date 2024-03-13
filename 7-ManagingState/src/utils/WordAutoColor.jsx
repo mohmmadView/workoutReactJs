@@ -1,15 +1,41 @@
 import { useRef } from "react";
 import { flushSync } from 'react-dom';
 import { useEffect } from 'react';
-import { element } from "prop-types";
+import Highlighter from "react-highlight-words";
+
 export default function WordColorAuto() {
+   
+
  let wordAllRef = useRef(null);
 let TokenList  = [];
-   useEffect(() => {
-        let ListText = wordAllRef.current.innerHTML;
-                console.log(ListText.split(RegExp(["a-zA-Z"])));
+const text =`ین sentence یک sentence جمله با کلمات eng و fa است.`;
+let englishWords = text.match(/[a-zA-Z]+/g);
+let persianWords = text.match(/[\u0600-\u06FF]+/g);
+// Split the text into words
+const words = text.split(' ');
 
-   })
+// Filter out the Persian words
+const englishWords2 = words.filter(word => /^[a-zA-Z]+$/.test(word));
+
+console.log(englishWords2); // ["This", "is", "a", "sentence", "with", "English", "words"]
+   useEffect(() => {
+        let ListText = wordAllRef.current.childNodes[0].childNodes;
+        let ArrayText =   Array.from(ListText);
+                    for(let i = 0; i < ArrayText.length; i++){
+                      console.log(ArrayText[i])
+                      const element = ArrayText[i];
+                      if(element.nodeType === 3){
+                        TokenList.push(element);
+                      }
+                    }
+                    for(let i = 0; i < TokenList.length; i++){
+                      const elementToken = TokenList[i];
+                        console.log(elementToken);
+                    }
+                 
+
+                  })
+   
 
 return(
     <div ref={wordAllRef} className="wAll" >
@@ -39,8 +65,20 @@ return(
       <li>Effect ها می‌توانند به DOM، API ها، یا سایر سیستم های خارجی دسترسی داشته باشند.</li>
     </ul>
 </ul>
-       <button  className="btn btn-primary">color word</button>
-
+    {
+   
+    
+    }
+<Highlighter 
+ highlightClassName={"text-primary bg-base-300 font- rounded"}
+    searchWords={[/([a-zA-Z])\w+/g]}
+    autoEscape={false}
+    textToHighlight={text} 
+    activeIndex={[3]}
+     activeClassName="text-success bg-success-content"
+     unhighlightClassName=""
+    />
+  
     </div>
 
 )
