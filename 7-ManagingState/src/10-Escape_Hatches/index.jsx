@@ -104,8 +104,7 @@ export default function EscapeHatches(lang) {
         <p>اگر مؤلفه شما نیاز به ذخیره مقداری دارد، اما بر منطق رندر تأثیر نمی گذارد، refs را انتخاب کنید.</p>
      </ul>
      </div>)}
-     <div className="divider  divider-primary text-red-700">Manipulating the DOM with refs </div>
-  
+     <div  className="divider  divider-primary text-red-700">Manipulating the DOM with refs </div>
 <InputFocus lang={lang.lang} />
 <div className="divider divider-start text-info divider-info">Example:<p className='under text-primary'> Scrolling to an element</p> </div>
 <ScrollIntoView />
@@ -113,17 +112,17 @@ export default function EscapeHatches(lang) {
 <WhenReactAttachesTheRef lang={lang.lang} />
 <div className="divider divider-content text-info divider-info">Recap:<p className='under text-primary'>DOM with Refs </p> </div>
 {lang.lang?(
-  <>
+  <div>
 <p className=""><span>1- </span>Refs are an escape hatch to hold onto values that aren’t used for rendering. You won’t need them often.</p>
 <p className=""><span>2- </span>A ref is a plain JavaScript object with a single property called current, which you can read or set.</p>
 <p className=""><span>3- </span>You can ask React to give you a ref by calling the useRef Hook.</p>
 <p className=""><span>4- </span>Like state, refs let you retain information between re-renders of a component.</p>
 <p className=""><span>5- </span>Unlike state, setting the ref’s current value does not trigger a re-render.</p>
 <p className=""><span>6- </span>Don’t read or write ref.current during rendering. This makes your component hard to predict.</p>
-</>
+</div>
 ):(
   <div dir='rtl'>
-<p ><span>1.</span> Refs یک راه فرار برای نگه‌داری مقادیری است که برای رندر (نمایش) استفاده نمی‌شوند.</p>
+<p ><span>1.</span>Refs یک راه فرار برای نگه‌داری مقادیری است که برای رندر (نمایش) استفاده نمی‌شوند.</p>
 <p ><span>2.</span>شما به طور معمول به آن‌ها نیاز زیادی پیدا نخواهید کرد.</p>
 <p ><span>3.</span>یک Ref یک شیء ساده جاوااسکریپت با تنها یک ویژگی به نام `current` است.</p>
 <p ><span>4.</span>شما می‌توانید مقدار این ویژگی را بخوانید یا آن را تنظیم کنید.</p>

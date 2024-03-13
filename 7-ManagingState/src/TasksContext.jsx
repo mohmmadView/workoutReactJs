@@ -517,9 +517,12 @@ function handleClick() {
 
     EscapeHatchesFa:()=>{
       return (
-        
+    
         <p style={{direction: "rtl"}}>
-     <span className="text-secondary">Escape Hatches </span>    ر برخی از اجزای شما ممکن است نیاز به کنترل و همگام سازی با سیستم های خارج از React داشته باشند. برای مثال، ممکن است لازم باشد یک ورودی را با استفاده از API مرورگر متمرکز کنید، پخش‌کننده ویدیویی را که بدون React اجرا شده است، پخش و متوقف کنید، یا پیام‌های یک سرور راه دور را متصل کنید و به آنها گوش دهید. در این فصل، دریچه‌های فرار را یاد می‌گیرید که به شما اجازه می‌دهند «بیرون بروید» React و به سیستم‌های خارجی متصل شوید. بیشتر منطق برنامه و جریان داده شما نباید به این ویژگی ها متکی باشد.<br />
+           
+
+     <span className="text-secondary">Escape Hatches </span>     ر برخی از اجزای شما ممکن است نیاز به کنترل و همگام سازی با سیستم های خارج از React داشته باشند. برای مثال، ممکن است لازم باشد یک ورودی را با استفاده از API مرورگر متمرکز کنید، پخش‌کننده ویدیویی را که بدون React اجرا شده است، پخش و متوقف کنید، یا پیام‌های یک سرور راه دور را متصل کنید و به آنها گوش دهید. در این فصل، دریچه‌های فرار را یاد می‌گیرید که به شما اجازه می‌دهند «بیرون بروید» React و به سیستم‌های خارجی متصل شوید. بیشتر منطق برنامه و جریان داده شما نباید به این ویژگی ها متکی باشد.
+     <br />
 <span className="text-secondary">Escape Hatches </span>مکانیزم هایی هستند که به شما امکان می دهند از State یک مؤلفه به طور موقت خارج شوید. این می تواند در مواقعی مفید باشد که می خواهید به طور موقت State را تغییر دهید بدون اینکه بر State اصلی مؤلفه تأثیر بگذارد. <br /> 
 <span> تعریف دیگه از Escape Hatches</span><br />
 در برخی موارد، ممکن است لازم باشد از State خارج شوید و به طور مستقیم DOM را دستکاری کنید. برای این کار می توانید از Escape Hatches استفاده کنید.
@@ -609,10 +612,8 @@ Effects let you specify side effects that are caused by rendering itself, rather
                 
             <Highlighter 
             highlightClassName='text-primary bg-base-300 rtl'
-            searchWords={[(/([a-zA-Z])\w+/g),("Effect")]}
+            searchWords={[(/([a-zA-Z])\w+/g)]}
             autoEscape={false}
-            activeIndex={4}
-            activeClassName='text-success'
             unhighlightClassName='text-white'
             textToHighlight={`
        Effect در React چگونه کار می کند؟

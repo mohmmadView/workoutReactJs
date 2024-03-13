@@ -1,9 +1,27 @@
+import { useEffect, useState } from 'react';
 import DataText from '../TasksContext'
+import Code from  '../utils/Prism'
 export default function SynchronizingWithEffects(lang){
-
+  function Counter() {
+    const [count, setCount] = useState(0);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCount(prevCount => prevCount + 1);
+      }, 1000);
+  
+      return () => clearInterval(interval);
+    }, []);
+  
+    return (
+      <div className='p-8 bg-black border border-yellow-500 ring ring-red-500 self-center'>
+        <h1 className='self-center'>Count: <span className='text-red-500'>{count}</span></h1>
+      </div>
+    );
+  }
     return (
 <div>
-    
+
             {lang.lang?(
             <div className="">
                  {DataText[20].Effect()}
@@ -24,34 +42,38 @@ export default function SynchronizingWithEffects(lang){
         {DataText[23].SynchronizingWithEffectsFa()}  
 </>
 )   }    
-<div dir='rtl' className="prose max-w-none">
+
 
 <br />
-<span className='flex  justify-end'>
-    <code dir='ltr' style={{ direction: "ltr" }} className=' whitespace-pre-line '>
-        {`
-        function Counter() {
-          const [count, setCount] = useState(0);
+
+<div className="divider divider-start  text-success divider-warning">example Effect</div>
+<span className='flex justify-around'>
+    <Counter />
+    <Code  language={'js'} 
+       code ={`import { useEffect, useState } from 'react';
+  function Counter() {
+    const [count, setCount] = useState(0);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCount(prevCount => prevCount + 1);
+      }, 1000);
+  
+      return () => clearInterval(interval);
+    }, []);
+  
+    return (
+      <div>
+        <h1>Count: {count}</h1>
+      </div>
+    );
+  }
         
-          useEffect(() => {
-            const interval = setInterval(() => {
-              setCount(prevCount => prevCount + 1);
-            }, 1000);
-        
-            return () => clearInterval(interval);
-          }, []);
-        
-          return (
-            <div>
-              <h1>Count: {count}</h1>
-            </div>
-          );
-        }
-        
-        `}
-    </code>
+        `} />
+      
+    
 </span>
-</div>
+
 </div>
     )
 }
