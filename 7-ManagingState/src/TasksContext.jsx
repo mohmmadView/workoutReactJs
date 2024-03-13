@@ -1,6 +1,8 @@
 import { prism } from 'prismjs';
 import Code from './utils/Prism';
 import Highlighter from "react-highlight-words";
+import { useEffect, useRef } from 'react';
+import Effects from './11-Effects';
 const DataText = [
   {
     Intermediate: () => {
@@ -646,7 +648,67 @@ Effect در React، یک تابع است که به شما امکان می‌ده
           )
 
         }
+      },{
+        HowToWriteAnEffect:()=>{
+        let refColor = useRef(null);
+        useEffect(() => {
+            refColor.current.style.color = "red";
+            console.log(refColor.current.chil);
+        })
+       
+          return (
+            <div ref={refColor} className='whitespace-pre-line'>
+          
+            <Highlighter 
+            highlightClassName='text-primary bg-base-300 rtl'
+            searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`To write an Effect, follow these three steps:
+
+   1- Declare an Effect. By default, your Effect will run after every render.
+
+   2- Specify the Effect dependencies. Most Effects should only re-run when needed rather than after every render. For example, a fade-in animation should only trigger when a component appears. Connecting and disconnecting to a chat room should only happen when the component appears and disappears, or when the chat room changes. You will learn how to control this by specifying dependencies.
+
+   3- Add cleanup if needed. Some Effects need to specify how to stop, undo, or clean up whatever they were doing. For example, “connect” needs “disconnect”, “subscribe” needs “unsubscribe”, and “fetch” needs either “cancel” or “ignore”. You will learn how to do this by returning a cleanup function.
+
+Let’s look at each of these steps in detail.
+          `} />
+            </div>
+          )
+
+        }
+      },{ HowToWriteAnEffectFa:()=>{
+
+          return (
+            <div  className='whitespace-pre-line'>
+                
+            <Highlighter 
+            highlightClassName='text-primary bg-base-300 rtl'
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect")]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`
+To write an Effect, follow these three steps:
+
+    Declare an Effect. By default, your Effect will run after every render.
+    Specify the Effect dependencies. Most Effects should only re-run when needed rather than after every render. For example, a fade-in animation should only trigger when a component appears. Connecting and disconnecting to a chat room should only happen when the component appears and disappears, or when the chat room changes. You will learn how to control this by specifying dependencies.
+    Add cleanup if needed. Some Effects need to specify how to stop, undo, or clean up whatever they were doing. For example, “connect” needs “disconnect”, “subscribe” needs “unsubscribe”, and “fetch” needs either “cancel” or “ignore”. You will learn how to do this by returning a cleanup function.
+
+Let’s look at each of these steps in detail.
+            </div> `} />
+            </div>
+          )
+
+        }
+      
       }
+        
+      
     
 ];
 

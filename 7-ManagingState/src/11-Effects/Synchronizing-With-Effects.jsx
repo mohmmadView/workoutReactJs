@@ -21,9 +21,7 @@ export default function SynchronizingWithEffects(lang){
      </>
 ):(
 <>
-    
-        {DataText[23].SynchronizingWithEffectsFa()}
-    
+        {DataText[23].SynchronizingWithEffectsFa()}  
 </>
 )   }    
 <div dir='rtl' className="prose max-w-none">
