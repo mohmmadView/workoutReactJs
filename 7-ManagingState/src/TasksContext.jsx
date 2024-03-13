@@ -1,3 +1,4 @@
+import { prism } from 'prismjs';
 import Code from './utils/Prism';
 import Highlighter from "react-highlight-words";
 const DataText = [
@@ -574,12 +575,42 @@ function handleClick() {
         }
       },{
         SynchronizingWithEffects:()=>{
+        
+          return(
+            <div dir='ltr' className='whitespace-pre-line'>
+                
+            <Highlighter 
+            highlightClassName='text-yellow-500 bg-base-300'
+            searchWords={["Effects","React","(",")","jsx","state","props","components","Event","component","effect"]}
+            autoEscape={true}
+            unhighlightClassName='text-white'
+            textToHighlight={`
+ Before getting to Effects, you need to be familiar with two types of logic inside React components:
+
+    Rendering code (introduced in Describing the UI) lives at the top level of your component. 
+    This is where you take the props and state, transform them, and return the JSX you want to see on the screen. Rendering code must be pure. Like a math formula, it should only calculate the result, but not do anything else.
+
+    Event handlers (introduced in Adding Interactivity) are nested functions inside your components that do things rather than just calculate them. An event handler might update an input field, submit an HTTP POST request to buy a product, or navigate the user to another screen. Event handlers contain “side effects” (they change the program’s state) caused by a specific user action (for example, a button click or typing).
+
+Sometimes this isn’t enough. Consider a ChatRoom component that must connect to the chat server whenever it’s visible on the screen. Connecting to a server is not a pure calculation (it’s a side effect) so it can’t happen during rendering. However, there is no single particular event like a click that causes ChatRoom to be displayed.
+
+Effects let you specify side effects that are caused by rendering itself, rather than by a particular event. Sending a message in the chat is an event because it is directly caused by the user clicking a specific button. However, setting up a server connection is an Effect because it should happen no matter which interaction caused the component to appear. Effects run at the end of a commit after the screen updates. This is a good time to synchronize the React components with some external system (like network or a third-party library).
+            `} />
+            </div>
+            )
+            }
+      },{
+        SynchronizingWithEffectsFa:()=>{
+        
           return(
             <div dir='rtl' className='whitespace-pre-line'>
+                
             <Highlighter 
             highlightClassName='text-primary bg-base-300 rtl'
-            searchWords={[/([a-zA-Z])\w+/g]}
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect")]}
             autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
             unhighlightClassName='text-white'
             textToHighlight={`
        Effect در React چگونه کار می کند؟

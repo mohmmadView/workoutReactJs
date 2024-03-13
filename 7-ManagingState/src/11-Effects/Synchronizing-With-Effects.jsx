@@ -15,7 +15,17 @@ export default function SynchronizingWithEffects(lang){
             )}
 
 <div className="divider text-primary divider-info">What are Effects and how are they different from events?</div>
-     {DataText[22].SynchronizingWithEffects()}       
+{lang.lang?(
+    <>
+     {DataText[22].SynchronizingWithEffects()}
+     </>
+):(
+<>
+    
+        {DataText[23].SynchronizingWithEffectsFa()}
+    
+</>
+)   }    
 <div dir='rtl' className="prose max-w-none">
 
 <br />
