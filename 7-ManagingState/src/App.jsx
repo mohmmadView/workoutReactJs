@@ -1,8 +1,7 @@
 import Container from "./utils/container";
 import Title from "./utils/Title";
 import Example from "./utils/Example";
-import CityQiuz from "./1-CityQiuz";
-import CityQuiz2 from "./2-CityQiuz";
+import ManagingState from './1-Managing_State/index.jsx'
 import FullName from "./3-fullName";
 import Panel from "./4-Panel";
 import ChatList from "./5-ChatList";
@@ -41,39 +40,8 @@ export default function App() {
           En
         </button>
       </div>
-      {lang ? (
-        <Container  Title={"Managing State"}>
-        {DataText[0].Intermediate()}
-        </Container>
-      ) : (
-        <Container Title={"مدیریت وضعیت"}>
-          {DataText[1].ManagingState()}
-        </Container>
-      )}
-
-      <Example exampleNumber={1} exampleName={"Example State"} />
-
-      {lang ? (
-        <Container Title={"Reacting to input with state"}>
-          {DataText[2].Reactingtoinput()}
-        </Container>
-      ) : (
-        <Container Title="واکنش به ورودی با استفاده از state" >
-          {DataText[3].ReactingToInputFa()}
-        </Container>
-      )}
-
-      <CityQiuz />
-      <CityQuiz2 />
-      {lang ? (
-        <Container Title={"Choosing the state structure"}>
-          {DataText[4].ChoosingTheState()}
-        </Container>
-      ) : (
-        <Container  Title={"   انتخاب ساختار  state"}>
-          {DataText[5].ChoosingTheStateFa()}
-        </Container>
-      )}
+      <ManagingState lang={lang} />
+     
       <FullName />
       {lang ? (
         <Container Title={"Sharing state between components"}>

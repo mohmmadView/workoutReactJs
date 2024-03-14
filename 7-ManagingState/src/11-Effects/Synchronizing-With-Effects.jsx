@@ -49,7 +49,7 @@ export default function SynchronizingWithEffects(lang){
 <div className="divider divider-start  text-success divider-warning">example Effect</div>
 <span className='flex justify-around'>
     <Counter />
-    <Code  language={'js'} 
+    <Code fileName={"example Effect"} language={'js'} 
        code ={`import { useEffect, useState } from 'react';
   function Counter() {
     const [count, setCount] = useState(0);

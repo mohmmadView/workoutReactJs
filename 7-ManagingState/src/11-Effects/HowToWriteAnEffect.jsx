@@ -8,7 +8,7 @@ export default function HowToWriteAnEffect (lang) {
     {DataText[24].HowToWriteAnEffect()}
   </>):(
 <>
-
+{DataText[25].HowToWriteAnEffectFa()}
 </>
   )}
         </div>

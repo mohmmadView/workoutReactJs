@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Prism from "./utils/Prism";
-import CodeCityQiuz from "./codeString/AllCodeString";
+import Prism from "../utils/Prism";
+import CodeCityQiuz from "../codeString/AllCodeString";
 /**
  * A function to handle form submission asynchronously.
  * @return {Promise} a promise representing the result of the form submission

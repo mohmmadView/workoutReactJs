@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Prism from "./utils/Prism";
-import CodeCityQiuz2 from "./codeString/AllCodeString";
+import Prism from "../utils/Prism";
+import CodeCityQiuz2 from "../codeString/AllCodeString";
 export default function CityQuiz() {
   const cities = [
     "New York",
@@ -37,18 +37,20 @@ export default function CityQuiz() {
     }
   }
   return (
-    <div className="w-11/12 mx-auto my-12 bg-base-300 p-4 text-xl flex">
-      <div className="w-1/3 sticky top-5 h-72 mb-24 gap-2 p-4 flex flex-col justify-between align-baseline ">
-        <h1 className="text-3xl font-bold text-primary">City Quiz 2</h1>
+    <div className="w-11/12 mx-auto my-12 bg-base-300 p-4  text-xl gap-2 flex">
+      <div className="w-1/3 max-h-40  mb-60 sticky top-5 ">
+        <div className="flex flex-col p-4 bg-secondary-content flex-wrap border border-secondary rounded-md">
+        <h2 className="text-2xl p-2 text-primary">  City Quiz 2</h2>
         <p>
           It is one answer the big cities of usa. The answer to the question?
         </p>
-        <form id="cityQuizForm" className="">
+        </div>
+        <form id="cityQuizForm" className="flex flex-col">
           
           <textarea
           name="cityQuizForm"
             onChange={textareaHandleChange}
-            className="textarea textarea-secondary textarea-lg "
+            className="textarea textarea-secondary textarea-lg my-4"
           />
           <p
             className={`${

@@ -482,9 +482,9 @@ const DataText = [
   {
       EscapeHatches:()=>{
         return (
-          <p style={{direction:"ltr"}}>
+          <p >
            Some of your components may need to control and synchronize with systems outside of React. For example, you might need to focus an input using the browser API, play and pause a video player implemented without React, or connect and listen to messages from a remote server. In this chapter, you’ll learn the escape hatches that let you “step outside” React and connect to external systems. Most of your application logic and data flow should not rely on these features
-<h1 className="text-secondary text-3xl p-2"> Referencing values with refs </h1> <br />
+<h1 className="divider divider-start pt-4 text-accent text-2xl divider-success max-md:text-sm"> Referencing values with refs </h1> <br />
 <p>When you want a component to “remember” some information, but you don’t want that information to trigger new renders, you can use a ref:</p><br />
 <p className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</p>
 <p className='m-2'>Like state, refs are retained by React between re-renders. However, setting state re-renders a component. Changing a ref does not! You can access the current value of that ref through the ref.current property.</p>
@@ -564,8 +564,14 @@ function handleClick() {
     Effect:()=>{
 
       return (
-        <p>
-          Some components need to synchronize with external systems. For example, you might want to control a non-React component based on the React state, set up a server connection, or send an analytics log when a component appears on the screen. Effects let you run some code after rendering so that you can synchronize your component with some system outside of React.
+        <p className='p-4'>
+          
+           <Highlighter 
+            highlightClassName=' bg-base-300'
+            searchWords={["Effects","React","(",")","jsx","state","props","components","Event","component","effect"]}
+            autoEscape={true}
+            unhighlightClassName='text-white'
+            textToHighlight={`Some components need to synchronize with external systems. For example, you might want to control a non-React component based on the React state, set up a server connection, or send an analytics log when a component appears on the screen. Effects let you run some code after rendering so that you can synchronize your component with some system outside of React.`} />
         </p>
         )
         }
@@ -611,7 +617,7 @@ Effects let you specify side effects that are caused by rendering itself, rather
             <div dir='rtl' className='whitespace-pre-line'>
                 
             <Highlighter 
-            highlightClassName='text-primary bg-base-300 rtl'
+            highlightClassName='text-info bg-base-300 rtl'
             searchWords={[(/([a-zA-Z])\w+/g)]}
             autoEscape={false}
             unhighlightClassName='text-white'
@@ -654,14 +660,14 @@ Effect در React، یک تابع است که به شما امکان می‌ده
         let refColor = useRef(null);
         useEffect(() => {
             refColor.current.style.color = "red";
-            console.log(refColor.current.chil);
+           
         })
        
           return (
             <div ref={refColor} className='whitespace-pre-line'>
           
             <Highlighter 
-            highlightClassName='text-primary bg-base-300 rtl'
+            highlightClassName='text-secondary bg-base-300 rtl'
             searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
             autoEscape={true}
             activeIndex={4}
@@ -684,23 +690,23 @@ Let’s look at each of these steps in detail.
       },{ HowToWriteAnEffectFa:()=>{
 
           return (
-            <div  className='whitespace-pre-line'>
+            <div dir='auto' className='whitespace-pre-line'>
                 
             <Highlighter 
-            highlightClassName='text-primary bg-base-300 rtl'
+            highlightClassName='text-secondary bg-base-300 rtl'
             searchWords={[(/([a-zA-Z])\w+/g),("Effect")]}
             autoEscape={false}
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
             textToHighlight={`
-To write an Effect, follow these three steps:
+            برای نوشتن یک Effect، این سه مرحله را دنبال کنید:
 
-    Declare an Effect. By default, your Effect will run after every render.
-    Specify the Effect dependencies. Most Effects should only re-run when needed rather than after every render. For example, a fade-in animation should only trigger when a component appears. Connecting and disconnecting to a chat room should only happen when the component appears and disappears, or when the chat room changes. You will learn how to control this by specifying dependencies.
-    Add cleanup if needed. Some Effects need to specify how to stop, undo, or clean up whatever they were doing. For example, “connect” needs “disconnect”, “subscribe” needs “unsubscribe”, and “fetch” needs either “cancel” or “ignore”. You will learn how to do this by returning a cleanup function.
-
-Let’s look at each of these steps in detail.
+            ۱. اعلام یک Effect: به طور پیش فرض، Effect شما بعد از هر بار رندر شدن اجرا خواهد شد.
+            
+            ۲. مشخص کردن وابستگی های Effect: اکثر Effect ها باید فقط در صورت نیاز و نه بعد از هر بار رندر شدن، دوباره اجرا شوند. به عنوان مثال، یک انیمیشن محو شدن (fade-in) فقط باید زمانی که یک کامپوننت ظاهر می شود، اجرا شود. اتصال و قطع اتصال به یک چت روم نیز فقط باید زمانی که کامپوننت ظاهر و ناپدید می شود یا زمانی که چت روم تغییر می کند، اتفاق بیفتد. شما با مشخص کردن وابستگی ها یاد خواهید گرفت که این را کنترل کنید.
+            
+            ۳. در صورت نیاز پاکسازی اضافه کنید: برخی Effect ها نیاز دارند مشخص کنند که چگونه هر کاری را که انجام می دهند متوقف، خنثی یا پاکسازی کنند. به عنوان مثال، "connect" نیاز به "disconnect" دارد، "subscribe" نیاز به "unsubscribe" دارد و "fetch" نیاز به "cancel" یا "ignore" دارد. شما با برگرداندن یک تابع پاکسازی، نحوه انجام این کار را یاد خواهید گرفت
             </div> `} />
             </div>
           )
