@@ -43,15 +43,7 @@ export default function App() {
       <ManagingState lang={lang} />
      
       <FullName />
-      {lang ? (
-        <Container Title={"Sharing state between components"}>
-          {DataText[6].SharingState()}
-        </Container>
-      ) : (
-        <Container Title={"به اشتراک گذاری  state بین کامپوننت ها"} >
-          {DataText[7].SharingStateFa()}
-        </Container>
-      )}
+     
       <Panel />
       {lang ? (
         <Container Title="Preserving and resetting state ">

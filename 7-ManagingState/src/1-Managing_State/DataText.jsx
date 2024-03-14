@@ -1,3 +1,4 @@
+import Highlighter from "react-highlight-words";
 let DataText= [
     {
 
@@ -141,6 +142,152 @@ let DataText= [
           به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت
           <span>(status)</span> برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال
           باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است
+        </p>
+      );
+    },
+  }
+,
+    {
+    ChoosingTheState: () => {
+      return (
+        <p>
+            <Highlighter 
+            searchWords={["state","props","debug","Event","component","effect","bugs!"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-yellow-200"
+            textToHighlight="
+          Structuring state well can make a difference between a component that
+          is pleasant to modify and debug, and one that is a constant source of
+          bugs. The most important principle is that state shouldn’t contain
+          redundant or duplicated information. If there’s unnecessary state,
+          it’s easy to forget to update it, and introduce bugs!" />
+      <h1 className="text-secondary text-3xl p-4">Types of structure state</h1><br />
+       <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
+       <code>
+       1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
+       2- <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
+       3- <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
+       </code>
+        </p>
+         <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
+       <code>
+       1- <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
+       2- <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
+  {`{ title: 'pretzels',       id: 0 }`},<br />
+  {`{ title: 'crispy seaweed', id: 1 }`},<br />
+  {`{ title: 'granola bar',    id: 2 }`},<br />
+];;</span> <br />
+       <span className="text-yellow-500">const</span>  [items, setItems]        = <span className="text-green-500">useState(<span className="text-red-500">initialItems</span>);</span><br />
+       </code>
+        </p>
+        </p>
+      );
+    },
+  },
+  {
+    ChoosingTheStateFa: () => {
+      return (
+        <p className="rtl" style={{ direction: "rtl" }}>
+       اهمیت ساختاردهی مناسب وضعیت <span>(state)</span> در  <span className="text-blue-500"> React </span>   
+        می‌تواند تفاوتی بین یک کامپوننتی که که بدونی مشکلی قابل تغییر و اشکال‌زدایی است 
+      و یک کامپوننتی که منبع ثابتی از باگ‌هاست، ایجاد کند 
+       برای اینکه بتوانیم ساختار با کارای  بهتر  و باگی کمتر به وجود بیاد باید در ساختار کد  هایمان از ۵ نکته پیروی کنیم : <br />
+<span className="text-primary">
+         ۱ ساختاردهی مناسب <span>(state) </span>وضعیت: <br />
+         </span> 
+         در <span className="text-blue-500"> React </span> ، مهم است که وضعیت کامپوننت به نحوی طراحی شود که حاوی اطلاعات ضروری باشد 
+         و اطلاعات تکراری یا اضافی حذف شوند. این کار باعث ساده‌تر شدن فرآیند توسعه، اشکال‌زدایی و نگهداری می‌شود. <br />
+  <span className="text-primary">
+         ۲ پیشگیری از اطلاعات تکراری: <br />
+         </span> 
+         هر اطلاعاتی که به صورت تکراری در وضعیت قرار دارد، ممکن است منجر به فراموش کردن به‌روزرسانی‌ها شود
+         . بنابراین، اهمیت دارد که فقط اطلاعات ضروری را در وضعیت نگه داریم و از تکرار آن‌ها پرهیز کنیم. <br />
+         <span className="text-primary">
+          ۳ تأثیر بر رندرینگ: <br />
+         </span> 
+هر تغییر در وضعیت منجر به رندر مجدد کامپوننت می‌شود. بنابراین، اگر وضعیت     
+به درستی مدیریت نشود، ممکن است رندرهای زیادی انجام شود که این موضوع به بهبود کارایی کد نقض می‌شود. <br />
+         <span className="text-primary">
+         ۴ مهارت‌های مدیریت وضعیت<span>(state) </span>وضعیت: <br />
+         </span> 
+         مدیریت وضعیت یک مهارت مهم در <span className="text-blue-500">React</span> است. استفاده از مفاهیمی مانند 
+        <span> lifting state up</span> برای به‌اشتراک‌گذاری وضعیت بین کامپوننت‌ها و 
+        <span> useEffect </span>برای کنترل جریان عمر کامپوننت‌ها کمک می‌کند. <br />
+         <span className="text-primary">
+         5 اهمیت به‌روزرسانی دقیق: <br />
+         </span> 
+         در <span className="text-blue-500">React،</span> مهم است که وضعیت کامپوننت به نحوی طراحی شود که حاوی اطلاعات ضروری باشد 
+         و اطلاعات تکراری یا اضافی حذف شوند. این کار باعث ساده‌تر شدن فرآیند توسعه، اشکال‌زدایی و نگهداری می‌شود. <br />
+        <h1 className="text-secondary text-3xl p-4">انواع ساختار  state</h1><br />
+       <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
+       <code>
+      1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
+      2- <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
+      3- <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
+       </code>
+        </p>
+         <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
+       <code>
+        <h1 className="px-6 pb-2 text-xl font-bold text-secondary">1. state object :</h1>
+          <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
+        <h1 className="px-6 py-2 font-bold text-xl text-secondary">2. state Array :</h1>
+          <span className="text-yellow-500">const</span> <span className="text-red-500"> initialItems </span>   = <span className="text-green-500">[ <br />
+  {`{ title: 'pretzels',       id: 0 }`},<br />
+  {`{ title: 'crispy seaweed', id: 1 }`},<br />
+  {`{ title: 'granola bar',    id: 2 }`},<br />
+];;</span> <br />
+       <span className="text-yellow-500">const</span>  [items, setItems]        = <span className="text-green-500">useState(<span className="text-red-500">initialItems</span>);</span><br />
+        <h1 className="px-6 pb-2 text-xl font-bold text-secondary">3. state nested object :</h1>
+       <span className="text-yellow-500">const</span> <span className="text-red-500"> [person, setPerson] </span>   = <span className="text-green-500">useState({`{`} <br />
+          {`{ title: 'pretzels',       id: 0 }`},<br />
+          {`{ title: 'crispy seaweed', id: 1 }`},<br />
+          {`{ title: 'granola bar',    id: 2 }`},<br />
+          {`}`});</span> <br />
+       </code>
+        </p>
+      </p>
+      );
+    },
+  },
+  {
+    SharingState: () => {
+      return (
+        <p style={{ direction: "ltr" }}>
+          Sometimes, you want the state of two components to always change
+          together. To do it, remove state from both of them, move it to their
+          closest common parent, and then pass it down to them via props. This
+          is known as <span className="font-bold">lifting state up</span>, and
+          it’s one of the most common things you will do writing React code. In
+          this example, only one panel should be active at a time. To achieve
+          this, instead of keeping the active state inside each individual
+          panel, the parent component holds the state and specifies the props
+          for its children
+        </p>
+      );
+    },
+  },
+  {
+    SharingStateFa: () => {
+      return (
+        <p style={{ direction: "rtl" }}>
+          گاهی اوقات، ممکن است بخواهید <span className="font-bold text-primary">state</span> دو جزء <span>React</span> همیشه با
+          هم تغییر کند. برای انجام این کار، باید <span className="font-bold text-primary">state</span> را از هر دو جزء حذف کنید،
+          آن را به والد مشترک آنها منتقل کنید و سپس از طریق <span>props</span>{" "}
+          به آنها منتقل کنید. این روش به نام بالا بردن وضعیت"{" "}
+          <span>(lifting state up)</span> شناخته می‌شود و یکی از رایج‌ترین
+          روش‌های نوشتن کد <span>React</span> است. در این مثال، فقط یک پانل باید
+          در یک زمان فعال باشد. برای دستیابی به این هدف، به جای ذخیره وضعیت فعال
+          در هر پانل جداگانه، جزء والد وضعیت را نگه می‌دارد و <span>props</span>{" "}
+          را برای فرزندان خود مشخص می‌کند. به عبارت دیگر، در این مثال، تنها یک
+          پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت
+          فعال در جزء والد <span>(App)</span> ذخیره می‌شود و از طریق{" "}
+          <span>prop</span> <span>isActive</span> به اجزای فرزند{" "}
+          <span>(Panel)</span> منتقل می‌شود. این <span>prop</span> به اجزای{" "}
+          <span>Panel</span> اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا
+          غیرفعال نمایش داده شوند. این روشی مؤثر برای اشتراک‌گذاری وضعیت بین
+          اجزای <span>React</span> است زیرا باعث می‌شود کد شما ماژولارتر و
+          نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و
+          ایجاد پیچیدگی در ساختار برنامه جلوگیری می‌کنید.
         </p>
       );
     },
