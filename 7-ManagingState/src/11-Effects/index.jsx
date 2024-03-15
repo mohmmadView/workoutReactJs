@@ -2,6 +2,7 @@ import DataText from '../TasksContext';
 import Container from '../utils/container';
 import SynchronizingWithEffects from './Synchronizing-With-Effects';
 import HowToWriteAnEffect  from './HowToWriteAnEffect'
+import './textfor.css'
 // import './hightLight.css'
 
 export default function Effects(lang) {
