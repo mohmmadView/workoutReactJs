@@ -161,7 +161,7 @@ let DataText= [
           bugs. The most important principle is that state shouldn’t contain
           redundant or duplicated information. If there’s unnecessary state,
           it’s easy to forget to update it, and introduce bugs!" />
-      <h1 className="text-secondary text-3xl p-4">Types of structure state</h1><br />
+      <h1 className="text-secondary text-3xl divider divider-start divider-accent p-4">Types of structure state</h1><br />
        <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
        <code>
        1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
@@ -187,38 +187,38 @@ let DataText= [
   {
     ChoosingTheStateFa: () => {
       return (
-        <p className="rtl" style={{ direction: "rtl" }}>
+        <div className="" style={{ direction: "rtl" }}>
        اهمیت ساختاردهی مناسب وضعیت <span>(state)</span> در  <span className="text-blue-500"> React </span>   
         می‌تواند تفاوتی بین یک کامپوننتی که که بدونی مشکلی قابل تغییر و اشکال‌زدایی است 
       و یک کامپوننتی که منبع ثابتی از باگ‌هاست، ایجاد کند 
-       برای اینکه بتوانیم ساختار با کارای  بهتر  و باگی کمتر به وجود بیاد باید در ساختار کد  هایمان از ۵ نکته پیروی کنیم : <br />
-<span className="text-primary">
-         ۱ ساختاردهی مناسب <span>(state) </span>وضعیت: <br />
-         </span> 
+       برای اینکه بتوانیم ساختار با کارای  بهتر  و باگی کمتر به وجود بیاد باید در ساختار کد  هایمان از ۵ نکته پیروی کنیم :
+<p className="text-secondary text-3xl divider divider-start divider-accent p-4 ">
+          ساختاردهی مناسب <span>(state) </span>وضعیت <br />
+         </p>  <br />
          در <span className="text-blue-500"> React </span> ، مهم است که وضعیت کامپوننت به نحوی طراحی شود که حاوی اطلاعات ضروری باشد 
          و اطلاعات تکراری یا اضافی حذف شوند. این کار باعث ساده‌تر شدن فرآیند توسعه، اشکال‌زدایی و نگهداری می‌شود. <br />
-  <span className="text-primary">
-         ۲ پیشگیری از اطلاعات تکراری: <br />
-         </span> 
+  <span className="text-primary py-4 my-5">
+         1 پیشگیری از اطلاعات تکراری: <br />
+         </span> <br />
          هر اطلاعاتی که به صورت تکراری در وضعیت قرار دارد، ممکن است منجر به فراموش کردن به‌روزرسانی‌ها شود
          . بنابراین، اهمیت دارد که فقط اطلاعات ضروری را در وضعیت نگه داریم و از تکرار آن‌ها پرهیز کنیم. <br />
          <span className="text-primary">
-          ۳ تأثیر بر رندرینگ: <br />
-         </span> 
+          2 تأثیر بر رندرینگ: <br />
+         </span> <br />
 هر تغییر در وضعیت منجر به رندر مجدد کامپوننت می‌شود. بنابراین، اگر وضعیت     
 به درستی مدیریت نشود، ممکن است رندرهای زیادی انجام شود که این موضوع به بهبود کارایی کد نقض می‌شود. <br />
          <span className="text-primary">
-         ۴ مهارت‌های مدیریت وضعیت<span>(state) </span>وضعیت: <br />
-         </span> 
+         3 مهارت‌های مدیریت وضعیت<span>(state) </span>وضعیت: <br />
+         </span> <br />
          مدیریت وضعیت یک مهارت مهم در <span className="text-blue-500">React</span> است. استفاده از مفاهیمی مانند 
         <span> lifting state up</span> برای به‌اشتراک‌گذاری وضعیت بین کامپوننت‌ها و 
         <span> useEffect </span>برای کنترل جریان عمر کامپوننت‌ها کمک می‌کند. <br />
          <span className="text-primary">
-         5 اهمیت به‌روزرسانی دقیق: <br />
-         </span> 
+         4 اهمیت به‌روزرسانی دقیق: <br />
+         </span> <br />
          در <span className="text-blue-500">React،</span> مهم است که وضعیت کامپوننت به نحوی طراحی شود که حاوی اطلاعات ضروری باشد 
          و اطلاعات تکراری یا اضافی حذف شوند. این کار باعث ساده‌تر شدن فرآیند توسعه، اشکال‌زدایی و نگهداری می‌شود. <br />
-        <h1 className="text-secondary text-3xl p-4">انواع ساختار  state</h1><br />
+        <h1 className="text-secondary text-3xl p-4">انواع ساختار  state</h1>
        <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
        <code>
       1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
@@ -245,7 +245,7 @@ let DataText= [
           {`}`});</span> <br />
        </code>
         </p>
-      </p>
+      </div>
       );
     },
   },

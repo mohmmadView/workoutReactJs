@@ -1,8 +1,9 @@
-mark:nth-of-type(1n + 3){color: rgb(50, 146, 55);}
-mark:nth-of-type(1){color: rgb(50, 146, 55);}
+mark:nth-of-type(3n + 3){color: rgb(103, 209, 108);}
+/* mark:nth-of-type(1){color: rgb(50, 146, 55);}
 mark:nth-of-type(4){color: rgb(50, 72, 146);}
 mark:nth-of-type(9){color: rgb(50, 72, 146);}
 mark:nth-of-type(2){color: rgb(50, 72, 146);}
 mark:nth-of-type(5){color: rgb(132, 185, 206)}
-mark:nth-of-type(7){color: rgb(236, 135, 52)}
-mark::content{content: "component"; color:rgb(177, 22, 22)}
+mark:nth-of-type(7){color: rgb(236, 135, 52)} */
+mark:nth-of-type(3n + 1){color: rgb(216, 103, 103)} 
+mark:nth-of-type(3n + 2){color: rgb(83, 114, 216)}

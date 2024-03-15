@@ -158,7 +158,7 @@ const DataText = [
           bugs. The most important principle is that state shouldn’t contain
           redundant or duplicated information. If there’s unnecessary state,
           it’s easy to forget to update it, and introduce bugs!
-      <h1 className="text-secondary text-3xl p-4">Types of structure state</h1><br />
+      <h1 className="text-secondary divider divider-start text-3xl p-4">Types of structure state</h1><br />
        <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
        <code>
        1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
