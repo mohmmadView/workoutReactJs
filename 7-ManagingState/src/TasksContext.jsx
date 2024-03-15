@@ -567,10 +567,10 @@ function handleClick() {
         <p className='p-4'>
           
            <Highlighter 
-            highlightClassName=' bg-base-300'
-            searchWords={["Effects","React","(",")","jsx","state","props","components","Event","component","effect"]}
+            highlightClassName='text-secondary bg-base-300'
+            searchWords={["Effects","React","non-React","(",")","jsx","state","props","components","Event","component","effect"]}
             autoEscape={true}
-            unhighlightClassName='text-white'
+            unhighlightClassName='text-yellow-100'
             textToHighlight={`Some components need to synchronize with external systems. For example, you might want to control a non-React component based on the React state, set up a server connection, or send an analytics log when a component appears on the screen. Effects let you run some code after rendering so that you can synchronize your component with some system outside of React.`} />
         </p>
         )
@@ -578,7 +578,7 @@ function handleClick() {
       },{
         EffectFa:()=>{
           return(
-          <p dir='rtl'>
+          <p className='text-yellow-100' dir='rtl'>
           برخی از کامپوننت ها نیاز به همگام سازی با سیستم های خارجی دارند. برای مثال، ممکن است بخواهید یک کامپوننت غیر <span className='text-blue-500 font-bold'>React</span> را بر اساس <span className='text-success font-bold'>state</span> ری اکت کنترل کنید، یک اتصال سرور راه اندازی کنید، یا زمانی که یک کامپوننت روی صفحه ظاهر می شود، یک لاگ آنالیز ارسال کنید.
 
 <span className='text-primary font-bold'>Effect</span> به شما این امکان را می دهد که بعد از رندر، کدهایی را اجرا کنید تا بتوانید کامپوننت خود را با سیستمی خارج از <span className='text-blue-500 font-bold'>React</span> همگام سازی کنید.

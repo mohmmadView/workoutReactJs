@@ -32,7 +32,7 @@ export default function SynchronizingWithEffects(lang){
                </>
             )}
 
-<div className="divider text-primary divider-info">What are Effects and how are they different from events?</div>
+<div className="divider divider-start text-accent mt-8 divider-secondary">What are Effects and how are they different from events?</div>
 {lang.lang?(
     <>
      {DataText[22].SynchronizingWithEffects()}

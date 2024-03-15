@@ -140,9 +140,7 @@ export default function App() {
         <EscapeHatches lang={lang} />
       </Container>
       <Title title="Effects" />
-      <Container Title="Synchronizing with Effects">
         <Effects lang={lang} />
-      </Container>
    
     </div>
   );
