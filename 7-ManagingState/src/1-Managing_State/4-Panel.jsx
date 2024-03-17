@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Prism from "./utils/Prism";
-import CodePanel from "./codeString/AllCodeString";
+import Prism from "../utils/Prism";
+import CodePanel from "../codeString/AllCodeString";
 function ContainerPanel({ men, and }) {
   let [active, setActive] = useState(0);
 
   return (
-    <div className="  w-11/12 mx-auto my-12 bg-base-300 p-10 text-xl">
+    <div className="  w-11/12 mx-auto my-12 bg-base-300 p-10 text-xl shadow-md shadow-info/50 hover:shadow-info">
       <div className="flex flex-col ">
         <div className=" m-4">
           <Panel

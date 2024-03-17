@@ -1,6 +1,6 @@
-import Prism from "./utils/Prism";
+import Prism from "../utils/Prism";
 import { useImmer } from "use-immer";
-import codeFullName from "./codeString/AllCodeString.js";
+import codeFullName from "../codeString/AllCodeString.js";
 /**
  * Generates a function FullName  give a firstName and  lastName
  *
@@ -20,7 +20,7 @@ export default function FullName() {
     });
   }
   return (
-    <div className="w-11/12 mx-auto my-12 bg-base-300 p-10 text-xl">
+    <div className="w-11/12 mx-auto my-12 bg-base-300 p-10 text-xl shadow-md shadow-primary/50 hover:shadow-primary ">
       <p className="p-2 text-success">
         For example, this form has a redundant fullName state variable:
       </p>

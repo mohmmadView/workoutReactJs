@@ -36,7 +36,7 @@ export default function Form() {
     setAnswer(e.target.value);
   }
   return (
-    <div className="w-11/12 mx-auto my-12 bg-base-300 p-4 text-xl gap-2  flex ">
+    <div className="w-11/12 mx-auto my-12 bg-base-300 p-4 text-xl gap-2  flex   shadow-md shadow-secondary/50 hover:shadow-secondary">
       <div className="w-1/3 max-h-40  mb-60 sticky top-5">
         <div className="flex flex-col p-4 bg-secondary-content flex-wrap border border-secondary rounded-md">
           <h2 className="text-2xl p-2 text-primary">City quiz</h2>

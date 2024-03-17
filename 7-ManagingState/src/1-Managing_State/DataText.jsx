@@ -252,19 +252,23 @@ let DataText= [
   {
     SharingState: () => {
       return (
-        <p style={{ direction: "ltr" }}>
+        <Highlighter
+          searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-yellow-200"
+            textToHighlight="
           Sometimes, you want the state of two components to always change
           together. To do it, remove state from both of them, move it to their
           closest common parent, and then pass it down to them via props. This
-          is known as <span className="font-bold">lifting state up</span>, and
+          is known as lifting state up, and
           it’s one of the most common things you will do writing React code. In
           this example, only one panel should be active at a time. To achieve
           this, instead of keeping the active state inside each individual
           panel, the parent component holds the state and specifies the props
           for its children
-        </p>
-      );
-    },
+        " />
+      )
+    }
   },
   {
     SharingStateFa: () => {
