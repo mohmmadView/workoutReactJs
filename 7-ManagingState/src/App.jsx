@@ -2,7 +2,6 @@ import Container from "./utils/container";
 import Title from "./utils/Title";
 import Example from "./utils/Example";
 import ManagingState from './1-Managing_State/index.jsx'
-import Panel from "./1-Managing_State/4-Panel.jsx";
 import ChatList from "./5-ChatList";
 import NoteReducer from "./6-Note-reducer/index";
 import PassingDataNesting from "./7-PassingData/index.jsx";
@@ -40,7 +39,6 @@ export default function App() {
         </button>
       </div>
       <ManagingState lang={lang} />
-      <Panel />
       {lang ? (
         <Container Title="Preserving and resetting state ">
           {DataText[8].PreservingAndResetting()}

@@ -4,33 +4,20 @@ let DataText= [
 
   Intermediate: () => {
       return (
-        <>
+        <Highlighter
+         searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
+            highlightClassName="  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight="
           As your application grows, it helps to be more intentional about how
-          your
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          is organized and how the data flows between your components. Redundant
-          or duplicate
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold ">
-            state
-          </span>
-          is a common source of bugs. In this chapter, you’ll learn how to
-          structure your
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          well, how to keep your
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          update logic maintainable, and how to share
-          <span className="text-primary underline underline-offset-4  decoration-double font-bold">
-            state
-          </span>
-          between distant components.,Children
-        </>
-      );
+          your state is organized and how the data flows between your components.
+           Redundant or duplicate state is a common source of bugs. 
+           In this chapter, you’ll learn how to structure your state
+          well, how to keep your state
+          update logic maintainable, and how to share state
+          between distant components.,Children"
+      /> 
+      ) 
     },
   },
   {
@@ -153,8 +140,8 @@ let DataText= [
         <p>
             <Highlighter 
             searchWords={["state","props","debug","Event","component","effect","bugs!"]}
-            highlightClassName="text-secondary  bg-base-300 font-bold"
-            unhighlightClassName="text-yellow-200"
+            highlightClassName=" bg-base-300 font-bold"
+            unhighlightClassName="text-white"
             textToHighlight="
           Structuring state well can make a difference between a component that
           is pleasant to modify and debug, and one that is a constant source of
@@ -255,7 +242,7 @@ let DataText= [
         <Highlighter
           searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
             highlightClassName="text-secondary  bg-base-300 font-bold"
-            unhighlightClassName="text-yellow-200"
+            unhighlightClassName="text-white"
             textToHighlight="
           Sometimes, you want the state of two components to always change
           together. To do it, remove state from both of them, move it to their

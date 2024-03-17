@@ -4,6 +4,7 @@ import Example from "../utils/Example";
 import CityQuiz from './1-CityQiuz'
 import CityQuiz_2 from './2-CityQiuz'
 import FullName_3 from "./3-fullName";
+import Panel_4 from "./4-Panel";
 export default function ManagingState(lang) {
 
 
@@ -52,6 +53,7 @@ export default function ManagingState(lang) {
         </Container>
       )}
       <FullName_3 /> 
+      <Panel_4 />
         </>
     )
 }
