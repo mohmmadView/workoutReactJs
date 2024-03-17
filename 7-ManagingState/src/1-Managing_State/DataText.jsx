@@ -282,6 +282,76 @@ let DataText= [
         </p>
       );
     },
-  }
+  },{  PreservingAndResetting: () => {
+      return (
+       
+          <Highlighter
+           searchWords={["state","props","debug","Event","component","effect","React","children","components","match up","re-render"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight="
+          When you re-render a component, React needs to decide which parts of
+          the tree to keep (and update), and which parts to discard or re-create
+          from scratch. In most cases, React’s automatic behavior works well
+          enough. By default, React preserves the parts of the tree that “match
+          up” with the previously rendered component tree. However, sometimes
+          this is not what you want. In this chat app, typing a message and then
+          switching the recipient does not reset the input. This can make the
+          user accidentally send a message to the wrong person:"
+       />
+      );
+    },
+    PreservingAndResetting_2:()=>{
+      return (
+        <Highlighter
+         searchWords={["state","props","debug","Event","component","effect","<Chat key={email} />.","React","children","components","match up","re-render"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+        textToHighlight="
+        React lets you override the default behavior, and force a component to reset its state
+         by passing it a different key, like <Chat key={email} />. This tells React that if 
+         the recipient is different, it should be considered a different Chat component that
+          needs to be re-created from scratch with the new data (and UI like inputs). 
+          Now switching between the recipients resets the input field—even though you 
+          render the same component."
+          />
+      )
+    }
+  },
+  {
+    PreservingAndResettingFa: () => {
+      return (
+        <p style={{direction: "rtl"} }>
+            <Highlighter
+           searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","(و به‌روزرسانی کند)","match up","re-render"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight="
+          وقتی یک کامپوننت را دوباره رندر می‌کنید، React باید تصمیم بگیرد که
+          کدام قسمت‌های درخت را نگه دارد (و به‌روزرسانی کند)، و کدام قسمت‌ها را
+          دور انداخته یا از ابتدا دوباره ایجاد کند. در بیشتر موارد، رفتار خودکار
+          React به اندازه کافی خوب عمل می کند. به‌طور پیش‌فرض، React بخش‌هایی از
+          درخت را حفظ می‌کند که با درخت مؤلفه‌ای که قبلاً رندر شده است، مطابقت
+          دارند. با این حال، گاهی اوقات این چیزی نیست که شما می خواهید. در این
+          برنامه چت، تایپ یک پیام و سپس تغییر گیرنده، ورودی را بازنشانی نمی کند.
+          این می تواند باعث شود کاربر به طور تصادفی پیامی را به شخص اشتباهی
+          ارسال کند:
+          " />
+        </p>
+      );
+    }, PreservingAndResettingFa_2: () => {
+      return (
+        <p style={{direction: "rtl"} }>
+            <Highlighter
+           searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","<Chat key={email} />","match up","re-render"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight="
+              React به شما امکان می‌دهد رفتار پیش‌فرض را نادیده بگیرید و یک مؤلفه را با دادن کلید دیگری مانند <Chat key={email} /> مجبور کنید وضعیت خود را بازنشانی کند. این به React می‌گوید که اگر گیرنده متفاوت است، باید به عنوان یک مؤلفه Chat متفاوت در نظر گرفته شود که باید از ابتدا با داده‌های جدید (و ورودی‌هایی مانند رابط کاربری) دوباره ایجاد شود. اکنون جابه‌جایی بین گیرندگان، فیلد ورودی را بازنشانی می‌کند - حتی اگر همان مؤلفه را ارائه کنید.
+          " />
+        </p>
+      );
+    },
+  },
 ]
 export default DataText 

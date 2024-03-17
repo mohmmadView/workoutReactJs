@@ -5,6 +5,7 @@ import CityQuiz from './1-CityQiuz'
 import CityQuiz_2 from './2-CityQiuz'
 import FullName_3 from "./3-fullName";
 import Panel_4 from "./4-Panel";
+import ChatList_5 from "./5-ChatList";
 export default function ManagingState(lang) {
 
 
@@ -54,6 +55,21 @@ export default function ManagingState(lang) {
       )}
       <FullName_3 /> 
       <Panel_4 />
+       {lang.lang ? (
+        <Container ColorDivider={"secondary shadow-error/50 hover:shadow-error text-purple-100"} Title="Preserving and resetting state ">
+          {DataText[8].PreservingAndResetting()}
+          <ChatList_5 />
+          {DataText[8].PreservingAndResetting_2()}
+        </Container>
+      ) : (
+        <Container ColorDivider={"secondary shadow-error/50 hover:shadow-error text-purple-100"} Title="Preserving and resetting state " Title="state حفظ و تنظیم مجدد ">
+          {DataText[9].PreservingAndResettingFa()}
+          <ChatList_5 />
+           {DataText[9].PreservingAndResettingFa_2()}
+
+        </Container>
+      )}
+      
         </>
     )
 }

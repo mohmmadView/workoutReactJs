@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Prism from "./utils/Prism";
-import codeChatList from "./codeString/AllCodeString";
+import Prism from "../utils/Prism";
+import codeChatList from "../codeString/AllCodeString";
 export default function ChatList() {
   let [id, setId] = useState(0);
   return (
