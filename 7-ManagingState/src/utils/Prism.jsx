@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
-export default function Code({ code, language, fileName, widthIN }) {
+export default function Code({ code, language, fileName, widthIN , more}) {
+ 
   useEffect(() => {
     Prism.highlightAll(Prism.highlight);
   }, []);
@@ -58,11 +59,17 @@ export default function Code({ code, language, fileName, widthIN }) {
           </pre>
         </code>
       </div>
+      {more ? (
       <button
         className="w-[100%]  btn btn-sm btn-warning rounded-t"
         onClick={handleClick}>
         more
-      </button>
+      </button>) :(<>
+      </>)}
     </div>
   );
 }
+
+ Code.defaultProps = {
+    more : true
+  }
