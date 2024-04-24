@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
 export default function Code({ code, language, fileName, widthIN , more}) {
- 
   useEffect(() => {
     Prism.highlightAll(Prism.highlight);
   }, []);
@@ -16,7 +15,7 @@ export default function Code({ code, language, fileName, widthIN , more}) {
     }
   }
   return (
-    <div className={`w-2/3  ${widthIN}  `}>
+    <div className={`w-2/3 ltr ${widthIN}  `}>
       <div
         className={
           overflow

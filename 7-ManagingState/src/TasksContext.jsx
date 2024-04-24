@@ -662,10 +662,8 @@ Effect در React، یک تابع است که به شما امکان می‌ده
            
            
         })
-       
           return (
             <div ref={refColor} className='whitespace-pre-line'>
-          
             <Highlighter 
             highlightClassName='text-secondary bg-base-300 rtl'
             searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
@@ -796,10 +794,10 @@ function MyComponent() {
       },{ HowToWriteAnEffectFa:()=>{
 
           return (
-            <div dir='auto' className='whitespace-pre-line'>
+            <div  className='whitespace-pre-line rtl'>
                 
             <Highlighter 
-            highlightClassName='text-secondary bg-base-300 rtl'
+            highlightClassName='text-secondary bg-base-300 '
             searchWords={[(/([a-zA-Z])\w+/g),("Effect")]}
             autoEscape={false}
             activeIndex={4}
@@ -813,7 +811,7 @@ function MyComponent() {
             ۲. مشخص کردن وابستگی های Effect: اکثر Effect ها باید فقط در صورت نیاز و نه بعد از هر بار رندر شدن، دوباره اجرا شوند. به عنوان مثال، یک انیمیشن محو شدن (fade-in) فقط باید زمانی که یک کامپوننت ظاهر می شود، اجرا شود. اتصال و قطع اتصال به یک چت روم نیز فقط باید زمانی که کامپوننت ظاهر و ناپدید می شود یا زمانی که چت روم تغییر می کند، اتفاق بیفتد. شما با مشخص کردن وابستگی ها یاد خواهید گرفت که این را کنترل کنید.
             
             ۳. در صورت نیاز پاکسازی اضافه کنید: برخی Effect ها نیاز دارند مشخص کنند که چگونه هر کاری را که انجام می دهند متوقف، خنثی یا پاکسازی کنند. به عنوان مثال، "connect" نیاز به "disconnect" دارد، "subscribe" نیاز به "unsubscribe" دارد و "fetch" نیاز به "cancel" یا "ignore" دارد. شما با برگرداندن یک تابع پاکسازی، نحوه انجام این کار را یاد خواهید گرفت
-            </div> `} />
+            `} />
  <div className="divider divider-start text-accent mt-8 divider-secondary ">
           Step 1: اعلام Effect
         </div>
@@ -834,7 +832,7 @@ function MyComponent() {
         <Code
           more={false}
           code={`
-          function MyComponent() {
+   function MyComponent() {
   // ...
 
   useEffect(() => {
@@ -886,31 +884,25 @@ useEffect(() => {
   return () => subscription.unsubscribe(); // تابع پاکسازی
 }, []); // آرایه وابستگی خالی: فقط یک بار اجرا می شود
  `} language={"js"}
-          widthIN={"w-full h-auto"} ></Code>
+          widthIN={"w-full h-auto "} ></Code>
           <p className="p-4">مثال کامل با دریافت داده و پاکسازی:</p>
              <Code more={true} code={`
  import { useEffect, useState } from 'react';
-
 function MyComponent() {
   const [data, setData] = useState(null);
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('https://api.example.com/data');
       const jsonData = await response.json();
       setData(jsonData);
     };
-
     fetchData();
-
     // تابع پاکسازی برای جلوگیری از نشت حافظه هنگام جدا شدن
     return () => {
       // هر گونه منطق پاکسازی در اینجا، مانند لغو اشتراک ها
     };
   }, []); // آرایه وابستگی خالی: فقط یک بار در رندر اولیه داده ها را دریافت کنید
-
   // ...
-
   return (
     <div>
       {data ? (
@@ -921,18 +913,12 @@ function MyComponent() {
     </div>
   );
 }
-
  `} language={"js"}
           widthIN={"w-full h-82"} ></Code> 
             </div>
           )
-
         }
-      
       }
-        
-      
-    
 ];
 
 export default DataText;

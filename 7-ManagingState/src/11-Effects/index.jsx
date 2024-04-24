@@ -13,9 +13,7 @@ export default function Effects(lang) {
     <SynchronizingWithEffects lang={lang.lang}/>
     </Container>     
    <Container ColorText={'text-primary'}  ColorDivider={'warning shadow-warning text-pink-200'} Title={"How to write an Effect"}>
-          
        <HowToWriteAnEffect lang={lang.lang}/>  
-         
    </Container>
 </div>
     )
