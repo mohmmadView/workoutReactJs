@@ -1,7 +1,6 @@
 import Highlighter from "react-highlight-words";
 let DataText= [
     {
-
   Intermediate: () => {
       return (
         <Highlighter

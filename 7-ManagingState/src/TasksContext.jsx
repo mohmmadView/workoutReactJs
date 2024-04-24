@@ -659,7 +659,7 @@ Effect در React، یک تابع است که به شما امکان می‌ده
         HowToWriteAnEffect:()=>{
         let refColor = useRef(null);
         useEffect(() => {
-            refColor.current.style.color = "red";
+           
            
         })
        
@@ -683,6 +683,112 @@ Effect در React، یک تابع است که به شما امکان می‌ده
 
 Let’s look at each of these steps in detail.
           `} />
+
+        <div className="divider divider-start text-accent mt-8 divider-secondary ">
+          Step 1: Declare an Effect
+        </div>
+        <p className="p-4 ">
+          To declare an <span className="text-red-500">Effect</span> in your{" "}
+          <span>component</span>
+        </p>
+        <Code
+          more={false}
+          code={"import { useEffect } from 'react'; "}
+          language={"js"}
+          widthIN={"w-full h-auto"}
+        />
+        <p className="p-4 ">
+          Then, call it at the top level of your <span>component</span> and put
+          some code inside your <span className="text-red-500">Effect</span>:
+        </p>
+        <p className="p-4 ">
+          Use <span className="text-green-500">useEffect</span> within your
+          functional <span> component</span>:
+        </p>
+        <Code
+          more={false}
+          code={`function MyComponent() {
+  // ...
+
+  useEffect(() => {
+    // Your effect code here
+  }, [/* dependency array */]);
+
+  // ...
+
+  return (
+    // JSX for your component
+  );
+}
+`}
+          language={"js"}
+          widthIN={"w-full h-auto"}
+        />
+
+        <div className="divider divider-start text-accent mt-8 divider-secondary ">
+          Step 2: Specify Effect Dependencies (Optional):
+        </div>
+        <p className="p-4">The second argument to <span className="text-green-500">useEffect</span> is an optional dependency array.</p>
+        <p className="p-4">By default, the effect runs after every render. This can be inefficient if the effect doesn't need to update every time.</p>
+        <p className="p-4">To control when the effect re-runs, include the props, state variables, or other values that the effect relies on in the dependency array. When one of these values changes, the effect will trigger again:</p>
+        <Code more={false} code={`
+  useEffect(() => {
+  // Effect that depends on count
+  }, [count]); // Dependency array includes count
+ `} language={"js"}
+          widthIN={"w-full h-auto"} ></Code>
+          <p className="p-4">If the effect doesn't depend on any values and only needs to run once (similar to componentDidMount in class components), use an empty dependency array ([]):</p>
+
+        <div className="divider divider-start text-accent mt-8 divider-secondary ">
+          Step 3: Add Cleanup Logic (Optional):
+        </div>
+        <p>If your effect performs actions that require cleanup (subscriptions, timers), you can return a function from inside the effect. This cleanup function will be called when the component unmounts or before the effect runs again if dependencies change. This prevents memory leaks and ensures resources are properly released:</p>
+        <Code more={false} code={`
+useEffect(() => {
+  const subscription = someApi.subscribe(/* ... */);
+
+  return () => subscription.unsubscribe(); // Cleanup function
+}, []); // Empty dependency array: runs only once
+
+ `} language={"js"}
+          widthIN={"w-full h-auto"} ></Code>
+          <p className='p-4'>Complete Example with Data Fetching and Cleanup:</p>
+           <Code more={true} code={`
+import { useEffect, useState } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('https://api.example.com/data');
+      const jsonData = await response.json();
+      setData(jsonData);
+    };
+
+    fetchData();
+
+    // Cleanup function to avoid memory leaks when unmounting
+    return () => {
+      // Any cleanup logic here, e.g., canceling subscriptions
+    };
+  }, []); // Empty dependency array: fetch data only once on initial render
+
+  // ...
+
+  return (
+    <div>
+      {data ? (
+        <p>Fetched data: {JSON.stringify(data)}</p>
+      ) : (
+        <p>Loading data...</p>
+      )}
+    </div>
+  );
+}
+
+ `} language={"js"}
+          widthIN={"w-full h-82"} ></Code>
             </div>
           )
 
@@ -708,6 +814,116 @@ Let’s look at each of these steps in detail.
             
             ۳. در صورت نیاز پاکسازی اضافه کنید: برخی Effect ها نیاز دارند مشخص کنند که چگونه هر کاری را که انجام می دهند متوقف، خنثی یا پاکسازی کنند. به عنوان مثال، "connect" نیاز به "disconnect" دارد، "subscribe" نیاز به "unsubscribe" دارد و "fetch" نیاز به "cancel" یا "ignore" دارد. شما با برگرداندن یک تابع پاکسازی، نحوه انجام این کار را یاد خواهید گرفت
             </div> `} />
+ <div className="divider divider-start text-accent mt-8 divider-secondary ">
+          Step 1: اعلام Effect
+        </div>
+        <p className="p-4 ">
+          فراخوانی <span className="text-red-500">Effect</span> در {" "}
+          
+        </p>
+        <Code
+          more={false}
+          code={"import { useEffect } from 'react'; "}
+          language={"js"}
+          widthIN={"w-full h-auto"}
+        />
+        <p className="p-4 ">
+          استفاده از <span className="text-green-500">useEffect</span> در  <span>component</span> 
+          :
+        </p>
+        <Code
+          more={false}
+          code={`
+          function MyComponent() {
+  // ...
+
+  useEffect(() => {
+    // کد Effect شما در اینجا
+  }, [/* آرایه وابستگی */]);
+
+  // ...
+
+  return (
+    // JSX برای کامپوننت شما
+  );
+}
+
+`}
+          language={"js"}
+          widthIN={"w-full h-auto"}
+        />
+
+        <div className="divider divider-start text-accent mt-8 divider-secondary ">
+          Step 2: وابستگی های Effect را مشخص کنید (اختیاری):
+        </div>
+        <p className="p-4">
+آرگومان دوم <span className='text-green-500'>useEffect</span> یک آرایه وابستگی اختیاری است.
+</p>
+        <p className="p-4">اگر یک آرایه خالی <span className='text-purple-500'>([])</span> ارائه دهید، <span className='text-red-500'>Effect</span> فقط یک بار پس از رندر اولیه اجرا می شود (مشابه componentDidMount در کامپوننت های کلاس).</p>
+        <p className="p-4">هر  گونه <span className='text-orange-500'>prop،</span> متغیر حالت یا مقادیر دیگری که <span className='text-red-500'>Effect</span> به آنها وابسته است را در آرایه وابستگی قرار دهید. هنگامی که یکی از این مقادیر تغییر می کند، <span className='text-red-500'>Effect</span> دوباره اجرا می شود:</p>
+        <Code more={false} code={`
+  useEffect(() => {
+  // Effect that depends on count
+  }, [count]); // Dependency array includes count
+ `} language={"js"}
+          widthIN={"w-full h-auto"} ></Code>
+          <p className="p-4">اگر <span className='text-red-500'>Effect</span> به هیچ مقداری وابسته نیست و فقط باید یک بار اجرا شود (مشابه <span>componentDidMount</span> در کامپوننت های کلاس)، از یک آرایه وابستگی خالی <span className='text-purple-500'>([])</span> استفاده کنید:</p>
+             <Code more={false} code={`
+ useEffect(() => {
+  // Effect که فقط در رندر اولیه اجرا می شود
+}, []);
+ `} language={"js"}
+          widthIN={"w-full h-auto"} ></Code> 
+          <div className="divider divider-start text-accent mt-8 divider-secondary ">
+          Step 3: منطق پاکسازی را اضافه کنید (اختیاری):
+        </div>
+        <p>
+    اگر <span className='text-red-500'>Effect</span> شما اقداماتی را انجام می دهد که به پاکسازی نیاز دارند (اشتراک ها، تایمرها)، می توانید یک تابع را از داخل <span className='text-red-500'>Effect</span> برگردانید. این تابع پاکسازی زمانی فراخوانی می شود که کامپوننت جدا شود یا قبل از اینکه <span className='text-red-500'>Effect</span> دوباره اجرا شود اگر وابستگی ها تغییر کند. این از نشت حافظه جلوگیری می کند و تضمین می کند که منابع به درستی آزاد می شوند:
+        </p>
+          <Code more={false} code={`
+useEffect(() => {
+  const subscription = someApi.subscribe(/* ... */);
+  return () => subscription.unsubscribe(); // تابع پاکسازی
+}, []); // آرایه وابستگی خالی: فقط یک بار اجرا می شود
+ `} language={"js"}
+          widthIN={"w-full h-auto"} ></Code>
+          <p className="p-4">مثال کامل با دریافت داده و پاکسازی:</p>
+             <Code more={true} code={`
+ import { useEffect, useState } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('https://api.example.com/data');
+      const jsonData = await response.json();
+      setData(jsonData);
+    };
+
+    fetchData();
+
+    // تابع پاکسازی برای جلوگیری از نشت حافظه هنگام جدا شدن
+    return () => {
+      // هر گونه منطق پاکسازی در اینجا، مانند لغو اشتراک ها
+    };
+  }, []); // آرایه وابستگی خالی: فقط یک بار در رندر اولیه داده ها را دریافت کنید
+
+  // ...
+
+  return (
+    <div>
+      {data ? (
+        <p>داده های دریافت شده: {JSON.stringify(data)}</p>
+      ) : (
+        <p>در حال بارگیری داده ها...</p>
+      )}
+    </div>
+  );
+}
+
+ `} language={"js"}
+          widthIN={"w-full h-82"} ></Code> 
             </div>
           )
 
