@@ -125,6 +125,7 @@ export default function App() {
       </Container>
       <Title title="Effects" />
         <Effects lang={lang} />
+        <Container></Container>
    
     </div>
   );

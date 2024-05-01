@@ -6,7 +6,6 @@ import './textfor.css'
 // import './hightLight.css'
 
 export default function Effects(lang) {
-
     return (
 <div>
     <Container ColorText={'text-primary'}  ColorDivider={'warning shadow-warning text-pink-200 '} Title={"Synchronizing With Effects"}>
