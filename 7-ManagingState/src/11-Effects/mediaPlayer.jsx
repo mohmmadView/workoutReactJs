@@ -4,12 +4,16 @@ import Code from '../utils/Prism';
 function VideoPlayer({ src, isPlaying }) {
   const ref = useRef(null);
 useEffect(() => {
-  if (isPlaying) {
+  const handlerPlay= () => {
+   if (isPlaying) {
     ref.current.play();  // Calling these while rendering isn't allowed.
   } else {
     ref.current.pause(); // Also, this crashes.
+} 
+console.log(ref.current,"test");
 }
-})
+return ()=> handlerPlay();
+},[isPlaying])
 return <video ref={ref} src={src} loop playsInline />;
 }
 export default function App() {

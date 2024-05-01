@@ -1,5 +1,5 @@
 import DataText from "../TasksContext"
-import Video from "./mediaPlayer"
+import MediaPlayer from "./mediaPlayer"
 export default function HowToWriteAnEffect (lang) {
     return (
       <div className="my-12">
@@ -11,7 +11,7 @@ export default function HowToWriteAnEffect (lang) {
         <div className="divider divider-start text-accent mt-8 divider-secondary ">
           example : <span> Media Player</span>
         </div>
-        <Video  />
+        <MediaPlayer  />
       </div>
     );
 }
