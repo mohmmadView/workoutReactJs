@@ -13,8 +13,8 @@ import PropTypes from "prop-types";
 
   return (
     <div style={{ direction: `auto` }}
-      className={`text-white w-11/12 mx-auto my-12 
-        bg-base-300 pt-10 lg:text-xl xl:text-2xl  shadow-md  ${ColorDivider} p-10   `}>
+      className={`text-white w-11/12 mx-auto my-12 container
+        bg-base-300 pt-10 lg:text-xl xl:text-2xl  shadow-md  shadow-${ColorDivider}/50 hover:shadow-${ColorDivider} p-10   `}>
       <div style={{ direction: "auto" }}
         className={`text-secondary pb-8 font-bold text-3xl max-lg:text-xl max-md:text-lg divider divider-${ColorDivider}`}>
         <p className={ColorText}>{Title}</p>
@@ -40,5 +40,5 @@ Container.defaultProps = {
 children: "about us",
 Title: "Title",
 ColorText: "text-secondary",
-ColorDivider: "divider-primary",
+ColorDivider:  "info"
 }
