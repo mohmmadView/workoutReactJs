@@ -26,7 +26,7 @@ export default function ManagingState(lang) {
 
       {lang.lang ? (
         <Container ColorText={'text-green-400'} ColorDivider={'success shadow-success/50 hover:shadow-success  text-green-200'} Title={"Reacting to input with state"}>
-          {DataText[2].Reactingtoinput()}
+          {DataText[2].ReactingToInput()}
         </Container>
       ) : (
         <Container  ColorText={'text-green-400'} ColorDivider={'success shadow-success/50 hover:shadow-success  text-green-200'} Title="واکنش به ورودی با استفاده از state" >

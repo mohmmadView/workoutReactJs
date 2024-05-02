@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 /**
  * Renders a container component with a title, direction, and children.
  *
@@ -6,13 +7,9 @@
  * @param {ReactNode} Children - The children to be rendered within the container.
  * @return {ReactElement} The rendered container component.
  */
-import { downContext } from "./downContext";
-import { useContext } from "react";
-import PropTypes from "prop-types";
 
  export default function Container( {Title, ColorText, ColorDivider, children })  {
  
-  const numContainer = useContext(downContext);
 
   return (
     <div style={{ direction: `auto` }}
@@ -22,9 +19,7 @@ import PropTypes from "prop-types";
         className={`text-secondary pb-8 font-bold text-3xl max-lg:text-xl max-md:text-lg divider divider-${ColorDivider}`}>
         <p className={ColorText}>{Title}</p>
       </div>
-      <downContext.Provider value={numContainer}>
         {children}
-      </downContext.Provider>
     </div>
   );
 }

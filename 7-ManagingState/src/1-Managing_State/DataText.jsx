@@ -22,7 +22,7 @@ let DataText= [
   {
     ManagingState: () => {
       return (
-        <p className="rtl" style={{ direction: "rtl" }}>
+        <div className="rtl" style={{ direction: "rtl" }}>
           هرچقدر برنامه شما بزرگتر می‌شود، بهتر است که در مورد نحوه سازماندهی و
           چگونگی جریان داده
           <span className="text-primary underline underline-offset-4  decoration-double font-bold">
@@ -89,46 +89,57 @@ let DataText= [
             تغییرات در وضعیت پاسخ دهد. این امر به بهترین نحو امکان پذیر استفاده
             از برنامه را فراهم می‌کند.
           </span>
-        </p>
+        </div>
       );
     },
   },
   {
-    Reactingtoinput: () => {
+    ReactingToInput: () => {
       return (
-        <p>
-          With <span className="text-blue-400">React</span>, you won’t modify
-          the UI from code directly. For example, you won’t write commands like
-          “disable the button”, “enable the button”, “show the success message”,
-          etc. Instead, you will describe the UI you want to see for the
-          different visual states of your component
-          <span>(“initial state”, “typing state”, “success state”),</span> and
-          then trigger the <span>state</span> changes in response to user input.
-          This is similar to how designers think about UI. Here is a quiz form
-          built using React. Note how it uses the status <span>state</span>{" "}
-          variable to determine whether to enable or disable the submit button,
-          and whether to show the success message instead.
-        </p>
+  <Highlighter
+         searchWords={["initial state","success state","typing state","props","debug","Event","component","effect","bugs!","React","children","components"]}
+            highlightClassName="  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight="
+            With React, you won’t modify
+            the UI from code directly. For example, you won’t write commands like
+            “disable the button”, “enable the button”, “show the success message”,
+            etc. Instead, you will describe the UI you want to see for the
+            different visual states of your component
+           (“initial state”, “typing state”, “success state”), and
+            then trigger the state changes in response to user input.
+            This is similar to how designers think about UI. Here is a quiz form
+            built using React. Note how it uses the status state
+            variable to determine whether to enable or disable the submit button,
+            and whether to show the success message instead."
+      /> 
+        
       );
     },
   },
   {
     ReactingToInputFa: () => {
       return (
-        <p style={{ direction: "rtl" }}>
-          با <span className="text-blue-400">React</span>، شما از کد به صورت
+          <Highlighter
+         searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
+            highlightClassName="  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight="
+          با React، شما از کد به صورت
           مستقیم تغییرات را در رابط کاربری اعمال نخواهید کرد. به عنوان مثال،
           دستوراتی مانند دکمه را غیرفعال کن، دکمه را فعال کن، پیام موفقیت را
           نشان بده و غیره را نخواهید نوشت. به جای اینکه دستورات مستقیم بنویسید،
           شما توصیف خواهید کرد که رابط کاربری مورد نظر خود را برای وضعیت‌های
           مختلف دیداری کامپوننت خود
-          <span>(وضعیت اولیه، وضعیت تایپ کردن، وضعیت موفقیت) </span>و سپس
+         (وضعیت اولیه، وضعیت تایپ کردن، وضعیت موفقیت) و سپس
           تغییرات وضعیت را در پاسخ به ورودی کاربر فراخوانی خواهید کرد. این مشابه
           به این است که طراحان به رابط کاربری فکر می‌کنند. در زیر، یک فرم آزمون
           به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت
-          <span>(status)</span> برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال
+          (status) برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال
           باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است
-        </p>
+          "
+      /> 
+       
       );
     },
   }
