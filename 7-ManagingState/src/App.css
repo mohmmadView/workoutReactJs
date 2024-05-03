@@ -1,4 +1,0 @@
-.container:nth-of-type(2n + 1){box-shadow: red}
-.container:nth-of-type(2n + 2){shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);} 
-.container:nth-of-type(5n + 2){}
-   

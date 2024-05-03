@@ -7,17 +7,14 @@ import FullName_3 from "./3-fullName";
 import Panel_4 from "./4-Panel";
 import ChatList_5 from "./5-ChatList";
 export default function ManagingState(lang) {
-
-
-
     return(
         <>
         {lang.lang ? (
-        <Container ColorText={'text-primary'}  ColorDivider={'error'} Title={"Managing State"}>
+        <Container ColorText={'primary'}  ColorDivider={'secondary'} Title={"Managing State"}>
         {DataText[0].Intermediate()}
         </Container>
       ) : (
-        <Container ColorText={'text-primary'}  ColorDivider={'error'} Title={"مدیریت وضعیت"}>
+        <Container ColorText={'primary'}  ColorDivider={'secondary'} Title={"مدیریت وضعیت"}>
           {DataText[1].ManagingState()}
         </Container>
       )}
@@ -25,11 +22,11 @@ export default function ManagingState(lang) {
       <Example exampleNumber={1} exampleName={"Example State"} />
 
       {lang.lang ? (
-        <Container ColorText={'text-green-400'} ColorDivider={'success'} Title={"Reacting to input with state"}>
+        <Container ColorText={'info'} ColorDivider={'success'} Title={"Reacting to input with state"}>
           {DataText[2].ReactingToInput()}
         </Container>
       ) : (
-        <Container  ColorText={'text-green-400'} ColorDivider={'success'} Title="واکنش به ورودی با استفاده از state" >
+        <Container  ColorText={'info'} ColorDivider={'success'} Title="واکنش به ورودی با استفاده از state" >
           {DataText[3].ReactingToInputFa()}
         </Container>
       )}
@@ -45,11 +42,11 @@ export default function ManagingState(lang) {
         </Container>
       )}
        {lang.lang ? (
-        <Container ColorDivider={"accent"} ColorText={"text-info "} Title={"Sharing state between components"}>
+        <Container ColorDivider={"accent"} ColorText={"text-info"} Title={"Sharing state between components"}>
           {DataText[6].SharingState()}
         </Container>
       ) : (
-        <Container  ColorDivider={"accent"} ColorText={"text-info "}  Title={"به اشتراک گذاری  state بین کامپوننت ها"} >
+        <Container  ColorDivider={"accent"} ColorText={"text-info"}  Title={"به اشتراک گذاری  state بین کامپوننت ها"} >
           {DataText[7].SharingStateFa()}
         </Container>
       )}
