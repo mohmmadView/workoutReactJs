@@ -36,7 +36,7 @@ const DataText = [
       );
     },
   },
-  {
+   {
     ManagingState: () => {
       return (
         <p className="rtl" style={{ direction: "rtl" }}>

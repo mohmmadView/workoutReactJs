@@ -125,7 +125,7 @@ export default function App() {
       </Container>
       <Title title="Effects" />
         <Effects lang={lang} />
-        <Container Title="Synchronizing With Effects" ColorText="text-primary" ColorDivider="secondary"></Container>
+        <Container></Container>
         <Container></Container>
         <Container></Container>
    

@@ -33,27 +33,27 @@ export default function ManagingState(lang) {
          <CityQuiz />
          <CityQuiz_2 />
           {lang.lang ? (
-        <Container ColorText={'text-accent'} ColorDivider={"secondary"} Title={"Choosing the state structure"}>
+        <Container ColorText={'yellow-300'} ColorDivider={"accent"} Title={"Choosing the state structure"}>
           {DataText[4].ChoosingTheState()}
         </Container>
       ) : (
-        <Container  ColorText={'text-accent'} ColorDivider={'secondary'} Title={" state  انتخاب ساختار  "}>
+        <Container  ColorText={'yellow-300'} ColorDivider={'accent'} Title={" state  انتخاب ساختار  "}>
           {DataText[5].ChoosingTheStateFa()}
         </Container>
       )}
        {lang.lang ? (
-        <Container ColorDivider={"accent"} ColorText={"text-info"} Title={"Sharing state between components"}>
+        <Container ColorDivider={"info"} ColorText={"accent"} Title={"Sharing state between components"}>
           {DataText[6].SharingState()}
         </Container>
       ) : (
-        <Container  ColorDivider={"accent"} ColorText={"text-info"}  Title={"به اشتراک گذاری  state بین کامپوننت ها"} >
+        <Container  ColorDivider={"info"} ColorText={"accent"}  Title={"به اشتراک گذاری  state بین کامپوننت ها"} >
           {DataText[7].SharingStateFa()}
         </Container>
       )}
       <FullName_3 /> 
       <Panel_4 />
        {lang.lang ? (
-        <Container ColorDivider={"secondary"} Title="Preserving and resetting state ">
+        <Container ColorDivider={"success"} ColorText={"yellow-300"} Title="Preserving and resetting state ">
           {DataText[8].PreservingAndResetting()}
           <ChatList_5 />
           {DataText[8].PreservingAndResetting_2()}

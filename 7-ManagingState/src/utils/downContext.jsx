@@ -1,2 +1,10 @@
 import { createContext } from "react";
-export const downContext = createContext(1);
+const  HandlerContext = createContext();
+const PrevContext =(children)=>{
+    return(
+        <HandlerContext.Provider value={children}>
+            {children}
+        </HandlerContext.Provider>
+    )
+}
+export {PrevContext}
