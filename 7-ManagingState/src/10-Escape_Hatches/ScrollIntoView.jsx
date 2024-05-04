@@ -6,7 +6,7 @@ export default function ScrollIntoView() {
   const secondCatRef = useRef(null);
   const thirdCatRef = useRef(null);
   const checkTest = useRef(null);
-  function testClick() {
+  function TestClick() {
   let testC =  checkTest.current.hasAttribute('class');
   console.log(testC);
   }
@@ -51,21 +51,21 @@ export default function ScrollIntoView() {
           <ul className="carousel carousel-center max-w-3xl  p-4 space-x-32 bg-neutral rounded-box  gap-14">
             <li className="carousel-item">
               <img
-                src="https://placekitten.com/300/200"
+                src="./src/10-Escape_Hatches/200.jpeg"
                 alt="Tom"
                 ref={firstCatRef}
               />
             </li>
             <li  className="carousel-item">
               <img
-                src="https://placekitten.com/g/300/200"
+                src="./src/10-Escape_Hatches/cat-2.jpg"
                 alt="Maru"
                 ref={secondCatRef}
               />
             </li>
             <li  className="carousel-item">
               <img
-                src="https://placekitten.com/g/250/200"
+                src="./src/10-Escape_Hatches/cat-3.jpg"
                 alt="Jellylorum"
                 ref={thirdCatRef}
               />

@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import Code from '../utils/Prism';
-
 function VideoPlayer({ src, isPlaying }) {
   const ref = useRef(null);
 useEffect(() => {
@@ -10,10 +9,9 @@ useEffect(() => {
   } else {
     ref.current.pause(); // Also, this crashes.
 } 
-console.log(ref.current,"test");
 }
-return ()=> handlerPlay();
-},[isPlaying])
+return  handlerPlay();
+})
 return <video ref={ref} src={src} loop playsInline />;
 }
 export default function App() {
@@ -62,7 +60,6 @@ export default function App() {
    </div>
   );
 }
-
      `} language={"js"}
               widthIN={"w-full  "} ></Code>
            

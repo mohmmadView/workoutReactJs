@@ -12,6 +12,7 @@
     "production": "vite build --mode production"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
     "@types/prismjs": "^1.26.3",
     "@vercel/speed-insights": "^1.0.2",
     "immer": "^10.0.3",
