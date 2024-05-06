@@ -1,4 +1,5 @@
 import Highlighter from "react-highlight-words";
+import TitleDivider from "../utils/TitleDivider";
 let DataText= [
     {
   Intermediate: () => {
@@ -331,8 +332,7 @@ let DataText= [
   {
     PreservingAndResettingFa: () => {
       return (
-        <p style={{direction: "rtl"} }>
-            <Highlighter
+            <Highlighter highlightStyle={{direction: "rtl"} }
            searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","(و به‌روزرسانی کند)","match up","re-render"]}
             highlightClassName="text-secondary  bg-base-300 font-bold"
             unhighlightClassName="text-white"
@@ -347,42 +347,47 @@ let DataText= [
           این می تواند باعث شود کاربر به طور تصادفی پیامی را به شخص اشتباهی
           ارسال کند:
           " />
-        </p>
       );
     }, PreservingAndResettingFa_2: () => {
       return (
-        <p style={{direction: "rtl"} }>
-            <Highlighter
+            <Highlighter highlightStyle={{direction: "rtl"} }
            searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","<Chat key={email} />","match up","re-render"]}
             highlightClassName="text-secondary  bg-base-300 font-bold"
             unhighlightClassName="text-white"
             textToHighlight="
               React به شما امکان می‌دهد رفتار پیش‌فرض را نادیده بگیرید و یک مؤلفه را با دادن کلید دیگری مانند <Chat key={email} /> مجبور کنید وضعیت خود را بازنشانی کند. این به React می‌گوید که اگر گیرنده متفاوت است، باید به عنوان یک مؤلفه Chat متفاوت در نظر گرفته شود که باید از ابتدا با داده‌های جدید (و ورودی‌هایی مانند رابط کاربری) دوباره ایجاد شود. اکنون جابه‌جایی بین گیرندگان، فیلد ورودی را بازنشانی می‌کند - حتی اگر همان مؤلفه را ارائه کنید.
           " />
-        </p>
       );
     },
   },{
     ExtractingStateLogic: () => {
       return (
-        <p style={{direction: "rtl"}}>
-          Components with many state updates spread across many event handlers
-          can get overwhelming. For these cases, you can consolidate all the
-          state update logic outside your component in a single function, called
-          “reducer”. Your event handlers become concise because they only
-          specify the user “actions”. At the bottom of the file, the reducer
-          function specifies how the state should update in response to each
-          action!
-        </p>
-      );
+        <>
+          
+          <Highlighter 
+          searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","reducer","match u","re-render"]}
+              highlightClassName="text-secondary  bg-base-300 font-bold"p
+              unhighlightClassName="text-white"
+              textToHighlight={`
+            A reducer is a function that consolidates state update logic outside your component. Instead of directly setting state in various event handlers, you can move that logic into a single function called a "reducer". This function specifies how the state should update in response to each action. This makes your code more readable and easier to maintain.
+          `}/>
+           {/* <TitleDivider Title={"Extracting state logic"} ColorText={'primary'} /> */}
+           <TitleDivider TitleDivider={"Extracting state logic"} ColorDivider2={'secondary'} />
+        </>
+        );
     },
   },
   {
     ExtractingStateLogicFa: () => {
       return (
-        <p style={{direction: "rtl"}}>
-کاهنده تابعی است که منطق به روز رسانی حالت را در خارج از مؤلفه شما یکپارچه می کند. به جای تنظیم مستقیم حالت در کنترل کننده های رویداد مختلف، می توانید آن منطق را به یک تابع منتقل کنید. این باعث می‌شود کد شما خواناتر و نگهداری راحت‌تر شود.        </p>
+        <Highlighter highlightStyle={{direction: "rtl"} }
+        searchWords={["state","Event","component","کامپوننت","React","reducer"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight={`
+کاهنده(reducer) تابعی(component) است که منطق(state) به روز رسانی حالت را در خارج از مؤلفه شما یکپارچه می کند. به جای تنظیم مستقیم حالت در کنترل کننده های رویداد(event) مختلف، می توانید آن منطق(state) را به یک تابع(component) منتقل کنید. این باعث می‌شود کد شما خواناتر و نگهداری راحت‌تر شود.    `}/>
       );
+      
     },
   },
 ]

@@ -71,7 +71,7 @@ export default function ManagingState(lang) {
           {DataText[10].ExtractingStateLogic()}
         </Container>
       ) : (
-        <Container  Title="استخراج منطق stage در یک کاهنده ">
+        <Container  Title="Extracting state logic into a reducer">
           {DataText[11].ExtractingStateLogicFa()}
         </Container>
       )}
