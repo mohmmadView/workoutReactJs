@@ -362,6 +362,28 @@ let DataText= [
         </p>
       );
     },
+  },{
+    ExtractingStateLogic: () => {
+      return (
+        <p style={{direction: "rtl"}}>
+          Components with many state updates spread across many event handlers
+          can get overwhelming. For these cases, you can consolidate all the
+          state update logic outside your component in a single function, called
+          “reducer”. Your event handlers become concise because they only
+          specify the user “actions”. At the bottom of the file, the reducer
+          function specifies how the state should update in response to each
+          action!
+        </p>
+      );
+    },
+  },
+  {
+    ExtractingStateLogicFa: () => {
+      return (
+        <p style={{direction: "rtl"}}>
+کاهنده تابعی است که منطق به روز رسانی حالت را در خارج از مؤلفه شما یکپارچه می کند. به جای تنظیم مستقیم حالت در کنترل کننده های رویداد مختلف، می توانید آن منطق را به یک تابع منتقل کنید. این باعث می‌شود کد شما خواناتر و نگهداری راحت‌تر شود.        </p>
+      );
+    },
   },
 ]
 export default DataText 

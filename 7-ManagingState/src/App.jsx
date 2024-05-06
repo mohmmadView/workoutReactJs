@@ -39,15 +39,7 @@ export default function App() {
       </div>
       <ManagingState lang={lang} />
      
-      {lang ? (
-        <Container Title="Extracting state logic into a reducer ">
-          {DataText[10].ExtractingStateLogic()}
-        </Container>
-      ) : (
-        <Container  Title="استخراج منطق stage در یک کاهنده ">
-          {DataText[11].ExtractingStateLogicFa()}
-        </Container>
-      )}
+      
       <Title title="React Context" />
       {lang ? (
         <Container Title="What is React Context ?">
@@ -104,7 +96,7 @@ export default function App() {
       )}
       
       <Title title="Reacting to Input with State" />
-      <Container>
+      <Container ColorText={"info"} ColorDivider={"success"} >
         <InputActive />
       </Container>
       <Title title="Escape Hatches" />
@@ -125,7 +117,7 @@ export default function App() {
       </Container>
       <Title title="Effects" />
         <Effects lang={lang} />
-        <Container></Container>
+        <Container title={2} ColorDivider={23}></Container>
         <Container></Container>
         <Container></Container>
    

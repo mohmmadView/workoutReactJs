@@ -33,11 +33,11 @@ export default function ManagingState(lang) {
          <CityQuiz />
          <CityQuiz_2 />
           {lang.lang ? (
-        <Container ColorText={'yellow-300'} ColorDivider={"accent"} Title={"Choosing the state structure"}>
+        <Container ColorText={'secondary'} ColorDivider={"accent"} Title={"Choosing the state structure"}>
           {DataText[4].ChoosingTheState()}
         </Container>
       ) : (
-        <Container  ColorText={'yellow-300'} ColorDivider={'accent'} Title={" state  انتخاب ساختار  "}>
+        <Container  ColorText={'secondary'} ColorDivider={'accent'} Title={" state  انتخاب ساختار  "}>
           {DataText[5].ChoosingTheStateFa()}
         </Container>
       )}
@@ -53,20 +53,28 @@ export default function ManagingState(lang) {
       <FullName_3 /> 
       <Panel_4 />
        {lang.lang ? (
-        <Container ColorDivider={"success"} ColorText={"yellow-300"} Title="Preserving and resetting state ">
+        <Container ColorDivider={"success"} ColorText={"primary"} Title="Preserving and resetting state ">
           {DataText[8].PreservingAndResetting()}
           <ChatList_5 />
           {DataText[8].PreservingAndResetting_2()}
         </Container>
       ) : (
-        <Container ColorDivider={"secondary"} Title="state حفظ و تنظیم مجدد ">
+        <Container ColorDivider={"success"} ColorText={"primary"} Title="state حفظ و تنظیم مجدد ">
           {DataText[9].PreservingAndResettingFa()}
           <ChatList_5 />
            {DataText[9].PreservingAndResettingFa_2()}
 
         </Container>
       )}
-      
+      {lang.lang ? (
+        <Container Title="Extracting state logic into a reducer ">
+          {DataText[10].ExtractingStateLogic()}
+        </Container>
+      ) : (
+        <Container  Title="استخراج منطق stage در یک کاهنده ">
+          {DataText[11].ExtractingStateLogicFa()}
+        </Container>
+      )}
         </>
     )
 }

@@ -1,0 +1,12 @@
+{
+    "1-Managing_State": {
+        "Eng":{
+            "title": "Managing State",
+            "text" : "As your application grows, it helps to be more intentional about how your state is organized and how the data flows between your components. Redundant or duplicate state is a common source of bugs. In this chapter, you’ll learn how to structure your state well, how to keep your state update logic maintainable, and how to share state between distant components.,Children"
+        },
+        "fa": {
+            "title": "مدیریت وضعیت",
+            "text" : " هرچقدر برنامه شما بزرگتر می‌شود، بهتر است که در مورد نحوه سازماندهی و چگونگی جریان دادهstate بین کامپوننت‌های شما دقت بیشتری داشته باشید. وضعیت state تکراری یا تکراری منبعی رایج برای باگ‌ هاست. در این فصل، یاد می‌گیرید که چگونه وضعیتstateخود را به خوبی سازماندهی کنید، چگونه منطق به‌روزرسانی وضعیتstate خود را قابل دفاع نگه دارید و چگونه وضعیتstateرا بین کامپوننت‌های دوردست به اشتراک بگذارید"
+      }
+    }
+}
