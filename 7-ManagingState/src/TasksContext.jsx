@@ -3,6 +3,8 @@ import Code from './utils/Prism';
 import Highlighter from "react-highlight-words";
 import { useEffect, useRef } from 'react';
 import Effects from './11-Effects';
+
+import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
 const DataText = [
   {
     Intermediate: () => {
@@ -426,8 +428,7 @@ const DataText = [
     },
   },
   {
-    WhatIsReactContext: () => {
-      return (
+    WhatIsReactContext: () => { return (
         <p >
           React Context provides us a way to pass data down through the
           component tree to where we need it without having to manually pass
@@ -435,6 +436,7 @@ const DataText = [
           your components in your project.
         </p>
       );
+     
     },
   },
   {
@@ -452,30 +454,44 @@ const DataText = [
   {
     ReactContextDifferent: () => {
       return (
-        <p >
-          In prop threading, data is passed down from the parent component to
-          the child component. If a child of that component needs the same prop,
-          it is passed down until the required component gets the data. While
-          simple, it can become complex when traversing deeply nested
-          structures, and this results in prop drilling. In contrast, React
-          Context allows data to be passed from the parent component to any
-          nested component that requires it, simplifying the process.
-        </p>
+      <>
+          <p >
+            In prop threading, data is passed down from the parent component to
+            the child component. If a child of that component needs the same prop,
+            it is passed down until the required component gets the data. While
+            simple, it can become complex when traversing deeply nested
+            structures, and this results in prop drilling. In contrast, React
+            Context allows data to be passed from the parent component to any
+            nested component that requires it, simplifying the process.
+          </p>
+           <img
+            src={imgReactContext}
+            className="w-full h-full mt-4"
+            alt="React Context"
+          />
+      </>
       );
     },
   },
   {
     ReactContextDifferentFa: () => {
       return (
-        <p style={{direction: "rtl"}}>
-          در prop threading، داده ها از مولفه والد به جزء فرزند منتقل می شود.
-          اگر فرزند آن مؤلفه به همان پایه نیاز داشته باشد، تا زمانی که مؤلفه
-          مورد نیاز داده را دریافت کند، ارسال می شود. در حالی که ساده است، می
-          تواند در هنگام عبور از ساختارهای تو در تو پیچیده شود و این منجر به
-          حفاری پایه می شود. در مقابل، React Context اجازه می‌دهد تا داده‌ها را
-          از مؤلفه والد به هر مؤلفه تودرتویی که به آن نیاز دارد منتقل شود و
-          فرآیند را ساده‌تر کند..
-        </p>
+        <>
+          <p style={{direction: "rtl"}}>
+            در prop threading، داده ها از مولفه والد به جزء فرزند منتقل می شود.
+            اگر فرزند آن مؤلفه به همان پایه نیاز داشته باشد، تا زمانی که مؤلفه
+            مورد نیاز داده را دریافت کند، ارسال می شود. در حالی که ساده است، می
+            تواند در هنگام عبور از ساختارهای تو در تو پیچیده شود و این منجر به
+            حفاری پایه می شود. در مقابل، React Context اجازه می‌دهد تا داده‌ها را
+            از مؤلفه والد به هر مؤلفه تودرتویی که به آن نیاز دارد منتقل شود و
+            فرآیند را ساده‌تر کند..
+          </p>
+           <img
+            src={imgReactContext}
+            className="w-full h-full mt-4"
+            alt="React Context"
+          />
+        </>
       );
     },
   },

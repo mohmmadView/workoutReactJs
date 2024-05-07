@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import DataText from '../TasksContext'
 import Code from  '../utils/Prism'
-export default function SynchronizingWithEffects(lang){
+export default function SynchronizingWithEffects({lang}){
   function Counter() {
     const [count, setCount] = useState(0);
   
@@ -22,7 +22,7 @@ export default function SynchronizingWithEffects(lang){
     return (
 <div>
 
-            {lang.lang?(
+            {lang?(
             <div className="">
                  {DataText[20].Effect()}
             </div>):(
@@ -33,7 +33,7 @@ export default function SynchronizingWithEffects(lang){
             )}
 
 <div className="divider divider-start text-accent mt-8 divider-secondary">What are Effects and how are they different from events?</div>
-{lang.lang?(
+{lang?(
     <>
      {DataText[22].SynchronizingWithEffects()}
      </>

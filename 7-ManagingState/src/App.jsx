@@ -1,19 +1,12 @@
 import Container from "./utils/container";
 import Title from "./utils/Title";
-import Example from "./utils/Example";
-import ManagingState from './1-Managing_State/index.jsx'
-import NoteReducer from "./6-Note-reducer/index";
-import PassingDataNesting from "./7-PassingData/index.jsx";
-import ToggleTheme from "./8-ToggleTheme/App.jsx";
-import InputActive from "./9-inputIsActive/index.jsx";
+import ManagingState from './1-Managing_State/index.jsx';
+import ReactContext from "./2-ReactContext/index.jsx";
 import EscapeHatches from "./10-Escape_Hatches/index.jsx";
 import Effects from "./11-Effects/index.jsx";
 import "./App.css";
 import "./index.css";
 import DataText from "./TasksContext.jsx";
-import CardImport from "./utils/card_Import.jsx";
-import CardImportFa from "./utils/card_ImportFa.jsx";
-import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
 import { useState } from "react";
 export default function App() {
   let [lang, setLang] = useState(true);
@@ -38,67 +31,9 @@ export default function App() {
         </button>
       </div>
       <ManagingState lang={lang} />
-     
+     <ReactContext lang={lang} />
       
-      <Title title="React Context" />
-      {lang ? (
-        <Container Title="What is React Context ?">
-          {DataText[14].WhatIsReactContext()}
-        </Container>
-      ) : (
-        <Container  Title="چیست؟ React Context ">
-          {DataText[15].WhatIsReactContextFa()}
-        </Container>
-      )}
-      {lang ? (
-        <Container Title="How is React Context Different from Prop Threading?">
-          {DataText[16].ReactContextDifferent()}
-          <img
-            src={imgReactContext}
-            className="w-full h-full mt-4"
-            alt="React Context"
-          />
-        </Container>
-      ) : (
-        <Container
-          
-          Title="React Context چه تفاوتی با Prop Threading دارد؟">
-          {DataText[17].ReactContextDifferentFa()}
-          <img
-            src={imgReactContext}
-            className="w-full h-full mt-4"
-            alt="React Context"
-          />
-        </Container>
-      )}
-      <Container Title="Toggle Theme">
-        <ToggleTheme />
-      </Container>
-      {lang ? (
-        <Container Title="Passing data deeply with context ">
-          {DataText[12].PassingDataDeeplyWithContext()}
-        </Container>
-      ) : (
-        <Container  Title="Passing data deeply with context  ">
-          {" "}
-          {DataText[13].PassingDataDeeplyWithContextFa()}
-        </Container>
-      )}
-      <PassingDataNesting />
-      <NoteReducer />
-      {lang ? (
-      <Container>
-        <CardImport />
-      </Container> ): (
-        <Container>
-          <CardImportFa />
-        </Container>
-      )}
-      
-      <Title title="Reacting to Input with State" />
-      <Container ColorText={"info"} ColorDivider={"success"} >
-        <InputActive />
-      </Container>
+  
       <Title title="Escape Hatches" />
       
       <Container Title="Example of Escape Hatches">

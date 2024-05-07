@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Prism from "prismjs";
-import "../index.css";
+import "../../index.css";
 export default function Code() {
   useEffect(() => {
     Prism.highlightAll(Prism.highlight);

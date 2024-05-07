@@ -1,8 +1,6 @@
 import Highlighter from "react-highlight-words";
-import TitleDivider from "../utils/TitleDivider";
-let DataText= [
-    {
-  Intermediate: () => {
+
+const  Intermediate= () => {
       return (
         <Highlighter
          searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
@@ -18,10 +16,10 @@ let DataText= [
           between distant components.,Children"
       /> 
       ) 
-    },
-  },
-  {
-    ManagingState: () => {
+    }
+  
+  
+  const  ManagingState= () => {
       return (
         <div className="rtl" style={{ direction: "rtl" }}>
           هرچقدر برنامه شما بزرگتر می‌شود، بهتر است که در مورد نحوه سازماندهی و
@@ -92,10 +90,10 @@ let DataText= [
           </span>
         </div>
       );
-    },
-  },
-  {
-    ReactingToInput: () => {
+    }
+  
+  
+ const   ReactingToInput= () => {
       return (
   <Highlighter
          searchWords={["initial state","success state","typing state","props","debug","Event","component","effect","bugs!","React","children","components"]}
@@ -116,10 +114,10 @@ let DataText= [
       /> 
         
       );
-    },
-  },
-  {
-    ReactingToInputFa: () => {
+    }
+
+  
+   const  ReactingToInputFa = () => {
       return (
           <Highlighter
          searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
@@ -142,13 +140,12 @@ let DataText= [
       /> 
        
       );
-    },
-  }
-,
-    {
-    ChoosingTheState: () => {
+    }
+
+    
+  const  ChoosingTheState= () => {
       return (
-        <p>
+        <>
             <Highlighter 
             searchWords={["state","props","debug","Event","component","effect","bugs!"]}
             highlightClassName=" bg-base-300 font-bold"
@@ -178,12 +175,10 @@ let DataText= [
        <span className="text-yellow-500">const</span>  [items, setItems]        = <span className="text-green-500">useState(<span className="text-red-500">initialItems</span>);</span><br />
        </code>
         </p>
-        </p>
+        </>
       );
-    },
-  },
-  {
-    ChoosingTheStateFa: () => {
+    }
+  const  ChoosingTheStateFa= () => {
       return (
         <div className="" style={{ direction: "rtl" }}>
        اهمیت ساختاردهی مناسب وضعیت <span>(state)</span> در  <span className="text-blue-500"> React </span>   
@@ -245,10 +240,8 @@ let DataText= [
         </p>
       </div>
       );
-    },
-  },
-  {
-    SharingState: () => {
+    }
+   const SharingState= () => {
       return (
         <Highlighter
           searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
@@ -267,35 +260,35 @@ let DataText= [
         " />
       )
     }
-  },
-  {
-    SharingStateFa: () => {
+ 
+  const  SharingStateFa= () => {
       return (
-        <p style={{ direction: "rtl" }}>
-          گاهی اوقات، ممکن است بخواهید <span className="font-bold text-primary">state</span> دو جزء <span>React</span> همیشه با
-          هم تغییر کند. برای انجام این کار، باید <span className="font-bold text-primary">state</span> را از هر دو جزء حذف کنید،
-          آن را به والد مشترک آنها منتقل کنید و سپس از طریق <span>props</span>{" "}
-          به آنها منتقل کنید. این روش به نام بالا بردن وضعیت"{" "}
-          <span>(lifting state up)</span> شناخته می‌شود و یکی از رایج‌ترین
-          روش‌های نوشتن کد <span>React</span> است. در این مثال، فقط یک پانل باید
-          در یک زمان فعال باشد. برای دستیابی به این هدف، به جای ذخیره وضعیت فعال
-          در هر پانل جداگانه، جزء والد وضعیت را نگه می‌دارد و <span>props</span>{" "}
-          را برای فرزندان خود مشخص می‌کند. به عبارت دیگر، در این مثال، تنها یک
-          پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت
-          فعال در جزء والد <span>(App)</span> ذخیره می‌شود و از طریق{" "}
-          <span>prop</span> <span>isActive</span> به اجزای فرزند{" "}
-          <span>(Panel)</span> منتقل می‌شود. این <span>prop</span> به اجزای{" "}
-          <span>Panel</span> اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا
-          غیرفعال نمایش داده شوند. این روشی مؤثر برای اشتراک‌گذاری وضعیت بین
-          اجزای <span>React</span> است زیرا باعث می‌شود کد شما ماژولارتر و
-          نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و
-          ایجاد پیچیدگی در ساختار برنامه جلوگیری می‌کنید.
-        </p>
+         <Highlighter
+          searchWords={["App","Panel","prop","state","props","debug","(lifting state up)","Event","component","effect","bugs!","React","children","components"]}
+            highlightClassName="text-secondary  bg-base-300 font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight="
+            گاهی اوقات، ممکن است بخواهید state دو جزء React همیشه با
+            هم تغییر کند. برای انجام این کار، باید state را از هر دو جزء حذف کنید،
+            آن را به والد مشترک آنها منتقل کنید و سپس از طریق props
+            به آنها منتقل کنید. این روش به نام بالا بردن وضعیت
+            (lifting state up) شناخته می‌شود و یکی از رایج‌ترین
+            روش‌های نوشتن کد React است. در این مثال، فقط یک پانل باید
+            در یک زمان فعال باشد. برای دستیابی به این هدف، به جای ذخیره وضعیت فعال
+            در هر پانل جداگانه، جزء والد وضعیت را نگه می‌دارد و props
+            را برای فرزندان خود مشخص می‌کند. به عبارت دیگر، در این مثال، تنها یک
+            پانل در یک زمان می‌تواند برجسته باشد. برای اطمینان از این موضوع، وضعیت
+            فعال در جزء والد (App) ذخیره می‌شود و از طریق
+            prop isActive به اجزای فرزند
+            (Panel) منتقل می‌شود. این prop به اجزای
+            Panel اطلاع می‌دهد که آیا باید به عنوان پانل فعال یا
+            غیرفعال نمایش داده شوند. این روشی مؤثر برای اشتراک‌گذاری وضعیت بین
+            اجزای React است زیرا باعث می‌شود کد شما ماژولارتر و
+            نگهداری آن آسان‌تر شود. با انتقال وضعیت به والد مشترک، از تکرار کد و "/>
       );
-    },
-  },{  PreservingAndResetting: () => {
+    }
+  const  PreservingAndResetting=() => {
       return (
-       
           <Highlighter
            searchWords={["state","props","debug","Event","component","effect","React","children","components","match up","re-render"]}
             highlightClassName="text-secondary  bg-base-300 font-bold"
@@ -311,8 +304,8 @@ let DataText= [
           user accidentally send a message to the wrong person:"
        />
       );
-    },
-    PreservingAndResetting_2:()=>{
+    }
+  const  PreservingAndResetting_2=()=>{
       return (
         <Highlighter
          searchWords={["state","props","debug","Event","component","effect","<Chat key={email} />.","React","children","components","match up","re-render"]}
@@ -328,9 +321,8 @@ let DataText= [
           />
       )
     }
-  },
-  {
-    PreservingAndResettingFa: () => {
+ 
+ const   PreservingAndResettingFa= () => {
       return (
             <Highlighter highlightStyle={{direction: "rtl"} }
            searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","(و به‌روزرسانی کند)","match up","re-render"]}
@@ -347,8 +339,9 @@ let DataText= [
           این می تواند باعث شود کاربر به طور تصادفی پیامی را به شخص اشتباهی
           ارسال کند:
           " />
-      );
-    }, PreservingAndResettingFa_2: () => {
+      )
+    }
+    const  PreservingAndResettingFa_2= () => {
       return (
             <Highlighter highlightStyle={{direction: "rtl"} }
            searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","<Chat key={email} />","match up","re-render"]}
@@ -358,11 +351,10 @@ let DataText= [
               React به شما امکان می‌دهد رفتار پیش‌فرض را نادیده بگیرید و یک مؤلفه را با دادن کلید دیگری مانند <Chat key={email} /> مجبور کنید وضعیت خود را بازنشانی کند. این به React می‌گوید که اگر گیرنده متفاوت است، باید به عنوان یک مؤلفه Chat متفاوت در نظر گرفته شود که باید از ابتدا با داده‌های جدید (و ورودی‌هایی مانند رابط کاربری) دوباره ایجاد شود. اکنون جابه‌جایی بین گیرندگان، فیلد ورودی را بازنشانی می‌کند - حتی اگر همان مؤلفه را ارائه کنید.
           " />
       );
-    },
-  },{
-    ExtractingStateLogic: () => {
+    }
+ 
+ const   ExtractingStateLogic=() => {
       return (
-        <>
           
           <Highlighter 
           searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","reducer","match u","re-render"]}
@@ -371,14 +363,10 @@ let DataText= [
               textToHighlight={`
             A reducer is a function that consolidates state update logic outside your component. Instead of directly setting state in various event handlers, you can move that logic into a single function called a "reducer". This function specifies how the state should update in response to each action. This makes your code more readable and easier to maintain.
           `}/>
-           {/* <TitleDivider Title={"Extracting state logic"} ColorText={'primary'} /> */}
-           <TitleDivider TitleDivider={"Extracting state logic"} ColorDivider2={'secondary'} />
-        </>
+          
         );
-    },
-  },
-  {
-    ExtractingStateLogicFa: () => {
+    }
+   const ExtractingStateLogicFa= () => {
       return (
         <Highlighter highlightStyle={{direction: "rtl"} }
         searchWords={["state","Event","component","کامپوننت","React","reducer"]}
@@ -388,7 +376,5 @@ let DataText= [
 کاهنده(reducer) تابعی(component) است که منطق(state) به روز رسانی حالت را در خارج از مؤلفه شما یکپارچه می کند. به جای تنظیم مستقیم حالت در کنترل کننده های رویداد(event) مختلف، می توانید آن منطق(state) را به یک تابع(component) منتقل کنید. این باعث می‌شود کد شما خواناتر و نگهداری راحت‌تر شود.    `}/>
       );
       
-    },
-  },
-]
-export default DataText 
+    }
+export default {Intermediate,ManagingState,ReactingToInput,ReactingToInputFa,ChoosingTheState,ChoosingTheStateFa,SharingState,SharingStateFa,PreservingAndResetting,PreservingAndResettingFa,PreservingAndResetting_2,PreservingAndResettingFa_2,ExtractingStateLogic,ExtractingStateLogicFa} 

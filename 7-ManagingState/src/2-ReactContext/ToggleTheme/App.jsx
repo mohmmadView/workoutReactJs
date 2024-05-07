@@ -2,7 +2,7 @@ import  { useState } from "react";
 import ThemedComponent from "./ThemedComponent";
 import { ThemeProvider } from "./ThemeContext";
 import Code from "./Code";
-import StringCode from "./../codeString/AllCodeString";
+import StringCode from "../../codeString/AllCodeString";
 /**
  * Render the App component.
  *

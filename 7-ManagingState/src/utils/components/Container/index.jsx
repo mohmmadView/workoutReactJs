@@ -1,20 +1,16 @@
 import PropTypes from "prop-types";
-import { createContext, useContext } from "react";
-
+import TitleDivider from "../../titleDivider";
+// eslint-disable-next-line react/prop-types
 function Container( {Title, ColorText, ColorDivider, children })  {
-  const PrevContext = createContext();
   return (
     <div style={{ direction: `auto` }}
       className={`text-white w-11/12 mx-auto my-12 
-        bg-base-300 pt-10 lg:text-xl xl:text-2xl p-10 shadow-md shadow-${ColorText}/50 hover:shadow-${ColorText} `}>
-      
-      <PrevContext.Provider value={children}>
+        bg-base-300 pt-10 lg:text-xl xl:text-2xl p-10 shadow-md shadow-${ColorDivider}/50 hover:shadow-${ColorDivider} `}>
+      <TitleDivider text1={Title} color2={ColorText} />
         {children}
-      </PrevContext.Provider>
     </div>
   );
 }
-
   Container.prototypes = {
    children: PropTypes.node,
    Title: PropTypes.string,

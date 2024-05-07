@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { createContext, useContext } from "react";
 
 function Container( {Title, ColorText, ColorDivider, children })  {
-  const PrevContext = createContext();
   return (
     <div style={{ direction: `auto` }}
       className={`text-white w-11/12 mx-auto my-12 
@@ -12,19 +11,15 @@ function Container( {Title, ColorText, ColorDivider, children })  {
         className={`pb-8 font-bold text-3xl max-lg:text-xl max-md:text-lg divider divider-${ColorDivider}`}>
         <p className={`text-${ColorText}`}>{Title}</p>
       </div>
-      <PrevContext.Provider value={children}>
         {children}
-      </PrevContext.Provider>
     </div>
   );
 }
-
-
   Container.prototypes = {
    Title: PropTypes.string.isRequired,
    ColorText: PropTypes.string.isRequired,
    ColorDivider: PropTypes.string.isRequired,
-   children: PropTypes.element.isRequired
+   children: PropTypes.node.isRequired
  }
 Container.defaultProps = {
 children: "about us",
