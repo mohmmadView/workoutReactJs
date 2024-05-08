@@ -8,9 +8,10 @@ import FullName_3 from "./3-fullName";
 import Panel_4 from "./4-Panel";
 import ChatList_5 from "./5-ChatList";
 import Container2 from '../utils/components/Container/index'
+// eslint-disable-next-line react/prop-types
 export default function ManagingState({lang}) {
     return(
-        <>
+        <div className="bg-success-content/35 py-11">
         {lang ? (
         <Container ColorText={'primary'}  ColorDivider={'secondary'} Title={"Managing State"}>
         {DataText.Intermediate()}
@@ -76,7 +77,7 @@ export default function ManagingState({lang}) {
         </Container>
       )}
      
-        </>
+        </div>
     )
 }
 //neutral

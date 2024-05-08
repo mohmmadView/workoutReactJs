@@ -11,8 +11,8 @@ import NoteReducer from "./NoteReducer/index.jsx";
 export default function ReactContext({lang}){
     console.log(DataText);
     return (
-        <>
-        <Title title="React Context" />
+        <div className="bg-secondary-content/30 py-12">
+        <Title id="react-context" title="React Context" />
       {lang ? (
         
         <Container Title="What is React Context ?">
@@ -61,6 +61,6 @@ export default function ReactContext({lang}){
         <InputActive />
       </Container>
       
-        </>
+        </div>
     )
 }

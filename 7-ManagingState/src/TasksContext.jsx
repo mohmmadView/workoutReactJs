@@ -2,7 +2,7 @@ import { prism } from 'prismjs';
 import Code from './utils/Prism';
 import Highlighter from "react-highlight-words";
 import { useEffect, useRef } from 'react';
-import Effects from './11-Effects';
+import Effects from './4-Effects';
 
 import imgReactContext from "./assets/Screenshot-2024-01-02-124809.png";
 const DataText = [

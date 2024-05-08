@@ -1,6 +1,6 @@
-export default function Title({title}) {
+export default function Title({title, id}) {
   return (
-    <div className="flex justify-center m-2">
+    <div id={id} className="flex justify-center m-2 pt-14">
       <h1 className="flex max-sm:text-3xl max-sm:leading-[1.750] max-sm:p-1 p-5  text-5xl mx-auto my-auto border rounded-lg mt-4 text-primary font-bold bg-primary-content ">
         {title}
         <svg
