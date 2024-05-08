@@ -47,42 +47,35 @@ export default function EscapeHatches({lang}) {
       )
         }
         
-     <div className="divider text-white divider-success">When to use refs </div>
      {lang?(
-      <Container>
+      <Container Title="When to use refs" ColorText={"secondary"} ColorDivider={"primary"}>
       {DataText.WhenToUseRefs()}
       </Container>
      ):(
-      DataText.WhenToUseRefsFa()
+      <Container Title="مراحل استفاده از ref" ColorText={"secondary"} ColorDivider={"primary"}>
+      {DataText.WhenToUseRefsFa()}
+      </Container>
      )}
-     <div  className="divider  divider-primary text-red-700">Manipulating the DOM with refs </div>
+     <Container Title="Manipulating the DOM with refs" ColorText={"success"} ColorDivider={"info"}>
 <InputFocus lang={lang} />
-<div className="divider divider-start text-info divider-info">Example:<p className='under text-primary'> Scrolling to an element</p> </div>
-<ScrollIntoView />
+ </Container>
+<Container Title={"Example: Scrolling to an element"}>
+  <ScrollIntoView />
+</Container>
+<Container Title="What work with refs" ColorText={"primary"} ColorDivider={"secondary"}>
 <WhatWorkUseRef />
+</Container>
+<Container Title="When React attaches the ref" ColorText={"secondary"} ColorDivider={"success"}>
 <WhenReactAttachesTheRef lang={lang} />
-<div className="divider divider-content text-info divider-info">Recap:<p className='under text-primary'>DOM with Refs </p> </div>
+</Container>
 {lang?(
-  <div>
-<p className=""><span>1- </span>Refs are an escape hatch to hold onto values that aren’t used for rendering. You won’t need them often.</p>
-<p className=""><span>2- </span>A ref is a plain JavaScript object with a single property called current, which you can read or set.</p>
-<p className=""><span>3- </span>You can ask React to give you a ref by calling the useRef Hook.</p>
-<p className=""><span>4- </span>Like state, refs let you retain information between re-renders of a component.</p>
-<p className=""><span>5- </span>Unlike state, setting the ref’s current value does not trigger a re-render.</p>
-<p className=""><span>6- </span>Don’t read or write ref.current during rendering. This makes your component hard to predict.</p>
-</div>
+ <Container Title={"Recap: DOM with refs"}>
+  {DataText.RecapDomWithRefs()}
+ </Container>
 ):(
-  <div dir='rtl'>
-<p ><span>1.</span>Refs یک راه فرار برای نگه‌داری مقادیری است که برای رندر (نمایش) استفاده نمی‌شوند.</p>
-<p ><span>2.</span>شما به طور معمول به آن‌ها نیاز زیادی پیدا نخواهید کرد.</p>
-<p ><span>3.</span>یک Ref یک شیء ساده جاوااسکریپت با تنها یک ویژگی به نام `current` است.</p>
-<p ><span>4.</span>شما می‌توانید مقدار این ویژگی را بخوانید یا آن را تنظیم کنید.</p>
-<p ><span>5.</span>شما می‌توانید با فراخوانی قلاب `useRef` از React بخواهید که یک Ref به شما بدهد.</p>
-<p ><span>6.</span>مانند State، Ref به شما اجازه می‌دهد اطلاعات را بین رندرهای مجدد یک کامپوننت حفظ کنید.</p>
-<p ><span>7.</span>برخلاف State، تنظیم مقدار جاری Ref باعث راه‌اندازی مجدد رندر (بازنمایش) نمی‌شود.</p>
-<p ><span>8.</span> خواندن یا نوشتن مقدار `ref.current` در طول رندر خودداری کنید. این کار باعث می‌شود پیش‌بینی رفتار کامپوننت شما دشوار شود.</p>
-
-  </div>
+<Container Title={"Recap: DOM with refs"}>
+  {DataText.RecapDomWithRefsFa()}
+</Container>
 )}
     </div>
    );

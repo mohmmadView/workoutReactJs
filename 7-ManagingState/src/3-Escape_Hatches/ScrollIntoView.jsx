@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import Code from '../utils/Prism'
-
+import imgCat_1 from './img/200.jpeg'
+import imgCat_2 from './img/cat-2.jpg'
+import imgCat_3 from './img/cat-3.jpg'
 export default function ScrollIntoView() {
  const firstCatRef = useRef(null);
   const secondCatRef = useRef(null);
@@ -47,25 +49,25 @@ export default function ScrollIntoView() {
           </button>
          
         </nav>
-        <div>
-          <ul className="carousel carousel-center max-w-3xl  p-4 space-x-32 bg-neutral rounded-box  gap-14">
+        <div className="max-w-3xl m-auto">
+          <ul className=" carousel carousel-center   p-4 space-x-32 bg-neutral rounded-box  gap-14">
             <li className="carousel-item">
               <img
-                src="./src/10-Escape_Hatches/200.jpeg"
+                src={imgCat_1}
                 alt="Tom"
                 ref={firstCatRef}
               />
             </li>
             <li  className="carousel-item">
               <img
-                src="./src/10-Escape_Hatches/cat-2.jpg"
+                src={imgCat_2}
                 alt="Maru"
                 ref={secondCatRef}
               />
             </li>
             <li  className="carousel-item">
               <img
-                src="./src/10-Escape_Hatches/cat-3.jpg"
+                src={imgCat_3}
                 alt="Jellylorum"
                 ref={thirdCatRef}
               />

@@ -18,7 +18,6 @@ function handleClick(){
 
     return(
         <>
-        <div className="divider  divider-error text-blue-500">When React attaches the ref </div>
             {lang.lang?(
             <p className="">
 <span>React updates in two phases:</span><br/>
