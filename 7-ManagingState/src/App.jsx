@@ -16,9 +16,9 @@ export default function App() {
     <div className="w-full">
         <div className="flex justify-center ">
             <nav className="flex fixed py-4 justify-between   w-2/6 list-none  bg-success-content text-success">
-          <li ><a className="p-4 mb-10 hover:bg-black" href="#managing-state">Managing State</a></li>
+          <li ><a className="p-4 mb-10 hover:bg-black" href="#managing-state">1-Managing State</a></li>
           {console.log(ReactContextRef)}
-          <li ><a className="p-4 hover:bg-black" href="#react-context" ref={ReactContextRef}>React Context</a> </li>
+          <li ><a className="p-4 hover:bg-black" href="#react-context" ref={ReactContextRef}>2-React Context</a> </li>
           <li><a className="p-4 hover:bg-black " href="#escape-hatches">3-Escape Hatches</a></li>
           <li><a className="p-4 hover:bg-black  " href="#effects">4-Effects</a></li>
         </nav>

@@ -39,14 +39,19 @@ export default function Form() {
     <div className="w-11/12 mx-auto my-12 bg-base-300 p-4 text-xl gap-2  flex   shadow-md shadow-secondary/50 hover:shadow-secondary">
       <div className="w-1/3 max-h-40  mb-60 sticky top-5">
         <div className="flex flex-col p-4 bg-secondary-content flex-wrap border border-secondary rounded-md">
+          <label form="cityQuizForm">
           <h2 className="text-2xl p-2 text-primary">City quiz</h2>
           <p>
             In which city is there a billboard that turns air into drinkable
             water?
           </p>
+          </label>
         </div>
-        <form id="cityQuizForm" className="flex flex-col" onSubmit={handleSubmit}>
+        <form  id="cityQuizForm" className="flex flex-col" onSubmit={handleSubmit}>
+          <label htmlFor="cityQuizForm">City</label>
           <textarea
+          title="answer city quiz"
+          placeholder="Enter your answer here"
           name="cityQuizForm"
             className=" textarea textarea-lg textarea-secondary my-4"
             value={answer}

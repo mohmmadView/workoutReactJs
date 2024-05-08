@@ -143,7 +143,7 @@ const  Intermediate= () => {
     }
 
     
-  const  ChoosingTheState= () => {
+const  ChoosingTheState= () => {
       return (
         <>
             <Highlighter 
@@ -355,7 +355,6 @@ const  Intermediate= () => {
  
  const   ExtractingStateLogic=() => {
       return (
-          
           <Highlighter 
           searchWords={["state","props","debug","Event","component","effect","کامپوننت","React","children","reducer","match u","re-render"]}
               highlightClassName="text-secondary  bg-base-300 font-bold"p
@@ -366,15 +365,14 @@ const  Intermediate= () => {
           
         );
     }
-   const ExtractingStateLogicFa= () => {
-      return (
-        <Highlighter highlightStyle={{direction: "rtl"} }
-        searchWords={["state","Event","component","کامپوننت","React","reducer"]}
-            highlightClassName="text-secondary  bg-base-300 font-bold"
-            unhighlightClassName="text-white"
-            textToHighlight={`
-کاهنده(reducer) تابعی(component) است که منطق(state) به روز رسانی حالت را در خارج از مؤلفه شما یکپارچه می کند. به جای تنظیم مستقیم حالت در کنترل کننده های رویداد(event) مختلف، می توانید آن منطق(state) را به یک تابع(component) منتقل کنید. این باعث می‌شود کد شما خواناتر و نگهداری راحت‌تر شود.    `}/>
-      );
-      
-    }
-export default {Intermediate,ManagingState,ReactingToInput,ReactingToInputFa,ChoosingTheState,ChoosingTheStateFa,SharingState,SharingStateFa,PreservingAndResetting,PreservingAndResettingFa,PreservingAndResetting_2,PreservingAndResettingFa_2,ExtractingStateLogic,ExtractingStateLogicFa} 
+   const ExtractingStateLogicFa=()=> {
+      return(
+    <Highlighter highlightStyle={{ direction: "rtl" }}
+      searchWords={["state", "Event", "component", "کامپوننت", "React", "reducer"]}
+      highlightClassName="text-secondary  bg-base-300 font-bold"
+      unhighlightClassName="text-white"
+      textToHighlight={`
+کاهنده(reducer) تابعی(component) است که منطق(state) به روز رسانی حالت را در خارج از مؤلفه شما یکپارچه می کند. به جای تنظیم مستقیم حالت در کنترل کننده های رویداد(event) مختلف، می توانید آن منطق(state) را به یک تابع(component) منتقل کنید. این باعث می‌شود کد شما خواناتر و نگهداری راحت‌تر شود.    `} />
+      )
+}
+export default{Intermediate,ManagingState,ReactingToInput,ReactingToInputFa,ChoosingTheState,ChoosingTheStateFa,SharingState,SharingStateFa,PreservingAndResetting,PreservingAndResettingFa,PreservingAndResetting_2,PreservingAndResettingFa_2,ExtractingStateLogic,ExtractingStateLogicFa} 

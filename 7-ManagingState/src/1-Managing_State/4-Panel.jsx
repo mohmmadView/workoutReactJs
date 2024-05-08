@@ -57,6 +57,7 @@ function ContainerPanel({ men, and }) {
       </div>
     </div>
   );
+  // eslint-disable-next-line react/prop-types
   function Panel({ Title, childern, isActive, onShow, itemColors }) {
     return (
       <div className={`w-full p-4 border border-warning  ${itemColors}`}>

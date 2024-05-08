@@ -18,7 +18,8 @@ export default function FocusInInput(lang){
         }
 <div className="mb-4 divider divider-start divider-secondary"><p className='text-secondary'>Example:</p><p className='text-primary'>input Focus</p></div>
             <div className='flex gap-4 border border-success rounded-lg p-4 bg-secondary-content'>
-              <input className="input input-secondary" ref={inputRef} />
+              <label htmlFor="InputFocus">Input Focus</label>
+              <input id='InputFocus' title='input-Focus' placeholder='Input Focus' className="input input-secondary" ref={inputRef} />
               <button onClick={handleClick} className="w-24 btn btn-secondary btn-circle" type="button">Focus the input</button>
             </div>
  <Code fileName={"example"} widthIN={"w-full"} code={`

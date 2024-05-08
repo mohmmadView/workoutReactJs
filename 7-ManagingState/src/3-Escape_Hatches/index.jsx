@@ -17,19 +17,17 @@ export default function EscapeHatches({lang}) {
     <div className=' bg-primary-content/35'>
 <Title id={"escape-hatches"} title="Escape Hatches" />
       
-      <Container Title="Example of Escape Hatches">
+     
            {lang ? (
-      <>
+             <Container Title="Example of Escape Hatches">
           {DataText.EscapeHatches()}
-        </>
+             </Container>
       ) : (
-      <>
+      <Container Title="مثال Escape Hatches">
             {DataText.EscapeHatchesFa()}
           
-      </>
-        
-      )}
       </Container>
+      )}
       <Container ColorText={'info'} ColorDivider={'success'} Title="Alert Click Number" >
      <AlertClickNumber/>
      </Container>

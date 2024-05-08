@@ -11,7 +11,9 @@ export default function InputActive() {
         In which city is there a billboard that turns air into drinkable water?
       </p>
       <div className="flex h-28">
+        <label htmlFor="TypeHere"></label>
         <textarea
+          id="TypeHere"
           onKeyDown={() => {
             clearTimeout(timeOut);
             setType("Typeing");
@@ -26,6 +28,8 @@ export default function InputActive() {
             setValue(e.target.value);
           }}
           type="text"
+          title="input Active"
+          placeholder="Type Here" 
           className="textarea textarea-secondary w-full max-w-xs"
         />
         <button

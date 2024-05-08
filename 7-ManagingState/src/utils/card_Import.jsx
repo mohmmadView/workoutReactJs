@@ -96,7 +96,8 @@ Note that useRef() is useful for more than the ref attribute. It’s handy for k
         <div
           key={item.id}
           className="collapse collapse-arrow bg-secondary-content">
-          <input type="radio" name="my-accordion-2" />
+            <label htmlFor="my-accordion-2"></label>
+          <input title="toggle" placeholder="toggle" type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium">
             <div className="badge badge-warning text-center badge-lg text-2xl">
               {item.name}

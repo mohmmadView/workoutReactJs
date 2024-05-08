@@ -7,7 +7,6 @@ import CityQuiz_2 from './2-CityQiuz'
 import FullName_3 from "./3-fullName";
 import Panel_4 from "./4-Panel";
 import ChatList_5 from "./5-ChatList";
-import Container2 from '../utils/components/Container/index'
 // eslint-disable-next-line react/prop-types
 export default function ManagingState({lang}) {
     return(

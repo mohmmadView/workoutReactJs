@@ -1,15 +1,14 @@
 import  Container  from "../utils/container";
 import DataText from "./DataText.jsx";
 import Title from "../utils/Title";
-import imgReactContext from "../assets/Screenshot-2024-01-02-124809.png";
 import ToggleTheme from "./ToggleTheme/App.jsx";
 import PassingDataNesting from "./PassingData/index.jsx";
 import InputActive from "./inputIsActive/index.jsx";
 import CardImport from "../utils/card_Import.jsx";
 import CardImportFa from "../utils/card_ImportFa.jsx";
 import NoteReducer from "./NoteReducer/index.jsx";
+// eslint-disable-next-line react/prop-types
 export default function ReactContext({lang}){
-    console.log(DataText);
     return (
         <div className="bg-secondary-content/30 py-12">
         <Title id="react-context" title="React Context" />
@@ -48,10 +47,10 @@ export default function ReactContext({lang}){
       <PassingDataNesting />
       <NoteReducer />
       {lang ? (
-      <Container>
+      <Container ColorText={"info"} ColorDivider={"success"} title="Example : useEffect">
         <CardImport />
       </Container> ): (
-        <Container>
+        <Container ColorText={"info"} ColorDivider={"success"} title="مثال : useEffect">
           <CardImportFa />
         </Container>
       )}

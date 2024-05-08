@@ -49,6 +49,8 @@ export default function CityQuiz() {
           
           <textarea
           name="cityQuizForm"
+          placeholder="Enter Your Answer City"
+          title="Enter Your Answer City"
             onChange={textareaHandleChange}
             className="textarea textarea-secondary textarea-lg my-4"
           />

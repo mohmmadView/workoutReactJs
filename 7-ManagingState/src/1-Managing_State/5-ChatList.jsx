@@ -37,16 +37,17 @@ function ContactList({ list, giveId }) {
 function Chat({ listContact }) {
   let [message, setMessage] = useState("");
   return (
-    <div className="w-7/12 flex flex-col">
+    <form className="w-7/12 flex flex-col">
+      <label >{listContact.name}
       <textarea
         className="w-full textarea textarea-bordered h-4/6"
         placeholder={listContact.name}
         onChange={e => setMessage(e.target.value)}
         value={message}
-      />
+      /></label>
       <button className="w-5/6  mt-1 h-1/6 self-center btn btn-accent">
         {listContact.email}
       </button>
-    </div>
+    </form>
   );
 }
