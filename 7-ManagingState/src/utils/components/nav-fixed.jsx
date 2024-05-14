@@ -1,11 +1,14 @@
-export default function NavFixed (contextRef){
+import { useRef } from "react"
+
+export default function NavFixed (){
+  let  navContextRef = useRef(0)
 return(
-<div className="flex justify-center ">
-            <nav className="flex fixed py-4 justify-between   w-full list-none max-:md:w-4/6 max-md:leading-2  bg-success-content text-success  max-h-5">
-          <li className="p-4"  ><a className="p-1  hover:bg-black" href="#managing-state">1-Managing State</a></li>
-          <li className="p-4" ><a className="p-4 hover:bg-black" href="#react-context" ref={contextRef}>2-React Context</a> </li>
-          <li className="p-4"><a className="p-4 hover:bg-black " href="#escape-hatches">3-Escape Hatches</a></li>
-          <li className="p-4"><a className="p-4 hover:bg-black  " href="#effects">4-Effects</a></li>
+<div className="flex justify-center my-2 mb-8 z-50">
+            <nav className="flex fixed  justify-between   p-6 w-5/12 max-xl:w-6/12 text-xl list-none max-lg:w-4/6 max-md:leading-2  bg-secondary-content text-success  ">
+          <li ><a className="p-4 btn btn-warning text-success-content ring-2 ring-secondary hover:ring-2 hover:ring-yellow-200 hover:bg-success" href="#managing-state">1-Managing State</a></li>
+          <li ><a className="p-4 btn btn-warning text-success-content ring-2 ring-secondary hover:ring-2 hover:ring-yellow-200 hover:bg-success" href="#react-context" ref={navContextRef}>2-React Context</a> </li>
+          <li ><a className="p-4 btn btn-warning text-success-content ring-2 ring-secondary hover:ring-2 hover:ring-yellow-200 hover:bg-success " href="#escape-hatches">3-Escape Hatches</a></li>
+          <li ><a className="p-4 btn btn-warning text-success-content ring-2 ring-secondary hover:ring-2 hover:ring-yellow-200 hover:bg-success  " href="#effects">4-Effects</a></li>
         </nav>
         </div>
         )
