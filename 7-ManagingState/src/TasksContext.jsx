@@ -938,20 +938,18 @@ function MyComponent() {
         {YouMightNotNeedEffect : () => {
           return (
             <div className='whitespace-pre-line'>
-                <Highlighter 
+            <Highlighter 
             highlightClassName='text-secondary bg-base-300 rtl'
             searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
             autoEscape={true}
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
-            textToHighlight={`You Might Not Need an Effect (YMNE) in React
+            textToHighlight={`
+            You Might Not Need an Effect (YMNE) in React
             YMNE stands for "You Might Not Need an Effect" and it means that you might not need to use useEffect in your React component.
-            
             Misusing useEffect can lead to more complex, slower, and error-prone code. That's why it's important to check if there's a simpler solution to your problem before using useEffect.
-            
             When to use YMNE
-            
             Here are some cases where you might not need useEffect:
             
             When you want to know when state changes or to send information to the server: In these cases, you can use State Hooks like useState or Context API.
@@ -985,15 +983,14 @@ function MyComponent(props) {
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
-            textToHighlight={`In this example, we can use the useState State Hook to update count based on props.initialCount without needing useEffect: 
-          `} />  
-                 <Code code={`
+            textToHighlight={`In this example, we can use the useState State Hook to update count based on props.initialCount without needing useEffect: `} />  
+            <Code code={`
 function MyComponent(props) {
   const [count, setCount] = useState(props.initialCount);
 
   return <div>{count}</div>;
 }
-`} language={'js'} more={false} widthIN={'w-full h-72'} />
+`} language={'js'} more={false} widthIN={'w-full h-auto'} />
               </div>
                )
             }
@@ -1054,7 +1051,7 @@ function MyComponent(props) {
 
   return <div>{count}</div>;
 }
-`} language={'js'} more={false} widthIN={'w-full h-72'} />
+`} language={'js'} more={false} widthIN={'w-full h-auto'} />
                       </div>
                )
             }
