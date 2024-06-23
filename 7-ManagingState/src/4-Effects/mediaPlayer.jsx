@@ -5,20 +5,25 @@ function VideoPlayer({ src, isPlaying }) {
 useEffect(() => {
   const handlerPlay= () => {
    if (isPlaying) {
-    ref.current.play();  // Calling these while rendering isn't allowed.
+    ref.current.play(); 
+    console.log("play"); // Calling these while rendering isn't allowed.
   } else {
     ref.current.pause(); // Also, this crashes.
+    console.log("pause"); // Calling these while rendering isn't allowed.
 } 
 }
 return  handlerPlay();
-})
+},[isPlaying])
 return <video ref={ref} src={src} loop playsInline />;
 }
 export default function App() {
   const [isPlaying, setIsPlaying] = useState(false);
+    const [text, setText] = useState('');
+
   return (
    <div className='flex' >
         <div className='w-1/2' >
+          <input type='text' className='input w-full max-w-xs' onChange={(e) => setText(e.target.value)} />
           <VideoPlayer
             isPlaying={isPlaying}
             src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
@@ -56,13 +61,11 @@ export default function App() {
             {isPlaying ? 'Pause' : 'Play'}
           </button>
         </div>
-       
    </div>
   );
 }
      `} language={"js"}
               widthIN={"w-full  "} ></Code>
-           
          </div>
    </div>
   );
