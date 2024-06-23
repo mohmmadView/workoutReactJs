@@ -803,6 +803,7 @@ function MyComponent() {
 
  `} language={"js"}
           widthIN={"w-full h-82"} ></Code>
+          
             </div>
           )
 
@@ -933,8 +934,132 @@ function MyComponent() {
           widthIN={"w-full h-82"} ></Code> 
             </div>
           )
-        }
-      }
+        }},
+        {YouMightNotNeedEffect : () => {
+          return (
+            <div className='whitespace-pre-line'>
+                <Highlighter 
+            highlightClassName='text-secondary bg-base-300 rtl'
+            searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`You Might Not Need an Effect (YMNE) in React
+            YMNE stands for "You Might Not Need an Effect" and it means that you might not need to use useEffect in your React component.
+            
+            Misusing useEffect can lead to more complex, slower, and error-prone code. That's why it's important to check if there's a simpler solution to your problem before using useEffect.
+            
+            When to use YMNE
+            
+            Here are some cases where you might not need useEffect:
+            
+            When you want to know when state changes or to send information to the server: In these cases, you can use State Hooks like useState or Context API.
+            When you want to load data from an external API: You can use State Hooks like useState or libraries like react-query or SWR.
+            When you want to create a subscription to an external resource: You can use State Hooks like useState or libraries like useEffect or useRef.
+            Alternatives to YMNE
+            
+            Here are some alternatives to useEffect:
+            
+            State Hooks: useState and useReducer are good for managing the internal state of your component.
+            Context API: Good for sharing state between different parts of your application.
+            Libraries: There are various libraries like react-query, SWR, and useRef that can be used to perform specific tasks without needing useEffect.
+            
+          `} />
+<h1 className="text-2xl text-primary font-bold">Example : </h1>
+<Code code={`
+function MyComponent(props) {
+  const [count, setCount] = useState(props.initialCount);
+
+  useEffect(() => {
+    setCount(props.initialCount);
+  }, [props.initialCount]);
+
+  return <div>{count}</div>;
+}
+`} language={'js'} more={false} widthIN={'w-full'} />
+<Highlighter 
+ highlightClassName='text-secondary bg-base-300 rtl'
+            searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`In this example, we can use the useState State Hook to update count based on props.initialCount without needing useEffect: 
+          `} />  
+                 <Code code={`
+function MyComponent(props) {
+  const [count, setCount] = useState(props.initialCount);
+
+  return <div>{count}</div>;
+}
+`} language={'js'} more={false} widthIN={'w-full h-72'} />
+              </div>
+               )
+            }
+      }, {YouMightNotNeedEffectFa : () => {
+          return (
+
+            <div className="whitespace-pre-line rtl">
+                <Highlighter 
+            highlightClassName='text-secondary bg-base-300 rtl'
+            searchWords={["useRef","useReducer","useEffect","React","(","Effects",")","jsx","useState","props","components","Event","component","effect","YMNE","Context API","Hooks","State","libraries","You Might Not Need an Effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={` 
+YMNE مخفف "You Might Not Need an Effect" است و به این معنی است که شما ممکن است نیازی به استفاده از useEffect در کامپوننت React خود نداشته باشید.
+
+استفاده نادرست از useEffect می تواند منجر به کد پیچیده تر، کندتر و مستعد خطا شود. به همین دلیل، مهم است که قبل از استفاده از useEffect، بررسی کنید که آیا راه حل ساده تری برای مشکل شما وجود دارد یا خیر.
+
+چه زمانی باید از YMNE استفاده کرد؟
+
+در اینجا چند مورد وجود دارد که نشان می دهد شما ممکن است نیازی به useEffect نداشته باشید:
+
+هنگامی که می خواهید از تغییر وضعیت یا ارسال اطلاعات به سرور مطلع شوید: در این موارد، می توانید از State Hooks مانند useState یا Context API استفاده کنید.
+هنگامی که می خواهید داده ها را از یک API خارجی بارگیری کنید: می توانید از State Hooks مانند useState یا libraries مانند react-query یا SWR استفاده کنید.
+هنگامی که می خواهید یک اشتراک به یک منبع خارجی ایجاد کنید: می توانید از State Hooks مانند useState یا libraries مانند useEffect یا useRef استفاده کنید.
+
+در اینجا چند جایگزین برای useEffect آورده شده است:
+
+State Hooks: useState و useReducer برای مدیریت وضعیت داخلی کامپوننت شما مناسب هستند.
+Context API: برای به اشتراک گذاری وضعیت بین اجزای مختلف برنامه شما مناسب است.
+libraries: کتابخانه های مختلفی مانند react-query، SWR و useRef وجود دارند که می توانند برای انجام وظایف خاص بدون نیاز به useEffect استفاده شوند.
+          `} />
+<h1 className="text-2xl text-primary font-bold">مثال : </h1>
+<Code code={`
+function MyComponent(props) {
+  const [count, setCount] = useState(props.initialCount);
+
+  useEffect(() => {
+    setCount(props.initialCount);
+  }, [props.initialCount]);
+
+  return <div>{count}</div>;
+}
+`} language={'js'} more={false} widthIN={'w-full'} />
+<Highlighter 
+ highlightClassName='text-secondary bg-base-300 rtl'
+            searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`در این مثال، می توانیم از State Hook useState برای به روز رسانی count بر اساس props.initialCount بدون نیاز به useEffect استفاده کنیم: 
+          `} />  
+                 <Code code={`
+function MyComponent(props) {
+  const [count, setCount] = useState(props.initialCount);
+
+  return <div>{count}</div>;
+}
+`} language={'js'} more={false} widthIN={'w-full h-72'} />
+                      </div>
+               )
+            }
+      },
+    
 ];
 
 export default DataText;
