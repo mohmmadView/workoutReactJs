@@ -9,7 +9,7 @@ import './textfor.css'
 export default function Effects(lang) {
     return (
 <div>
-    <Container ColorText={'success'}  ColorDivider={'warning  text-pink-200 '} Title={"Synchronizing With Effects"}>
+    <Container ColorText={'success'}  ColorDivider={'warning  text-pink-200 '} Title={`Synchronizing With Effects`}>
     <SynchronizingWithEffects lang={lang.lang}/>
     </Container>     
    <Container ColorText={'primary'}  ColorDivider={'success  text-primary'} Title={"How to write an Effect"}>
@@ -18,6 +18,7 @@ export default function Effects(lang) {
    <Container ColorText={'secondary'}  ColorDivider={'primary shadow-success'} Title={"You Might Not Need an Effect"}>
        <YouMightNotNeedEffect lang={lang.lang}/>
    </Container>
+  
 </div>
     )
 }

@@ -675,8 +675,6 @@ Effect در React، یک تابع است که به شما امکان می‌ده
         HowToWriteAnEffect:()=>{
         let refColor = useRef(null);
         useEffect(() => {
-           
-           
         })
           return (
             <div ref={refColor} className='whitespace-pre-line'>
@@ -991,6 +989,27 @@ function MyComponent(props) {
   return <div>{count}</div>;
 }
 `} language={'js'} more={false} widthIN={'w-full h-auto'} />
+<div className="divider divider-start text-accent mt-8 divider-secondary  text">
+      <span className='text-primary text-2xl'>
+          How to remove unnecessary Effects 
+      </span>
+        </div>
+<Highlighter 
+ highlightClassName='text-secondary bg-base-300 whitespace-pre-line'
+            searchWords={["*","useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`
+* You don’t need Effects to transform data for rendering. For example,let’s say you want to filter a list before displaying it. You might feel tempted to write an Effect that updates a state variable when the list changes. However, this is inefficient. When you update the state, React will first call your component functions to calculate what should be on the screen. Then React will “commit” these changes to the DOM, updating the screen. Then React will run your Effects. If your Effect also immediately updates the state, this restarts the whole process from scratch! To avoid the unnecessary render passes, transform all the data at the top level of your components. That code will automatically re-run whenever your props or state change.
+
+* You don’t need Effects to handle user events. For example, let’s say you want to send an /api/buy POST request and show a notification when the user buys a product. In the Buy button click event handler, you know exactly what happened. By the time an Effect runs, you don’t know what the user did (for example, which button was clicked). This is why you’ll usually handle user events in the corresponding event handlers.
+
+* You do need Effects to synchronize with external systems. For example, you can write an Effect that keeps a jQuery widget synchronized with the React state. You can also fetch data with Effects: for example, you can synchronize the search results with the current search query. Keep in mind that modern frameworks provide more efficient built-in data fetching mechanisms than writing Effects directly in your components.
+  To help you gain the right intuition, let’s look at some common concrete examples! 
+  
+          `} />  
               </div>
                )
             }
@@ -1052,6 +1071,7 @@ function MyComponent(props) {
   return <div>{count}</div>;
 }
 `} language={'js'} more={false} widthIN={'w-full h-auto'} />
+
                       </div>
                )
             }
