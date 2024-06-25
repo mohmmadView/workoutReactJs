@@ -960,7 +960,6 @@ function MyComponent() {
             State Hooks: useState and useReducer are good for managing the internal state of your component.
             Context API: Good for sharing state between different parts of your application.
             Libraries: There are various libraries like react-query, SWR, and useRef that can be used to perform specific tasks without needing useEffect.
-            
           `} />
 <h1 className="text-2xl text-primary font-bold">Example : </h1>
 <Code code={`
@@ -993,7 +992,7 @@ function MyComponent(props) {
       <span className='text-primary text-2xl'>
           How to remove unnecessary Effects 
       </span>
-        </div>
+ </div>
 <Highlighter 
  highlightClassName='text-secondary bg-base-300 whitespace-pre-line'
             searchWords={["*","useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
@@ -1007,16 +1006,15 @@ function MyComponent(props) {
 * You don’t need Effects to handle user events. For example, let’s say you want to send an /api/buy POST request and show a notification when the user buys a product. In the Buy button click event handler, you know exactly what happened. By the time an Effect runs, you don’t know what the user did (for example, which button was clicked). This is why you’ll usually handle user events in the corresponding event handlers.
 
 * You do need Effects to synchronize with external systems. For example, you can write an Effect that keeps a jQuery widget synchronized with the React state. You can also fetch data with Effects: for example, you can synchronize the search results with the current search query. Keep in mind that modern frameworks provide more efficient built-in data fetching mechanisms than writing Effects directly in your components.
-  To help you gain the right intuition, let’s look at some common concrete examples! 
-  
-          `} />  
+  To help you gain the right intuition, let’s look at some common concrete examples!`} />  
               </div>
                )
+               
             }
+            
       }, {YouMightNotNeedEffectFa : () => {
           return (
-
-            <div className="whitespace-pre-line rtl">
+            <div className="whitespace-pre-line rtl ">
                 <Highlighter 
             highlightClassName='text-secondary bg-base-300 rtl'
             searchWords={["useRef","useReducer","useEffect","React","(","Effects",")","jsx","useState","props","components","Event","component","effect","YMNE","Context API","Hooks","State","libraries","You Might Not Need an Effect"]}
@@ -1047,11 +1045,9 @@ libraries: کتابخانه های مختلفی مانند react-query، SWR و 
 <Code code={`
 function MyComponent(props) {
   const [count, setCount] = useState(props.initialCount);
-
   useEffect(() => {
     setCount(props.initialCount);
   }, [props.initialCount]);
-
   return <div>{count}</div>;
 }
 `} language={'js'} more={false} widthIN={'w-full'} />
@@ -1067,15 +1063,65 @@ function MyComponent(props) {
                  <Code code={`
 function MyComponent(props) {
   const [count, setCount] = useState(props.initialCount);
-
   return <div>{count}</div>;
 }
 `} language={'js'} more={false} widthIN={'w-full h-auto'} />
+          <Highlighter  
+            highlightClassName='whitespace-pre-line  bg-base-100'  
+            searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`در این مثال، می توانیم از State Hook useState برای به روز رسانی count بر اساس props.initialCount بدون نیاز به useEffect استفاده کنیم: 
+          `} />  
+          <Code code={`
+function MyComponent(props) {
+  const [count, setCount] = useState(props.initialCount);
+  return <div>{count}</div>;
+}
+`} language={'js'} more={false} widthIN={'w-full h-auto'} />
+        <div className="divider divider-start text-accent mt-8 divider-secondary ">
+            <span className="text-2xl text-primary font-bold">حذف Effect های غیرضروری</span>
+        </div> 
+        <Highlighter
+         highlightClassName=' whitespace-pre-line  bg-base-100'
+         searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
+         autoEscape={true}
+         activeIndex={4}
+         activeClassName='text-success'
+         unhighlightClassName='text-white'
+         textToHighlight={`
+        نحوه حذف Effect های غیرضروری در React:
+        در اینجا چند قدم برای حذف Effect های غیرضروری در کد React شما آورده شده است:
 
-                      </div>
-               )
-            }
+1. Effect های غیرضروری را شناسایی کنید:
+
+کد خود را بررسی کنید: به طور دستی کامپوننت های خود را بررسی کنید و به دنبال مکان هایی باشید که از useEffect استفاده می کنید. از خود بپرسید:
+آیا این Effect فقط بر اساس تغییرات props یا state، وضعیت را به روز می کند؟ State hook ها مانند useState می توانند به طور مستقیم این کار را انجام دهند.
+آیا این Effect در حال دریافت اطلاعات یا اشتراک در یک منبع خارجی است؟ استفاده از کتابخانه هایی مانند react-query یا SWR برای دریافت اطلاعات یا useState با منطق مناسب برای اشتراک ها را در نظر بگیرید.
+به دنبال هشدارهای linter باشید: برخی از linter ها مانند ESLint با قانون react-hooks/exhaustive-deps می توانند در مورد وابستگی های احتمالی گمشده در تماس های useEffect شما به شما هشدار دهند. با این حال، این هشدارها قابل سرکوب هستند، بنابراین بررسی دستی همچنان مهم است.
+2. Effect های غیرضروری را حذف کنید:
+
+پس از شناسایی یک Effect غیرضروری، hook useEffect و کد درون آن را حذف کنید.
+اگر Effect در حال به روز رسانی وضعیت بر اساس props یا state بود، کامپوننت خود را برای به روز رسانی مستقیم وضعیت با استفاده از مقدار prop جدید یا مقدار state به روز شده اصلاح کنید.
+اگر Effect در حال دریافت اطلاعات یا اشتراک بود، استفاده از روش های جایگزین ذکر شده در مرحله 1 را در نظر بگیرید.
+3. برای حفظ قابلیت نگهداری بازسازی کنید:
+
+با حذف Effect ها، مطمئن شوید که کد شما واضح و آسان برای درک باقی می ماند. در نظر بگیرید که منطق پیچیده را به توابع جداگانه یا hook های سفارشی تقسیم کنید.
+نکات اضافی:
+
+از سادگی شروع کنید: هنگام برخورد با یک مشکل جدید، ابتدا فکر کنید که آیا راهی برای حل آن بدون useEffect وجود دارد یا خیر. State hook ها و Context API ممکن است برای بسیاری از موارد کافی باشد.
+ترکیب را ترجیح دهید: منطق پیچیده را به اجزای کوچکتر قابل استفاده مجدد یا hook های سفارشی تقسیم کنید. این می تواند به شناسایی و حذف Effect های غیرضروری در واحدهای کوچکتر کد کمک کند.
+به طور کامل تست کنید: پس از حذف Effect، مطمئن شوید که کامپوننت شما همچنان طبق انتظار رفتار می کند. تست های واحد می توانند در اینجا مفید باشند.
+با دنبال کردن این مراحل و در نظر گرفتن اصل YMNE (You Might Not Need an Effect)، می توانید کد React تمیزتر، کارآمدتر و آسان تر برای نگهداری بنویسید.
+`} />
+        </div>
+ 
+          )
+            
       },
+  }
     
 ];
 
