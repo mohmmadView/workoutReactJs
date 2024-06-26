@@ -973,8 +973,8 @@ function MyComponent(props) {
   return <div>{count}</div>;
 }
 `} language={'js'} more={false} widthIN={'w-full'} />
-<Highlighter 
- highlightClassName='text-secondary bg-base-300 rtl'
+           <Highlighter 
+            highlightClassName='text-secondary bg-base-300 rtl'
             searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
             autoEscape={true}
             activeIndex={4}
