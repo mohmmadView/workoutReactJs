@@ -448,10 +448,122 @@ function MyComponent(props) {
           )
             
       }
+      const YouMightNotNeedEffectExample = () => {
+        return (
+  <>
+    <h1 className="text-red-500 text-2xl m-4">Example :</h1>
+         <Code widthIN="w-full"  language={"js"} code={`
+  function SearchResults({ query }) {
+  const [results, setResults] = useState([]);
+  const [page, setPage] = useState(1);
+  useEffect(() => {
+    let ignore = false;
+    fetchResults(query, page).then(json => {
+      if (!ignore) {
+        setResults(json);
+      }
+    });
+    return () => {
+      ignore = true;
+    };
+  }, [query, page]);
+
+  function handleNextPageClick() {
+    setPage(page + 1);
+  }
+  // ...
+}
+            `}  />
+<h1 className="text-red-500 text-2xl m-4"> Remove effect</h1>
+  <Code widthIN="w-full"  language={"js"} code={`
+ function SearchResults({ query }) {
+  const [page, setPage] = useState(1);
+  const params = new URLSearchParams({ query, page });
+  const results = useData(/api/search?params});
+
+  function handleNextPageClick() {
+    setPage(page + 1);
+  }
+  // ...
+}
+
+function useData(url) {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    let ignore = false;
+    fetch(url)
+      .then(response => response.json())
+      .then(json => {
+        if (!ignore) {
+          setData(json);
+        }
+      });
+    return () => {
+      ignore = true;
+    };
+  }, [url]);
+  return data;
+}
+ 
+            `}  />
+  </>
+        )
+    }
+    const LifecycleOfReactiveEffects = () => {
+        return (
+            <div className='whitespace-pre-line'>
+                <Highlighter 
+                highlightClassName=' whitespace-pre-line  bg-base-100'
+         searchWords={["mount","React","update","Effects","unmount","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
+         autoEscape={true}
+         activeIndex={4}
+         activeClassName='text-success'
+         unhighlightClassName='text-white'
+         textToHighlight={`Effects have a different lifecycle from components. Components may mount, update, or unmount. An Effect can only do two things: to start synchronizing something, and later to stop synchronizing it. This cycle can happen multiple times if your Effect depends on props and state that change over time. React provides a linter rule to check that you’ve specified your Effect’s dependencies correctly. This keeps your Effect synchronized to the latest props and state.`} />
+            <h1 className=''></h1>
+             <div className="divider divider-start text-accent mt-8 divider-secondary ">
+            <span className="text-xl text-primary font-bold">The lifecycle of an Effect</span>
+        </div> 
+            </div>
+        )
+    }
+    const LifecycleOfReactiveEffectsFa = () => {
+        return (
+            <div className='whitespace-pre-line rtl'>
+                <Highlighter 
+                highlightClassName=' whitespace-pre-line  bg-base-100'
+         searchWords={['update','mount',"unmount","useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
+         autoEscape={true}
+         activeIndex={4}
+         activeClassName='text-success'
+         unhighlightClassName='text-white' 
+         textToHighlight='چرخه حیات افکت‌ها با کامپوننت‌ها متفاوت است. کامپوننت‌ها می‌توانند لोड (mount) شوند، به‌روزرسانی (update) شوند، یا حذف (unmount) شوند. یک Effect (اثر) تنها می‌تواند دو کار انجام دهد:
+
+شروع همگام‌سازی چیزی: این کار می‌تواند شامل مواردی مانند اتصال به یک API، راه‌اندازی یک تایمر یا تنظیم یک اشتراک باشد.
+توقف همگام‌سازی چیزی: این کار می‌تواند شامل مواردی مانند قطع اتصال از یک API، پاکسازی یک تایمر یا لغو یک اشتراک باشد.
+این چرخه می‌تواند چندین بار اتفاق بیفتد، به ویژه اگر Effect شما به props (ویژگی‌های) و state (وضعیت) که در طول زمان تغییر می‌کنند وابسته باشد. ریکت یک قانون linter (ابزار بررسی کد) ارائه می‌دهد تا بررسی کند که وابستگی‌های Effect خود را به درستی مشخص کرده‌اید. این کار باعث می‌شود Effect شما با آخرین props و state همگام‌سازی شود.'
+         />
+            <div className="divider divider-start text-accent mt-8 divider-secondary ">
+            <span className="text-xl text-primary font-bold">ٍچرخه حیاط Effect</span>
+            </div>
+              <Highlighter 
+                highlightClassName=' whitespace-pre-line  bg-base-100'
+         searchWords={['update','mount',"unmount","useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
+         autoEscape={true}
+         activeIndex={4}
+         activeClassName='text-success'
+         unhighlightClassName='text-white' 
+         textToHighlight='هر مؤلفه React چرخه حیات یکسانی را طی می کند: یک مؤلفه زمانی که به صفحه اضافه می شود سوار می شود. یک مؤلفه معمولاً در پاسخ به یک تعامل زمانی که موارد یا وضعیت جدیدی دریافت می کند، به روز می شود. هنگامی که یک جزء از صفحه نمایش حذف می شود، نصب می شود. این یک راه خوب برای فکر کردن در مورد کامپوننت ها است، اما نه در مورد افکت ها. در عوض، سعی کنید در مورد هر افکت مستقل از چرخه عمر اجزای خود فکر کنید. یک افکت نحوه همگام سازی یک سیستم خارجی را با شرایط و وضعیت فعلی توضیح می دهد. همانطور که کد شما تغییر می کند، همگام سازی باید بیشتر یا کمتر انجام شود.'
+         />
+            </div>
+        )
+    }
          export default  {
             HowToWriteAnEffectText ,
             HowToWriteAnEffectTextFa ,
             YouMightNotNeedEffect ,
             YouMightNotNeedEffectFa ,
-            
+            YouMightNotNeedEffectExample ,
+            LifecycleOfReactiveEffects ,
+            LifecycleOfReactiveEffectsFa ,
         }

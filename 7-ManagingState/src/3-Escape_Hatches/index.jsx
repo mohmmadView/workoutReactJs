@@ -14,7 +14,7 @@ export default function EscapeHatches({lang}) {
   
    return (
     
-    <div className=' bg-primary-content/35'>
+    <div className=' bg-primary-content/35 py-12'>
 <Title id={"escape-hatches"} title="Escape Hatches" />
       
      

@@ -18,6 +18,15 @@ export default function HowToWriteAnEffect (lang) {
         Putting it all together
         </div>
         <PuttingItAllTogether />
+         <div className="divider divider-center text-accent mt-8 divider-secondary ">
+           <span className="text-2xl"> You might not need Effect</span>
+        </div>
+        {lang.lang ? (
+          <>{DataText.YouMightNotNeedEffect()}</>
+        ) : (
+          <>{DataText.YouMightNotNeedEffectFa()}</>
+        )}
+        {DataText.YouMightNotNeedEffectExample()}
       </div>
     );
 }
