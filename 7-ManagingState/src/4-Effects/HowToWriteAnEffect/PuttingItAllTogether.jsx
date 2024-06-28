@@ -1,5 +1,5 @@
 import { useEffect ,useState } from "react";
-import Code from '../utils/Prism';
+import Code from './../../utils/Prism';
 
 function PlayGround() {
     const [text,setText] = useState("a");
