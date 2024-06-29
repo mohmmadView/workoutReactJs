@@ -3,6 +3,7 @@ import Container from '../utils/container';
 import SynchronizingWithEffects from './Synchronizing-With-Effects';
 import HowToWriteAnEffect  from './HowToWriteAnEffect/HowToWriteAnEffect'
 import LifecycleOfReactiveEffects from './LifecycleOfReactiveEffects';
+import DotMove from './DotMove/index';
 import './textfor.css'
 // import './hightLight.css'
 
@@ -16,8 +17,10 @@ export default function Effects(lang) {
        <HowToWriteAnEffect lang={lang.lang}/>  
    </Container>
    <Container ColorText={'info'}  ColorDivider={'accent shadow-primary'} Title={"Lifecycle of Reactive Effects"}> 
-      <LifecycleOfReactiveEffects lang={lang.lang}/>
+      <LifecycleOfReactiveEffects lang={lang.lang} />
     </Container>
+                
+ <DotMove />               
 </div>
     )
 }
