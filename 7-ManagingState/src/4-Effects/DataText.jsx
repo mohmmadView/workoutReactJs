@@ -524,6 +524,30 @@ function useData(url) {
              <div className="divider divider-start text-accent mt-8 divider-secondary ">
             <span className="text-xl text-primary font-bold">The lifecycle of an Effect</span>
         </div> 
+          <Highlighter 
+                highlightClassName=' whitespace-pre-line  bg-base-100'
+         searchWords={["mounts","React","updates","Effects","unmounts","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
+         autoEscape={true}
+         activeIndex={4}
+         activeClassName='text-success'
+         unhighlightClassName='text-white'
+         textToHighlight={`
+         Every React component goes through the same lifecycle:
+
+A component mounts when it’s added to the screen.
+A component updates when it receives new props or state, usually in response to an interaction.
+A component unmounts when it’s removed from the screen.
+
+         
+         It’s a good way to think about components, but not about Effects. Instead, try to think about each Effect independently from your component’s lifecycle. An Effect describes how to synchronize an external system to the current props and state. As your code changes, synchronization will need to happen more or less often.
+         
+         To illustrate this point, consider this Effect connecting your component to a chat server:
+
+
+         `} />
+        
+
+         
             </div>
         )
     }
@@ -537,7 +561,8 @@ function useData(url) {
          activeIndex={4}
          activeClassName='text-success'
          unhighlightClassName='text-white' 
-         textToHighlight='چرخه حیات افکت‌ها با کامپوننت‌ها متفاوت است. کامپوننت‌ها می‌توانند لोड (mount) شوند، به‌روزرسانی (update) شوند، یا حذف (unmount) شوند. یک Effect (اثر) تنها می‌تواند دو کار انجام دهد:
+         textToHighlight='چرخه حیات افکت‌ها با کامپوننت‌ها متفاوت است.
+          کامپوننت‌ها می‌توانند لोड (mount) شوند، به‌روزرسانی (update) شوند، یا حذف (unmount) شوند. یک Effect (اثر) تنها می‌تواند دو کار انجام دهد:
 
 شروع همگام‌سازی چیزی: این کار می‌تواند شامل مواردی مانند اتصال به یک API، راه‌اندازی یک تایمر یا تنظیم یک اشتراک باشد.
 توقف همگام‌سازی چیزی: این کار می‌تواند شامل مواردی مانند قطع اتصال از یک API، پاکسازی یک تایمر یا لغو یک اشتراک باشد.
@@ -547,13 +572,19 @@ function useData(url) {
             <span className="text-xl text-primary font-bold">ٍچرخه حیاط Effect</span>
             </div>
               <Highlighter 
-                highlightClassName=' whitespace-pre-line  bg-base-100'
+                highlightClassName=' whitespace-pre-line rtl  bg-base-100'
          searchWords={['update','mount',"unmount","useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
          autoEscape={true}
          activeIndex={4}
          activeClassName='text-success'
          unhighlightClassName='text-white' 
-         textToHighlight='هر مؤلفه React چرخه حیات یکسانی را طی می کند: یک مؤلفه زمانی که به صفحه اضافه می شود سوار می شود. یک مؤلفه معمولاً در پاسخ به یک تعامل زمانی که موارد یا وضعیت جدیدی دریافت می کند، به روز می شود. هنگامی که یک جزء از صفحه نمایش حذف می شود، نصب می شود. این یک راه خوب برای فکر کردن در مورد کامپوننت ها است، اما نه در مورد افکت ها. در عوض، سعی کنید در مورد هر افکت مستقل از چرخه عمر اجزای خود فکر کنید. یک افکت نحوه همگام سازی یک سیستم خارجی را با شرایط و وضعیت فعلی توضیح می دهد. همانطور که کد شما تغییر می کند، همگام سازی باید بیشتر یا کمتر انجام شود.'
+         textToHighlight={`
+            هر مؤلفه React چرخه حیات یکسانی را طی می کند: 
+         یک مؤلفه زمانی که به صفحه اضافه می شود سوار می شود.
+          یک مؤلفه معمولاً در پاسخ به یک تعامل زمانی که موارد یا وضعیت جدیدی دریافت می کند، به روز می شود. 
+          هنگامی که یک جزء از صفحه نمایش حذف می شود، نصب می شود.
+
+           این یک راه خوب برای فکر کردن در مورد کامپوننت ها است، اما نه در مورد افکت ها.در عوض، سعی کنید در مورد هر افکت مستقل از چرخه عمر اجزای خود فکر کنید. یک افکت نحوه همگام سازی یک سیستم خارجی را با شرایط و وضعیت فعلی توضیح می دهد.  همانطور که کد شما تغییر می کند، همگام سازی باید بیشتر یا کمتر انجام شود  .`}
          />
             </div>
         )
