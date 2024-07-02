@@ -2,19 +2,21 @@ import Highlighter from "react-highlight-words";
 
 const  Intermediate= () => {
       return (
-        <Highlighter
-         searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
-            highlightClassName="  bg-base-300 font-bold"
-            unhighlightClassName="text-white"
-            textToHighlight="
-          As your application grows, it helps to be more intentional about how
-          your state is organized and how the data flows between your components.
-           Redundant or duplicate state is a common source of bugs. 
-           In this chapter, you’ll learn how to structure your state
-          well, how to keep your state
-          update logic maintainable, and how to share state
-          between distant components.,Children"
-      /> 
+       <>
+          <Highlighter
+           searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
+              highlightClassName="  bg-base-300 font-bold"
+              unhighlightClassName="text-white"
+              textToHighlight={`
+            As your application grows, it helps to be more intentional about how
+            your state is organized and how the data flows between your components.
+             Redundant or duplicate state is a common source of bugs. 
+             In this chapter, you’ll learn how to structure your state
+            well, how to keep your state
+            update logic maintainable, and how to share state
+            between distant components.,Children`}
+        /> 
+       </>
       ) 
     }
   
@@ -119,25 +121,27 @@ const  Intermediate= () => {
   
    const  ReactingToInputFa = () => {
       return (
-          <Highlighter
-         searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
-            highlightClassName="  bg-base-300 font-bold"
-            unhighlightClassName="text-white"
-            textToHighlight="
-          با React، شما از کد به صورت
-          مستقیم تغییرات را در رابط کاربری اعمال نخواهید کرد. به عنوان مثال،
-          دستوراتی مانند دکمه را غیرفعال کن، دکمه را فعال کن، پیام موفقیت را
-          نشان بده و غیره را نخواهید نوشت. به جای اینکه دستورات مستقیم بنویسید،
-          شما توصیف خواهید کرد که رابط کاربری مورد نظر خود را برای وضعیت‌های
-          مختلف دیداری کامپوننت خود
-         (وضعیت اولیه، وضعیت تایپ کردن، وضعیت موفقیت) و سپس
-          تغییرات وضعیت را در پاسخ به ورودی کاربر فراخوانی خواهید کرد. این مشابه
-          به این است که طراحان به رابط کاربری فکر می‌کنند. در زیر، یک فرم آزمون
-          به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت
-          (status) برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال
-          باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است
-          "
-      /> 
+         <>
+            <Highlighter
+           searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
+              highlightClassName="  bg-base-300 font-bold"
+              unhighlightClassName="text-white"
+              textToHighlight="
+            با React، شما از کد به صورت
+            مستقیم تغییرات را در رابط کاربری اعمال نخواهید کرد. به عنوان مثال،
+            دستوراتی مانند دکمه را غیرفعال کن، دکمه را فعال کن، پیام موفقیت را
+            نشان بده و غیره را نخواهید نوشت. به جای اینکه دستورات مستقیم بنویسید،
+            شما توصیف خواهید کرد که رابط کاربری مورد نظر خود را برای وضعیت‌های
+            مختلف دیداری کامپوننت خود
+           (وضعیت اولیه، وضعیت تایپ کردن، وضعیت موفقیت) و سپس
+            تغییرات وضعیت را در پاسخ به ورودی کاربر فراخوانی خواهید کرد. این مشابه
+            به این است که طراحان به رابط کاربری فکر می‌کنند. در زیر، یک فرم آزمون
+            به کمک React ساخته شده است. توجه داشته باشید که از متغیر وضعیت
+            (status) برای تعیین اینکه آیا دکمه ارسال فعال یا غیرفعال
+            باشد و آیا پیام موفقیت را نشان دهد یا خیر، استفاده شده است
+            "
+        /> 
+         </>
        
       );
     }

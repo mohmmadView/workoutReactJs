@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import { createContext, useContext } from "react";
-
 function Container( {Title, ColorText, ColorDivider, children })  {
   return (
     <div style={{ direction: `auto` }}
