@@ -1,5 +1,5 @@
 // import DataText from '../TasksContext';
-import Container from '../utils/container';
+import Container from '../utils/Container';
 import SynchronizingWithEffects from './Synchronizing-With-Effects';
 import HowToWriteAnEffect  from './HowToWriteAnEffect/HowToWriteAnEffect'
 import LifecycleOfReactiveEffects from './LifecycleOfReactiveEffects';

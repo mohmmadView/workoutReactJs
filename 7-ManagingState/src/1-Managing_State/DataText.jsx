@@ -2,7 +2,6 @@ import Highlighter from "react-highlight-words";
 
 const  Intermediate= () => {
       return (
-       <>
           <Highlighter
            searchWords={["state","props","debug","Event","component","effect","bugs!","React","children","components"]}
               highlightClassName="  bg-base-300 font-bold"
@@ -16,7 +15,6 @@ const  Intermediate= () => {
             update logic maintainable, and how to share state
             between distant components.,Children`}
         /> 
-       </>
       ) 
     }
   
@@ -24,8 +22,10 @@ const  Intermediate= () => {
   const  ManagingState= () => {
       return (
         <div className="rtl" style={{ direction: "rtl" }}>
-          هرچقدر برنامه شما بزرگتر می‌شود، بهتر است که در مورد نحوه سازماندهی و
-          چگونگی جریان داده
+          <p>
+            هرچقدر برنامه شما بزرگتر می‌شود، بهتر است که در مورد نحوه سازماندهی و
+            چگونگی جریان داده
+          </p>
           <span className="text-primary underline underline-offset-4  decoration-double font-bold">
             state
           </span>
@@ -149,19 +149,38 @@ const  Intermediate= () => {
     
 const  ChoosingTheState= () => {
       return (
-        <>
+        <div className="whitespace-pre-line ">
             <Highlighter 
             searchWords={["state","props","debug","Event","component","effect","bugs!"]}
-            highlightClassName=" bg-base-300 font-bold"
+            highlightClassName=" bg-base-300  whitespace-pre-line font-bold"
             unhighlightClassName="text-white"
-            textToHighlight="
-          Structuring state well can make a difference between a component that
-          is pleasant to modify and debug, and one that is a constant source of
-          bugs. The most important principle is that state shouldn’t contain
-          redundant or duplicated information. If there’s unnecessary state,
-          it’s easy to forget to update it, and introduce bugs!" />
-      <h1 className="text-secondary text-3xl divider divider-start divider-accent p-4">Types of structure state</h1><br />
-       <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
+            textToHighlight={`
+          Structuring state well can make a difference between a component thatis pleasant to modify and debug, and one that is a constant source ofbugs. The most important principle is that state shouldn’t containredundant or duplicated information. If there’s unnecessary state,it’s easy to forget to update it, and introduce bugs!`} />
+      <div className="text-secondary text-3xl divider divider-start divider-accent p-4">Types of structure state</div><br />
+      <Highlighter 
+            searchWords={["pretzels","crispy seaweed","granola bar","title","id","'","props","debug","Event","component","effect","State multiple","bugs!","bol","setBol" ,'state single',"1.","2.","3.",":","const","x","setX","useState","value","setValue"]}
+            highlightClassName=" bg-base-300  whitespace-pre-line font-bold"
+            unhighlightClassName="text-white"
+            textToHighlight={`
+            1.State Single :
+
+               const [ x, setX ] = useState(0);
+               const [ value , setValue ] = useState(" ");
+               const [ bol , setBol ] = useState(false);
+            
+            2.State multiple :
+
+             const [ position, setPosition ] = useState({ x: 0, y: 0 });
+
+             const  initialitems = [
+             { title: 'pretzels',       id: 0 },
+             { title: 'crispy seaweed', id: 1 },
+             { title: 'granola bar',    id: 2 },
+             ] ;
+
+              const [ items, setItems ] = useState(initialitems);
+            `} />
+       {/* <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
        <code>
        1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
        2- <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
@@ -178,8 +197,8 @@ const  ChoosingTheState= () => {
 ];;</span> <br />
        <span className="text-yellow-500">const</span>  [items, setItems]        = <span className="text-green-500">useState(<span className="text-red-500">initialItems</span>);</span><br />
        </code>
-        </p>
-        </>
+        </p> */}
+        </div>
       );
     }
   const  ChoosingTheStateFa= () => {

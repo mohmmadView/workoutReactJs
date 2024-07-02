@@ -4,14 +4,10 @@
 import WhatWorkUseRef from './whatWorkUseRef.jsx';
 import ScrollIntoView from './ScrollIntoView.jsx';
 import Title from '../utils/Title.jsx'
-import Container from '../utils/container.jsx';
+import Container from '../utils/Container';
 import DataText from './DataText.jsx';
 import WhenReactAttachesTheRef from './ٌWhenReactAttachesTheRef.jsx';
 export default function EscapeHatches({lang}) {
-
- 
-  
-  
    return (
     
     <div className=' bg-primary-content/35 py-12'>

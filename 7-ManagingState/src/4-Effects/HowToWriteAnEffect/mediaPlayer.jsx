@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Code from '../../utils/Prism';
+
 function VideoPlayer({ src, isPlaying }) {
   const ref = useRef(null);
 useEffect(() => {

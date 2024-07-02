@@ -1,4 +1,4 @@
-import Container from "./utils/container";
+import Container from "./utils/Container";
 import Title from "./utils/Title";
 import LangBtn from "./utils/components/lang-btn";
 import NavFixed from "./utils/components/nav-fixed";
@@ -21,16 +21,12 @@ export default function App() {
        <LangBtn setLang={setLang} lang={lang} />
       <ManagingState lang={lang} />
      <ReactContext lang={lang} />
-      
-     
         <EscapeHatches lang={lang} />
       <Title id="effects" title="Effects" />
         <Effects lang={lang} />
         <Title id="custom-hooks" title="Custom Hooks" />
          <CustomHooks/>
-        <Container title={2} ColorDivider={23}></Container>
-        <Container></Container>
-        <Container></Container>
+        
    
     </div>
   );
