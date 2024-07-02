@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types */
+/* jsDoc */
 import PropTypes from "prop-types";
-function Container( {Title, ColorText, ColorDivider, children })  {
+
+const Container = ({Title, ColorText, ColorDivider, children }) => {
   return (
-    <div style={{ direction: `auto` }}
+    <div dir="auto" 
       className={`text-white w-11/12 mx-auto my-12 
         bg-base-300 pt-10 lg:text-xl xl:text-2xl p-10 shadow-md shadow-${ColorText}/50 hover:shadow-${ColorText} `}>
-      <div style={{ direction: "auto" }}
+      <div dir="auto"
         className={`pb-8 font-bold text-3xl max-lg:text-xl max-md:text-lg divider divider-${ColorDivider}`}>
         <p className={`text-${ColorText}`}>{Title}</p>
       </div>
@@ -13,7 +14,7 @@ function Container( {Title, ColorText, ColorDivider, children })  {
     </div>
   );
 }
-  Container.prototypes = {
+  Container.propTypes = {
    Title: PropTypes.string.isRequired,
    ColorText: PropTypes.string.isRequired,
    ColorDivider: PropTypes.string.isRequired,
