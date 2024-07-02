@@ -16,7 +16,7 @@ export default function DotMove() {
         return () => window.removeEventListener("pointermove",onMove);
     });
     return (
-        <div className="relative w-full h-72">
+        <>
       <label>
         <input type="checkbox"
           checked={play}
@@ -25,10 +25,16 @@ export default function DotMove() {
         The dot is allowed to move
       </label>
       <hr />
-      <div className="w-32 h-32 absolute bg-white pointer-events-none left-2 top-2 " style={{
-        transform: `translate(${move.x}px, ${move.y}px)`,
-       
-      }} />
-    </div>
+      <div  style={{
+        position: 'absolute',
+        width: '15px',
+        height: '15px',
+        borderRadius: '50%',
+        backgroundColor: 'red',
+         left: -20,
+        top: -20,
+         transform: `translate(${move.x}px, ${move.y}px)`,
+      }} ></div>
+    </>
     );
 }

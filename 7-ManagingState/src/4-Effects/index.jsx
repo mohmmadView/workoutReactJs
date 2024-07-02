@@ -19,8 +19,9 @@ export default function Effects(lang) {
    <Container ColorText={'info'}  ColorDivider={'accent shadow-primary'} Title={"Lifecycle of Reactive Effects"}> 
       <LifecycleOfReactiveEffects lang={lang.lang} />
     </Container>
-                
- <DotMove />               
+  <div className="w-full h-64 relative"> 
+     <DotMove />  
+  </div>             
 </div>
     )
 }
