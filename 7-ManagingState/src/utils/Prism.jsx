@@ -15,7 +15,7 @@ export default function Code({ code, language, fileName, widthIN , more}) {
     }
   }
   return (
-    <div className={`w-2/3 ltr ${widthIN}  `}>
+    <div className={`w-2/3 ltr my-4 ${widthIN}  `}>
       <div
         className={
           overflow

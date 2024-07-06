@@ -1,5 +1,6 @@
 import Code from '../utils/Prism';
 import Highlighter from "react-highlight-words";
+import { useEffect, useState } from 'react';
 const ReusingLogicWithCustomHooks = () => {
           return (
             <div  className='whitespace-pre-line'>
@@ -55,114 +56,48 @@ export default function StatusBar() {
 
  `} language={"js"}
           widthIN={"w-full h-auto"} ></Code>
-          <p className="p-4">If the effect doesn't depend on any values and only needs to run once (similar to componentDidMount in class components), use an empty dependency array ([]):</p>
-
-        <div className="divider divider-start text-accent mt-8 divider-secondary ">
-          Step 3: Add Cleanup Logic (Optional):
-        </div>
-        <p>If your effect performs actions that require cleanup (subscriptions, timers), you can return a function from inside the effect. This cleanup function will be called when the component unmounts or before the effect runs again if dependencies change. This prevents memory leaks and ensures resources are properly released:</p>
-        <Code more={false} code={`
-useEffect(() => {
-  const subscription = someApi.subscribe(/* ... */);
-
-  return () => subscription.unsubscribe(); // Cleanup function
-}, []); // Empty dependency array: runs only once
-
- `} language={"js"}
-          widthIN={"w-full h-auto"} ></Code>
-          <p className='p-4'>Complete Example with Data Fetching and Cleanup:</p>
-           <Code more={true} code={`
-import { useEffect, useState } from 'react';
-
-function MyComponent() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('https://api.example.com/data');
-      const jsonData = await response.json();
-      setData(jsonData);
-    };
-
-    fetchData();
-
-    // Cleanup function to avoid memory leaks when unmounting
-    return () => {
-      // Any cleanup logic here, e.g., canceling subscriptions
-    };
-  }, []); // Empty dependency array: fetch data only once on initial render
-
-  // ...
-
-  return (
-    <div>
-      {data ? (
-        <p>Fetched data: {JSON.stringify(data)}</p>
-      ) : (
-        <p>Loading data...</p>
-      )}
-    </div>
-  );
-}
-
- `} language={"js"}
-          widthIN={"w-full h-82"} ></Code>
-          
-            </div>
-          )
-        }
-const HowToWriteAnEffectTextFa=()=>{
-
-          return (
-            <div  className='whitespace-pre-line rtl'>
-                
-            <Highlighter 
-            highlightClassName='text-secondary bg-base-300 '
-            searchWords={[(/([a-zA-Z])\w+/g),("Effect")]}
-            autoEscape={false}
+<Highlighter 
+            highlightClassName='text-secondary bg-base-300 rtl'
+            searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
+            autoEscape={true}
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
-            textToHighlight={`
-            برای نوشتن یک Effect، این سه مرحله را دنبال کنید:
+            textToHighlight={`Try turning your network on and off, and notice how this StatusBar updates in response to your actions.
 
-            ۱. اعلام یک Effect: به طور پیش فرض، Effect شما بعد از هر بار رندر شدن اجرا خواهد شد.
-            
-            ۲. مشخص کردن وابستگی های Effect: اکثر Effect ها باید فقط در صورت نیاز و نه بعد از هر بار رندر شدن، دوباره اجرا شوند. به عنوان مثال، یک انیمیشن محو شدن (fade-in) فقط باید زمانی که یک کامپوننت ظاهر می شود، اجرا شود. اتصال و قطع اتصال به یک چت روم نیز فقط باید زمانی که کامپوننت ظاهر و ناپدید می شود یا زمانی که چت روم تغییر می کند، اتفاق بیفتد. شما با مشخص کردن وابستگی ها یاد خواهید گرفت که این را کنترل کنید.
-            
-            ۳. در صورت نیاز پاکسازی اضافه کنید: برخی Effect ها نیاز دارند مشخص کنند که چگونه هر کاری را که انجام می دهند متوقف، خنثی یا پاکسازی کنند. به عنوان مثال، "connect" نیاز به "disconnect" دارد، "subscribe" نیاز به "unsubscribe" دارد و "fetch" نیاز به "cancel" یا "ignore" دارد. شما با برگرداندن یک تابع پاکسازی، نحوه انجام این کار را یاد خواهید گرفت
-            `} />
- <div className="divider divider-start text-accent mt-8 divider-secondary ">
-          Step 1: اعلام Effect
-        </div>
-        <p className="p-4 ">
-          فراخوانی <span className="text-red-500">Effect</span> در {" "}
-          
-        </p>
-        <Code
-          more={false}
-          code={"import { useEffect } from 'react'; "}
-          language={"js"}
-          widthIN={"w-full h-auto"}
-        />
-        <p className="p-4 ">
-          استفاده از <span className="text-green-500">useEffect</span> در  <span>component</span> 
-          :
-        </p>
-        <Code
+Now imagine you also want to use the same logic in a different component. You want to implement a Save button that will become disabled and show “Reconnecting…” instead of “Save” while the network is off.
+
+To start, you can copy and paste the isOnline state and the Effect into SaveButton:`} />
+  <Code
           more={false}
           code={`
-   function MyComponent() {
-  // ...
+   import { useState, useEffect } from 'react';
 
+export default function SaveButton() {
+  const [isOnline, setIsOnline] = useState(true);
   useEffect(() => {
-    // کد Effect شما در اینجا
-  }, [/* آرایه وابستگی */]);
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
-  // ...
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
 
   return (
-    // JSX برای کامپوننت شما
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
   );
 }
 
@@ -170,74 +105,369 @@ const HowToWriteAnEffectTextFa=()=>{
           language={"js"}
           widthIN={"w-full h-auto"}
         />
+      <Highlighter 
+            highlightClassName='text-secondary bg-base-300 rtl'
+            searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`Verify that, if you turn off the network, the button will change its appearance.
 
-        <div className="divider divider-start text-accent mt-8 divider-secondary ">
-          Step 2: وابستگی های Effect را مشخص کنید (اختیاری):
-        </div>
-        <p className="p-4">
-آرگومان دوم <span className='text-green-500'>useEffect</span> یک آرایه وابستگی اختیاری است.
-</p>
-        <p className="p-4">اگر یک آرایه خالی <span className='text-purple-500'>([])</span> ارائه دهید، <span className='text-red-500'>Effect</span> فقط یک بار پس از رندر اولیه اجرا می شود (مشابه componentDidMount در کامپوننت های کلاس).</p>
-        <p className="p-4">هر  گونه <span className='text-orange-500'>prop،</span> متغیر حالت یا مقادیر دیگری که <span className='text-red-500'>Effect</span> به آنها وابسته است را در آرایه وابستگی قرار دهید. هنگامی که یکی از این مقادیر تغییر می کند، <span className='text-red-500'>Effect</span> دوباره اجرا می شود:</p>
-        <Code more={false} code={`
-  useEffect(() => {
-  // Effect that depends on count
-  }, [count]); // Dependency array includes count
- `} language={"js"}
-          widthIN={"w-full h-auto"} ></Code>
-          <p className="p-4">اگر <span className='text-red-500'>Effect</span> به هیچ مقداری وابسته نیست و فقط باید یک بار اجرا شود (مشابه <span>componentDidMount</span> در کامپوننت های کلاس)، از یک آرایه وابستگی خالی <span className='text-purple-500'>([])</span> استفاده کنید:</p>
-             <Code more={false} code={`
- useEffect(() => {
-  // Effect که فقط در رندر اولیه اجرا می شود
-}, []);
- `} language={"js"}
-          widthIN={"w-full h-auto"} ></Code> 
-          <div className="divider divider-start text-accent mt-8 divider-secondary ">
-          Step 3: منطق پاکسازی را اضافه کنید (اختیاری):
-        </div>
-        <p>
-    اگر <span className='text-red-500'>Effect</span> شما اقداماتی را انجام می دهد که به پاکسازی نیاز دارند (اشتراک ها، تایمرها)، می توانید یک تابع را از داخل <span className='text-red-500'>Effect</span> برگردانید. این تابع پاکسازی زمانی فراخوانی می شود که کامپوننت جدا شود یا قبل از اینکه <span className='text-red-500'>Effect</span> دوباره اجرا شود اگر وابستگی ها تغییر کند. این از نشت حافظه جلوگیری می کند و تضمین می کند که منابع به درستی آزاد می شوند:
-        </p>
-          <Code more={false} code={`
-useEffect(() => {
-  const subscription = someApi.subscribe(/* ... */);
-  return () => subscription.unsubscribe(); // تابع پاکسازی
-}, []); // آرایه وابستگی خالی: فقط یک بار اجرا می شود
- `} language={"js"}
-          widthIN={"w-full h-auto "} ></Code>
-          <p className="p-4">مثال کامل با دریافت داده و پاکسازی:</p>
-             <Code more={true} code={`
- import { useEffect, useState } from 'react';
-function MyComponent() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('https://api.example.com/data');
-      const jsonData = await response.json();
-      setData(jsonData);
-    };
-    fetchData();
-    // تابع پاکسازی برای جلوگیری از نشت حافظه هنگام جدا شدن
-    return () => {
-      // هر گونه منطق پاکسازی در اینجا، مانند لغو اشتراک ها
-    };
-  }, []); // آرایه وابستگی خالی: فقط یک بار در رندر اولیه داده ها را دریافت کنید
-  // ...
+These two components work fine, but the duplication in logic between them is unfortunate. It seems like even though they have different visual appearance, you want to reuse the logic between them.`} />
+  
+   <div className="divider divider-start text-accent mt-8 divider-secondary ">
+ Extracting your own custom Hook from a component 
+ </div>
+  <Highlighter 
+            highlightClassName='text-secondary bg-base-300 rtl'
+            searchWords={["3-","1-","2-",`.`,`,`,"Hook",`“`,"Effect","React","(","useEffect",")","jsx","useState","props","components","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`Imagine for a moment that, similar to useState and useEffect, there was a built-in useOnlineStatus Hook. Then both of these components could be simplified and you could remove the duplication between them:`} />
+   <Code
+              language={"js"}
+              widthIN={"w-full h-auto "}
+          code={`
+  function StatusBar() {
+  const isOnline = useOnlineStatus();
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
   return (
-    <div>
-      {data ? (
-        <p>داده های دریافت شده: {JSON.stringify(data)}</p>
-      ) : (
-        <p>در حال بارگیری داده ها...</p>
-      )}
-    </div>
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
   );
 }
- `} language={"js"}
-          widthIN={"w-full h-82"} ></Code> 
+`}/>
+ <Highlighter 
+            highlightClassName='text-secondary bg-base-300  rtl'
+            searchWords={["3-","1-","2-",`.`,`,`,"Hook",`“`,"Effect","React","(","useEffect",")","jsx","useState","props","useOnlineStatus","Event","component","effect"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success '
+            unhighlightClassName='text-white '
+            textToHighlight={`Although there is no such built-in Hook, you can write it yourself. Declare a function called useOnlineStatus and move all the duplicated code into it from the components you wrote earlier:`} />
+      <Code
+      language={"js"}
+              widthIN={"w-full h-auto"}
+               code={`
+function useOnlineStatus() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+  return isOnline;
+}
+`}/>
+      <Highlighter 
+            highlightClassName='text-secondary bg-base-300  rtl'
+            searchWords={["isOnline"]}
+            autoEscape={true}
+            activeIndex={4}
+            activeClassName='text-success '
+            unhighlightClassName='text-white '
+            textToHighlight={`At the end of the function, return isOnline. This lets your components read that value:`} />
+    
+          
+
+          
             </div>
           )
         }
+      
+const ReusingLogicWithCustomHooksFa=()=>{
+          return (
+            <div  className='whitespace-pre-line rtl'>
+               
+            <Highlighter 
+            highlightClassName='text-secondary bg-base-300 '
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect")]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`React دارای چندین Hook داخلی مانند useState، useContext و useEffect است. گاهی اوقات، شما آرزو می کنید که ای کاش یک Hook برای اهداف خاص تر وجود داشت: به عنوان مثال، برای واکشی داده ها، پیگیری آنلاین بودن کاربر یا اتصال به یکاتاق گفتگو ممکن است این Hook ها را در React پیدا نکنید، اما می توانید هوک های خود را برای نیازهای برنامه خود ایجاد کنید.
+            `} />
+ <div className="divider divider-start text-accent mt-8 divider-secondary ">
+ Custom Hooks: Sharing logic between components 
+ </div>
+          <Highlighter 
+            highlightClassName='text-secondary bg-base-300 '
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect"),"1-","2-"]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`تصور کنید در حال توسعه برنامه ای هستید که به شدت به شبکه متکی است (همانطور که اکثر برنامه ها انجام می دهند). می‌خواهید به کاربر هشدار دهید که اتصال شبکه او به طور تصادفی در حین استفاده از برنامه شما قطع شده است. چگونه در مورد آن اقدام می کنید؟ به نظر می رسد که شما به دو چیز در کامپوننت خود نیاز دارید:
+1- یک قطعه حالت که آنلاین بودن شبکه را ردیابی می کند.
+2-افکتی که در رویدادهای جهانی آنلاین و آفلاین مشترک می شود و آن حالت را به روز می کند.
+با این کار جزء شما با وضعیت شبکه همگام می شود. ممکن است با چیزی شبیه به این شروع کنید:`} />
+        <Code
+          more={false}
+          code={`
+import { useState, useEffect } from 'react';
+export default function StatusBar() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+            `}
+          language={"js"}
+          widthIN={"w-full h-auto mt-8"}
+        />
+          <Highlighter 
+            highlightClassName='text-secondary bg-base-300 '
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect"),"1-","2-"]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`سعی کنید شبکه خود را روشن و خاموش کنید و متوجه شوید که چگونه این نوار وضعیت در پاسخ به اقدامات شما به روز می شود.
+
+حال تصور کنید که می خواهید از همان منطق در کامپوننت دیگری نیز استفاده کنید. می‌خواهید یک دکمه ذخیره را اجرا کنید که غیرفعال می‌شود و در حالی که شبکه خاموش است، به جای «ذخیره»، «Reconnecting…» را نشان می‌دهد.
+
+برای شروع، می توانید حالت isOnline و افکت را در SaveButton کپی و جایگذاری کنید:`} />  
+        <Code
+          more={false}
+          code={`
+   import { useState, useEffect } from 'react';
+
+export default function SaveButton() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+
+`}
+          language={"js"}
+          widthIN={"w-full h-auto"}
+        />
+<Highlighter 
+            highlightClassName='text-secondary bg-base-300 '
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect"),"1-","2-"]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`بررسی کنید که اگر شبکه را خاموش کنید، دکمه ظاهر آن تغییر خواهد کرد.
+
+این دو جزء به خوبی کار می کنند، اما تکراری شدن در منطق بین آنها مایه تاسف است. به نظر می رسد با وجود اینکه ظاهر بصری متفاوتی دارند، می خواهید از منطق بین آنها دوباره استفاده کنید.`} />  
+    <div className="divider divider-start text-accent mt-8 divider-secondary ">
+ Extracting your own custom Hook from a component 
+ </div>
+ <Highlighter 
+            highlightClassName='text-secondary bg-base-300 '
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect"),"1-","2-"]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`یک لحظه تصور کنید که مشابه useState و useEffect، یک useOnlineStatus Hook داخلی وجود دارد. سپس هر دوی این مؤلفه ها را می توان ساده کرد و می توانید تکرار بین آنها را حذف کنید:`} />  
+            <Code
+              language={"js"}
+              widthIN={"w-full h-auto"}
+          code={`
+  function StatusBar() {
+  const isOnline = useOnlineStatus();
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+`}/>
+<Highlighter 
+            highlightClassName='text-secondary bg-base-300 '
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect"),"1-","2-"]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`گرچه چنین هوک داخلی وجود ندارد، اما می توانید خودتان آن را بنویسید. تابعی به نام useOnlineStatus را اعلام کنید و تمام کدهای تکراری را از اجزایی که قبلا نوشتید به آن منتقل کنید:`} /> 
+   <Code
+              language={"js"}
+              widthIN={"w-full h-auto"}
+          code={`
+function useOnlineStatus() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+  return isOnline;
+}
+`}/>
+<Highlighter 
+            highlightClassName='text-secondary bg-base-300 '
+            searchWords={[(/([a-zA-Z])\w+/g),("Effect"),"1-","2-"]}
+            autoEscape={false}
+            activeIndex={4}
+            activeClassName='text-success'
+            unhighlightClassName='text-white'
+            textToHighlight={`در پایان تابع، isOnline را برگردانید. این به اجزای شما اجازه می‌دهد آن مقدار را بخوانند:`} /> 
+  <HandleTab tabOne="App.js" tabTwo="useOnlineStatus.js" />
+            </div>
+          )
+        }
+
+        function HandleTab({tabOne,tabTwo }){
+           let [tab,setTab]=useState(0);
+                let stringCode =[`import { useOnlineStatus } from './useOnlineStatus.js';
+
+function StatusBar() {
+  const isOnline = useOnlineStatus();
+  return <h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</h1>;
+}
+
+function SaveButton() {
+  const isOnline = useOnlineStatus();
+
+  function handleSaveClick() {
+    console.log('✅ Progress saved');
+  }
+
+  return (
+    <button disabled={!isOnline} onClick={handleSaveClick}>
+      {isOnline ? 'Save progress' : 'Reconnecting...'}
+    </button>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <SaveButton />
+      <StatusBar />
+    </>
+  );
+}
+`,`import { useState, useEffect } from 'react';
+
+export function useOnlineStatus() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+  return isOnline;
+}
+
+          `]
+          // useEffect((tabOne,tabTwo) => {
+          //    Tab(tabOne, tabTwo)
+   
+            
+          // })
+       
+         return (
+          <>
+          <Tab one={tabOne} two={tabTwo} />
+           <Code widthIN={"w-full h-auto"} code={`${stringCode[tab]}`} language={"js"} />
+          </>
+         )
+          function Tab({one,two }){
+         
+          return (
+            <>
+            <div className='flex justify-end bg-stone-900'>
+            <button onClick={()=>{setTab(0)}} className='btn btn-outline btn-sm btn-primary'>{one}</button>
+            <button onClick={()=>setTab(1)} className='btn btn-outline btn-sm btn-primary'>{two}</button>
+            </div>
+            <div>
+            </div>
+            </>
+          )
+        }
+      }
 const YouMightNotNeedEffect = () => {
           return (
             <div className='whitespace-pre-line'>
@@ -568,7 +798,7 @@ A component unmounts when it’s removed from the screen.
     }
          export default  {
           ReusingLogicWithCustomHooks ,
-            HowToWriteAnEffectTextFa ,
+            ReusingLogicWithCustomHooksFa ,
             YouMightNotNeedEffect ,
             YouMightNotNeedEffectFa ,
             YouMightNotNeedEffectExample ,

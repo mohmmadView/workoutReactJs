@@ -24,7 +24,7 @@ export default function App() {
       <Title id="effects" title="Effects" />
         <Effects lang={lang} />
         <Title id="custom-hooks" title="Custom Hooks" />
-         <CustomHooks/>
+         <CustomHooks lang={lang}/>
         
    
     </div>
