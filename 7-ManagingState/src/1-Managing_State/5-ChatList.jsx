@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Prism from "../utils/Prism";
 import codeChatList from "../codeString/AllCodeString";
+import PropTypes from 'prop-types'
 export default function ChatList() {
   let [id, setId] = useState(0);
   return (
@@ -34,6 +35,10 @@ function ContactList({ list, giveId }) {
     </div>
   );
 }
+ContactList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object).isRequired,
+  giveId: PropTypes.func.isRequired,
+}
 function Chat({ listContact }) {
   let [message, setMessage] = useState("");
   return (
@@ -50,4 +55,7 @@ function Chat({ listContact }) {
       </button>
     </form>
   );
+}
+Chat.propTypes = {
+  listContact: PropTypes.object.isRequired
 }

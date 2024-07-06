@@ -1,11 +1,11 @@
  import Code from "../utils/Prism"
      const  EscapeHatches=()=>{
         return (
-          <p >
+          <>
            Some of your components may need to control and synchronize with systems outside of React. For example, you might need to focus an input using the browser API, play and pause a video player implemented without React, or connect and listen to messages from a remote server. In this chapter, you’ll learn the escape hatches that let you “step outside” React and connect to external systems. Most of your application logic and data flow should not rely on these features
 <h1 className="divider divider-start pt-4 text-accent text-2xl divider-success max-md:text-sm"> Referencing values with refs </h1> <br />
 <p>When you want a component to “remember” some information, but you don’t want that information to trigger new renders, you can use a ref:</p><br />
-<p className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</p>
+<div className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</div>
 <p className='m-2'>Like state, refs are retained by React between re-renders. However, setting state re-renders a component. Changing a ref does not! You can access the current value of that ref through the ref.current property.</p>
           <span className='m-2'>  <Code widthIN={"w-full"} fileName={"example"} code={`
 import { useRef } from 'react';
@@ -29,7 +29,7 @@ function handleClick() {
  
         `} language={"js"}></Code></span>
         <p>A ref is like a secret pocket of your component that React doesn’t track. For example, you can use refs to store timeout IDs, DOM elements, and other objects that don’t impact the component’s rendering output.</p>
-            </p>
+            </>
         );
       }
 
@@ -37,9 +37,7 @@ function handleClick() {
   const  EscapeHatchesFa=()=>{
       return (
     
-        <p style={{direction: "rtl"}}>
-           
-
+        <div style={{direction: "rtl"}}>    
      <span className="text-secondary">Escape Hatches </span>     ر برخی از اجزای شما ممکن است نیاز به کنترل و همگام سازی با سیستم های خارج از React داشته باشند. برای مثال، ممکن است لازم باشد یک ورودی را با استفاده از API مرورگر متمرکز کنید، پخش‌کننده ویدیویی را که بدون React اجرا شده است، پخش و متوقف کنید، یا پیام‌های یک سرور راه دور را متصل کنید و به آنها گوش دهید. در این فصل، دریچه‌های فرار را یاد می‌گیرید که به شما اجازه می‌دهند «بیرون بروید» React و به سیستم‌های خارجی متصل شوید. بیشتر منطق برنامه و جریان داده شما نباید به این ویژگی ها متکی باشد.
      <br />
 <span className="text-secondary">Escape Hatches </span>مکانیزم هایی هستند که به شما امکان می دهند از State یک مؤلفه به طور موقت خارج شوید. این می تواند در مواقعی مفید باشد که می خواهید به طور موقت State را تغییر دهید بدون اینکه بر State اصلی مؤلفه تأثیر بگذارد. <br /> 
@@ -47,7 +45,7 @@ function handleClick() {
 در برخی موارد، ممکن است لازم باشد از State خارج شوید و به طور مستقیم DOM را دستکاری کنید. برای این کار می توانید از Escape Hatches استفاده کنید.
 <h1 className="text-secondary text-3xl p-2">Referencing values with refs</h1> <br />
 <p>وقتی می‌خواهید یک مؤلفه اطلاعاتی را «به خاطر بسپارد»، اما نمی‌خواهید این اطلاعات رندرهای جدیدی را ایجاد کند، می‌توانید از یک ref استفاده کنید:</p>
-<p style={{direction:"ltr"}} className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</p>
+<div style={{direction:"ltr"}} className='p-2  bg-secondary-content'><span className='text-yellow-500'>const</span><span className='text-blue-500'> ref</span> =<span className='text-green-500'> useRef(0)</span>;</div>
 <p>مانند حالت، ref ها توسط React بین رندرهای مجدد حفظ می شوند. با این حال، تنظیم وضعیت یک مؤلفه را دوباره ارائه می کند. تغییر یک رف انجام نمی شود! شما می توانید از طریق ویژگی ref.current به مقدار فعلی آن ref دسترسی پیدا کنید.</p>
 <div style={{direction:"ltr"}} >
   
@@ -76,7 +74,7 @@ function handleClick() {
 </div>
         <br />
         <p>یک ref مانند یک جیب مخفی از مؤلفه شما است که React آن را ردیابی نمی کند. برای مثال، می‌توانید از refs timeout IDs, DOM elements و سایر اشیایی که بر خروجی رندر مؤلفه تأثیر نمی‌گذارند استفاده کنید.</p>
-        </p>
+        </div>
       );
    };
   const DifferencesBetweenRefsAndState =()=>{
@@ -178,26 +176,26 @@ const WhenToUseRefsFa =()=>{
   const RecapDomWithRefs =()=>{
     return (
              <div>
-<p className=""><span>1- </span>Refs are an escape hatch to hold onto values that aren’t used for rendering. You won’t need them often.</p>
-<p className=""><span>2- </span>A ref is a plain JavaScript object with a single property called current, which you can read or set.</p>
-<p className=""><span>3- </span>You can ask React to give you a ref by calling the useRef Hook.</p>
-<p className=""><span>4- </span>Like state, refs let you retain information between re-renders of a component.</p>
-<p className=""><span>5- </span>Unlike state, setting the ref’s current value does not trigger a re-render.</p>
-<p className=""><span>6- </span>Don’t read or write ref.current during rendering. This makes your component hard to predict.</p>
+<div><span>1- </span>Refs are an escape hatch to hold onto values that aren’t used for rendering. You won’t need them often.</div>
+<div><span>2- </span>A ref is a plain JavaScript object with a single property called current, which you can read or set.</div>
+<div><span>3- </span>You can ask React to give you a ref by calling the useRef Hook.</div>
+<div><span>4- </span>Like state, refs let you retain information between re-renders of a component.</div>
+<div><span>5- </span>Unlike state, setting the ref’s current value does not trigger a re-render.</div>
+<div><span>6- </span>Don’t read or write ref.current during rendering. This makes your component hard to predict.</div>
 </div>
 )}
 const RecapDomWithRefsFa =()=>{
 
     return(
       <div dir='rtl'>
-<p ><span>1.</span>Refs یک راه فرار برای نگه‌داری مقادیری است که برای رندر (نمایش) استفاده نمی‌شوند.</p>
-<p ><span>2.</span>شما به طور معمول به آن‌ها نیاز زیادی پیدا نخواهید کرد.</p>
-<p ><span>3.</span>یک Ref یک شیء ساده جاوااسکریپت با تنها یک ویژگی به نام `current` است.</p>
-<p ><span>4.</span>شما می‌توانید مقدار این ویژگی را بخوانید یا آن را تنظیم کنید.</p>
-<p ><span>5.</span>شما می‌توانید با فراخوانی قلاب `useRef` از React بخواهید که یک Ref به شما بدهد.</p>
-<p ><span>6.</span>مانند State، Ref به شما اجازه می‌دهد اطلاعات را بین رندرهای مجدد یک کامپوننت حفظ کنید.</p>
-<p ><span>7.</span>برخلاف State، تنظیم مقدار جاری Ref باعث راه‌اندازی مجدد رندر (بازنمایش) نمی‌شود.</p>
-<p ><span>8.</span> خواندن یا نوشتن مقدار `ref.current` در طول رندر خودداری کنید. این کار باعث می‌شود پیش‌بینی رفتار کامپوننت شما دشوار شود.</p>
+<div><span>1.</span>Refs یک راه فرار برای نگه‌داری مقادیری است که برای رندر (نمایش) استفاده نمی‌شوند.</div>
+<div><span>2.</span>شما به طور معمول به آن‌ها نیاز زیادی پیدا نخواهید کرد.</div>
+<div><span>3.</span>یک Ref یک شیء ساده جاوااسکریپت با تنها یک ویژگی به نام `current` است.</div>
+<div><span>4.</span>شما می‌توانید مقدار این ویژگی را بخوانید یا آن را تنظیم کنید.</div>
+<div><span>5.</span>شما می‌توانید با فراخوانی قلاب `useRef` از React بخواهید که یک Ref به شما بدهد.</div>
+<div><span>6.</span>مانند State، Ref به شما اجازه می‌دهد اطلاعات را بین رندرهای مجدد یک کامپوننت حفظ کنید.</div>
+<div><span>7.</span>برخلاف State، تنظیم مقدار جاری Ref باعث راه‌اندازی مجدد رندر (بازنمایش) نمی‌شود.</div>
+<div><span>8.</span> خواندن یا نوشتن مقدار `ref.current` در طول رندر خودداری کنید. این کار باعث می‌شود پیش‌بینی رفتار کامپوننت شما دشوار شود.</div>
   </div>
     )
 }

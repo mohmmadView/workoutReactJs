@@ -44,7 +44,6 @@ function ContainerPanel({ men, and }) {
               " To learn React, you can start with official documentation, online courses, or tutorials. FreeCodeCamp, Egghead.io, and Codecademy offer free courses. YouTube videos also provide great learning opportunities. MDN Web Docs is a comprehensive resource for specific React topics.Begin with the basics like components, props, and state. Practice by building small projects. Seek help if you encounter difficulties. With dedication, you can master React development."
             }
           />
-          <p className="pt-4  text-success"></p>
         </div>
         {men}
         {and}

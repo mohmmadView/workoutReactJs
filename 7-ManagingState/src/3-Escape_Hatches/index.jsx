@@ -7,7 +7,16 @@ import Title from '../utils/Title.jsx'
 import Container from '../utils/Container';
 import DataText from './DataText.jsx';
 import WhenReactAttachesTheRef from './ٌWhenReactAttachesTheRef.jsx';
-export default function EscapeHatches({lang}) {
+import PropTypes from "prop-types";
+
+
+/**
+ * Renders the Escape Hatches component based on the language.
+ *
+ * @param {boolean} lang - A boolean determining the language to render
+ * @return {JSX.Element} The rendered Escape Hatches component
+ */
+ function EscapeHatches(lang) {
    return (
     
     <div className=' bg-primary-content/35 py-12'>
@@ -74,3 +83,10 @@ export default function EscapeHatches({lang}) {
     </div>
    );
 }
+EscapeHatches.propTypes = {
+  lang: PropTypes.bool.isRequired
+}
+EscapeHatches.defaultProps = {
+  lang: true
+}
+export default EscapeHatches

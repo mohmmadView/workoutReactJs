@@ -1,6 +1,15 @@
 /* jsDoc */
 import PropTypes from "prop-types";
 
+/**
+ * Renders a Container component with specified Title, ColorText, ColorDivider, and children.
+ *
+ * @param {string} Title - The title of the container.
+ * @param {string} ColorText - The color of the text.
+ * @param {string} ColorDivider - The color of the divider.
+ * @param {ReactNode} children - The children components to be rendered inside the container.
+ * @return {ReactElement} The rendered Container component.
+ */
 const Container = ({Title, ColorText, ColorDivider, children }) => {
   return (
     <div dir="auto" 

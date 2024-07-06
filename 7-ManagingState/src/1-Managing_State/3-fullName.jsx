@@ -28,31 +28,31 @@ export default function FullName() {
         <div className="w-1/3 h-48 sticky top-5 m-4">
           <label id="inputName" className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text text-primary">What is your First name?</span>
+              <span className="label-text text-warning">What is your First name?</span>
             </div>
             <input
             name="inputName"
               type="text"
               onChange={handleChangeFirstName}
               placeholder="Type here"
-              className="input input-primary w-full max-w-xs"
+              className="input input-warning input-bordered w-full max-w-xs"
             />
             <div className="label"></div>
           </label>
           <label id="inputLastName" className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text text-primary">What is your Last name?</span>
+              <span className="label-text text-success">What is your Last name?</span>
             </div>
             <input
             name="inputLastName"
               type="text"
               onChange={handleChangeLastName}
               placeholder="Type here"
-              className="input input-primary input-bordered w-full max-w-xs"
+              className="input input-success input-bordered w-full max-w-xs"
             />
-            <p className="pt-4 text-success">
+            <div className="pt-4 text-success">
               <span >{name.firstName}</span><span className="text-lime-500"> {name.lastName}</span>
-            </p>
+            </div>
           </label>
         </div>
         <Prism

@@ -56,7 +56,7 @@ const  Intermediate= () => {
             شود.
           </span>
           )) <br />
-          <span className="text-success">
+          <div className="text-success">
             <p className="text-primary font-bold text-2xl p-2">
               {" "}
               مفهوم مدیریت وضعیت:
@@ -89,7 +89,7 @@ const  Intermediate= () => {
             مدیریت وضعیت به برنامه این امکان را می‌دهد که به درستی به رویدادها و
             تغییرات در وضعیت پاسخ دهد. این امر به بهترین نحو امکان پذیر استفاده
             از برنامه را فراهم می‌کند.
-          </span>
+          </div>
         </div>
       );
     }
@@ -208,9 +208,9 @@ const  ChoosingTheState= () => {
         می‌تواند تفاوتی بین یک کامپوننتی که که بدونی مشکلی قابل تغییر و اشکال‌زدایی است 
       و یک کامپوننتی که منبع ثابتی از باگ‌هاست، ایجاد کند 
        برای اینکه بتوانیم ساختار با کارای  بهتر  و باگی کمتر به وجود بیاد باید در ساختار کد  هایمان از ۵ نکته پیروی کنیم :
-<p className="text-secondary text-3xl divider divider-start divider-accent p-4 ">
+<div className="text-secondary text-3xl divider divider-start divider-accent p-4 ">
           ساختاردهی مناسب <span>(state) </span>وضعیت <br />
-         </p>  <br />
+         </div>  <br />
          در <span className="text-blue-500"> React </span> ، مهم است که وضعیت کامپوننت به نحوی طراحی شود که حاوی اطلاعات ضروری باشد 
          و اطلاعات تکراری یا اضافی حذف شوند. این کار باعث ساده‌تر شدن فرآیند توسعه، اشکال‌زدایی و نگهداری می‌شود. <br />
   <span className="text-primary py-4 my-5">
@@ -235,14 +235,14 @@ const  ChoosingTheState= () => {
          در <span className="text-blue-500">React،</span> مهم است که وضعیت کامپوننت به نحوی طراحی شود که حاوی اطلاعات ضروری باشد 
          و اطلاعات تکراری یا اضافی حذف شوند. این کار باعث ساده‌تر شدن فرآیند توسعه، اشکال‌زدایی و نگهداری می‌شود. <br />
         <h1 className="text-secondary text-3xl p-4">انواع ساختار  state</h1>
-       <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
+       <div style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">1.State Single :</h1><br />
        <code>
       1- <span className="text-yellow-500">const</span> [x, setX]          = <span className="text-green-500">useState(0);</span>   <br />
       2- <span className="text-yellow-500">const</span>  [value, setValue] = <span className="text-green-500"> useState("");</span> <br />
       3- <span className="text-yellow-500">const</span>  [bol, setBol]     = <span className="text-green-500">useState(false);</span><br />
        </code>
-        </p>
-         <p style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
+        </div>
+         <div style={{ direction: "ltr" }} className="text-blue-400 "> <h1 className="p-2 text-2xl text-primary">2.State multiple :</h1><br />
        <code>
         <h1 className="px-6 pb-2 text-xl font-bold text-secondary">1. state object :</h1>
           <span className="text-yellow-500">const</span>[position, setPosition]= <span className="text-green-500">useState({ `{x:0,y:0}` });</span>   <br />
@@ -260,7 +260,7 @@ const  ChoosingTheState= () => {
           {`{ title: 'granola bar',    id: 2 }`},<br />
           {`}`});</span> <br />
        </code>
-        </p>
+        </div>
       </div>
       );
     }
