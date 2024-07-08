@@ -1,5 +1,6 @@
 import Container from '../utils/Container';
 import DataText from './DataText'; 
+import IsOnline from './isOnline';
 export default function CustomHooks({lang}){
 
     return (
@@ -12,6 +13,7 @@ export default function CustomHooks({lang}){
                {DataText.ReusingLogicWithCustomHooksFa()}
                </Container>
             }
+            <IsOnline />
               
         </div>
     )

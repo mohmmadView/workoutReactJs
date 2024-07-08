@@ -189,10 +189,6 @@ function useOnlineStatus() {
             activeClassName='text-success '
             unhighlightClassName='text-white '
             textToHighlight={`At the end of the function, return isOnline. This lets your components read that value:`} />
-    
-          
-
-          
             </div>
           )
         }
@@ -390,7 +386,7 @@ function useOnlineStatus() {
         }
 
         function HandleTab({tabOne,tabTwo }){
-           let [tab,setTab]=useState(0);
+           let [tab,setTab]=useState(false);
                 let stringCode =[`import { useOnlineStatus } from './useOnlineStatus.js';
 
 function StatusBar() {
@@ -442,25 +438,38 @@ export function useOnlineStatus() {
 }
 
           `]
-          // useEffect((tabOne,tabTwo) => {
-          //    Tab(tabOne, tabTwo)
+          function HabdleSetTab(){
+            setTab(1)
+          }
+          function HandleSetTab2(){
+            setTab(0)
+          }
+          useEffect(() => {
+            let setBtnCode = document.getElementById('setBtnCode');
+            let setBtnCode2 = document.getElementById('setBtnCode2');
+            setBtnCode.addEventListener('click',HabdleSetTab)
+            setBtnCode2.addEventListener('click',HandleSetTab2)
+            return () => {
+              setBtnCode.removeEventListener('click',HabdleSetTab)
+              setBtnCode2.removeEventListener('click',HandleSetTab2)
+            }
    
             
-          // })
+          })
        
          return (
-          <>
+          <div id='con'>
           <Tab one={tabOne} two={tabTwo} />
-           <Code widthIN={"w-full h-auto"} code={`${stringCode[tab]}`} language={"js"} />
-          </>
+           {tab? <Code language={'js'} widthIN={'w-full h-auto'} code={stringCode[0]} /> : <Code language={'js'} widthIN={'w-full h-auto'} code={stringCode[1]} /> }
+          </div>
          )
           function Tab({one,two }){
          
           return (
             <>
             <div className='flex justify-end bg-stone-900'>
-            <button onClick={()=>{setTab(0)}} className='btn btn-outline btn-sm btn-primary'>{one}</button>
-            <button onClick={()=>setTab(1)} className='btn btn-outline btn-sm btn-primary'>{two}</button>
+            <button id='setBtnCode'  className='btn btn-outline btn-sm btn-primary'>{one}</button>
+            <button id='setBtnCode2'  className='btn btn-outline btn-sm btn-primary'>{two}</button>
             </div>
             <div>
             </div>
@@ -693,7 +702,6 @@ function MyComponent(props) {
   }
   // ...
 }
-
 function useData(url) {
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -711,7 +719,6 @@ function useData(url) {
   }, [url]);
   return data;
 }
- 
             `}  />
   </>
         )
