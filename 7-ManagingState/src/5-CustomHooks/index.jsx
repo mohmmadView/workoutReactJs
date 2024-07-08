@@ -8,12 +8,16 @@ export default function CustomHooks({lang}){
             {lang ?
            <Container  Title="Reusing Logic with Custom Hooks" ColorDivider={`success`} ColorText={`warning text-pink-200`}>
            {DataText.ReusingLogicWithCustomHooks()}
+            <IsOnline />
+               {DataText.customHooks2()}
            </Container>
                : <Container  Title="استفاده از قطعی برای استفاده از Custom Hooks" ColorDivider={`success`} ColorText={`warning text-pink-200`}>
                {DataText.ReusingLogicWithCustomHooksFa()}
+               <IsOnline />
+               {DataText.customHooks2Fa()}
                </Container>
             }
-            <IsOnline />
+           
               
         </div>
     )

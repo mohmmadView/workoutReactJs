@@ -477,46 +477,24 @@ export function useOnlineStatus() {
           )
         }
       }
-const YouMightNotNeedEffect = () => {
+const customHooks2 = () => {
           return (
             <div className='whitespace-pre-line'>
             <Highlighter 
             highlightClassName='text-secondary bg-base-300 rtl'
-            searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Event","component","effect"]}
+            searchWords={["3-","1-","2-",`.`,`,`,"”",`“`,"Effect","React","(","Effects",")","jsx","state","props","components","Events","component","effect"]}
             autoEscape={true}
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
             textToHighlight={`
-            You Might Not Need an Effect (YMNE) in React
-            YMNE stands for "You Might Not Need an Effect" and it means that you might not need to use useEffect in your React component.
-            Misusing useEffect can lead to more complex, slower, and error-prone code. That's why it's important to check if there's a simpler solution to your problem before using useEffect.
-            When to use YMNE
-            Here are some cases where you might not need useEffect:
-            
-            When you want to know when state changes or to send information to the server: In these cases, you can use State Hooks like useState or Context API.
-            When you want to load data from an external API: You can use State Hooks like useState or libraries like react-query or SWR.
-            When you want to create a subscription to an external resource: You can use State Hooks like useState or libraries like useEffect or useRef.
-            Alternatives to YMNE
-            
-            Here are some alternatives to useEffect:
-            
-            State Hooks: useState and useReducer are good for managing the internal state of your component.
-            Context API: Good for sharing state between different parts of your application.
-            Libraries: There are various libraries like react-query, SWR, and useRef that can be used to perform specific tasks without needing useEffect.
+            Verify that switching the network on and off updates both components. Now your components don't have as much repetitive logic. More importantly, the code inside them describes what they want to do (use the online status!) rather than how to do it (by subscribing to the browser events). When you extract logic into custom Hooks, you can hide the gnarly details of how you deal with some external system or a browser API. The code of your components expresses your intent, not the implementation.
           `} />
-<h1 className="text-2xl text-primary font-bold">Example : </h1>
-<Code code={`
-function MyComponent(props) {
-  const [count, setCount] = useState(props.initialCount);
-
-  useEffect(() => {
-    setCount(props.initialCount);
-  }, [props.initialCount]);
-
-  return <div>{count}</div>;
-}
-`} language={'js'} more={false} widthIN={'w-full'} />
+<div className="divider divider-start text-accent mt-8 divider-secondary  text">
+      <span className='text-primary text-2xl'>
+         Hook names always start with use 
+      </span>
+ </div>
            <Highlighter 
             highlightClassName='text-secondary bg-base-300 rtl'
             searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
@@ -524,141 +502,52 @@ function MyComponent(props) {
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
-            textToHighlight={`In this example, we can use the useState State Hook to update count based on props.initialCount without needing useEffect: `} />  
-            <Code code={`
-function MyComponent(props) {
-  const [count, setCount] = useState(props.initialCount);
-
-  return <div>{count}</div>;
-}
-`} language={'js'} more={false} widthIN={'w-full h-auto'} />
-<div className="divider divider-start text-accent mt-8 divider-secondary  text">
-      <span className='text-primary text-2xl'>
-          How to remove unnecessary Effects 
-      </span>
- </div>
-<Highlighter 
- highlightClassName='text-secondary bg-base-300 whitespace-pre-line'
-            searchWords={["*","useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
-            autoEscape={true}
-            activeIndex={4}
-            activeClassName='text-success'
-            unhighlightClassName='text-white'
             textToHighlight={`
-* You don’t need Effects to transform data for rendering. For example,let’s say you want to filter a list before displaying it. You might feel tempted to write an Effect that updates a state variable when the list changes. However, this is inefficient. When you update the state, React will first call your component functions to calculate what should be on the screen. Then React will “commit” these changes to the DOM, updating the screen. Then React will run your Effects. If your Effect also immediately updates the state, this restarts the whole process from scratch! To avoid the unnecessary render passes, transform all the data at the top level of your components. That code will automatically re-run whenever your props or state change.
+React applications are built from components. Components are built from Hooks, whether built-in or custom. You’ll likely often use custom Hooks created by others, but occasionally you might write one yourself!
 
-* You don’t need Effects to handle user events. For example, let’s say you want to send an /api/buy POST request and show a notification when the user buys a product. In the Buy button click event handler, you know exactly what happened. By the time an Effect runs, you don’t know what the user did (for example, which button was clicked). This is why you’ll usually handle user events in the corresponding event handlers.
+You must follow these naming conventions:
 
-* You do need Effects to synchronize with external systems. For example, you can write an Effect that keeps a jQuery widget synchronized with the React state. You can also fetch data with Effects: for example, you can synchronize the search results with the current search query. Keep in mind that modern frameworks provide more efficient built-in data fetching mechanisms than writing Effects directly in your components.
-  To help you gain the right intuition, let’s look at some common concrete examples!`} />  
+React component names must start with a capital letter, like StatusBar and SaveButton. React components also need to return something that React knows how to display, like a piece of JSX.
+Hook names must start with use followed by a capital letter, like useState (built-in) or useOnlineStatus (custom, like earlier on the page). Hooks may return arbitrary values.
+This convention guarantees that you can always look at a component and know where its state, Effects, and other React features might “hide”. For example, if you see a getColor() function call inside your component, you can be sure that it can’t possibly contain React state inside because its name doesn’t start with use. However, a function call like useOnlineStatus() will most likely contain calls to other Hooks inside!
+`}  />
               </div>
                )
                
             }
- const YouMightNotNeedEffectFa = () => {
+ const customHooks2Fa = () => {
           return (
             <div className="whitespace-pre-line rtl ">
                 <Highlighter 
             highlightClassName='text-secondary bg-base-300 rtl'
-            searchWords={["useRef","useReducer","useEffect","React","(","Effects",")","jsx","useState","props","components","Event","component","effect","YMNE","Context API","Hooks","State","libraries","You Might Not Need an Effect"]}
+            searchWords={["API","Hook","(","Effects",")","jsx","useState","props","components","Event","component"]}
             autoEscape={true}
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
             textToHighlight={` 
-YMNE مخفف "You Might Not Need an Effect" است و به این معنی است که شما ممکن است نیازی به استفاده از useEffect در کامپوننت React خود نداشته باشید.
-
-استفاده نادرست از useEffect می تواند منجر به کد پیچیده تر، کندتر و مستعد خطا شود. به همین دلیل، مهم است که قبل از استفاده از useEffect، بررسی کنید که آیا راه حل ساده تری برای مشکل شما وجود دارد یا خیر.
-
-چه زمانی باید از YMNE استفاده کرد؟
-
-در اینجا چند مورد وجود دارد که نشان می دهد شما ممکن است نیازی به useEffect نداشته باشید:
-
-هنگامی که می خواهید از تغییر وضعیت یا ارسال اطلاعات به سرور مطلع شوید: در این موارد، می توانید از State Hooks مانند useState یا Context API استفاده کنید.
-هنگامی که می خواهید داده ها را از یک API خارجی بارگیری کنید: می توانید از State Hooks مانند useState یا libraries مانند react-query یا SWR استفاده کنید.
-هنگامی که می خواهید یک اشتراک به یک منبع خارجی ایجاد کنید: می توانید از State Hooks مانند useState یا libraries مانند useEffect یا useRef استفاده کنید.
-
-در اینجا چند جایگزین برای useEffect آورده شده است:
-
-State Hooks: useState و useReducer برای مدیریت وضعیت داخلی کامپوننت شما مناسب هستند.
-Context API: برای به اشتراک گذاری وضعیت بین اجزای مختلف برنامه شما مناسب است.
-libraries: کتابخانه های مختلفی مانند react-query، SWR و useRef وجود دارند که می توانند برای انجام وظایف خاص بدون نیاز به useEffect استفاده شوند.
+بررسی کنید که روشن و خاموش کردن شبکه هر دو مؤلفه را به روز می کند. حالا اجزای شما آنقدرها هم منطق تکراری ندارند. مهمتر از آن، کد داخل آنها به جای نحوه انجام آن (با اشتراک در رویدادهای مرورگر) آنچه را که می خواهند انجام دهند (از وضعیت آنلاین استفاده کنید!) توضیح می دهد. هنگامی که منطق را در Hook های سفارشی استخراج می کنید، می توانید جزئیات دقیق نحوه برخورد با برخی از سیستم های خارجی یا API مرورگر را پنهان کنید. کد اجزای شما بیانگر قصد شماست، نه اجرای آن.
           `} />
-<h1 className="text-2xl text-primary font-bold">مثال : </h1>
-<Code code={`
-function MyComponent(props) {
-  const [count, setCount] = useState(props.initialCount);
-  useEffect(() => {
-    setCount(props.initialCount);
-  }, [props.initialCount]);
-  return <div>{count}</div>;
-}
-`} language={'js'} more={false} widthIN={'w-full'} />
-<Highlighter 
- highlightClassName='text-secondary bg-base-300 rtl'
-            searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
-            autoEscape={true}
-            activeIndex={4}
-            activeClassName='text-success'
-            unhighlightClassName='text-white'
-            textToHighlight={`در این مثال، می توانیم از State Hook useState برای به روز رسانی count بر اساس props.initialCount بدون نیاز به useEffect استفاده کنیم: 
-          `} />  
-                 <Code code={`
-function MyComponent(props) {
-  const [count, setCount] = useState(props.initialCount);
-  return <div>{count}</div>;
-}
-`} language={'js'} more={false} widthIN={'w-full h-auto'} />
+<div className="divider divider-start text-accent mt-8 divider-secondary  text">
+      <span className='text-primary text-2xl'>
+         Hook names always start with use 
+      </span>
+ </div>          
           <Highlighter  
             highlightClassName='whitespace-pre-line  bg-base-100'  
-            searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect"]}
-            autoEscape={true}
+            searchWords={[(/([a-zA-Z])\w+/g),"Effect"]}
+            autoEscape={false}
             activeIndex={4}
             activeClassName='text-success'
             unhighlightClassName='text-white'
-            textToHighlight={`در این مثال، می توانیم از State Hook useState برای به روز رسانی count بر اساس props.initialCount بدون نیاز به useEffect استفاده کنیم: 
+            textToHighlight={` برنامه های React از کامپوننت ها ساخته می شوند. کامپوننت ها از Hooks ساخته می شوند، چه داخلی و چه سفارشی. احتمالاً اغلب از قلاب‌های سفارشی ایجاد شده توسط دیگران استفاده می‌کنید، اما گاهی اوقات ممکن است خودتان یکی بنویسید!
+
+شما باید این قراردادهای نامگذاری را دنبال کنید:
+
+نام اجزای React باید با یک حرف بزرگ شروع شود، مانند StatusBar و SaveButton. کامپوننت‌های React نیز باید چیزی را برگردانند که React می‌داند چگونه نمایش دهد، مانند یک قطعه JSX.
+نام قلاب ها باید با استفاده و به دنبال آن یک حرف بزرگ شروع شود، مانند useState (توکار) یا useOnlineStatus (سفارشی، مانند قبل در صفحه). هوک ها ممکن است مقادیر دلخواه را برگردانند.
+این قرارداد تضمین می‌کند که همیشه می‌توانید به یک مؤلفه نگاه کنید و بدانید که وضعیت، افکت‌ها و سایر ویژگی‌های React در کجا ممکن است پنهان شوند. برای مثال، اگر یک تابع getColor() را در داخل کامپوننت خود مشاهده کردید، می‌توانید مطمئن باشید که احتمالاً نمی‌تواند حاوی وضعیت React در داخل باشد زیرا نام آن با استفاده شروع نمی‌شود. با این حال، یک فراخوانی تابعی مانند useOnlineStatus() به احتمال زیاد شامل تماس‌هایی با سایر Hook‌های داخل آن خواهد بود!
           `} />  
-          <Code code={`
-function MyComponent(props) {
-  const [count, setCount] = useState(props.initialCount);
-  return <div>{count}</div>;
-}
-`} language={'js'} more={false} widthIN={'w-full h-auto'} />
-        <div className="divider divider-start text-accent mt-8 divider-secondary ">
-            <span className="text-2xl text-primary font-bold">حذف Effect های غیرضروری</span>
-        </div> 
-        <Highlighter
-         highlightClassName=' whitespace-pre-line  bg-base-100'
-         searchWords={["useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
-         autoEscape={true}
-         activeIndex={4}
-         activeClassName='text-success'
-         unhighlightClassName='text-white'
-         textToHighlight={`
-        نحوه حذف Effect های غیرضروری در React:
-        در اینجا چند قدم برای حذف Effect های غیرضروری در کد React شما آورده شده است:
-
-1. Effect های غیرضروری را شناسایی کنید:
-
-کد خود را بررسی کنید: به طور دستی کامپوننت های خود را بررسی کنید و به دنبال مکان هایی باشید که از useEffect استفاده می کنید. از خود بپرسید:
-آیا این Effect فقط بر اساس تغییرات props یا state، وضعیت را به روز می کند؟ State hook ها مانند useState می توانند به طور مستقیم این کار را انجام دهند.
-آیا این Effect در حال دریافت اطلاعات یا اشتراک در یک منبع خارجی است؟ استفاده از کتابخانه هایی مانند react-query یا SWR برای دریافت اطلاعات یا useState با منطق مناسب برای اشتراک ها را در نظر بگیرید.
-به دنبال هشدارهای linter باشید: برخی از linter ها مانند ESLint با قانون react-hooks/exhaustive-deps می توانند در مورد وابستگی های احتمالی گمشده در تماس های useEffect شما به شما هشدار دهند. با این حال، این هشدارها قابل سرکوب هستند، بنابراین بررسی دستی همچنان مهم است.
-2. Effect های غیرضروری را حذف کنید:
-
-پس از شناسایی یک Effect غیرضروری، hook useEffect و کد درون آن را حذف کنید.
-اگر Effect در حال به روز رسانی وضعیت بر اساس props یا state بود، کامپوننت خود را برای به روز رسانی مستقیم وضعیت با استفاده از مقدار prop جدید یا مقدار state به روز شده اصلاح کنید.
-اگر Effect در حال دریافت اطلاعات یا اشتراک بود، استفاده از روش های جایگزین ذکر شده در مرحله 1 را در نظر بگیرید.
-3. برای حفظ قابلیت نگهداری بازسازی کنید:
-
-با حذف Effect ها، مطمئن شوید که کد شما واضح و آسان برای درک باقی می ماند. در نظر بگیرید که منطق پیچیده را به توابع جداگانه یا hook های سفارشی تقسیم کنید.
-نکات اضافی:
-
-از سادگی شروع کنید: هنگام برخورد با یک مشکل جدید، ابتدا فکر کنید که آیا راهی برای حل آن بدون useEffect وجود دارد یا خیر. State hook ها و Context API ممکن است برای بسیاری از موارد کافی باشد.
-ترکیب را ترجیح دهید: منطق پیچیده را به اجزای کوچکتر قابل استفاده مجدد یا hook های سفارشی تقسیم کنید. این می تواند به شناسایی و حذف Effect های غیرضروری در واحدهای کوچکتر کد کمک کند.
-به طور کامل تست کنید: پس از حذف Effect، مطمئن شوید که کامپوننت شما همچنان طبق انتظار رفتار می کند. تست های واحد می توانند در اینجا مفید باشند.
-با دنبال کردن این مراحل و در نظر گرفتن اصل YMNE (You Might Not Need an Effect)، می توانید کد React تمیزتر، کارآمدتر و آسان تر برای نگهداری بنویسید.
-`} />
         </div>
  
           )
@@ -806,8 +695,8 @@ A component unmounts when it’s removed from the screen.
          export default  {
           ReusingLogicWithCustomHooks ,
             ReusingLogicWithCustomHooksFa ,
-            YouMightNotNeedEffect ,
-            YouMightNotNeedEffectFa ,
+            customHooks2 ,
+            customHooks2Fa ,
             YouMightNotNeedEffectExample ,
             LifecycleOfReactiveEffects ,
             LifecycleOfReactiveEffectsFa ,
