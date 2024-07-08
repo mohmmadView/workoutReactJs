@@ -1,6 +1,7 @@
 import Container from '../utils/Container';
 import DataText from './DataText'; 
 import IsOnline from './isOnline';
+import CustomHookInput from './useForm/index'
 export default function CustomHooks({lang}){
 
     return (
@@ -10,6 +11,7 @@ export default function CustomHooks({lang}){
            {DataText.ReusingLogicWithCustomHooks()}
             <IsOnline />
                {DataText.customHooks2()}
+               <CustomHookInput/>
            </Container>
                : <Container  Title="استفاده از قطعی برای استفاده از Custom Hooks" ColorDivider={`success`} ColorText={`warning text-pink-200`}>
                {DataText.ReusingLogicWithCustomHooksFa()}
