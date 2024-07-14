@@ -182,13 +182,14 @@ function useOnlineStatus() {
 }
 `}/>
       <Highlighter 
-            highlightClassName='text-secondary bg-base-300  rtl'
+            highlightClassName='text-secondary bg-base-300  '
             searchWords={["isOnline"]}
             autoEscape={true}
             activeIndex={4}
             activeClassName='text-success '
             unhighlightClassName='text-white '
             textToHighlight={`At the end of the function, return isOnline. This lets your components read that value:`} />
+             <HandleTab tabOne="App.js" tabTwo="useOnlineStatus.js" />
             </div>
           )
         }
