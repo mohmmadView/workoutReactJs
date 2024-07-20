@@ -19,7 +19,11 @@ export default function CustomHooks({lang}){
                {DataText.ReusingLogicWithCustomHooksFa()}
                <IsOnline />
                {DataText.customHooks2Fa()}
+                 <CustomHookInput/>
                <CustomHookInput/>
+               <CustomHookInput/> <CustomHookInput/>
+               <CustomHookInput/>
+               <CustomHookInput/> <CustomHookInput/>
                <CustomHookInput/>
                <CustomHookInput/>
                </Container>
