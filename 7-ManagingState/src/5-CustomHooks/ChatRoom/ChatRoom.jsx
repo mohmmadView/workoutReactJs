@@ -20,11 +20,11 @@ export default function ChatRoom({ roomId }) {
 
   return (
     <>
-      <label>
+      <label className='label'>
         Server URL:
-        <input value={serverUrl} onChange={e => setServerUrl(e.target.value)} />
+        <input className='input input-primary' value={serverUrl} onChange={e => setServerUrl(e.target.value)} />
       </label>
-      <h1>Welcome to the {roomId} room!</h1>
+      <h1 className='text-center mt-5'>Welcome to the {roomId} room!</h1>
     </>
   );
 }
