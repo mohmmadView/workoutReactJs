@@ -554,65 +554,40 @@ This convention guarantees that you can always look at a component and know wher
           )
             
       }
-      const YouMightNotNeedEffectExample = () => {
-        return (
-  <>
-    <h1 className="text-red-500 text-2xl m-4">Example :</h1>
-         <Code widthIN="w-full"  language={"js"} code={`
-  function SearchResults({ query }) {
-  const [results, setResults] = useState([]);
-  const [page, setPage] = useState(1);
-  useEffect(() => {
-    let ignore = false;
-    fetchResults(query, page).then(json => {
-      if (!ignore) {
-        setResults(json);
-      }
-    });
-    return () => {
-      ignore = true;
-    };
-  }, [query, page]);
+    const  PassingReactiveValuesBetweenHooks = () => { 
 
-  function handleNextPageClick() {
-    setPage(page + 1);
-  }
-  // ...
-}
-            `}  />
-<h1 className="text-red-500 text-2xl m-4"> Remove effect</h1>
-  <Code widthIN="w-full"  language={"js"} code={`
- function SearchResults({ query }) {
-  const [page, setPage] = useState(1);
-  const params = new URLSearchParams({ query, page });
-  const results = useData(/api/search?params});
+      return(
+      <Highlighter 
+      highlightClassName='whitespace-pre-line  bg-base-100'
+      searchWords={["Hooks","component"]}
+      unhighlightClassName='text-white'
+      textToHighlight='
+      The code inside your custom Hooks will re-run during every re-render of your component. This is why, like components, custom Hooks need to be pure. Think of custom Hooks’ code as part of your component’s body!
 
-  function handleNextPageClick() {
-    setPage(page + 1);
-  }
-  // ...
-}
-function useData(url) {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    let ignore = false;
-    fetch(url)
-      .then(response => response.json())
-      .then(json => {
-        if (!ignore) {
-          setData(json);
-        }
-      });
-    return () => {
-      ignore = true;
-    };
-  }, [url]);
-  return data;
-}
-            `}  />
-  </>
-        )
+      Because custom Hooks re-render together with your component, they always receive the latest props and state. To see what this means, consider this chat room example. Change the server URL or the chat room:
+      '
+      >
+      
+      </Highlighter>)
     }
+    const PassingReactiveValuesBetweenHooksFa = () => {
+
+      return(
+       <Highlighter 
+                highlightClassName=' whitespace-pre-line  bg-base-100'
+         searchWords={['update','mount',"unmount","useEffect","React","(","Effects",")","jsx","State Hook","count","useState","props","components","Event","component","effect","state","hook","prop","ESLint"]}
+         autoEscape={true}
+         activeIndex={4}
+         activeClassName='text-success'
+         unhighlightClassName='text-white' 
+         textToHighlight='
+         کد داخل Hooks سفارشی شما در طول هر رندر مجدد جزء شما دوباره اجرا می شود. به همین دلیل است که قلاب های سفارشی مانند اجزاء باید خالص باشند. به کد Hooks سفارشی به عنوان بخشی از بدنه جزء خود فکر کنید! از آنجایی که هوک‌های سفارشی به همراه کامپوننت شما دوباره رندر می‌شوند، همیشه آخرین موارد و حالت‌ها را دریافت می‌کنند. برای اینکه بفهمید این به چه معناست، این نمونه اتاق گفتگو را در نظر بگیرید. آدرس سرور یا اتاق چت را تغییر دهید:'
+
+         />
+      )
+      
+    }
+
     const LifecycleOfReactiveEffects = () => {
         return (
             <div className='whitespace-pre-line'>
@@ -693,12 +668,14 @@ A component unmounts when it’s removed from the screen.
             </div>
         )
     }
+
          export default  {
           ReusingLogicWithCustomHooks ,
             ReusingLogicWithCustomHooksFa ,
             customHooks2 ,
             customHooks2Fa ,
-            YouMightNotNeedEffectExample ,
+            PassingReactiveValuesBetweenHooks ,
             LifecycleOfReactiveEffects ,
             LifecycleOfReactiveEffectsFa ,
+            PassingReactiveValuesBetweenHooksFa
         }
