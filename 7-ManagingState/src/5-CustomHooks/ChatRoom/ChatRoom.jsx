@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
-import { createConnection } from './Chat';
-import { showNotification } from './notification';
+import { useState } from 'react';
+import { useChatRoom } from './useChatRooms';
 
 export default function ChatRoom({ roomId }) {
   const [serverUrl, setServerUrl] = useState('https://localhost:1234');
 
+  useChatRoom({ 
+    serverUrl : serverUrl ,  
+    roomId : roomId
+});
  
 
   return (

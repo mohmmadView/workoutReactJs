@@ -7,11 +7,10 @@ export function showNotification(message, theme = 'dark') {
     text: message,
     duration: 2000,
     gravity: 'top',
-    selector: 'notification',
     position: 'right',
     style: {
       background: theme === 'dark' ? 'black' : 'white',
       color: theme === 'dark' ? 'white' : 'black',
     },
-  }).showToast();
+  })
 }
