@@ -2,10 +2,12 @@ import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
 export function showNotification(message, theme = 'dark') {
+  
   Toastify({
     text: message,
     duration: 2000,
     gravity: 'top',
+    selector: 'notification',
     position: 'right',
     style: {
       background: theme === 'dark' ? 'black' : 'white',
