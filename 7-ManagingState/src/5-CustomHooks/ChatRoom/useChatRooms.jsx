@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { createConnection } from './Chat';
 import { showNotification } from './notification';
-export function useChatRoom({ serverUrl, roomId }) {
+export  function useChatRoom({ serverUrl, roomId }) {
     
     useEffect(() => {
       const options = {
