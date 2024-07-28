@@ -15,7 +15,7 @@ export default function App() {
 
   return (
   
-      <div className="" >
+      <div >
         
         <Title  id="managing-state" title="Managing State" />
          <LangBtn setLang={setLang} lang={lang} />

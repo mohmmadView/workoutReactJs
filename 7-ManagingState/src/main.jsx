@@ -8,7 +8,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
    <div className="container flex m-auto ">
      <NavFixed />
-      <main className="w-10/12">
+      <main className="w-9/12">
         <App />
       </main>
    </div>
