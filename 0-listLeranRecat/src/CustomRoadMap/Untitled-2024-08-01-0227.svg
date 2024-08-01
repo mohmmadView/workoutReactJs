@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 214.44094822406765 245.58827602863315" width="214.44094822406765" height="245.58827602863315">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://unpkg.com/@excalidraw/excalidraw@0.14.0/dist/excalidraw-assets/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://unpkg.com/@excalidraw/excalidraw@0.14.0/dist/excalidraw-assets/Cascadia.woff2");
+      }
+    </style>
+  </defs>
+  <g stroke-linecap="round"><g transform="translate(12.376215650513757 233.09394197873772) rotate(0 94.84425846152007 -110.29980396442114)"><path d="M-2.38 2.49 C20.9 -3.74, 106.99 -1.41, 139.4 -39.01 C171.81 -76.61, 183.08 -192.71, 192.06 -223.09" stroke="#000000" stroke-width="4.5" fill="none" stroke-dasharray="8 12"></path></g><g transform="translate(12.376215650513757 233.09394197873772) rotate(0 94.84425846152007 -110.29980396442114)"><path d="M200.16 -195.73 C195.6 -202.07, 194.16 -208.92, 194.46 -222.4" stroke="#000000" stroke-width="4.5" fill="none"></path></g><g transform="translate(12.376215650513757 233.09394197873772) rotate(0 94.84425846152007 -110.29980396442114)"><path d="M180.04 -199.75 C181.3 -204.58, 185.73 -210.26, 194.46 -222.4" stroke="#000000" stroke-width="4.5" fill="none"></path></g></g><mask></mask></svg>

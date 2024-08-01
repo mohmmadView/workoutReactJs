@@ -16,7 +16,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+@font-face {
+  font-family: "Virgil";
+  src: url("https://unpkg.com/@excalidraw/excalidraw@0.14.0/dist/excalidraw-assets/Virgil.woff2");
+}
+@font-face {
+  font-family: "Cascadia";
+  src: url("https://unpkg.com/@excalidraw/excalidraw@0.14.0/dist/excalidraw-assets/Cascadia.woff2");
+}
 @layer utilities {
   .Rtl {
     direction: rtl;
