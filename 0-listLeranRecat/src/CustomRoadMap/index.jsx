@@ -15,7 +15,7 @@ export default function  Index() {
         <h2  className="text-4xl text-green-500 font-['Virgil']">Developer</h2>
        </div>
         <img src={Arrow} alt="" className="w-8 m-auto pr-2 " />
-        <div className="relative"><span className="absolute half">test</span><img src={Place} alt="" className="w-58 m-auto " /></div>
+        <img src={Place} className="w-52 m-auto"  />
         </div>
     )
     
