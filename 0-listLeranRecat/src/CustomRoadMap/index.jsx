@@ -5,6 +5,7 @@ import Arrow from '../assets/Arrow.svg'
 import Place from '../assets/place.svg'
 import BubblePointer from '../assets/Bubble-Pointer--Streamline-Beveled-Scribbles.svg'
 import ArrowDot from '../assets/Arrow-Dashed-Line-Head-Straight-Long--Streamline-Beveled-Scribbles.svg'
+import PlacCus from '../assets/svgviewer-react-output.jsx'
 export default function  Index() {
 
     return(
@@ -30,7 +31,6 @@ export default function  Index() {
                 </div>
             
        </div> */}
-        </div>
-    )
-    
-};
+       <PlacCus className='w-64 h-56' text={`1 - Vite  \n 2 - React`}/>
+       </div>
+    )}
