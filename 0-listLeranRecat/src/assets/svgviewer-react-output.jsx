@@ -2,8 +2,6 @@ const SVGComponent = ({text , className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 275 93"
-    width={275}
-    height={93}
     className={`fill-slate-500 stroke-orange-200  ${className}`} 
   >
     <defs>

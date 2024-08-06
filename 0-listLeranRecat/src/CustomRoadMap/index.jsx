@@ -17,20 +17,19 @@ export default function  Index() {
         <img src={reactLogo} alt="" className="w-20   " />
         <h2  className="text-4xl text-green-500 font-['Virgil']">Developer</h2>
        </div>
-      <div className="flex relative "> 
-         <img src={Arrow} alt="" className="w-8 m-auto pr-2" />
-      <img src={ArrowDot} alt="" className="w-36 absolute right-[29%] top-[30%]  max-lg:right-[20%] max-md:right-[15%]" />
-
+      <div className="flex  "> 
+         <img src={Arrow} alt="" className="w-8 h-32 m-auto pr-2 " />
+      {/* <img src={ArrowDot} alt="" className="w-32 absolute right-[26%] top-[40%] rotate-12 max-lg:right-[20%] max-md:right-[15%]" /> */}
+  {/* <PlacCus className='w-48 absolute right-0 flex ' text={`Vite`}/> */}
       </div>
-           <img src={Place} className="group w-52 m-auto   hover:w-64"  />
-       {/* <div className=" flex   ">
-                <div className="group relative  w-full">
-                    <img  src={BubblePointer} alt="" className="w-44 absolute hidden right-1/4 bottom-full pr-2 group-hover:block" />
-    
-             
-                </div>
-            
-       </div> */}
-       <PlacCus className='w-64 h-56' text={`1 - Vite  \n 2 - React`}/>
+            <div className="flex flex-col  group/cli">
+                    <img src={Place} className=" w-52 m-auto "  />
+                    <div   alt="" className="w-1/2 h-auto p-4  m-auto hidden  group-hover/cli:block" >
+                      <a href="https://vitejs.dev" className="text-lg font-bold text-orange-400">Vite</a> <br/>
+                      <a href="https://react.dev" className="text-lg font-bold text-blue-400">Create React app</a>
+                     </div>
+            </div>
+              <img src={Arrow} alt="" className="w-8 h-32 m-auto pr-2 " />
+               <img src={Place} className=" w-52 m-auto "  />
        </div>
     )}
