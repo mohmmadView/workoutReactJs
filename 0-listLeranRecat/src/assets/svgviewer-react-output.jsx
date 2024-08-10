@@ -30,7 +30,7 @@ const SVGComponent = ({text , className }) => (
         x={69}
         y={30}
         fontFamily="Helvetica, Segoe UI Emoji"
-        fontSize="38px"
+        fontSize="32px"
         fill="#a61e4d"
         textAnchor="middle"
         style={{
