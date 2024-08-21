@@ -34,17 +34,16 @@ export default function Components() {
                    {/* <PlaceCus className={"w-5/6 text-sm  font-bold fill-yellow-500  mx-auto"} text={`Components`} /> */}
                    <ul className="menu row-span-2 text-white ml-10 bg-yellow-400 rounded-box w-5/6 gap-2">
                    <h1 className="text-center  text-black  font-bold text-2xl">Functional Components</h1>
-                     <li className="border rounded-md bg-red-600"><a className="text-white hover:text-base-200" onClick={()=>document.getElementById('my_modal_1').showModal()} >JSX</a></li>
+                     <li className="border rounded-md bg-red-600"><a className="text-white hover:text-base-200" onClick={()=>{}} >JSX</a></li>
 <dialog id="my_modal_1" className="modal">
   <div className="modal-box">
     <h3 className="font-bold text-lg">JSX</h3>
     <p className="py-4">JSX stands for JavaScript XML. It allows writing HTML in JavaScript and converts the HTML tags into React elements.</p>
-    <div className="modal-action">
+    {/* <div className="modal-action">
       <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
         <button className="btn">Close</button>
       </form>
-    </div>
+    </div> */}
   </div>
 </dialog>
                      <li className="border  rounded-md bg-blue-600"> <a className="text-white  hover:text-base-200" >Props vs State</a></li>

@@ -13,8 +13,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <Header /> */}
     <Navbar  /> 
     <Roadmap />
-    <IndexLesson />
+    {/* <IndexLesson />
     <Dialog />
-    <Example />
+    <Example /> */}
   </React.StrictMode>,
 );
