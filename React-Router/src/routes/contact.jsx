@@ -11,19 +11,21 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact">
+    <div className="card card-side bg-white shadow-lg " id="contact">
       <div>
-        <img
-          key={contact.avatar}
-          src={
-            contact.avatar ||
-            `https://robohash.org/${contact.id}.png?size=200x200`
-          }
-        />
+       <figure>
+          <img
+            key={contact.avatar}
+            src={
+              contact.avatar ||
+              `https://robohash.org/${contact.id}.png?size=200x200`
+            }
+          />
+       </figure>
       </div>
 
-      <div>
-        <h1>
+      <div className="card-body">
+        <h1 className="text-success">
           {contact.first || contact.last ? (
             <>
               {contact.first} {contact.last}
@@ -46,9 +48,9 @@ export default function Contact() {
 
         {contact.notes && <p>{contact.notes}</p>}
 
-        <div>
+        <div className="flex gap-1">
           <Form action="edit">
-            <button type="submit">Edit</button>
+            <button className="btn btn-success" type="submit">Edit</button>
           </Form>
           <Form
             method="post"
@@ -63,7 +65,7 @@ export default function Contact() {
               }
             }}
           >
-            <button type="submit">Delete</button>
+            <button className="btn btn-secondary" type="submit">Delete</button>
           </Form>
         </div>
       </div>
