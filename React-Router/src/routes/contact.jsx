@@ -5,16 +5,18 @@ export async function loader({params}){
   return(contact)
 }
 export default function Contact() {
-  const dataContact = useLoaderData() 
-  const contact = {
-    first: "Your",
-    last: "Name",
-    avatar: "https://robohash.org/you.png?size=200x200",
-    twitter: "your_handle",
-    notes: "Some notes",
-    favorite: true,
-  };
-
+  const contact = useLoaderData() 
+  // const contact = {
+  //   first: "Your",
+  //   last: "Name",
+  //   avatar: "https://robohash.org/you.png?size=200x200",
+  //   twitter: "your_handle",
+  //   notes: "Some notes",
+  //   favorite: true,
+  // };
+{console.log('====================================');
+console.log(contact);
+console.log('====================================');}
   return (
     <div className="card card-side bg-white shadow-lg " id="contact">
       <div>

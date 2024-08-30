@@ -16,6 +16,7 @@ export async function loader() {
 }
 export default function Root() {
     const { contacts } = useLoaderData();
+    
 
     return (
       <div className="flex">
@@ -33,6 +34,7 @@ export default function Root() {
                   aria-label="Search contacts"
                   placeholder="Search"
                   type="search"
+                  onChange={() => {console.log(loader(contacts.id));}}
                   name="q"
                 />
                 <div
@@ -60,7 +62,7 @@ export default function Root() {
                           {contact.first} {contact.last} 
                         </>
                       ) : (
-                        <i>No Name</i>
+                        <i>No Name </i>
                       )}{" "}
                       {contact.favorite && <span>★</span>}
                     </Link>
