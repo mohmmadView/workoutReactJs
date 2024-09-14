@@ -15,6 +15,7 @@ export async function loader() {
   return { contacts };
 }
 export default function Root() {
+// location.reload()
     const { contacts } = useLoaderData();
     
 
@@ -47,7 +48,7 @@ export default function Root() {
                   aria-live="polite"
                 ></div>
               </form>
-              <Form className="flex justify-center my-2" method="post">
+              <Form  className="flex justify-center my-2" method="post">
                 <button className="btn btn-block " type="submit">New</button>
               </Form>
             </div>
@@ -62,7 +63,7 @@ export default function Root() {
                           {contact.first} {contact.last} 
                         </>
                       ) : (
-                        <i>No Name </i>
+                        <i>{contact.first}</i>
                       )}{" "}
                       {contact.favorite && <span>★</span>}
                     </Link>

@@ -1,5 +1,5 @@
 import { Form , useLoaderData } from "react-router-dom";
-import { getContact } from '../contacts';
+import { getContact , deleteContact} from '../contacts';
 export async function loader({params}){
   const contact = await getContact(params.contactId);
   return(contact)
@@ -14,12 +14,11 @@ export default function Contact() {
   //   notes: "Some notes",
   //   favorite: true,
   // };
-{console.log('====================================');
-console.log(contact);
-console.log('====================================');}
+
   return (
     <div className="card card-side bg-white shadow-lg " id="contact">
       <div>
+        
        <figure>
           <img
             key={contact.avatar}
@@ -60,23 +59,29 @@ console.log('====================================');}
             <button className="btn btn-success" type="submit">Edit</button>
           </Form>
           <Form
-            method="post"
-            action="destroy"
+            action="/"
+            reloadDocument={true}
             onSubmit={(event) => {
               if (
                 !confirm(
                   "Please confirm you want to delete this record."
                 )
               ) {
+              console.log("test");
                 event.preventDefault();
               }
             }}
           >
-            <button className="btn btn-secondary" type="submit">Delete</button>
+            <button className="btn btn-secondary" onClick={()=>{
+              deleteContact(contact.id);
+             
+            }} type="submit">Delete</button>
           </Form>
         </div>
       </div>
+{console.log(contact ,"contact.jsx")}
     </div>
+  
   );
 }
 
